@@ -40,13 +40,17 @@ interface GraphQLResponse {
 async function fetchGraphQL(query: string, variables: Record<string, any> = {}): Promise<GraphQLResponse> {
   const wpApiUrl = process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://beckend.bikanerbuilders.in/graphql';
 
+  const payload = Object.keys(variables).length > 0 
+    ? { query, variables } 
+    : { query };
+
   try {
     const res = await fetch(wpApiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ query, variables }),
+      body: JSON.stringify(payload),
       next: {
         revalidate: 60, // ISR: Revalidate every 60 seconds
       },

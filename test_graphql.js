@@ -21,8 +21,9 @@ async function run() {
       }
     }
   `;
+  const wpApiUrl = process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://beckend.bikanerbuilders.in/graphql';
   try {
-    const res = await fetch('http://bikaner-backend.local/graphql', {
+    const res = await fetch(wpApiUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ query, variables: { id: "premium-builders-architects-in-nokha" } })
