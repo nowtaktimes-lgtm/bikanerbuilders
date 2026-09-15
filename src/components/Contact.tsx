@@ -3,8 +3,10 @@
 import React from 'react';
 import Link from 'next/link';
 
+import { useSettings } from '@/components/SettingsProvider';
+
 export default function Contact() {
-  const phoneNumber = "91XXXXXXXXXX";
+  const settings = useSettings();
   
   return (
     <section className="py-24 bg-white relative overflow-hidden" id="contact">
@@ -43,8 +45,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500 font-medium mb-1">Direct Call</p>
-                    <a href={`tel:+${phoneNumber}`} className="text-xl font-bold text-[#0F172A] hover:text-[#EA580C] transition-colors">
-                      +91 {phoneNumber.substring(2)}
+                    <a href={`tel:${settings.primaryPhone.startsWith('+') ? settings.primaryPhone : '+' + settings.primaryPhone.replace(/[^0-9]/g, '')}`} className="text-xl font-bold text-[#0F172A] hover:text-[#EA580C] transition-colors">
+                      {settings.primaryPhone}
                     </a>
                   </div>
                 </div>
@@ -56,8 +58,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500 font-medium mb-1">Email Us</p>
-                    <a href="mailto:info@bikanerbuilders.in" className="text-lg font-bold text-[#0F172A] hover:text-[#EA580C] transition-colors">
-                      info@bikanerbuilders.in
+                    <a href={`mailto:${settings.emailAddress}`} className="text-lg font-bold text-[#0F172A] hover:text-[#EA580C] transition-colors">
+                      {settings.emailAddress}
                     </a>
                   </div>
                 </div>
@@ -69,10 +71,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500 font-medium mb-1">Head Office</p>
-                    <p className="text-lg font-bold text-[#0F172A]">
-                      Bikaner Builders HQ,<br />
-                      Karni Industrial Area,<br />
-                      Bikaner, Rajasthan 334004
+                    <p className="text-lg font-bold text-[#0F172A] whitespace-pre-line">
+                      {settings.officeAddress}
                     </p>
                   </div>
                 </div>
@@ -96,7 +96,7 @@ export default function Contact() {
               {/* WhatsApp CTA */}
               <div className="mt-10">
                 <Link 
-                  href={`https://wa.me/${phoneNumber}?text=Namaste,%20mujhe%20apne%20plot%20ka%20naksha%20banwana%20hai.`}
+                  href={`https://wa.me/${settings.whatsappNumber.replace(/[^0-9]/g, '')}?text=Namaste,%20mujhe%20apne%20plot%20ka%20naksha%20banwana%20hai.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-3 w-full bg-[#25D366] hover:bg-[#1fae54] text-white font-black text-lg py-4 rounded-xl transition-colors shadow-lg"

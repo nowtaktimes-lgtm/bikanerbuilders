@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
+import { SettingsProvider } from "@/components/SettingsProvider";
+import { getGlobalSettings } from "@/lib/api";
 
 const inter = Inter({ subsets: ["latin"], display: 'swap' });
 
@@ -19,18 +21,22 @@ export const metadata: Metadata = {
   description: "Bikaner's leading construction company offering 2D Naksha, 3D Front Elevation, and Turnkey Construction services.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const globalSettings = await getGlobalSettings();
+
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} antialiased selection:bg-[#EA580C] selection:text-white`}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <MobileBottomBar />
+        <SettingsProvider settings={globalSettings}>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <MobileBottomBar />
+        </SettingsProvider>
       </body>
     </html>
   );

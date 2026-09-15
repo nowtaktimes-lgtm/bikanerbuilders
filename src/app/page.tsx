@@ -7,9 +7,11 @@ import LeadModal from '@/components/LeadModal';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 import Portfolio from '@/components/Portfolio';
 import Contact from '@/components/Contact';
+import { useSettings } from '@/components/SettingsProvider';
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const settings = useSettings();
 
   return (
     <>
@@ -52,20 +54,20 @@ export default function Home() {
           <p className="mt-4 max-w-2xl text-lg sm:text-xl text-gray-200 mx-auto font-medium drop-shadow-md mb-10">
             Premium Turnkey Construction, 100% Vastu Compliant 2D Maps, and Stunning 3D Elevations at unbeatable rates.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button 
-              onClick={() => setIsModalOpen(true)}
-              className="w-full sm:w-auto bg-[#EA580C] hover:bg-[#F97316] text-white font-black text-lg px-8 py-4 rounded-xl shadow-[0_8px_30px_rgba(234,88,12,0.5)] transition-all hover:-translate-y-1"
-            >
-              Get Free Estimate
-            </button>
-            <Link 
-              href="tel:+91XXXXXXXXXX"
-              className="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white font-bold text-lg px-8 py-4 rounded-xl transition-all"
-            >
-              Call Us Now
-            </Link>
-          </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center opacity-0 animate-fade-in-up animation-delay-500">
+              <button 
+                onClick={() => setIsModalOpen(true)}
+                className="w-full sm:w-auto bg-[#EA580C] hover:bg-[#F97316] text-white font-black text-lg px-8 py-4 rounded-xl shadow-[0_8px_30px_rgba(234,88,12,0.5)] transition-all hover:-translate-y-1"
+              >
+                Get Free Estimate
+              </button>
+              <Link 
+                href={`tel:${settings.primaryPhone.startsWith('+') ? settings.primaryPhone : '+' + settings.primaryPhone.replace(/[^0-9]/g, '')}`}
+                className="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-bold text-lg px-8 py-4 rounded-xl transition-all"
+              >
+                Call Now
+              </Link>
+            </div>
         </div>
       </section>
 

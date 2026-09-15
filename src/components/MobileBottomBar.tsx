@@ -1,18 +1,20 @@
+'use client';
+
 import React from 'react';
 import Link from 'next/link';
+import { useSettings } from '@/components/SettingsProvider';
 
 interface MobileBottomBarProps {
-  phoneNumber?: string;
   whatsappMessage?: string;
 }
 
 export default function MobileBottomBar({
-  phoneNumber = '91XXXXXXXXXX',
   whatsappMessage = 'Namaste, mujhe apne plot ka naksha / construction rate chahiye.',
 }: MobileBottomBarProps) {
   
-  const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
-  const telUrl = `tel:+${phoneNumber}`;
+  const settings = useSettings();
+  const waUrl = `https://wa.me/${settings.whatsappNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(whatsappMessage)}`;
+  const telUrl = `tel:${settings.primaryPhone.startsWith('+') ? settings.primaryPhone : '+' + settings.primaryPhone.replace(/[^0-9]/g, '')}`;
 
   return (
     <div 

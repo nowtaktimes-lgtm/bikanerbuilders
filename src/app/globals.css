@@ -37,3 +37,8 @@ body {
 .custom-prose a { color: #ea580c; text-decoration: underline; font-weight: 600; }
 .custom-prose ul { list-style-type: disc; padding-left: 1.625em; margin-top: 1.25em; margin-bottom: 1.25em; }
 .custom-prose img { border-radius: 1rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); margin-top: 2em; margin-bottom: 2em; }
+
+.bg-radial-pattern-light {
+  background-image: radial-gradient(#ffffff 1px, transparent 1px);
+  background-size: 24px 24px;
+}

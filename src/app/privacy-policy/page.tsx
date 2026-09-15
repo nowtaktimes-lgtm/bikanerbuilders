@@ -1,6 +1,8 @@
 import React from 'react';
+import { getGlobalSettings } from '@/lib/api';
 
-export default function PrivacyPolicy() {
+export default async function PrivacyPolicy() {
+  const globalSettings = await getGlobalSettings();
   return (
     <div className="pt-32 pb-24 bg-slate-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -58,9 +60,9 @@ export default function PrivacyPolicy() {
               </p>
               <div className="mt-4 bg-slate-50 p-6 rounded-xl border border-slate-100">
                 <p className="font-bold text-[#0F172A]">Bikaner Builders</p>
-                <p>Karni Industrial Area, Bikaner, Rajasthan 334004</p>
-                <p>Email: privacy@bikanerbuilders.in</p>
-                <p>Phone: +91 98765 43210</p>
+                <p className="whitespace-pre-line">{globalSettings.officeAddress}</p>
+                <p>Email: {globalSettings.emailAddress}</p>
+                <p>Phone: {globalSettings.primaryPhone}</p>
               </div>
             </section>
 

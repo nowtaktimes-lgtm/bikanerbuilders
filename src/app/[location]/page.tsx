@@ -2,6 +2,7 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
+import { getGlobalSettings, fetchGraphQL, GraphQLError, GraphQLResponse } from '@/lib/api';
 
 // Types for the WPGraphQL response
 interface LocationData {
@@ -19,53 +20,11 @@ interface LocationNode {
   locationData?: LocationData;
 }
 
-interface GraphQLError {
-  message: string;
-  locations?: { line: number; column: number }[];
-  path?: (string | number)[];
-  extensions?: Record<string, unknown>;
+interface LocationResponse {
+  location: LocationNode;
 }
 
-interface GraphQLResponse {
-  data?: {
-    location?: LocationNode;
-  };
-  errors?: GraphQLError[];
-}
 
-/**
- * Generic fetch function for WPGraphQL
- */
-async function fetchGraphQL(query: string, variables: Record<string, unknown> = {}): Promise<GraphQLResponse> {
-  const wpApiUrl = process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://beckend.bikanerbuilders.in/graphql';
-
-  const payload = Object.keys(variables).length > 0 
-    ? { query, variables } 
-    : { query };
-
-  try {
-    const res = await fetch(wpApiUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(payload),
-      next: {
-        revalidate: 60, // ISR: Revalidate every 60 seconds
-      },
-    });
-
-    if (!res.ok) {
-      console.error('Failed to fetch API', res.status);
-      return {};
-    }
-
-    return await res.json();
-  } catch (error) {
-    console.error('Network error while fetching WPGraphQL:', error);
-    return {};
-  }
-}
 
 /**
  * Fetch specific location data by slug (URI)
@@ -88,7 +47,7 @@ async function getLocationData(slug: string): Promise<LocationNode | null> {
     }
   `;
 
-  const response = await fetchGraphQL(query, { id: slug });
+  const response = await fetchGraphQL<LocationResponse>(query, { id: slug });
   
   if (response.errors || !response.data?.location) {
     console.log("Returning mock data for preview because WordPress API is unavailable.");
@@ -132,7 +91,10 @@ export async function generateMetadata({ params }: { params: Promise<{ location:
 
 export default async function LocationPage({ params }: { params: Promise<{ location: string }> }) {
   const resolvedParams = await params;
-  const locationNode = await getLocationData(resolvedParams.location);
+  const [locationNode, globalSettings] = await Promise.all([
+    getLocationData(resolvedParams.location),
+    getGlobalSettings()
+  ]);
 
   if (!locationNode) {
     notFound();
@@ -143,7 +105,8 @@ export default async function LocationPage({ params }: { params: Promise<{ locat
   const pincode = locationData?.pincode || '';
 
   const dynamicWhatsappText = `Namaste, mujhe ${title} mein naksha banwana hai.`;
-  const whatsappUrl = `https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent(dynamicWhatsappText)}`;
+  const whatsappUrl = `https://wa.me/${globalSettings.whatsappNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(dynamicWhatsappText)}`;
+  const telUrl = `tel:${globalSettings.primaryPhone.startsWith('+') ? globalSettings.primaryPhone : '+' + globalSettings.primaryPhone.replace(/[^0-9]/g, '')}`;
 
   // Hardcode missing API fields to maintain layout structure
   const localPrice2d = '5'; 
@@ -219,7 +182,7 @@ export default async function LocationPage({ params }: { params: Promise<{ locat
               Chat on WhatsApp
             </Link>
             <Link 
-              href="tel:+91XXXXXXXXXX"
+              href={telUrl}
               className="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-bold text-lg px-8 py-4 rounded-xl transition-all"
             >
               Call Now
