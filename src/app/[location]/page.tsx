@@ -27,17 +27,24 @@ interface VillageNode {
   acfVillageData: VillageACF;
 }
 
+interface GraphQLError {
+  message: string;
+  locations?: { line: number; column: number }[];
+  path?: (string | number)[];
+  extensions?: Record<string, unknown>;
+}
+
 interface GraphQLResponse {
   data?: {
     villages?: VillageNode;
   };
-  errors?: any[];
+  errors?: GraphQLError[];
 }
 
 /**
  * Generic fetch function for WPGraphQL
  */
-async function fetchGraphQL(query: string, variables: Record<string, any> = {}): Promise<GraphQLResponse> {
+async function fetchGraphQL(query: string, variables: Record<string, unknown> = {}): Promise<GraphQLResponse> {
   const wpApiUrl = process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://beckend.bikanerbuilders.in/graphql';
 
   const payload = Object.keys(variables).length > 0 
@@ -191,8 +198,7 @@ export default async function LocationPage({ params }: { params: Promise<{ locat
             <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/80 to-transparent z-0"></div>
           </>
         ) : (
-          <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-               style={{ backgroundImage: 'radial-gradient(#ffffff 1px, transparent 1px)', backgroundSize: '24px 24px' }}>
+          <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-radial-pattern-light">
           </div>
         )}
         
