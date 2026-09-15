@@ -1,15 +1,20 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { getGlobalSettings } from '@/lib/api';
+import { getGlobalSettings, getServiceData } from '@/lib/api';
 import { generateServiceSchema } from '@/lib/schema';
+import { notFound } from 'next/navigation';
 
 export default async function ServiceDetail({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  const globalSettings = await getGlobalSettings();
+  const [globalSettings, wpService] = await Promise.all([
+    getGlobalSettings(),
+    getServiceData(resolvedParams.slug)
+  ]);
   
   const telUrl = `tel:${globalSettings.primaryPhone.startsWith('+') ? globalSettings.primaryPhone : '+' + globalSettings.primaryPhone.replace(/[^0-9]/g, '')}`;
   const waUrl = (text: string) => `https://wa.me/${globalSettings.whatsappNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(text)}`;
+  
   // Mock data mapping based on slug
   const serviceData: Record<string, any> = {
     '2d-naksha': {
@@ -43,9 +48,43 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
   };
 
   const service = serviceData[resolvedParams.slug] || serviceData['turnkey-construction'];
+  const title = wpService?.title || service.title;
   
   const fullUrl = `https://bikanerbuilders.in/services/${resolvedParams.slug}`;
-  const serviceSchema = generateServiceSchema(service, fullUrl);
+  const serviceSchema = generateServiceSchema({ ...service, title }, fullUrl);
+
+  const dynamicData = wpService?.serviceData || {};
+
+  const gallery = [
+    dynamicData.galleryImage1,
+    dynamicData.galleryImage2,
+    dynamicData.galleryImage3
+  ].filter(Boolean) as string[];
+
+  const processSteps = [
+    { title: dynamicData.step1Title, desc: dynamicData.step1Description },
+    { title: dynamicData.step2Title, desc: dynamicData.step2Description },
+    { title: dynamicData.step3Title, desc: dynamicData.step3Description }
+  ].filter(step => step.title);
+
+  const faqs = [
+    { q: dynamicData.faq1Question, a: dynamicData.faq1Answer },
+    { q: dynamicData.faq2Question, a: dynamicData.faq2Answer },
+    { q: dynamicData.faq3Question, a: dynamicData.faq3Answer }
+  ].filter(faq => faq.q);
+
+  const faqSchema = faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map((faq) => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  } : null;
 
   return (
     <div className="pt-24 pb-20 bg-slate-50">
@@ -54,20 +93,26 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Dynamic Hero Section */}
         <div className="flex flex-col lg:flex-row gap-12 items-center mb-16">
           <div className="w-full lg:w-1/2">
             <h1 className="text-4xl md:text-5xl font-black text-[#0F172A] mb-6 tracking-tight">
-              {service.title}
+              {title}
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
               {service.desc}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
-                href={waUrl(`I'm interested in ${service.title}`)}
+                href={waUrl(`I'm interested in ${title}`)}
                 className="bg-[#25D366] hover:bg-[#1fae54] text-white font-bold py-4 px-8 rounded-xl shadow-lg transition-colors flex justify-center items-center gap-2"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M11.97 2.005a9.962 9.962 0 00-8.528 15.11L2 22l5.023-1.328a9.964 9.964 0 104.947-18.667zM12 20a7.973 7.973 0 01-4.062-1.115l-.291-.173-3.023.794.808-2.953-.19-.3A7.95 7.95 0 014.032 12 7.977 7.977 0 1112 20zm4.242-5.467c-.232-.116-1.378-.68-1.593-.758-.215-.078-.372-.116-.528.116-.156.232-.6 .758-.737.914-.136.155-.274.175-.506.058-.232-.116-.983-.362-1.87-1.156-.69-.617-1.155-1.38-1.29-1.612-.136-.233-.014-.359.102-.475.105-.105.232-.272.348-.408.116-.136.155-.233.232-.388.077-.156.039-.292-.019-.408-.058-.116-.528-1.277-.723-1.748-.19-.46-.383-.398-.528-.406-.137-.008-.293-.008-.45-.008a.86.86 0 00-.618.291c-.215.233-.822.805-.822 1.96 0 1.155.843 2.27 1.96 2.443.116.175 1.636 2.5 3.96 3.504.552.238.983.38 1.318.487.553.176 1.057.151 1.455.092.445-.067 1.378-.563 1.572-1.107.193-.544.193-1.01.136-1.107-.058-.097-.215-.155-.447-.272z" /></svg>
@@ -85,7 +130,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
             <div className="relative h-[350px] md:h-[450px] rounded-3xl overflow-hidden shadow-2xl">
               <Image
                 src={service.image}
-                alt={service.title}
+                alt={title}
                 fill
                 priority
                 className="object-cover"
@@ -113,7 +158,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
             </div>
 
             <h2 className="text-3xl font-black text-[#0F172A] mb-8">Pricing Plans</h2>
-            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 relative overflow-hidden">
+            <div className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 relative overflow-hidden mb-16">
               <div className="absolute top-0 right-0 bg-[#EA580C] text-white text-xs font-bold uppercase tracking-wider py-1 px-4 rounded-bl-xl">
                 Most Popular
               </div>
@@ -126,6 +171,82 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
                 Select Package
               </button>
             </div>
+
+            {/* Deep Content */}
+            {dynamicData.serviceContent && (
+              <div className="mb-16">
+                <h2 className="text-3xl font-black text-[#0F172A] mb-6">Service Overview</h2>
+                <div 
+                  className="prose prose-lg max-w-none text-gray-700 prose-headings:text-[#0F172A] prose-headings:font-black prose-a:text-[#EA580C] prose-strong:text-[#0F172A]"
+                  dangerouslySetInnerHTML={{ __html: dynamicData.serviceContent }}
+                />
+              </div>
+            )}
+
+            {/* Project Gallery */}
+            {gallery.length > 0 && (
+              <div className="mb-16">
+                <h2 className="text-3xl font-black text-[#0F172A] mb-8">Project Gallery</h2>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                  {gallery.map((imgSrc, index) => (
+                    <div key={index} className="relative aspect-square rounded-2xl overflow-hidden shadow-md">
+                      <Image 
+                        src={imgSrc} 
+                        alt={`${title} Gallery Image ${index + 1}`} 
+                        fill 
+                        className="object-cover hover:scale-110 transition-transform duration-500" 
+                        sizes="(max-width: 768px) 50vw, 33vw"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Working Process */}
+            {processSteps.length > 0 && (
+              <div className="mb-16">
+                <h2 className="text-3xl font-black text-[#0F172A] mb-8">Our Process</h2>
+                <div className="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-slate-200">
+                  {processSteps.map((step, index) => (
+                    <div key={index} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                      <div className="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-[#EA580C] text-white font-bold shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                        {index + 1}
+                      </div>
+                      <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                        <h3 className="font-bold text-xl text-[#0F172A] mb-2">{step.title}</h3>
+                        <p className="text-gray-600">{step.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* FAQ Accordion */}
+            {faqs.length > 0 && (
+              <div className="mb-16">
+                <h2 className="text-3xl font-black text-[#0F172A] mb-8">Frequently Asked Questions</h2>
+                <div className="space-y-4">
+                  {faqs.map((faq, index) => (
+                    <details key={index} className="group bg-white p-6 rounded-2xl shadow-sm border border-slate-100 [&_summary::-webkit-details-marker]:hidden">
+                      <summary className="flex cursor-pointer items-center justify-between gap-1.5 text-gray-900">
+                        <h3 className="text-lg font-bold text-[#0F172A]">{faq.q}</h3>
+                        <span className="shrink-0 rounded-full bg-slate-50 p-1.5 text-gray-900 sm:p-3 group-open:bg-[#EA580C] group-open:text-white transition-colors">
+                          <svg className="size-5 shrink-0 transition duration-300 group-open:-rotate-45" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
+                          </svg>
+                        </span>
+                      </summary>
+                      <p className="mt-4 leading-relaxed text-gray-600">
+                        {faq.a}
+                      </p>
+                    </details>
+                  ))}
+                </div>
+              </div>
+            )}
+
           </div>
 
           {/* Sticky Sidebar */}
@@ -143,7 +264,7 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
 
               <div className="space-y-4">
                 <Link 
-                  href={waUrl(`I'm interested in ${service.title}`)}
+                  href={waUrl(`I'm interested in ${title}`)}
                   className="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#1fae54] text-white font-bold py-4 rounded-xl transition-colors shadow-md"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M11.97 2.005a9.962 9.962 0 00-8.528 15.11L2 22l5.023-1.328a9.964 9.964 0 104.947-18.667zM12 20a7.973 7.973 0 01-4.062-1.115l-.291-.173-3.023.794.808-2.953-.19-.3A7.95 7.95 0 014.032 12 7.977 7.977 0 1112 20zm4.242-5.467c-.232-.116-1.378-.68-1.593-.758-.215-.078-.372-.116-.528.116-.156.232-.6 .758-.737.914-.136.155-.274.175-.506.058-.232-.116-.983-.362-1.87-1.156-.69-.617-1.155-1.38-1.29-1.612-.136-.233-.014-.359.102-.475.105-.105.232-.272.348-.408.116-.136.155-.233.232-.388.077-.156.039-.292-.019-.408-.058-.116-.528-1.277-.723-1.748-.19-.46-.383-.398-.528-.406-.137-.008-.293-.008-.45-.008a.86.86 0 00-.618.291c-.215.233-.822.805-.822 1.96 0 1.155.843 2.27 1.96 2.443.116.175 1.636 2.5 3.96 3.504.552.238.983.38 1.318.487.553.176 1.057.151 1.455.092.445-.067 1.378-.563 1.572-1.107.193-.544.193-1.01.136-1.107-.058-.097-.215-.155-.447-.272z" /></svg>

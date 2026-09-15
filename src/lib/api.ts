@@ -159,3 +159,69 @@ export async function getAllLocations(): Promise<LocationNode[]> {
 
   return response.data.locations.nodes;
 }
+
+export interface ServiceData {
+  serviceContent?: string;
+  galleryImage1?: string;
+  galleryImage2?: string;
+  galleryImage3?: string;
+  step1Title?: string;
+  step1Description?: string;
+  step2Title?: string;
+  step2Description?: string;
+  step3Title?: string;
+  step3Description?: string;
+  faq1Question?: string;
+  faq1Answer?: string;
+  faq2Question?: string;
+  faq2Answer?: string;
+  faq3Question?: string;
+  faq3Answer?: string;
+}
+
+export interface ServiceNode {
+  title: string;
+  uri: string;
+  serviceData?: ServiceData;
+}
+
+export async function getServiceData(slug: string): Promise<ServiceNode | null> {
+  const query = `
+    query GetServiceBySlug($id: ID!) {
+      service(id: $id, idType: URI) {
+        title
+        uri
+        serviceData {
+          serviceContent
+          galleryImage1
+          galleryImage2
+          galleryImage3
+          step1Title
+          step1Description
+          step2Title
+          step2Description
+          step3Title
+          step3Description
+          faq1Question
+          faq1Answer
+          faq2Question
+          faq2Answer
+          faq3Question
+          faq3Answer
+        }
+      }
+    }
+  `;
+
+  type ServiceResponse = {
+    service: ServiceNode;
+  };
+
+  const response = await fetchGraphQL<ServiceResponse>(query, { id: slug });
+  
+  if (response.errors || !response.data?.service) {
+    return null;
+  }
+
+  return response.data.service;
+}
