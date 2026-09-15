@@ -2,8 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { useSettings } from '@/components/SettingsProvider';
 
 export default function Header() {
+  const settings = useSettings();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
@@ -26,9 +29,19 @@ export default function Header() {
         <div className="flex justify-between items-center">
           
           <Link href="/" className="flex items-center gap-2 z-50">
-            <div className="w-10 h-10 bg-[#EA580C] rounded-lg flex items-center justify-center text-white font-black text-xl shadow-lg">
-              BB
-            </div>
+            {settings.siteLogo ? (
+              <Image 
+                src={settings.siteLogo} 
+                alt="Bikaner Builders Logo" 
+                width={40} 
+                height={40} 
+                className="w-10 h-10 object-contain"
+              />
+            ) : (
+              <div className="w-10 h-10 bg-[#EA580C] rounded-lg flex items-center justify-center text-white font-black text-xl shadow-lg">
+                BB
+              </div>
+            )}
             <span className={`text-2xl font-black tracking-tight ${isScrolled ? 'text-[#0F172A]' : 'text-[#0F172A] drop-shadow-md'}`}>
               Bikaner Builders
             </span>

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { useSettings } from '@/components/SettingsProvider';
 
 export default function Footer() {
@@ -24,9 +25,19 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-[#EA580C] rounded-lg flex items-center justify-center text-white font-black text-xl shadow-md">
-                BB
-              </div>
+              {settings.siteLogo ? (
+                <Image 
+                  src={settings.siteLogo} 
+                  alt="Bikaner Builders Logo" 
+                  width={40} 
+                  height={40} 
+                  className="w-10 h-10 object-contain"
+                />
+              ) : (
+                <div className="w-10 h-10 bg-[#EA580C] rounded-lg flex items-center justify-center text-white font-black text-xl shadow-md">
+                  BB
+                </div>
+              )}
               <span className="text-2xl font-black tracking-tight text-[#0F172A]">
                 Bikaner Builders
               </span>

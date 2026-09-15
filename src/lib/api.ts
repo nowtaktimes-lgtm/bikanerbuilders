@@ -46,6 +46,7 @@ export interface GlobalSettings {
   whatsappNumber: string;
   emailAddress: string;
   officeAddress: string;
+  siteLogo?: string;
 }
 
 export async function getGlobalSettings(): Promise<GlobalSettings> {
@@ -58,6 +59,7 @@ export async function getGlobalSettings(): Promise<GlobalSettings> {
             whatsappNumber 
             emailAddress 
             officeAddress 
+            siteLogo
           } 
         } 
       } 
@@ -80,7 +82,8 @@ export async function getGlobalSettings(): Promise<GlobalSettings> {
       primaryPhone: "91XXXXXXXXXX",
       whatsappNumber: "91XXXXXXXXXX",
       emailAddress: "info@bikanerbuilders.in",
-      officeAddress: "Bikaner Builders HQ, Karni Industrial Area, Bikaner, Rajasthan 334004"
+      officeAddress: "Bikaner Builders HQ, Karni Industrial Area, Bikaner, Rajasthan 334004",
+      siteLogo: "/logo.png"
     };
   }
 
