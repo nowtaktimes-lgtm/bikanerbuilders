@@ -20,12 +20,7 @@ export default function Footer({ locations = [] }: FooterProps) {
     "Pugal", "Bajju", "Chhatargarh"
   ];
 
-  const displayLocations = locations && locations.length > 0
-    ? locations
-    : topVillages.map(v => ({
-        title: v,
-        uri: `/locations/construction-in-${v.toLowerCase().replace(' ', '-')}`
-      }));
+
 
   return (
     <footer className="bg-white border-t border-slate-100 pt-16 pb-24 md:pb-8 relative">
@@ -103,21 +98,48 @@ export default function Footer({ locations = [] }: FooterProps) {
       {/* SEO Village Silo - Bottom Section */}
       <div className="bg-[#0F172A] py-12 mt-8 rounded-t-3xl md:rounded-none">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Section 1: Top SEO Service Areas */}
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-black text-white mb-2">Recently Added Service Areas in Bikaner</h3>
-            <p className="text-slate-400">Find specialized construction services in your local area</p>
+            <h3 className="text-2xl font-black text-white mb-2">Serving Bikaner City & 300+ Surrounding Villages</h3>
+            <p className="text-slate-400">Top construction service areas</p>
           </div>
           
-          <div className="flex flex-wrap justify-center gap-3">
-            {displayLocations.map((loc, index) => (
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
+            {topVillages.map((village, index) => (
               <Link 
                 key={index} 
-                href={loc.uri}
+                href={`/locations/construction-in-${village.toLowerCase().replace(' ', '-')}`}
                 className="bg-white/10 hover:bg-[#EA580C] text-white px-5 py-2.5 rounded-full text-sm font-bold tracking-wide transition-all border border-white/5 hover:border-transparent"
               >
-                {loc.title}
+                {village}
               </Link>
             ))}
+          </div>
+
+          {/* Section 2: Recently Added Locations (Dynamic from WP) */}
+          {locations && locations.length > 0 && (
+            <>
+              <div className="text-center mb-6 mt-4 border-t border-white/10 pt-8">
+                <h4 className="text-xl font-bold text-white mb-2">Recently Added Locations</h4>
+              </div>
+              
+              <div className="flex flex-wrap justify-center gap-3 mb-10">
+                {locations.map((loc, index) => (
+                  <Link 
+                    key={`dyn-${index}`} 
+                    href={loc.uri}
+                    className="bg-white/10 hover:bg-[#EA580C] text-white px-5 py-2.5 rounded-full text-sm font-bold tracking-wide transition-all border border-white/5 hover:border-transparent"
+                  >
+                    {loc.title}
+                  </Link>
+                ))}
+              </div>
+            </>
+          )}
+
+          {/* Global CTA */}
+          <div className="flex justify-center mt-6">
             <Link 
               href="/locations"
               className="bg-transparent hover:bg-white/5 text-[#EA580C] px-5 py-2.5 rounded-full text-sm font-bold tracking-wide transition-all border border-[#EA580C]/50 hover:border-[#EA580C]"
