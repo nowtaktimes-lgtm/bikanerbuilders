@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { getGlobalSettings, fetchGraphQL } from '@/lib/api';
 import { generateLocationSchema } from '@/lib/schema';
+import DynamicMap from '@/components/DynamicMap';
 
 // Types for the WPGraphQL response
 interface LocationData {
@@ -240,6 +241,13 @@ export default async function LocationPage({ params }: { params: Promise<{ locat
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Dynamic Map Section */}
+      <section className="py-10 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <DynamicMap locationQuery={title} />
         </div>
       </section>
 
