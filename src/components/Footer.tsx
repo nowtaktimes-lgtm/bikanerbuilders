@@ -25,7 +25,7 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6">
-              {settings.siteLogo ? (
+              {settings?.siteLogo ? (
                 <Image 
                   src={settings.siteLogo} 
                   alt="Bikaner Builders Logo" 

@@ -29,7 +29,7 @@ export default function Header() {
         <div className="flex justify-between items-center">
           
           <Link href="/" className="flex items-center gap-2 z-50">
-            {settings.siteLogo ? (
+            {settings?.siteLogo ? (
               <Image 
                 src={settings.siteLogo} 
                 alt="Bikaner Builders Logo" 

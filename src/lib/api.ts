@@ -83,7 +83,7 @@ export async function getGlobalSettings(): Promise<GlobalSettings> {
       whatsappNumber: "91XXXXXXXXXX",
       emailAddress: "info@bikanerbuilders.in",
       officeAddress: "Bikaner Builders HQ, Karni Industrial Area, Bikaner, Rajasthan 334004",
-      siteLogo: "/logo.png"
+      siteLogo: ""
     };
   }
 
