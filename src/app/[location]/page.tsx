@@ -4,27 +4,19 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 // Types for the WPGraphQL response
-interface FAQItem {
-  question: string;
-  answer: string;
+interface LocationData {
+  pincode?: string;
+  customSeoHeading?: string;
 }
 
-interface VillageACF {
-  villageName: string;
-  heroH1Title: string;
-  dynamicWhatsappText: string;
-  localPrice2d: string;
-  seoArticleContent?: string;
-  villageFeaturedImage?: {
+interface LocationNode {
+  title: string;
+  featuredImage?: {
     node?: {
       sourceUrl?: string;
     };
   };
-  faqSection?: FAQItem[];
-}
-
-interface VillageNode {
-  acfVillageData: VillageACF;
+  locationData?: LocationData;
 }
 
 interface GraphQLError {
@@ -36,7 +28,7 @@ interface GraphQLError {
 
 interface GraphQLResponse {
   data?: {
-    villages?: VillageNode;
+    location?: LocationNode;
   };
   errors?: GraphQLError[];
 }
@@ -76,27 +68,21 @@ async function fetchGraphQL(query: string, variables: Record<string, unknown> = 
 }
 
 /**
- * Fetch specific village data by slug
+ * Fetch specific location data by slug (URI)
  */
-async function getVillageData(slug: string): Promise<VillageACF | null> {
+async function getLocationData(slug: string): Promise<LocationNode | null> {
   const query = `
-    query GetVillageBySlug($id: ID!) {
-      villages(id: $id, idType: SLUG) {
-        acfVillageData {
-          villageName
-          heroH1Title
-          dynamicWhatsappText
-          localPrice2d
-          seoArticleContent
-          villageFeaturedImage {
-            node {
-              sourceUrl
-            }
+    query GetLocationBySlug($id: ID!) {
+      location(id: $id, idType: URI) {
+        title
+        featuredImage {
+          node {
+            sourceUrl
           }
-          faqSection {
-            question
-            answer
-          }
+        }
+        locationData {
+          pincode
+          customSeoHeading
         }
       }
     }
@@ -104,61 +90,70 @@ async function getVillageData(slug: string): Promise<VillageACF | null> {
 
   const response = await fetchGraphQL(query, { id: slug });
   
-  if (response.errors || !response.data?.villages?.acfVillageData) {
+  if (response.errors || !response.data?.location) {
     console.log("Returning mock data for preview because WordPress API is unavailable.");
     const safeSlug = typeof slug === 'string' && slug.length > 0 ? slug : 'location';
     const capSlug = safeSlug.charAt(0).toUpperCase() + safeSlug.slice(1);
     
     // Mock Data Fallback for Preview
     return {
-      villageName: capSlug,
-      heroH1Title: `Premium Builders & Architects in ${capSlug}`,
-      dynamicWhatsappText: `Namaste, mujhe ${capSlug} mein naksha banwana hai.`,
-      localPrice2d: '5',
-      villageFeaturedImage: {
+      title: capSlug,
+      featuredImage: {
         node: {
           sourceUrl: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1920&auto=format&fit=crop'
         }
       },
-      seoArticleContent: `<h2>Top Construction Services in ${capSlug}</h2><p>Building a home in ${capSlug} requires an understanding of the local climate and Vastu principles. We are the leading turnkey contractors...</p>`,
-      faqSection: [
-        { question: `${capSlug} me 2D map banwane me kitna time lagta hai?`, answer: 'Sirf 3-4 din me first draft (Naksha) ready ho jata hai. Hum Vastu ke anusar design karte hain.' },
-        { question: `Kya aap ${capSlug} me construction ka theka (Turnkey) bhi lete hain?`, answer: 'Jee haan, hum with-material construction karte hain jisme A-grade quality cement aur steel use hota hai.' }
-      ]
+      locationData: {
+        pincode: '334001',
+        customSeoHeading: `Premium Builders & Architects in ${capSlug}`
+      }
     };
   }
 
-  return response.data.villages.acfVillageData;
+  return response.data.location;
 }
 
 // Generate metadata dynamically for SEO
 export async function generateMetadata({ params }: { params: Promise<{ location: string }> }) {
   const resolvedParams = await params;
-  const villageData = await getVillageData(resolvedParams.location);
+  const locationNode = await getLocationData(resolvedParams.location);
   
-  if (!villageData) {
+  if (!locationNode) {
     return { title: 'Location Not Found' };
   }
   
+  const heading = locationNode.locationData?.customSeoHeading || locationNode.title;
+
   return {
-    title: `${villageData.heroH1Title} | Bikaner Builders`,
-    description: `Premium construction and 2D/3D map services in ${villageData.villageName}. Starting at just ₹${villageData.localPrice2d} / sq.ft.`,
+    title: `${heading} | Bikaner Builders`,
+    description: `Premium construction and 2D/3D map services in ${locationNode.title}${locationNode.locationData?.pincode ? ` (${locationNode.locationData.pincode})` : ''}.`,
   };
 }
 
 export default async function LocationPage({ params }: { params: Promise<{ location: string }> }) {
   const resolvedParams = await params;
-  const villageData = await getVillageData(resolvedParams.location);
+  const locationNode = await getLocationData(resolvedParams.location);
 
-  if (!villageData) {
+  if (!locationNode) {
     notFound();
   }
 
-  const { villageName, heroH1Title, dynamicWhatsappText, localPrice2d, seoArticleContent, villageFeaturedImage, faqSection } = villageData;
+  const { title, featuredImage, locationData } = locationNode;
+  const customSeoHeading = locationData?.customSeoHeading || title;
+  const pincode = locationData?.pincode || '';
+
+  const dynamicWhatsappText = `Namaste, mujhe ${title} mein naksha banwana hai.`;
   const whatsappUrl = `https://wa.me/91XXXXXXXXXX?text=${encodeURIComponent(dynamicWhatsappText)}`;
 
+  // Hardcode missing API fields to maintain layout structure
+  const localPrice2d = '5'; 
+  const faqSection = [
+    { question: `${title} me 2D map banwane me kitna time lagta hai?`, answer: 'Sirf 3-4 din me first draft (Naksha) ready ho jata hai. Hum Vastu ke anusar design karte hain.' },
+    { question: `Kya aap ${title} me construction ka theka (Turnkey) bhi lete hain?`, answer: 'Jee haan, hum with-material construction karte hain jisme A-grade quality cement aur steel use hota hai.' }
+  ];
+
   // Generate FAQ Schema (JSON-LD)
-  const faqSchema = faqSection && faqSection.length > 0 ? {
+  const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": faqSection.map((faq) => ({
@@ -169,27 +164,25 @@ export default async function LocationPage({ params }: { params: Promise<{ locat
         "text": faq.answer
       }
     }))
-  } : null;
+  };
 
   return (
     <div className="min-h-screen bg-slate-50 pt-20">
       
       {/* Inject FAQ JSON-LD Schema for Google Rich Snippets */}
-      {faqSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
-      )}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
       {/* Premium Dark Theme Hero Section */}
       <section className="bg-[#0F172A] relative py-24 md:py-32 overflow-hidden">
-        {villageFeaturedImage?.node?.sourceUrl ? (
+        {featuredImage?.node?.sourceUrl ? (
           <>
             <div className="absolute inset-0 z-0">
               <Image 
-                src={villageFeaturedImage.node.sourceUrl} 
-                alt={`${villageName} Construction`}
+                src={featuredImage.node.sourceUrl} 
+                alt={`${title} Construction`}
                 fill 
                 className="object-cover opacity-20"
                 priority
@@ -204,15 +197,15 @@ export default async function LocationPage({ params }: { params: Promise<{ locat
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-orange-400 font-bold text-sm tracking-widest uppercase mb-6 border border-white/20 backdrop-blur-sm shadow-xl">
-            Serving {villageName} & Surrounding Areas
+            Serving {title} {pincode ? `- ${pincode} ` : ''}& Surrounding Areas
           </span>
           
           <h1 className="text-4xl md:text-6xl font-black text-white mb-6 leading-tight drop-shadow-2xl">
-            {heroH1Title}
+            {customSeoHeading}
           </h1>
           
           <p className="text-xl text-gray-300 max-w-2xl mx-auto font-medium mb-10 leading-relaxed drop-shadow-md">
-            Expert Vastu-compliant 2D Naksha, stunning 3D Front Elevations, and complete turnkey construction services tailored exclusively for the residents of <strong className="text-white">{villageName}</strong>.
+            Expert Vastu-compliant 2D Naksha, stunning 3D Front Elevations, and complete turnkey construction services tailored exclusively for the residents of <strong className="text-white">{title}</strong>.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -235,18 +228,6 @@ export default async function LocationPage({ params }: { params: Promise<{ locat
         </div>
       </section>
 
-      {/* SEO Content Section */}
-      {seoArticleContent && (
-        <section className="py-20 bg-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div 
-              className="custom-prose mx-auto"
-              dangerouslySetInnerHTML={{ __html: seoArticleContent }}
-            />
-          </div>
-        </section>
-      )}
-
       {/* Pricing Section */}
       <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -258,7 +239,7 @@ export default async function LocationPage({ params }: { params: Promise<{ locat
           <div className="max-w-lg mx-auto bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden transform hover:-translate-y-1 transition-all">
             <div className="bg-slate-50 p-8 text-center border-b border-slate-100">
               <h3 className="text-2xl font-bold text-[#0F172A] mb-2">2D Vastu Naksha</h3>
-              <p className="text-gray-500 font-medium">Customized for plots in {villageName}</p>
+              <p className="text-gray-500 font-medium">Customized for plots in {title}</p>
             </div>
             <div className="p-8 text-center">
               <div className="flex justify-center items-baseline mb-6">
@@ -290,25 +271,23 @@ export default async function LocationPage({ params }: { params: Promise<{ locat
       </section>
 
       {/* FAQ Section */}
-      {faqSection && faqSection.length > 0 && (
-        <section className="py-20 bg-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-black text-[#0F172A] mb-4">Frequently Asked Questions</h2>
-              <div className="w-16 h-1 bg-[#EA580C] mx-auto rounded-full"></div>
-            </div>
-            
-            <div className="space-y-6">
-              {faqSection.map((faq, index) => (
-                <div key={index} className="bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm">
-                  <h3 className="text-xl font-bold text-[#0F172A] mb-3">{faq.question}</h3>
-                  <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
-                </div>
-              ))}
-            </div>
+      <section className="py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-black text-[#0F172A] mb-4">Frequently Asked Questions</h2>
+            <div className="w-16 h-1 bg-[#EA580C] mx-auto rounded-full"></div>
           </div>
-        </section>
-      )}
+          
+          <div className="space-y-6">
+            {faqSection.map((faq, index) => (
+              <div key={index} className="bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-100 shadow-sm">
+                <h3 className="text-xl font-bold text-[#0F172A] mb-3">{faq.question}</h3>
+                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
     </div>
   );
