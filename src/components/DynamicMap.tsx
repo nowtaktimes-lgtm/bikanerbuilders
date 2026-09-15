@@ -22,7 +22,7 @@ export default function DynamicMap({ locationQuery }: DynamicMapProps) {
             src={`https://maps.google.com/maps?q=${encodeURIComponent(locationQuery)}&t=&z=13&ie=UTF8&iwloc=&output=embed`}
             width="100%"
             height="400"
-            style={{ border: 0 }}
+            className="border-0 w-full"
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
