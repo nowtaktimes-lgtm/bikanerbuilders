@@ -42,3 +42,8 @@ body {
   background-image: radial-gradient(#ffffff 1px, transparent 1px);
   background-size: 24px 24px;
 }
+
+.blueprint-pattern {
+  background-image: repeating-linear-gradient(#0F172A 0 1px, transparent 1px 100%), repeating-linear-gradient(90deg, #0F172A 0 1px, transparent 1px 100%);
+  background-size: 40px 40px;
+}

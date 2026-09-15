@@ -2,7 +2,7 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { getGlobalSettings, fetchGraphQL, GraphQLError, GraphQLResponse } from '@/lib/api';
+import { getGlobalSettings, fetchGraphQL } from '@/lib/api';
 
 // Types for the WPGraphQL response
 interface LocationData {

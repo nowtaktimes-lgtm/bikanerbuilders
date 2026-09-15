@@ -12,8 +12,7 @@ export default function Contact() {
     <section className="py-24 bg-white relative overflow-hidden" id="contact">
       
       {/* Blueprint Pattern Background */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-           style={{ backgroundImage: 'repeating-linear-gradient(#0F172A 0 1px, transparent 1px 100%), repeating-linear-gradient(90deg, #0F172A 0 1px, transparent 1px 100%)', backgroundSize: '40px 40px' }}>
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none blueprint-pattern">
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -117,12 +116,11 @@ export default function Contact() {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d112702.48398045952!2d73.23746617066922!3d28.01481191395886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x393fdd7efaf61cfd%3A0xc3974d643b9ccde0!2sBikaner%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
               width="100%" 
               height="100%" 
-              style={{ border: 0 }} 
+              className="border-0 grayscale hover:grayscale-0 transition-all duration-700"
               allowFullScreen={true} 
               loading="lazy" 
               referrerPolicy="no-referrer-when-downgrade"
               title="Bikaner Builders Office Location"
-              className="grayscale hover:grayscale-0 transition-all duration-700"
             ></iframe>
           </div>
 
