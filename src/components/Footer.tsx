@@ -4,8 +4,13 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSettings } from '@/components/SettingsProvider';
+import { LocationNode } from '@/lib/api';
 
-export default function Footer() {
+interface FooterProps {
+  locations?: LocationNode[];
+}
+
+export default function Footer({ locations = [] }: FooterProps) {
   const settings = useSettings();
   const currentYear = new Date().getFullYear();
   
@@ -14,6 +19,13 @@ export default function Footer() {
     "Lunkaransar", "Sri Dungargarh", "Khajuwala", 
     "Pugal", "Bajju", "Chhatargarh"
   ];
+
+  const displayLocations = locations && locations.length > 0
+    ? locations
+    : topVillages.map(v => ({
+        title: v,
+        uri: `/locations/construction-in-${v.toLowerCase().replace(' ', '-')}`
+      }));
 
   return (
     <footer className="bg-white border-t border-slate-100 pt-16 pb-24 md:pb-8 relative">
@@ -92,18 +104,18 @@ export default function Footer() {
       <div className="bg-[#0F172A] py-12 mt-8 rounded-t-3xl md:rounded-none">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-black text-white mb-2">Serving Bikaner City & 300+ Surrounding Villages</h3>
+            <h3 className="text-2xl font-black text-white mb-2">Recently Added Service Areas in Bikaner</h3>
             <p className="text-slate-400">Find specialized construction services in your local area</p>
           </div>
           
           <div className="flex flex-wrap justify-center gap-3">
-            {topVillages.map((village, index) => (
+            {displayLocations.map((loc, index) => (
               <Link 
                 key={index} 
-                href={`/locations/construction-in-${village.toLowerCase().replace(' ', '-')}`}
+                href={loc.uri}
                 className="bg-white/10 hover:bg-[#EA580C] text-white px-5 py-2.5 rounded-full text-sm font-bold tracking-wide transition-all border border-white/5 hover:border-transparent"
               >
-                {village}
+                {loc.title}
               </Link>
             ))}
             <Link 

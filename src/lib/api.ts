@@ -98,3 +98,36 @@ export async function getGlobalSettings(): Promise<GlobalSettings> {
 
   return response.data.pages.nodes[0].masterSettings;
 }
+
+export interface LocationNode {
+  title: string;
+  uri: string;
+}
+
+export async function getRecentLocations(): Promise<LocationNode[]> {
+  const query = `
+    query GetRecentLocations {
+      locations(first: 10, where: {orderby: {field: DATE, order: DESC}}) {
+        nodes {
+          title
+          uri
+        }
+      }
+    }
+  `;
+
+  type LocationsResponse = {
+    locations: {
+      nodes: LocationNode[];
+    };
+  };
+
+  const response = await fetchGraphQL<LocationsResponse>(query);
+  
+  if (response.errors || !response.data?.locations?.nodes) {
+    console.error("Error fetching recent locations from WordPress API.");
+    return [];
+  }
+
+  return response.data.locations.nodes;
+}

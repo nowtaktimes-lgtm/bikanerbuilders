@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import { SettingsProvider } from "@/components/SettingsProvider";
-import { getGlobalSettings } from "@/lib/api";
+import { getGlobalSettings, getRecentLocations } from "@/lib/api";
 
 const inter = Inter({ subsets: ["latin"], display: 'swap' });
 
@@ -26,7 +26,10 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const globalSettings = await getGlobalSettings();
+  const [globalSettings, recentLocations] = await Promise.all([
+    getGlobalSettings(),
+    getRecentLocations()
+  ]);
 
   return (
     <html lang="en" className="scroll-smooth">
@@ -34,7 +37,7 @@ export default async function RootLayout({
         <SettingsProvider settings={globalSettings}>
           <Header />
           <main>{children}</main>
-          <Footer />
+          <Footer locations={recentLocations} />
           <MobileBottomBar />
         </SettingsProvider>
       </body>
