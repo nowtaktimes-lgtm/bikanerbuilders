@@ -43,7 +43,7 @@ export default function Header() {
               </div>
             )}
             <span className={`text-2xl font-black tracking-tight ${isScrolled ? 'text-[#0F172A]' : 'text-[#0F172A] drop-shadow-md'}`}>
-              Bikaner Builders
+              {settings?.headerSiteTitle || 'Bikaner Builders'}
             </span>
           </Link>
 
@@ -76,8 +76,8 @@ export default function Header() {
           </nav>
 
           <div className="hidden lg:block">
-            <Link href="#contact" className="bg-[#EA580C] hover:bg-[#F97316] text-white px-6 py-2.5 rounded-full font-bold text-sm transition-all shadow-[0_4px_14px_rgba(234,88,12,0.4)] hover:shadow-[0_6px_20px_rgba(234,88,12,0.6)] hover:-translate-y-0.5">
-              Get Quote
+            <Link href={settings?.headerButtonLink || '#contact'} className="bg-[#EA580C] hover:bg-[#F97316] text-white px-6 py-2.5 rounded-full font-bold text-sm transition-all shadow-[0_4px_14px_rgba(234,88,12,0.4)] hover:shadow-[0_6px_20px_rgba(234,88,12,0.6)] hover:-translate-y-0.5">
+              {settings?.headerButtonText || 'Get Quote'}
             </Link>
           </div>
 
@@ -109,8 +109,8 @@ export default function Header() {
           <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#EA580C] transition-colors">About Us</Link>
           <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#EA580C] transition-colors">Contact</Link>
           
-          <Link href="#contact" onClick={() => setMobileMenuOpen(false)} className="mt-8 bg-[#EA580C] text-white px-8 py-4 rounded-xl text-lg font-black w-full max-w-[200px] text-center">
-            Get Quote Now
+          <Link href={settings?.headerButtonLink || '#contact'} onClick={() => setMobileMenuOpen(false)} className="mt-8 bg-[#EA580C] text-white px-8 py-4 rounded-xl text-lg font-black w-full max-w-[200px] text-center">
+            {settings?.headerButtonText || 'Get Quote Now'}
           </Link>
         </nav>
       </div>
