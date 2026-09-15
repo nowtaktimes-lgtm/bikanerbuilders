@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bikaner Builders | #1 Construction & Architecture Company</title>
+    <meta name="description" content="Bikaner Builders: Your trusted partner for 2D Vastu Naksha, 3D Front Elevation, Turnkey Construction, and POP False Ceiling in Bikaner and 300+ surrounding villages.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            900: '#0F172A',
+                            800: '#1E3A8A',
+                            700: '#334155',
+                        },
+                        orange: {
+                            600: '#EA580C',
+                            500: '#F97316',
+                        },
+                        whatsapp: '#25D366'
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .accordion-content {
+            transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .accordion-content.active {
+            max-height: 500px;
+            opacity: 1;
+        }
+        .accordion-icon {
+            transition: transform 0.4s ease-in-out;
+        }
+        .accordion-icon.active {
+            transform: rotate(180deg);
+        }
+        
+        /* Image Comparison Slider */
+        .comparison-slider {
+            position: relative;
+            width: 100%;
+            height: 450px;
+            overflow: hidden;
+            border-radius: 1rem;
+            touch-action: none; /* Prevent scroll on mobile while dragging */
+        }
+        .comparison-slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+        .comparison-after {
+            clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+        }
+        .slider-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: white;
+            cursor: ew-resize;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 44px;
+            height: 44px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            color: #0F172A;
+            font-size: 1.2rem;
+            pointer-events: none;
+        }
+        
+        @media (max-width: 768px) {
+            .comparison-slider { height: 300px; }
+        }
+    </style>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Bikaner Builders",
+      "image": "https://bikanerbuilders.in/logo.png",
+      "url": "https://bikanerbuilders.in",
+      "telephone": "+91XXXXXXXXXX",
+      "priceRange": "₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bikaner",
+        "addressRegion": "Rajasthan",
+        "addressCountry": "IN"
+      },
+      "areaServed": ["Bikaner", "Nokha", "Deshnoke", "Napasar", "Kolayat", "Lunkaransar", "Sri Dungargarh"],
+      "description": "Bikaner’s #1 Builders, Architects & Interior Company. We provide 2D Vastu Naksha, 3D Front Elevation, Turnkey Construction, and POP False Ceiling.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Construction and Architectural Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Architectural Design"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "House Construction"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "False Ceiling"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "3D Elevation"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Bikaner mein 2D Vastu naksha aur 3D elevation ka kya rate hai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Bikaner mein 2D Vastu Naksha ₹1,499 se shuru hota hai aur 3D Front Elevation ₹2,499 se shuru hota hai. Exact rate plot size par depend karta hai."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kya aap Bikaner ke gaon aur kasbon (Nokha, Napasar, etc.) mein kaam karte hain?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Haan, hum Bikaner city ke alawa Nokha, Deshnoke, Napasar, Kolayat, Lunkaransar aur 300+ aas-paas ke gaon mein construction aur designing ka kaam karte hain."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Makan banane ke theke (With Material) ka per square foot rate kya hai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Turnkey construction (with material) ka rate ₹1,500 se ₹1,850 per square foot ke beech rehta hai. Isme Ultratech/Bangur cement aur Jindal TMT ka use kiya jata hai."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Kya sirf POP False Ceiling ya Interior ka kaam alag se karwaya ja sakta hai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ji bilkul, aap apne bane hue makan mein sirf POP false ceiling, modular kitchen ya interior fitouts ka kaam bhi humse karwa sakte hain."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Naksha aur 3D design deliver hone mein kitna time lagta hai?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "2D Vastu plan aam taur par 24 se 48 ghante mein deliver kiya jata hai. 3D Elevation design mein requirement ke hisaab se 3-5 din ka samay lagta hai."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body class="bg-white text-gray-800 antialiased selection:bg-orange-500 selection:text-white">
+
+    <!-- Sticky Header -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex flex-col justify-center">
+                    <a href="#" class="text-2xl font-black text-navy-900 tracking-tight leading-none mb-1">Bikaner Builders</a>
+                    <span class="text-xs text-orange-600 font-bold tracking-wide">नक्शा से निर्माण तक</span>
+                </div>
+                
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex space-x-8">
+                    <a href="#services" class="text-gray-600 hover:text-orange-600 font-semibold transition">Services</a>
+                    <a href="#process" class="text-gray-600 hover:text-orange-600 font-semibold transition">Working Process</a>
+                    <a href="#why-us" class="text-gray-600 hover:text-orange-600 font-semibold transition">Why Us</a>
+                    <a href="#faq" class="text-gray-600 hover:text-orange-600 font-semibold transition">FAQs</a>
+                    <a href="#coverage" class="text-gray-600 hover:text-orange-600 font-semibold transition">Rural Areas</a>
+                </nav>
+                
+                <!-- CTA Desktop -->
+                <div class="hidden md:flex">
+                    <a href="tel:+91XXXXXXXXXX" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2.5 rounded-full font-bold transition shadow-[0_4px_14px_0_rgba(234,88,12,0.39)] hover:shadow-[0_6px_20px_rgba(234,88,12,0.23)] hover:-translate-y-0.5 flex items-center gap-2">
+                        <i class="fas fa-phone-alt"></i> +91 XXXXXXXXXX
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-slate-50 pt-16 pb-20 lg:pt-24 lg:pb-32 overflow-hidden">
+        <!-- Architectural Mesh Background -->
+        <div class="absolute inset-0 opacity-[0.03] z-0" style="background-image: linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px); background-size: 40px 40px;"></div>
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-200/40 blur-3xl z-0"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-orange-200/40 blur-3xl z-0"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-navy-900 leading-[1.15] mb-6">
+                Bikaner’s #1 Builders, <br class="hidden md:block"/>Architects & Interior Company
+            </h1>
+            <h2 class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-10 font-medium leading-relaxed">
+                नक्शा से लेकर निर्माण तक – Bikaner aur 300+ Gaon ke liye 2D Vastu Naksha, 3D Front Elevation, POP False Ceiling aur Makan Banane ka Trusted Partner.
+            </h2>
+            
+            <!-- Trust Badges -->
+            <div class="flex flex-wrap justify-center gap-3 md:gap-6 mb-12">
+                <div class="flex items-center gap-2 bg-white px-5 py-2.5 rounded-full shadow-sm border border-gray-100">
+                    <span class="text-yellow-400 text-lg"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></span>
+                    <span class="text-sm md:text-base font-bold text-navy-900">4.9/5 Google Verified</span>
+                </div>
+                <div class="flex items-center gap-2 bg-white px-5 py-2.5 rounded-full shadow-sm border border-gray-100">
+                    <span class="text-navy-800 text-lg"><i class="fas fa-drafting-compass"></i></span>
+                    <span class="text-sm md:text-base font-bold text-navy-900">100% Vastu-Compliant</span>
+                </div>
+                <div class="flex items-center gap-2 bg-white px-5 py-2.5 rounded-full shadow-sm border border-gray-100">
+                    <span class="text-orange-500 text-lg"><i class="fas fa-map-marker-alt"></i></span>
+                    <span class="text-sm md:text-base font-bold text-navy-900">Free Site Visit</span>
+                </div>
+            </div>
+            
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://wa.me/91XXXXXXXXXX?text=Namaste%2C%20mujhe%20apne%20plot%20ka%20naksha%20%2F%20construction%20rate%20chahiye." target="_blank" class="bg-whatsapp hover:bg-green-600 text-white px-8 py-4 rounded-full font-bold text-lg transition shadow-xl shadow-green-500/30 flex items-center justify-center gap-3 hover:-translate-y-1">
+                    <i class="fab fa-whatsapp text-2xl"></i> Plot Size Bhejein
+                </a>
+                <a href="tel:+91XXXXXXXXXX" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-full font-bold text-lg transition shadow-xl shadow-orange-500/30 flex items-center justify-center gap-3 hover:-translate-y-1">
+                    <i class="fas fa-phone-alt text-xl"></i> Free Site Estimate
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services Grid -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-navy-900 mb-4">Our Core Services</h2>
+                <div class="w-24 h-1.5 bg-orange-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition duration-300 border border-slate-100 group">
+                    <div class="w-20 h-20 mb-6 group-hover:scale-110 transition duration-300">
+                        <img src="assets/icon_architecture_1789213681908.png" alt="2D Vastu Map Icon" class="w-full h-full object-contain drop-shadow-xl" />
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">2D House Map & Vastu Naksha</h3>
+                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">Customized floor planning, space optimization, doors/windows sizing & 100% Vastu Shastra compliance. 24-48 hours delivery.</p>
+                    <div class="text-orange-600 font-extrabold bg-orange-50 inline-block px-4 py-2 rounded-lg text-sm">Starting @ ₹1,499</div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition duration-300 border border-slate-100 group">
+                    <div class="w-20 h-20 mb-6 group-hover:scale-110 transition duration-300">
+                        <img src="assets/icon_3d_house_1789213697503.png" alt="3D Front Elevation Icon" class="w-full h-full object-contain drop-shadow-xl" />
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">3D Front Elevation</h3>
+                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">Photorealistic exterior views, modern facade textures, profile LED lighting preview before actual construction begins.</p>
+                    <div class="text-orange-600 font-extrabold bg-orange-50 inline-block px-4 py-2 rounded-lg text-sm">Starting @ ₹2,499</div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition duration-300 border border-slate-100 group">
+                    <div class="w-20 h-20 mb-6 group-hover:scale-110 transition duration-300">
+                        <img src="assets/icon_hardhat_1789213711249.png" alt="Turnkey Construction Icon" class="w-full h-full object-contain drop-shadow-xl" />
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">Turnkey House Construction</h3>
+                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">Full material theka with Ultratech/Bangur cement, Jindal Fe-550D TMT steel, and grade-1 bricks, or skilled labour-only theka.</p>
+                    <div class="text-orange-600 font-extrabold bg-orange-50 inline-block px-4 py-2 rounded-lg text-sm">₹1,500 - ₹1,850 / sq.ft.</div>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition duration-300 border border-slate-100 group">
+                    <div class="w-20 h-20 mb-6 group-hover:scale-110 transition duration-300">
+                        <img src="assets/icon_sofa_1789213727142.png" alt="POP False Ceiling Icon" class="w-full h-full object-contain drop-shadow-xl" />
+                    </div>
+                    <h3 class="text-xl font-bold text-navy-900 mb-3">POP False Ceiling & Interior</h3>
+                    <p class="text-gray-600 mb-6 text-sm leading-relaxed">Premium Gypsum/POP false ceiling designs, cove lighting planning, modular kitchen, and luxury paints fitouts.</p>
+                    <div class="text-orange-600 font-extrabold bg-orange-50 inline-block px-4 py-2 rounded-lg text-sm">Custom Pricing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Transformation Section -->
+    <section class="py-20 bg-navy-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4">See The Transformation</h2>
+                <div class="w-24 h-1.5 bg-orange-500 mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-300 max-w-2xl mx-auto text-lg">From raw brickwork to a stunning modern house elevation. Slide to interact.</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto bg-navy-800 p-3 md:p-5 rounded-3xl shadow-2xl border border-navy-700">
+                <div class="comparison-slider" id="compareSlider">
+                    <!-- Before Image (Underneath) -->
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop" alt="Raw Construction Site" />
+                    
+                    <!-- After Image (On Top, Clipped) -->
+                    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1200&auto=format&fit=crop" alt="Finished Modern House" class="comparison-after" id="compareAfter" />
+                    
+                    <!-- Slider Handle -->
+                    <div class="slider-handle" id="compareHandle">
+                        <div class="slider-button">
+                            <i class="fas fa-arrows-alt-h"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-between mt-5 text-sm md:text-base font-bold px-2">
+                    <span class="bg-navy-700 text-white px-4 py-1.5 rounded-lg border border-navy-600">Before (Raw Brickwork)</span>
+                    <span class="bg-orange-500 text-white px-4 py-1.5 rounded-lg shadow-lg">After (Finished 3D)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us" class="py-20 bg-slate-50 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-navy-900 mb-6">Why Choose Bikaner Builders?</h2>
+                    <div class="w-20 h-1.5 bg-orange-500 mb-8 rounded-full"></div>
+                    <p class="text-gray-600 mb-10 text-lg leading-relaxed">We bring transparency, quality, and trust to the unorganized construction sector in Bikaner. Here is what makes us different:</p>
+                    
+                    <div class="space-y-8">
+                        <div class="flex gap-5">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center mt-1 text-lg shadow-sm">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-navy-900 mb-2">All-in-One Solution</h4>
+                                <p class="text-gray-600 leading-relaxed">Design, Civil work, Electrical, Plumbing, and POP under a single hassle-free contract.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center mt-1 text-lg shadow-sm">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-navy-900 mb-2">Transparent Legal Agreement</h4>
+                                <p class="text-gray-600 leading-relaxed">Proper contract on Stamp Paper defining material specs. Zero hidden costs.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center mt-1 text-lg shadow-sm">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-navy-900 mb-2">300+ Village Network</h4>
+                                <p class="text-gray-600 leading-relaxed">Our skilled teams are active across Nokha, Kolayat, Dungargarh, Lunkaransar and beyond.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center mt-1 text-lg shadow-sm">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-navy-900 mb-2">Guaranteed Delivery & Milestones</h4>
+                                <p class="text-gray-600 leading-relaxed">Payment stage-wise only after work completion and your satisfaction.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative mt-10 lg:mt-0">
+                    <div class="absolute inset-0 bg-orange-500 rounded-3xl transform translate-x-4 translate-y-4 shadow-xl"></div>
+                    <img src="assets/why_choose_us_img_1789213667904.png" alt="Construction Quality" class="relative rounded-3xl shadow-2xl w-full object-cover h-[500px] border-4 border-white" />
+                    
+                    <!-- Floating Card -->
+                    <div class="absolute bottom-10 -left-10 bg-white p-6 rounded-2xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.3)] hidden md:block border border-gray-50">
+                        <div class="flex items-center gap-4">
+                            <div class="w-14 h-14 bg-orange-50 text-orange-600 rounded-full flex items-center justify-center text-2xl">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 font-bold uppercase tracking-wider">Commitment</p>
+                                <p class="text-xl font-black text-navy-900">100% Quality Assured</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4-Step Working Process -->
+    <section id="process" class="py-20 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-navy-900 mb-4">How We Work</h2>
+                <div class="w-24 h-1.5 bg-orange-500 mx-auto rounded-full mb-6"></div>
+                <p class="text-gray-600 text-lg">A simple, transparent 4-step process to build your dream home.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 relative">
+                <!-- Connecting Line for Desktop -->
+                <div class="hidden md:block absolute top-12 left-[12%] right-[12%] h-1 bg-slate-100 z-0 rounded-full"></div>
+                
+                <!-- Step 1 -->
+                <div class="relative z-10 flex flex-col items-center text-center group">
+                    <div class="w-24 h-24 bg-white border-4 border-slate-100 rounded-full flex items-center justify-center text-3xl text-navy-800 shadow-lg mb-6 group-hover:border-orange-500 group-hover:scale-110 group-hover:text-orange-600 transition duration-300">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-navy-900 mb-3">Step 1: Consultation</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed px-2">Initial Call / WhatsApp consultation with plot dimensions and requirements.</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="relative z-10 flex flex-col items-center text-center group">
+                    <div class="w-24 h-24 bg-white border-4 border-slate-100 rounded-full flex items-center justify-center text-3xl text-navy-800 shadow-lg mb-6 group-hover:border-orange-500 group-hover:scale-110 group-hover:text-orange-600 transition duration-300">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-navy-900 mb-3">Step 2: Planning & 3D</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed px-2">2D Vastu Floor Plan & 3D Front Elevation finalization with revisions.</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="relative z-10 flex flex-col items-center text-center group">
+                    <div class="w-24 h-24 bg-white border-4 border-slate-100 rounded-full flex items-center justify-center text-3xl text-navy-800 shadow-lg mb-6 group-hover:border-orange-500 group-hover:scale-110 group-hover:text-orange-600 transition duration-300">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-navy-900 mb-3">Step 3: Agreement</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed px-2">Legal agreement signing on stamp paper & on-site foundation work begins.</p>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="relative z-10 flex flex-col items-center text-center group">
+                    <div class="w-24 h-24 bg-white border-4 border-slate-100 rounded-full flex items-center justify-center text-3xl text-navy-800 shadow-lg mb-6 group-hover:border-orange-500 group-hover:scale-110 group-hover:text-orange-600 transition duration-300">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-navy-900 mb-3">Step 4: Handover</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed px-2">Final quality inspection, finishing touches, and happy key handover.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- High-Converting FAQ Accordion -->
+    <section id="faq" class="py-20 bg-slate-50">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-14">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-navy-900 mb-4">Frequently Asked Questions</h2>
+                <div class="w-24 h-1.5 bg-orange-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="space-y-4">
+                <!-- FAQ 1 -->
+                <div class="bg-white rounded-2xl shadow-[0_2px_10px_rgb(0,0,0,0.04)] border border-gray-100 overflow-hidden">
+                    <button class="w-full text-left px-6 py-6 focus:outline-none flex justify-between items-center bg-white hover:bg-slate-50 transition faq-toggle">
+                        <span class="font-bold text-navy-900 text-lg pr-4">Bikaner mein 2D Vastu naksha aur 3D elevation ka kya rate hai?</span>
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center">
+                            <i class="fas fa-chevron-down text-orange-500 accordion-icon"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 bg-white">
+                        <div class="pb-6 pt-2 text-gray-600 leading-relaxed border-t border-gray-50">
+                            Bikaner mein 2D Vastu Naksha ₹1,499 se shuru hota hai aur 3D Front Elevation ₹2,499 se shuru hota hai. Exact rate aapke plot ke size aur design requirements par depend karta hai.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="bg-white rounded-2xl shadow-[0_2px_10px_rgb(0,0,0,0.04)] border border-gray-100 overflow-hidden">
+                    <button class="w-full text-left px-6 py-6 focus:outline-none flex justify-between items-center bg-white hover:bg-slate-50 transition faq-toggle">
+                        <span class="font-bold text-navy-900 text-lg pr-4">Kya aap Bikaner ke gaon aur kasbon (Nokha, Napasar, etc.) mein kaam karte hain?</span>
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center">
+                            <i class="fas fa-chevron-down text-orange-500 accordion-icon"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 bg-white">
+                        <div class="pb-6 pt-2 text-gray-600 leading-relaxed border-t border-gray-50">
+                            Haan, hum Bikaner city ke alawa Nokha, Deshnoke, Napasar, Kolayat, Lunkaransar aur 300+ aas-paas ke gaon mein construction aur designing ka kaam guarantee ke sath karte hain.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="bg-white rounded-2xl shadow-[0_2px_10px_rgb(0,0,0,0.04)] border border-gray-100 overflow-hidden">
+                    <button class="w-full text-left px-6 py-6 focus:outline-none flex justify-between items-center bg-white hover:bg-slate-50 transition faq-toggle">
+                        <span class="font-bold text-navy-900 text-lg pr-4">Makan banane ke theke (With Material) ka per square foot rate kya hai?</span>
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center">
+                            <i class="fas fa-chevron-down text-orange-500 accordion-icon"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 bg-white">
+                        <div class="pb-6 pt-2 text-gray-600 leading-relaxed border-t border-gray-50">
+                            Turnkey construction (with material) ka rate ₹1,500 se ₹1,850 per square foot ke beech rehta hai. Isme hum premium quality ka material jaise Ultratech/Bangur cement aur Jindal Fe-550D TMT ka istemal karte hain.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ 4 -->
+                <div class="bg-white rounded-2xl shadow-[0_2px_10px_rgb(0,0,0,0.04)] border border-gray-100 overflow-hidden">
+                    <button class="w-full text-left px-6 py-6 focus:outline-none flex justify-between items-center bg-white hover:bg-slate-50 transition faq-toggle">
+                        <span class="font-bold text-navy-900 text-lg pr-4">Kya sirf POP False Ceiling ya Interior ka kaam alag se karwaya ja sakta hai?</span>
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center">
+                            <i class="fas fa-chevron-down text-orange-500 accordion-icon"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 bg-white">
+                        <div class="pb-6 pt-2 text-gray-600 leading-relaxed border-t border-gray-50">
+                            Ji bilkul, aap apne bane hue makan mein sirf POP false ceiling, modular kitchen ya interior fitouts ka kaam bhi humse alag se karwa sakte hain.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ 5 -->
+                <div class="bg-white rounded-2xl shadow-[0_2px_10px_rgb(0,0,0,0.04)] border border-gray-100 overflow-hidden">
+                    <button class="w-full text-left px-6 py-6 focus:outline-none flex justify-between items-center bg-white hover:bg-slate-50 transition faq-toggle">
+                        <span class="font-bold text-navy-900 text-lg pr-4">Naksha aur 3D design deliver hone mein kitna time lagta hai?</span>
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center">
+                            <i class="fas fa-chevron-down text-orange-500 accordion-icon"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 bg-white">
+                        <div class="pb-6 pt-2 text-gray-600 leading-relaxed border-t border-gray-50">
+                            2D Vastu floor plan aam taur par 24 se 48 ghante mein deliver kiya jata hai. 3D Front Elevation design aur detailing mein requirement ke hisaab se 3 se 5 din ka samay lagta hai.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rural Coverage Hub -->
+    <section id="coverage" class="py-20 bg-navy-900 text-white relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Serving Bikaner City & 300+ Surrounding Villages</h2>
+            <div class="w-24 h-1.5 bg-orange-500 mx-auto rounded-full mb-12"></div>
+            
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="bg-navy-800/80 backdrop-blur-sm border border-navy-700 px-6 py-3 rounded-full font-bold hover:bg-orange-500 hover:border-orange-500 transition-all duration-300 cursor-default hover:shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:-translate-y-1">Nokha</span>
+                <span class="bg-navy-800/80 backdrop-blur-sm border border-navy-700 px-6 py-3 rounded-full font-bold hover:bg-orange-500 hover:border-orange-500 transition-all duration-300 cursor-default hover:shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:-translate-y-1">Deshnoke</span>
+                <span class="bg-navy-800/80 backdrop-blur-sm border border-navy-700 px-6 py-3 rounded-full font-bold hover:bg-orange-500 hover:border-orange-500 transition-all duration-300 cursor-default hover:shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:-translate-y-1">Napasar</span>
+                <span class="bg-navy-800/80 backdrop-blur-sm border border-navy-700 px-6 py-3 rounded-full font-bold hover:bg-orange-500 hover:border-orange-500 transition-all duration-300 cursor-default hover:shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:-translate-y-1">Kolayat</span>
+                <span class="bg-navy-800/80 backdrop-blur-sm border border-navy-700 px-6 py-3 rounded-full font-bold hover:bg-orange-500 hover:border-orange-500 transition-all duration-300 cursor-default hover:shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:-translate-y-1">Lunkaransar</span>
+                <span class="bg-navy-800/80 backdrop-blur-sm border border-navy-700 px-6 py-3 rounded-full font-bold hover:bg-orange-500 hover:border-orange-500 transition-all duration-300 cursor-default hover:shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:-translate-y-1">Sri Dungargarh</span>
+                <span class="bg-navy-800/80 backdrop-blur-sm border border-navy-700 px-6 py-3 rounded-full font-bold hover:bg-orange-500 hover:border-orange-500 transition-all duration-300 cursor-default hover:shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:-translate-y-1">Khajuwala</span>
+                <span class="bg-navy-800/80 backdrop-blur-sm border border-navy-700 px-6 py-3 rounded-full font-bold hover:bg-orange-500 hover:border-orange-500 transition-all duration-300 cursor-default hover:shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:-translate-y-1">Bajju</span>
+                <span class="bg-navy-800/80 backdrop-blur-sm border border-navy-700 px-6 py-3 rounded-full font-bold hover:bg-orange-500 hover:border-orange-500 transition-all duration-300 cursor-default hover:shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:-translate-y-1">JNV Colony</span>
+                <span class="bg-navy-800/80 backdrop-blur-sm border border-navy-700 px-6 py-3 rounded-full font-bold hover:bg-orange-500 hover:border-orange-500 transition-all duration-300 cursor-default hover:shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:-translate-y-1">Gangashahar</span>
+                <span class="bg-navy-800/80 backdrop-blur-sm border border-navy-700 px-6 py-3 rounded-full font-bold hover:bg-orange-500 hover:border-orange-500 transition-all duration-300 cursor-default hover:shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:-translate-y-1">Vallabh Garden</span>
+                <span class="bg-navy-800/80 backdrop-blur-sm border border-navy-700 px-6 py-3 rounded-full font-bold hover:bg-orange-500 hover:border-orange-500 transition-all duration-300 cursor-default hover:shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:-translate-y-1">Tilak Nagar</span>
+                <span class="bg-navy-800/80 backdrop-blur-sm border border-navy-700 px-6 py-3 rounded-full font-bold hover:bg-orange-500 hover:border-orange-500 transition-all duration-300 cursor-default hover:shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:-translate-y-1">Kanta Khaturia Colony</span>
+                <span class="bg-navy-800/80 backdrop-blur-sm border border-navy-700 px-6 py-3 rounded-full font-bold hover:bg-orange-500 hover:border-orange-500 transition-all duration-300 cursor-default hover:shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:-translate-y-1">Sagar Road</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Keyword-Rich Paragraph (Footer Silo) -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-100">
+                <p class="text-sm text-gray-500 text-justify leading-relaxed">
+                    <strong class="text-gray-700 text-base mb-2 block">About Bikaner Builders & Quality Assurance:</strong> 
+                    As the leading <span class="font-bold text-gray-700">civil contractor in bikaner</span>, we pride ourselves on delivering top-notch structural integrity and design. Whether you are looking for <span class="font-bold text-gray-700">ghar ka naksha bikaner</span> to ensure 100% Vastu compliance, or seeking an expert <span class="font-bold text-gray-700">3d front elevation designer</span>, our architectural team has you covered. We also specialize as a premium <span class="font-bold text-gray-700">pop false ceiling contractor</span> for both residential and commercial spaces. For clients looking for budget-friendly yet quality constructions, we are known as a highly reliable <span class="font-bold text-gray-700">low cost building thekedar bikaner</span>. From raw materials to final finishes, we provide complete transparency and modern civil engineering solutions across the Bikaner district.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 border-t border-navy-800 pt-16 pb-24 md:pb-16 text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-center md:text-left">
+                    <span class="text-2xl font-black text-white block mb-1">Bikaner Builders</span>
+                    <span class="text-orange-500 font-bold block mb-4">नक्शा से निर्माण तक</span>
+                    <span class="text-sm text-gray-400">© 2024 Bikaner Builders. All Rights Reserved.</span>
+                </div>
+                <div class="flex gap-5">
+                    <a href="#" class="w-10 h-10 rounded-full bg-navy-800 flex items-center justify-center text-gray-300 hover:bg-orange-500 hover:text-white transition-all duration-300 text-lg"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-navy-800 flex items-center justify-center text-gray-300 hover:bg-orange-500 hover:text-white transition-all duration-300 text-lg"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-navy-800 flex items-center justify-center text-gray-300 hover:bg-orange-500 hover:text-white transition-all duration-300 text-lg"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile-Only Fixed Bottom Action Bar -->
+    <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden flex shadow-[0_-5px_20px_rgba(0,0,0,0.15)] h-16 w-full">
+        <a href="tel:+91XXXXXXXXXX" class="w-1/2 bg-navy-900 text-white flex items-center justify-center font-bold text-lg gap-2 active:bg-navy-800 transition">
+            <i class="fas fa-phone-alt"></i> Call Now
+        </a>
+        <a href="https://wa.me/91XXXXXXXXXX?text=Namaste%2C%20mujhe%20apne%20plot%20ka%20naksha%20%2F%20construction%20rate%20chahiye." target="_blank" class="w-1/2 bg-whatsapp text-white flex items-center justify-center font-bold text-lg gap-2 active:bg-green-600 transition">
+            <i class="fab fa-whatsapp text-xl"></i> WhatsApp Us
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        // FAQ Accordion Logic
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('.accordion-icon');
+                
+                // Close all others
+                document.querySelectorAll('.accordion-content').forEach(c => {
+                    if(c !== content && c.classList.contains('active')) {
+                        c.classList.remove('active');
+                        c.previousElementSibling.querySelector('.accordion-icon').classList.remove('active');
+                    }
+                });
+
+                // Toggle current
+                content.classList.toggle('active');
+                icon.classList.toggle('active');
+            });
+        });
+
+        // Comparison Slider Logic
+        const slider = document.getElementById('compareSlider');
+        const handle = document.getElementById('compareHandle');
+        const afterImg = document.getElementById('compareAfter');
+
+        if (slider && handle && afterImg) {
+            let isDown = false;
+
+            const updateSlider = (clientX) => {
+                const rect = slider.getBoundingClientRect();
+                let x = clientX - rect.left;
+                
+                // Constrain x to slider bounds
+                if (x < 0) x = 0;
+                if (x > rect.width) x = rect.width;
+
+                const percentage = (x / rect.width) * 100;
+                
+                handle.style.left = percentage + '%';
+                afterImg.style.clipPath = `polygon(${percentage}% 0, 100% 0, 100% 100%, ${percentage}% 100%)`;
+            };
+
+            // Mouse Events
+            slider.addEventListener('mousedown', (e) => {
+                isDown = true;
+                updateSlider(e.clientX);
+            });
+            window.addEventListener('mouseup', () => {
+                isDown = false;
+            });
+            window.addEventListener('mousemove', (e) => {
+                if (!isDown) return;
+                e.preventDefault();
+                updateSlider(e.clientX);
+            });
+            
+            // Touch Events
+            slider.addEventListener('touchstart', (e) => {
+                isDown = true;
+                updateSlider(e.touches[0].clientX);
+            }, {passive: true});
+            window.addEventListener('touchend', () => {
+                isDown = false;
+            });
+            window.addEventListener('touchmove', (e) => {
+                if (!isDown) return;
+                // Prevent scrolling when interacting with the slider
+                if (e.cancelable) e.preventDefault();
+                updateSlider(e.touches[0].clientX);
+            }, {passive: false});
+        }
+    </script>
+</body>
+</html>

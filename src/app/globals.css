@@ -1,0 +1,39 @@
+@import "tailwindcss";
+@theme {
+  --color-navy-800: #1e293b;
+  --color-navy-900: #0f172a;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* WYSIWYG Custom Styles (Alternative to Typography Plugin) */
+.custom-prose {
+  color: #374151;
+  line-height: 1.75;
+}
+.custom-prose h2, .custom-prose h3 {
+  color: #0f172a;
+  font-weight: 900;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+.custom-prose h2 { font-size: 1.875rem; }
+.custom-prose h3 { font-size: 1.5rem; }
+.custom-prose p { margin-top: 1.25em; margin-bottom: 1.25em; }
+.custom-prose a { color: #ea580c; text-decoration: underline; font-weight: 600; }
+.custom-prose ul { list-style-type: disc; padding-left: 1.625em; margin-top: 1.25em; margin-bottom: 1.25em; }
+.custom-prose img { border-radius: 1rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); margin-top: 2em; margin-bottom: 2em; }
