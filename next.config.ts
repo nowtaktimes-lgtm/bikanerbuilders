@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'wp.bikanerbuilders.in',
+        hostname: 'beckend.bikanerbuilders.in',
       },
       {
         protocol: 'http',

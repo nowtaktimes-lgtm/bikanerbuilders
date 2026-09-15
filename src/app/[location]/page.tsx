@@ -38,7 +38,7 @@ interface GraphQLResponse {
  * Generic fetch function for WPGraphQL
  */
 async function fetchGraphQL(query: string, variables: Record<string, any> = {}): Promise<GraphQLResponse> {
-  const wpApiUrl = process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://wp.bikanerbuilders.in/graphql';
+  const wpApiUrl = process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://beckend.bikanerbuilders.in/graphql';
 
   try {
     const res = await fetch(wpApiUrl, {
