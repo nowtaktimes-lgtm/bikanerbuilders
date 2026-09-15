@@ -131,3 +131,31 @@ export async function getRecentLocations(): Promise<LocationNode[]> {
 
   return response.data.locations.nodes;
 }
+
+export async function getAllLocations(): Promise<LocationNode[]> {
+  const query = `
+    query GetAllLocations {
+      locations(first: 100, where: {orderby: {field: TITLE, order: ASC}}) {
+        nodes {
+          title
+          uri
+        }
+      }
+    }
+  `;
+
+  type LocationsResponse = {
+    locations: {
+      nodes: LocationNode[];
+    };
+  };
+
+  const response = await fetchGraphQL<LocationsResponse>(query);
+  
+  if (response.errors || !response.data?.locations?.nodes) {
+    console.error("Error fetching all locations from WordPress API.");
+    return [];
+  }
+
+  return response.data.locations.nodes;
+}
