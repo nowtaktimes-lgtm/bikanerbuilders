@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getGlobalSettings, fetchGraphQL } from '@/lib/api';
+import { generateLocationSchema } from '@/lib/schema';
 
 // Types for the WPGraphQL response
 interface LocationData {
@@ -129,6 +130,9 @@ export default async function LocationPage({ params }: { params: Promise<{ locat
     }))
   };
 
+  const fullUrl = `https://bikanerbuilders.in/${resolvedParams.location}`;
+  const locationSchema = generateLocationSchema(locationNode, fullUrl);
+
   return (
     <div className="min-h-screen bg-slate-50 pt-20">
       
@@ -136,6 +140,12 @@ export default async function LocationPage({ params }: { params: Promise<{ locat
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      
+      {/* Inject Location JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(locationSchema) }}
       />
 
       {/* Premium Dark Theme Hero Section */}

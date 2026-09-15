@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getGlobalSettings } from '@/lib/api';
+import { generateServiceSchema } from '@/lib/schema';
 
 export default async function ServiceDetail({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
@@ -42,9 +43,17 @@ export default async function ServiceDetail({ params }: { params: Promise<{ slug
   };
 
   const service = serviceData[resolvedParams.slug] || serviceData['turnkey-construction'];
+  
+  const fullUrl = `https://bikanerbuilders.in/services/${resolvedParams.slug}`;
+  const serviceSchema = generateServiceSchema(service, fullUrl);
 
   return (
     <div className="pt-24 pb-20 bg-slate-50">
+      {/* Inject Service JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Dynamic Hero Section */}
