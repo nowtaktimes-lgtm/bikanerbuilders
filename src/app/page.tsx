@@ -54,7 +54,7 @@ export default function Home() {
           <p className="mt-4 max-w-2xl text-lg sm:text-xl text-gray-200 mx-auto font-medium drop-shadow-md mb-10">
             Premium Turnkey Construction, 100% Vastu Compliant 2D Maps, and Stunning 3D Elevations at unbeatable rates.
           </p>
-            <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4 opacity-0 animate-fade-in-up animation-delay-500">
+            <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
               <Link 
                 href={`https://wa.me/${settings.whatsappNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent("Namaste, Bikaner Builders team.")}`}
                 target="_blank"
