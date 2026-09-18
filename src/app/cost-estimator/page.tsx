@@ -1,7 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
 import CostCalculator from '@/components/CostCalculator';
-import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Construction Cost Calculator in Bikaner | Free Estimate',
