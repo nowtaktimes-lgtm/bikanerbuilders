@@ -71,6 +71,7 @@ export default function Header() {
             </div>
 
             <Link href="/portfolio" className={`font-bold hover:text-[#EA580C] transition-colors ${isScrolled ? 'text-gray-700' : 'text-[#0F172A] drop-shadow-sm'}`}>Portfolio</Link>
+            <Link href="/cost-estimator" className={`font-bold hover:text-[#EA580C] transition-colors ${isScrolled ? 'text-gray-700' : 'text-[#0F172A] drop-shadow-sm'}`}>Cost Estimator</Link>
             <Link href="/about" className={`font-bold hover:text-[#EA580C] transition-colors ${isScrolled ? 'text-gray-700' : 'text-[#0F172A] drop-shadow-sm'}`}>About</Link>
             <Link href="/contact" className={`font-bold hover:text-[#EA580C] transition-colors ${isScrolled ? 'text-gray-700' : 'text-[#0F172A] drop-shadow-sm'}`}>Contact</Link>
           </nav>
@@ -106,6 +107,7 @@ export default function Header() {
             <Link href="/services/interior-design" onClick={() => setMobileMenuOpen(false)} className="block text-xl hover:text-[#EA580C] transition-colors">POP & Interior Design</Link>
           </div>
           <Link href="/portfolio" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#EA580C] transition-colors mt-2">Portfolio</Link>
+          <Link href="/cost-estimator" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#EA580C] transition-colors">Cost Estimator</Link>
           <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#EA580C] transition-colors">About Us</Link>
           <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#EA580C] transition-colors">Contact</Link>
           
