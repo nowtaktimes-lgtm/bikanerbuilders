@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useSettings } from '@/components/SettingsProvider';
 
@@ -12,13 +12,35 @@ export default function MobileBottomBar({
   whatsappMessage = 'Namaste, mujhe apne plot ka naksha / construction rate chahiye.',
 }: MobileBottomBarProps) {
   
+  const [isVisible, setIsVisible] = useState(false);
   const settings = useSettings();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show sticky bar after scrolling past 400px
+      if (window.scrollY > 400) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Initial check in case user refreshes midway down the page
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const waUrl = `https://wa.me/${settings.whatsappNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(whatsappMessage)}`;
   const telUrl = `tel:${settings.primaryPhone.startsWith('+') ? settings.primaryPhone : '+' + settings.primaryPhone.replace(/[^0-9]/g, '')}`;
 
   return (
     <div 
-      className="fixed bottom-0 left-0 w-full z-50 flex md:hidden shadow-[0_-8px_20px_rgba(0,0,0,0.12)] bg-white pb-safe"
+      className={`fixed bottom-0 left-0 w-full z-50 flex md:hidden shadow-[0_-8px_20px_rgba(0,0,0,0.12)] bg-white pb-safe transition-transform duration-300 ease-in-out ${isVisible ? 'translate-y-0' : 'translate-y-full'}`}
     >
       <Link 
         href={telUrl}
