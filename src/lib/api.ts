@@ -1,3 +1,5 @@
+import { cache } from 'react';
+
 export interface GraphQLError {
   message: string;
   locations?: { line: number; column: number }[];
@@ -99,9 +101,32 @@ export async function getGlobalSettings(): Promise<GlobalSettings> {
   return response.data.pages.nodes[0].masterSettings;
 }
 
+export interface LocationData {
+  pincode?: string;
+  customSeoHeading?: string;
+}
+
+export interface SeoData {
+  title?: string;
+  metaDesc?: string;
+  canonical?: string;
+  opengraphTitle?: string;
+  opengraphDescription?: string;
+  opengraphImage?: {
+    sourceUrl?: string;
+  };
+}
+
 export interface LocationNode {
   title: string;
   uri: string;
+  featuredImage?: {
+    node?: {
+      sourceUrl?: string;
+    };
+  };
+  locationData?: LocationData;
+  seo?: SeoData;
 }
 
 export async function getRecentLocations(): Promise<LocationNode[]> {
@@ -183,9 +208,10 @@ export interface ServiceNode {
   title: string;
   uri: string;
   serviceData?: ServiceData;
+  seo?: SeoData;
 }
 
-export async function getServiceData(slug: string): Promise<ServiceNode | null> {
+export const getServiceData = cache(async (slug: string): Promise<ServiceNode | null> => {
   const query = `
     query GetServiceBySlug($id: ID!) {
       service(id: $id, idType: URI) {
@@ -209,6 +235,16 @@ export async function getServiceData(slug: string): Promise<ServiceNode | null> 
           faq3Question
           faq3Answer
         }
+        seo {
+          title
+          metaDesc
+          canonical
+          opengraphTitle
+          opengraphDescription
+          opengraphImage {
+            sourceUrl
+          }
+        }
       }
     }
   `;
@@ -224,4 +260,62 @@ export async function getServiceData(slug: string): Promise<ServiceNode | null> 
   }
 
   return response.data.service;
-}
+});
+
+export const getLocationData = cache(async (slug: string): Promise<LocationNode | null> => {
+  const query = `
+    query GetLocationBySlug($id: ID!) {
+      location(id: $id, idType: URI) {
+        title
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+        locationData {
+          pincode
+          customSeoHeading
+        }
+        seo {
+          title
+          metaDesc
+          canonical
+          opengraphTitle
+          opengraphDescription
+          opengraphImage {
+            sourceUrl
+          }
+        }
+      }
+    }
+  `;
+
+  type LocationResponse = {
+    location: LocationNode;
+  };
+
+  const response = await fetchGraphQL<LocationResponse>(query, { id: slug });
+  
+  if (response.errors || !response.data?.location) {
+    console.log("Returning mock data for preview because WordPress API is unavailable.");
+    const safeSlug = typeof slug === 'string' && slug.length > 0 ? slug : 'location';
+    const capSlug = safeSlug.charAt(0).toUpperCase() + safeSlug.slice(1);
+    
+    // Mock Data Fallback for Preview
+    return {
+      title: capSlug,
+      uri: `/${slug}`,
+      featuredImage: {
+        node: {
+          sourceUrl: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1920&auto=format&fit=crop'
+        }
+      },
+      locationData: {
+        pincode: '334001',
+        customSeoHeading: `Premium Builders & Architects in ${capSlug}`
+      }
+    };
+  }
+
+  return response.data.location;
+});

@@ -5,6 +5,36 @@ import { getGlobalSettings, getServiceData } from '@/lib/api';
 import { generateServiceSchema } from '@/lib/schema';
 import { notFound } from 'next/navigation';
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const resolvedParams = await params;
+  const wpService = await getServiceData(resolvedParams.slug);
+
+  if (!wpService) {
+    return { title: 'Service Not Found' };
+  }
+
+  const seo = wpService.seo;
+
+  if (seo) {
+    return {
+      title: seo.title,
+      description: seo.metaDesc,
+      alternates: {
+        canonical: seo.canonical,
+      },
+      openGraph: {
+        title: seo.opengraphTitle,
+        description: seo.opengraphDescription,
+        images: seo.opengraphImage?.sourceUrl ? [seo.opengraphImage.sourceUrl] : undefined,
+      }
+    };
+  }
+
+  return {
+    title: `${wpService.title} | Bikaner Builders`,
+  };
+}
+
 export default async function ServiceDetail({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const [globalSettings, wpService] = await Promise.all([

@@ -2,77 +2,9 @@ import React from 'react';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
-import { getGlobalSettings, fetchGraphQL } from '@/lib/api';
+import { getGlobalSettings, fetchGraphQL, getLocationData } from '@/lib/api';
 import { generateLocationSchema } from '@/lib/schema';
 import DynamicMap from '@/components/DynamicMap';
-
-// Types for the WPGraphQL response
-interface LocationData {
-  pincode?: string;
-  customSeoHeading?: string;
-}
-
-interface LocationNode {
-  title: string;
-  featuredImage?: {
-    node?: {
-      sourceUrl?: string;
-    };
-  };
-  locationData?: LocationData;
-}
-
-interface LocationResponse {
-  location: LocationNode;
-}
-
-
-
-/**
- * Fetch specific location data by slug (URI)
- */
-async function getLocationData(slug: string): Promise<LocationNode | null> {
-  const query = `
-    query GetLocationBySlug($id: ID!) {
-      location(id: $id, idType: URI) {
-        title
-        featuredImage {
-          node {
-            sourceUrl
-          }
-        }
-        locationData {
-          pincode
-          customSeoHeading
-        }
-      }
-    }
-  `;
-
-  const response = await fetchGraphQL<LocationResponse>(query, { id: slug });
-  
-  if (response.errors || !response.data?.location) {
-    console.log("Returning mock data for preview because WordPress API is unavailable.");
-    const safeSlug = typeof slug === 'string' && slug.length > 0 ? slug : 'location';
-    const capSlug = safeSlug.charAt(0).toUpperCase() + safeSlug.slice(1);
-    
-    // Mock Data Fallback for Preview
-    return {
-      title: capSlug,
-      featuredImage: {
-        node: {
-          sourceUrl: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1920&auto=format&fit=crop'
-        }
-      },
-      locationData: {
-        pincode: '334001',
-        customSeoHeading: `Premium Builders & Architects in ${capSlug}`
-      }
-    };
-  }
-
-  return response.data.location;
-}
 
 // Generate metadata dynamically for SEO
 export async function generateMetadata({ params }: { params: Promise<{ location: string }> }) {
@@ -83,6 +15,23 @@ export async function generateMetadata({ params }: { params: Promise<{ location:
     return { title: 'Location Not Found' };
   }
   
+  const seo = locationNode.seo;
+
+  if (seo) {
+    return {
+      title: seo.title,
+      description: seo.metaDesc,
+      alternates: {
+        canonical: seo.canonical,
+      },
+      openGraph: {
+        title: seo.opengraphTitle,
+        description: seo.opengraphDescription,
+        images: seo.opengraphImage?.sourceUrl ? [seo.opengraphImage.sourceUrl] : undefined,
+      }
+    };
+  }
+
   const heading = locationNode.locationData?.customSeoHeading || locationNode.title;
 
   return {
