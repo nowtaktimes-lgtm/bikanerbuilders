@@ -172,8 +172,8 @@ export async function getAllServices(): Promise<WpNode[]> {
   }));
   
   // Merge fetched services with hardcoded ones to prevent them from disappearing
-  const existingUris = new Set(fetchedServices.map(s => s.uri));
-  const missingHardcoded = HARDCODED_SERVICES.filter(s => !existingUris.has(s.uri));
+  const existingSlugs = new Set(fetchedServices.map(s => s.slug));
+  const missingHardcoded = HARDCODED_SERVICES.filter(s => !existingSlugs.has(s.slug));
   
   return [...fetchedServices, ...missingHardcoded];
 }
