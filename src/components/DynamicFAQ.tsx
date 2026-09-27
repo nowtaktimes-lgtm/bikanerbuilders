@@ -5,34 +5,113 @@ interface DynamicFAQProps {
   pageType: 'location' | 'service';
 }
 
+function getDeterministicIndex(str: string, max: number): number {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash += str.charCodeAt(i);
+  }
+  return hash % max;
+}
+
 export default function DynamicFAQ({ title, pageType }: DynamicFAQProps) {
-  const faqs = pageType === 'location' ? [
-    {
-      q: `Do you provide construction services across all areas of ${title}?`,
-      a: `Yes, our engineering team covers the entirety of ${title}, ensuring timely material delivery and daily site supervision.`
-    },
-    {
-      q: `What is the transportation cost for building materials to ${title}?`,
-      a: `We provide a 100% transparent BOQ. Any logistical costs specific to ${title} are clearly discussed upfront with zero hidden charges.`
-    },
-    {
-      q: `Are your 3D elevations and Vastu maps customized for plots in ${title}?`,
-      a: `Absolutely. We design strictly according to your plot's dimensions, local climate, and Vastu principles.`
-    }
-  ] : [
-    {
-      q: `Why choose Bikaner Builders for ${title}?`,
-      a: `With 10+ years of local expertise, we deliver premium ${title} using top-grade materials and government-approved structural standards.`
-    },
-    {
-      q: `What is the estimated timeline and cost for ${title}?`,
-      a: `The exact timeline and cost depend on your project's scale, but we guarantee strict adherence to deadlines and a transparent BOQ.`
-    },
-    {
-      q: `Do you handle both material and labor for ${title}?`,
-      a: `Yes, we provide end-to-end turnkey solutions, managing all labor and material sourcing for flawless execution.`
-    }
+  const locationSets = [
+    // Set 0: Logistics & Site Visits
+    [
+      {
+        q: `How do you manage daily site supervision in ${title}?`,
+        a: `We assign dedicated site engineers to oversee construction in ${title}, ensuring daily progress tracking and strict quality control on-site.`
+      },
+      {
+        q: `Are transport costs included for ${title}?`,
+        a: `Yes, our detailed BOQ includes all logistical and transportation costs specific to ${title}, guaranteeing 100% transparency with zero hidden delivery charges.`
+      },
+      {
+        q: `Can you handle complete turnkey construction in ${title}?`,
+        a: `Absolutely. From the initial 2D naksha to the final paint coat, we offer end-to-end turnkey solutions across all areas of ${title}.`
+      }
+    ],
+    // Set 1: Local Climate & Soil
+    [
+      {
+        q: `Do you design foundations suited for ${title}'s specific soil conditions?`,
+        a: `Yes, we always conduct a thorough soil analysis before construction in ${title} to engineer a foundation that guarantees long-term structural integrity.`
+      },
+      {
+        q: `Which materials work best for homes in ${title}?`,
+        a: `Given the local weather patterns, we recommend and source climate-resistant materials that offer optimal thermal insulation and durability in ${title}.`
+      },
+      {
+        q: `Are the 3D elevations designed for the local environment of ${title}?`,
+        a: `Definitely. Our architects design exterior elevations that not only look premium but are practically suited for the dust and heat conditions of ${title}.`
+      }
+    ],
+    // Set 2: Timelines & Approvals
+    [
+      {
+        q: `How long does a standard turnkey project take in ${title}?`,
+        a: `Depending on the plot size and requirements, most residential projects in ${title} are completed strictly within the agreed timeline of 8 to 12 months.`
+      },
+      {
+        q: `Do you assist with local municipal approvals in ${title}?`,
+        a: `Yes, our team can guide you through the local building bye-laws and necessary documentation required for municipal approvals in ${title}.`
+      },
+      {
+        q: `Is Vastu compliance factored into ${title} projects?`,
+        a: `Yes, we ensure 100% Vastu compliance right from the initial floor planning stage for all our clients in ${title}.`
+      }
+    ]
   ];
+
+  const serviceSets = [
+    // Set 0: Quality & BOQ
+    [
+      {
+        q: `How is the pricing calculated for ${title}?`,
+        a: `Our pricing for ${title} is based on a highly detailed Bill of Quantities (BOQ), ensuring you only pay for exactly what goes into your project.`
+      },
+      {
+        q: `Can I see the exact brands used for ${title}?`,
+        a: `Yes, we provide a complete material specification list upfront. You will know exactly which premium brands are being utilized for ${title}.`
+      },
+      {
+        q: `Are there any hidden charges associated with ${title}?`,
+        a: `Never. We pride ourselves on 100% transparency. The final quote provided for ${title} covers all aspects without any surprise costs.`
+      }
+    ],
+    // Set 1: Process & Expertise
+    [
+      {
+        q: `What are the standard steps involved in ${title}?`,
+        a: `The process begins with an in-depth consultation, followed by structural planning, 3D visualization, and finally, flawless execution of the ${title}.`
+      },
+      {
+        q: `Are certified engineers handling the ${title} process?`,
+        a: `Absolutely. Every phase of ${title} is supervised and executed by our team of certified civil engineers and expert architects.`
+      },
+      {
+        q: `How do you ensure the quality of ${title}?`,
+        a: `We conduct multi-level quality checks during the entire lifecycle of ${title}, strictly adhering to modern structural engineering codes.`
+      }
+    ],
+    // Set 2: Customization & Vastu
+    [
+      {
+        q: `Is ${title} fully customizable to Vastu principles?`,
+        a: `Yes, our team specializes in deeply integrating Vastu Shastra principles into every aspect of ${title} to ensure a positive living space.`
+      },
+      {
+        q: `Do you provide revisions during the ${title} phase?`,
+        a: `Of course. We offer multiple design revisions during the planning stage of ${title} until you are 100% satisfied with the outcome.`
+      },
+      {
+        q: `Can the design for ${title} be tailored to my budget?`,
+        a: `Yes, we offer flexible material and design options to customize the ${title} exactly to your financial requirements without compromising structural safety.`
+      }
+    ]
+  ];
+
+  const setIndex = getDeterministicIndex(title, 3);
+  const faqs = pageType === 'location' ? locationSets[setIndex] : serviceSets[setIndex];
 
   const schema = {
     "@context": "https://schema.org",
