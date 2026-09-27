@@ -10,7 +10,10 @@ export interface GraphQLResponse<T> {
 }
 
 export async function fetchGraphQL<T>(query: string, variables: Record<string, unknown> = {}): Promise<GraphQLResponse<T>> {
-  const wpApiUrl = process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://beckend.bikanerbuilders.in/graphql';
+  const wpApiUrl = process.env.NEXT_PUBLIC_WORDPRESS_API_URL as string;
+  if (!wpApiUrl) {
+    console.warn('NEXT_PUBLIC_WORDPRESS_API_URL is not set');
+  }
   const payload = Object.keys(variables).length > 0 ? { query, variables } : { query };
 
   try {
@@ -154,13 +157,6 @@ export async function getAllLocations(): Promise<WpNode[]> {
   return response.data?.locations?.nodes || [];
 }
 
-const HARDCODED_SERVICES: WpNode[] = [
-  { title: "2D Vastu Naksha", uri: "/services/2d-naksha", slug: "2d-naksha", content: "Expert 2D Vastu compliant floor plans for your dream home." },
-  { title: "3D Front Elevation", uri: "/services/3d-elevation", slug: "3d-elevation", content: "Stunning 3D elevations to visualize your building exterior." },
-  { title: "Turnkey Construction", uri: "/services/turnkey-construction", slug: "turnkey-construction", content: "End-to-end turnkey construction services." },
-  { title: "POP & Interior Design", uri: "/services/interior-design", slug: "interior-design", content: "Premium POP and interior design solutions." }
-];
-
 export async function getAllServices(): Promise<WpNode[]> {
   const query = `
     query GetAllServices {
@@ -180,15 +176,9 @@ export async function getAllServices(): Promise<WpNode[]> {
     }
   `;
   const response = await fetchGraphQL<{ services: { nodes: WpNode[] } }>(query);
-  const fetchedServices = (response.data?.services?.nodes || []).map(s => ({
+  return (response.data?.services?.nodes || []).map(s => ({
     ...s,
     uri: `/services/${s.slug}`
   }));
-  
-  // Merge fetched services with hardcoded ones to prevent them from disappearing
-  const existingSlugs = new Set(fetchedServices.map(s => s.slug));
-  const missingHardcoded = HARDCODED_SERVICES.filter(s => !existingSlugs.has(s.slug));
-  
-  return [...fetchedServices, ...missingHardcoded];
 }
 

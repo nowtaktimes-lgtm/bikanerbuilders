@@ -45,10 +45,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
             dangerouslySetInnerHTML={{ __html: post.seo.schemaDetails }}
           />
         )}
-        <article 
-          className="prose prose-lg md:prose-xl prose-slate max-w-4xl mx-auto prose-headings:font-bold prose-a:text-blue-600 prose-img:rounded-2xl prose-img:shadow-lg mt-10 mb-16"
-          dangerouslySetInnerHTML={{ __html: post.content || '' }}
-        />
+        <article className="prose prose-lg max-w-4xl mx-auto my-12 px-4 prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-orange-500 hover:prose-a:text-orange-600 prose-img:rounded-2xl prose-img:shadow-lg">
+          <div dangerouslySetInnerHTML={{ __html: post.content || '' }} />
+        </article>
       </div>
     </div>
   );
