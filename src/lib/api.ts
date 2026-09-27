@@ -147,6 +147,13 @@ export async function getAllServices(): Promise<WpNode[]> {
         nodes {
           title
           uri
+          slug
+          content
+          featuredImage {
+            node {
+              sourceUrl
+            }
+          }
         }
       }
     }
