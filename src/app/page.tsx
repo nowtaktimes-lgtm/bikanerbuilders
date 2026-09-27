@@ -216,7 +216,7 @@ export default function Home() {
               <h2 className="text-3xl md:text-5xl font-black mb-4">Expertise You Can Trust</h2>
               <h3 className="text-xl text-orange-500 font-bold mb-6">Led by Aahan & Team</h3>
               <p className="text-lg text-slate-300 leading-relaxed mb-8">
-                With over a decade of local construction experience in Bikaner, our team strictly adheres to modern structural engineering codes while respecting traditional aesthetics. We promise 100% transparency in material usage and project timelines, ensuring your investment is completely secure.
+                With over a decade of experience as top civil contractors and residential & commercial builders in Bikaner, our team strictly adheres to modern structural engineering codes. Led by top architects and interior designers, we promise 100% transparency in material usage and project timelines, ensuring your investment is completely secure.
               </p>
               <ul className="space-y-4">
                 {[

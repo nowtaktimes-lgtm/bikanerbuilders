@@ -100,6 +100,13 @@ export default function Footer({ locations = [] }: FooterProps) {
       <div className="bg-[#0F172A] py-12 mt-8 rounded-t-3xl md:rounded-none">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
+          {/* Comprehensive Services SEO Paragraph */}
+          <div className="mb-12 max-w-4xl mx-auto text-center">
+            <p className="text-slate-400 text-sm md:text-base leading-relaxed">
+              Bikaner Builders is your one-stop destination for complete home building and renovation. As the best building contractors in Bikaner, we offer end-to-end turnkey construction, custom Vastu-compliant floor planning, and 3D front elevations. Our expertise extends to premium interior designing, modular kitchen setups, and flawless execution of all types of false ceilings, including POP false ceiling, Gypsum, and PVC panel work. Build your dream space with Bikaner's most trusted architects and civil experts.
+            </p>
+          </div>
+
           {/* Section 1: Top SEO Service Areas */}
           <div className="text-center mb-8">
             <h3 className="text-2xl font-black text-white mb-2">Serving Bikaner City & 300+ Surrounding Villages</h3>
