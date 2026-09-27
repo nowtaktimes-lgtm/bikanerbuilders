@@ -205,16 +205,16 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="w-full md:w-1/2 relative h-[400px] rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-800">
-              <Image src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=1000&auto=format&fit=crop" alt="Aahan - Bikaner Builders" fill className="object-cover" />
+              <Image src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1000&auto=format&fit=crop" alt="Bikaner Builders Expert Engineering Team" fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#111827] to-transparent opacity-80"></div>
               <div className="absolute bottom-6 left-6">
-                <p className="text-orange-500 font-bold uppercase tracking-wider text-sm mb-1">Founder & Lead Engineer</p>
-                <p className="text-2xl font-black">Aahan Sharma</p>
+                <p className="text-orange-500 font-bold uppercase tracking-wider text-sm mb-1">CERTIFIED EXPERTS</p>
+                <p className="text-2xl font-black">Bikaner Builders Engineering Team</p>
               </div>
             </div>
             <div className="w-full md:w-1/2">
               <h2 className="text-3xl md:text-5xl font-black mb-4">Expertise You Can Trust</h2>
-              <h3 className="text-xl text-orange-500 font-bold mb-6">Led by Aahan & Team</h3>
+              <h3 className="text-xl text-orange-500 font-bold mb-6">Led by Expert Civil Engineers</h3>
               <p className="text-lg text-slate-300 leading-relaxed mb-8">
                 With over a decade of experience as top civil contractors and residential & commercial builders in Bikaner, our team strictly adheres to modern structural engineering codes. Led by top architects and interior designers, we promise 100% transparency in material usage and project timelines, ensuring your investment is completely secure.
               </p>
