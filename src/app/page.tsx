@@ -169,9 +169,167 @@ export default function Home() {
       {/* Portfolio Section */}
       <Portfolio />
 
+      {/* Section 1: The Expertise & Experience Block */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-black text-[#0F172A] mb-4">Built for Bikaner: Our Proven Construction Process</h2>
+            <div className="w-20 h-1.5 bg-[#EA580C] mx-auto rounded-full mb-6"></div>
+            <p className="max-w-3xl mx-auto text-lg text-slate-600">
+              We understand Rajasthan's extreme weather. That's why our 4-step process ensures your home is built using climate-resistant materials, ensuring durability against intense heat and sandstorms.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { title: "Free Site Inspection", desc: "Detailed soil & topography analysis before we begin.", icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" },
+              { title: "Vastu-Compliant 3D Design", desc: "Scientific space planning for positive energy.", icon: "M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" },
+              { title: "Transparent BOQ", desc: "Clear material selection with zero hidden costs.", icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" },
+              { title: "Turnkey Handover", desc: "Move-in ready homes delivered on strict deadlines.", icon: "M5 13l4 4L19 7" }
+            ].map((step, idx) => (
+              <div key={idx} className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl transition-shadow text-center">
+                <div className="w-16 h-16 mx-auto bg-orange-100 text-orange-600 rounded-full flex items-center justify-center mb-6">
+                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d={step.icon} />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
+                <p className="text-slate-600">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2: The Authority Block */}
+      <section className="py-20 bg-[#111827] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="w-full md:w-1/2 relative h-[400px] rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-800">
+              <Image src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=1000&auto=format&fit=crop" alt="Aahan - Bikaner Builders" fill className="object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#111827] to-transparent opacity-80"></div>
+              <div className="absolute bottom-6 left-6">
+                <p className="text-orange-500 font-bold uppercase tracking-wider text-sm mb-1">Founder & Lead Engineer</p>
+                <p className="text-2xl font-black">Aahan Sharma</p>
+              </div>
+            </div>
+            <div className="w-full md:w-1/2">
+              <h2 className="text-3xl md:text-5xl font-black mb-4">Expertise You Can Trust</h2>
+              <h3 className="text-xl text-orange-500 font-bold mb-6">Led by Aahan & Team</h3>
+              <p className="text-lg text-slate-300 leading-relaxed mb-8">
+                With over a decade of local construction experience in Bikaner, our team strictly adheres to modern structural engineering codes while respecting traditional aesthetics. We promise 100% transparency in material usage and project timelines, ensuring your investment is completely secure.
+              </p>
+              <ul className="space-y-4">
+                {[
+                  "10+ Years Local Experience",
+                  "Government Approved Structural Standards",
+                  "No Hidden Costs, 100% Transparent BOQ"
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-center gap-3">
+                    <svg className="w-6 h-6 text-orange-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                    <span className="font-medium text-slate-200">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: The Trust Block */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-black text-[#0F172A] mb-4">What Bikaner Says About Us</h2>
+            <div className="w-20 h-1.5 bg-[#EA580C] mx-auto rounded-full"></div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { name: "Rajesh Sharma, JNV Colony", review: "Bikaner Builders delivered my home exactly on time. Their material quality is top-notch and the 3D design matching was 100% accurate." },
+              { name: "Sunita Jain, Gangashahar", review: "Very professional team. They handled everything from Naksha to final paint. The Vastu compliance really brought peace to our new house." },
+              { name: "Vikram Singh, Nokha", review: "Transparent pricing with no hidden surprises. Aahan and his team are the most reliable contractors I've worked with in Rajasthan." }
+            ].map((testimonial, idx) => (
+              <div key={idx} className="bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-sm relative">
+                <div className="flex gap-1 mb-4 text-orange-500">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                  ))}
+                </div>
+                <p className="text-slate-600 italic mb-6">"{testimonial.review}"</p>
+                <div className="font-bold text-slate-900 border-t border-slate-200 pt-4">- {testimonial.name}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: Local SEO FAQs */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-black text-[#0F172A] mb-4">Frequently Asked Questions</h2>
+            <div className="w-20 h-1.5 bg-[#EA580C] mx-auto rounded-full"></div>
+          </div>
+          <div className="space-y-6">
+            {[
+              { q: "What is the cost of house construction in Bikaner?", a: "Our construction cost in Bikaner starts at competitive per sq.ft rates depending on your material choices. We provide a fully customized and transparent BOQ (Bill of Quantities) before starting, ensuring zero hidden charges." },
+              { q: "Do you provide Vastu-compliant house maps?", a: "Yes, our expert architects specialize in 100% Vastu-compliant 2D nakshas and 3D elevations, ensuring your new home attracts positive energy and prosperity." },
+              { q: "Do you handle material and labor both?", a: "Absolutely. We offer comprehensive turnkey construction solutions. From foundation digging to the final coat of paint, we manage all labor, material sourcing, and project supervision." }
+            ].map((faq, idx) => (
+              <details key={idx} className="group bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+                <summary className="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-lg text-slate-900 group-open:text-orange-600 transition-colors">
+                  {faq.q}
+                  <span className="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                  </span>
+                </summary>
+                <div className="text-slate-600 p-6 pt-0 leading-relaxed">
+                  {faq.a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <Contact />
 
+      {/* Auto-injected FAQPage Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is the cost of house construction in Bikaner?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Our construction cost in Bikaner starts at competitive per sq.ft rates depending on your material choices. We provide a fully customized and transparent BOQ (Bill of Quantities) before starting, ensuring zero hidden charges."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you provide Vastu-compliant house maps?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, our expert architects specialize in 100% Vastu-compliant 2D nakshas and 3D elevations, ensuring your new home attracts positive energy and prosperity."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you handle material and labor both?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Absolutely. We offer comprehensive turnkey construction solutions. From foundation digging to the final coat of paint, we manage all labor, material sourcing, and project supervision."
+                }
+              }
+            ]
+          })
+        }}
+      />
     </>
   );
 }
