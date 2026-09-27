@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 type Category = 'All' | '3D Elevations' | '2D Floor Plans' | 'Completed Sites' | 'Interiors';
 
@@ -134,9 +135,9 @@ export default function Portfolio() {
         </div>
         
         <div className="mt-16 text-center">
-          <button className="bg-[#0F172A] hover:bg-slate-800 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-[0_4px_20px_rgba(15,23,42,0.3)] hover:-translate-y-1">
+          <Link href="/portfolio" className="inline-block bg-[#0F172A] hover:bg-slate-800 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-[0_4px_20px_rgba(15,23,42,0.3)] hover:-translate-y-1">
             View Complete Gallery <span aria-hidden="true">&rarr;</span>
-          </button>
+          </Link>
         </div>
 
       </div>
