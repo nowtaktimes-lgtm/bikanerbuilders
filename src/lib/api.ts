@@ -22,7 +22,7 @@ export async function fetchGraphQL<T>(query: string, variables: Record<string, u
     });
     if (!res.ok) return {};
     return await res.json();
-  } catch (error) {
+  } catch {
     return {};
   }
 }
@@ -139,3 +139,19 @@ export async function getAllLocations(): Promise<WpNode[]> {
   const response = await fetchGraphQL<{ locations: { nodes: WpNode[] } }>(query);
   return response.data?.locations?.nodes || [];
 }
+
+export async function getAllServices(): Promise<WpNode[]> {
+  const query = `
+    query GetAllServices {
+      services(first: 100, where: {orderby: {field: TITLE, order: ASC}}) {
+        nodes {
+          title
+          uri
+        }
+      }
+    }
+  `;
+  const response = await fetchGraphQL<{ services: { nodes: WpNode[] } }>(query);
+  return response.data?.services?.nodes || [];
+}
+

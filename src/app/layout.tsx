@@ -5,7 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import { SettingsProvider } from "@/components/SettingsProvider";
-import { getGlobalSettings, getRecentLocations } from "@/lib/api";
+import { getGlobalSettings, getRecentLocations, getAllServices } from "@/lib/api";
 
 const inter = Inter({ subsets: ["latin"], display: 'swap' });
 
@@ -26,16 +26,17 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [globalSettings, recentLocations] = await Promise.all([
+  const [globalSettings, recentLocations, services] = await Promise.all([
     getGlobalSettings(),
-    getRecentLocations()
+    getRecentLocations(),
+    getAllServices()
   ]);
 
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} antialiased selection:bg-[#EA580C] selection:text-white`}>
         <SettingsProvider settings={globalSettings}>
-          <Header />
+          <Header services={services} />
           <main>{children}</main>
           <Footer locations={recentLocations} />
           <MobileBottomBar />
