@@ -70,7 +70,7 @@ export interface WpNode {
   uri?: string;
 }
 
-const COMMON_FIELDS = `
+const POST_COMMON_FIELDS = `
   title
   content
   slug
@@ -86,26 +86,40 @@ const COMMON_FIELDS = `
   }
 `;
 
+const CUSTOM_POST_FIELDS = `
+  title
+  content
+  slug
+  featuredImage {
+    node {
+      sourceUrl
+    }
+  }
+  seo {
+    title
+  }
+`;
+
 export const getPageBySlug = cache(async (slug: string): Promise<WpNode | null> => {
-  const query = `query GetPageBySlug($id: ID!) { page(id: $id, idType: URI) { ${COMMON_FIELDS} } }`;
+  const query = `query GetPageBySlug($id: ID!) { page(id: $id, idType: URI) { ${POST_COMMON_FIELDS} } }`;
   const response = await fetchGraphQL<{ page: WpNode }>(query, { id: slug });
   return response.data?.page || null;
 });
 
 export const getPostBySlug = cache(async (slug: string): Promise<WpNode | null> => {
-  const query = `query GetPostBySlug($id: ID!) { post(id: $id, idType: URI) { ${COMMON_FIELDS} } }`;
+  const query = `query GetPostBySlug($id: ID!) { post(id: $id, idType: URI) { ${POST_COMMON_FIELDS} } }`;
   const response = await fetchGraphQL<{ post: WpNode }>(query, { id: slug });
   return response.data?.post || null;
 });
 
 export const getLocationBySlug = cache(async (slug: string): Promise<WpNode | null> => {
-  const query = `query GetLocationBySlug($id: ID!) { location(id: $id, idType: URI) { ${COMMON_FIELDS} } }`;
+  const query = `query GetLocationBySlug($id: ID!) { location(id: $id, idType: SLUG) { ${CUSTOM_POST_FIELDS} } }`;
   const response = await fetchGraphQL<{ location: WpNode }>(query, { id: slug });
   return response.data?.location || null;
 });
 
 export const getServiceBySlug = cache(async (slug: string): Promise<WpNode | null> => {
-  const query = `query GetServiceBySlug($id: ID!) { service(id: $id, idType: SLUG) { ${COMMON_FIELDS} } }`;
+  const query = `query GetServiceBySlug($id: ID!) { service(id: $id, idType: SLUG) { ${CUSTOM_POST_FIELDS} } }`;
   const response = await fetchGraphQL<{ service: WpNode }>(query, { id: slug });
   return response.data?.service || null;
 });
