@@ -205,7 +205,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="w-full md:w-1/2 relative h-[400px] rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-800">
-              <Image src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1000&auto=format&fit=crop" alt="Bikaner Builders Expert Engineering Team" fill className="object-cover" />
+              <Image src="/assets/bikaner_builders_engineering_team.jpg" alt="Bikaner Builders Expert Engineering Team" fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#111827] to-transparent opacity-80"></div>
               <div className="absolute bottom-6 left-6">
                 <p className="text-orange-500 font-bold uppercase tracking-wider text-sm mb-1">CERTIFIED EXPERTS</p>
