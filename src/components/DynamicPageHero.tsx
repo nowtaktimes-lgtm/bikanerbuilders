@@ -1,13 +1,16 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface DynamicPageHeroProps {
   title: string;
   image?: string;
+  category: string;
+  categoryLink: string;
 }
 
-export default function DynamicPageHero({ title, image }: DynamicPageHeroProps) {
+export default function DynamicPageHero({ title, image, category, categoryLink }: DynamicPageHeroProps) {
   return (
-    <section className="relative bg-slate-900 pt-32 pb-24 md:pt-40 md:pb-32 overflow-hidden">
+    <section className="relative bg-slate-900 pt-32 pb-32 md:pt-40 md:pb-40 overflow-hidden">
       {image && (
         <>
           <div className="absolute inset-0 z-0">
@@ -15,11 +18,11 @@ export default function DynamicPageHero({ title, image }: DynamicPageHeroProps) 
               src={image}
               alt={title}
               fill
-              className="object-cover opacity-25"
+              className="object-cover"
               priority
             />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent z-0"></div>
+          <div className="absolute inset-0 bg-slate-900/85 z-0"></div>
         </>
       )}
       {!image && (
@@ -29,6 +32,15 @@ export default function DynamicPageHero({ title, image }: DynamicPageHeroProps) 
       )}
       
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* SEO Breadcrumbs */}
+        <nav className="mb-6 flex justify-center items-center space-x-2 text-sm md:text-base font-medium text-slate-300">
+          <Link href="/" className="hover:text-white transition-colors">Home</Link>
+          <span className="text-slate-500">/</span>
+          <Link href={categoryLink} className="hover:text-white transition-colors">{category}</Link>
+          <span className="text-slate-500">/</span>
+          <span className="text-orange-400">{title}</span>
+        </nav>
+
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl">
           {title}
         </h1>

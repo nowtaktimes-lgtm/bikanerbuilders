@@ -1,7 +1,9 @@
 import { notFound } from 'next/navigation';
-import { getLocationBySlug } from '@/lib/api';
+import { getLocationBySlug, getAllLocations } from '@/lib/api';
 import DynamicPageHero from '@/components/DynamicPageHero';
 import BottomCTA from '@/components/BottomCTA';
+import Link from 'next/link';
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const post = await getLocationBySlug(resolvedParams.slug);
@@ -19,28 +21,79 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function LocationPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const post = await getLocationBySlug(resolvedParams.slug);
+  const locations = await getAllLocations();
 
   if (!post) {
     notFound();
   }
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.bikanerbuilders.in" },
+      { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://www.bikanerbuilders.in/locations" },
+      { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://www.bikanerbuilders.in/locations/${resolvedParams.slug}` }
+    ]
+  };
+
   return (
     <main className="min-h-screen bg-slate-50">
       {post.seo?.schemaDetails && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: post.seo.schemaDetails }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: post.seo.schemaDetails }} />
       )}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       
       {/* TOP: Auto-Generated Hero Banner */}
-      <DynamicPageHero title={post.title} image={post.featuredImage?.node?.sourceUrl} />
+      <DynamicPageHero title={post.title} image={post.featuredImage?.node?.sourceUrl} category="Locations" categoryLink="/locations" />
       
-      {/* MIDDLE: Auto-Formatted WP Content */}
-      <div className="container mx-auto px-4 py-16">
-        <article className="prose prose-lg md:prose-xl prose-slate max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-slate-100 prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-orange-500">
-          <div dangerouslySetInnerHTML={{ __html: post.content || '' }} />
-        </article>
+      {/* MIDDLE: Modern Overlap & Grid Split */}
+      <div className="container mx-auto px-4 -mt-16 md:-mt-24 relative z-10 pb-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          
+          {/* Main Content Area */}
+          <div className="lg:col-span-8">
+            <article className="prose prose-lg md:prose-xl prose-slate max-w-none bg-white p-6 md:p-12 rounded-2xl shadow-xl border border-slate-100 prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-orange-500">
+              <div dangerouslySetInnerHTML={{ __html: post.content || '' }} />
+            </article>
+
+            {/* Automated SEO Enhancements: Local Grids */}
+            {locations && locations.length > 0 && (
+              <div className="mt-12 bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                <h3 className="text-2xl font-bold text-slate-900 mb-6">Other Locations We Serve</h3>
+                <div className="flex flex-wrap gap-3">
+                  {locations.filter(loc => loc.slug !== resolvedParams.slug).map((loc, idx) => (
+                    <Link key={idx} href={`/locations/${loc.slug}`} className="px-5 py-2.5 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-600 font-medium rounded-full border border-slate-200 hover:border-orange-200 transition-colors text-sm">
+                      {loc.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Sticky Sidebar Widget */}
+          <div className="lg:col-span-4">
+            <div className="sticky top-24 bg-white p-8 rounded-2xl shadow-xl border border-slate-100">
+              <h3 className="text-xl font-bold text-slate-900 mb-4">Start Your Project in {post.title}</h3>
+              <p className="text-slate-600 mb-6 text-sm">Need construction or architectural services in {post.title}? Our experts are here to assist you.</p>
+              
+              <Link href="https://wa.me/91XXXXXXXXXX" target="_blank" className="block w-full bg-[#25D366] hover:bg-[#1fae54] text-white text-center font-bold py-3 px-4 rounded-xl mb-4 transition-colors">
+                Chat on WhatsApp
+              </Link>
+              <Link href="tel:+91XXXXXXXXXX" className="block w-full bg-slate-900 hover:bg-slate-800 text-white text-center font-bold py-3 px-4 rounded-xl mb-8 transition-colors">
+                Call Us Now
+              </Link>
+              
+              <div className="pt-6 border-t border-slate-100 text-center">
+                <Link href="/" className="text-slate-500 hover:text-orange-500 text-sm font-medium transition-colors">
+                  &larr; Back to Bikaner Builders Home
+                </Link>
+              </div>
+            </div>
+          </div>
+          
+        </div>
       </div>
 
       {/* BOTTOM: Auto-Generated Lead CTA */}
