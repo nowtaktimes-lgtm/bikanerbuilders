@@ -42,7 +42,7 @@ export default async function LocationsPage() {
           {locations.map((loc, index) => (
             <Link 
               key={index}
-              href={loc.uri}
+              href={loc.uri || '#'}
               className="group block bg-[#0F172A] border border-white/5 rounded-2xl p-6 hover:bg-[#1E293B] hover:border-[#EA580C]/50 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
               <div className="flex items-center justify-between">
