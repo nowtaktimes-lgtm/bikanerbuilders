@@ -140,6 +140,13 @@ export async function getAllLocations(): Promise<WpNode[]> {
   return response.data?.locations?.nodes || [];
 }
 
+const HARDCODED_SERVICES: WpNode[] = [
+  { title: "2D Vastu Naksha", uri: "/services/2d-naksha", slug: "2d-naksha", content: "Expert 2D Vastu compliant floor plans for your dream home." },
+  { title: "3D Front Elevation", uri: "/services/3d-elevation", slug: "3d-elevation", content: "Stunning 3D elevations to visualize your building exterior." },
+  { title: "Turnkey Construction", uri: "/services/turnkey-construction", slug: "turnkey-construction", content: "End-to-end turnkey construction services." },
+  { title: "POP & Interior Design", uri: "/services/interior-design", slug: "interior-design", content: "Premium POP and interior design solutions." }
+];
+
 export async function getAllServices(): Promise<WpNode[]> {
   const query = `
     query GetAllServices {
@@ -159,6 +166,12 @@ export async function getAllServices(): Promise<WpNode[]> {
     }
   `;
   const response = await fetchGraphQL<{ services: { nodes: WpNode[] } }>(query);
-  return response.data?.services?.nodes || [];
+  const fetchedServices = response.data?.services?.nodes || [];
+  
+  // Merge fetched services with hardcoded ones to prevent them from disappearing
+  const existingUris = new Set(fetchedServices.map(s => s.uri));
+  const missingHardcoded = HARDCODED_SERVICES.filter(s => !existingUris.has(s.uri));
+  
+  return [...fetchedServices, ...missingHardcoded];
 }
 
