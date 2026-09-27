@@ -105,7 +105,7 @@ export const getLocationBySlug = cache(async (slug: string): Promise<WpNode | nu
 });
 
 export const getServiceBySlug = cache(async (slug: string): Promise<WpNode | null> => {
-  const query = `query GetServiceBySlug($id: ID!) { service(id: $id, idType: URI) { ${COMMON_FIELDS} } }`;
+  const query = `query GetServiceBySlug($id: ID!) { service(id: $id, idType: SLUG) { ${COMMON_FIELDS} } }`;
   const response = await fetchGraphQL<{ service: WpNode }>(query, { id: slug });
   return response.data?.service || null;
 });
@@ -166,7 +166,10 @@ export async function getAllServices(): Promise<WpNode[]> {
     }
   `;
   const response = await fetchGraphQL<{ services: { nodes: WpNode[] } }>(query);
-  const fetchedServices = response.data?.services?.nodes || [];
+  const fetchedServices = (response.data?.services?.nodes || []).map(s => ({
+    ...s,
+    uri: `/services/${s.slug}`
+  }));
   
   // Merge fetched services with hardcoded ones to prevent them from disappearing
   const existingUris = new Set(fetchedServices.map(s => s.uri));
