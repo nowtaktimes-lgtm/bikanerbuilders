@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { getLocationBySlug, getAllLocations } from '@/lib/api';
 import DynamicPageHero from '@/components/DynamicPageHero';
 import BottomCTA from '@/components/BottomCTA';
+import DynamicFAQ from '@/components/DynamicFAQ';
 import Link from 'next/link';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
@@ -56,6 +57,9 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
             <article className="prose prose-lg md:prose-xl prose-slate max-w-none bg-white p-6 md:p-12 rounded-2xl shadow-xl border border-slate-100 prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-orange-500">
               <div dangerouslySetInnerHTML={{ __html: post.content || '' }} />
             </article>
+
+            {/* Dynamic FAQs */}
+            <DynamicFAQ pageType="location" title={post.title} />
 
             {/* Automated SEO Enhancements: Local Grids */}
             {locations && locations.length > 0 && (
