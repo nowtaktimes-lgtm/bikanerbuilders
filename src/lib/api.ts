@@ -2,9 +2,6 @@ import { cache } from 'react';
 
 export interface GraphQLError {
   message: string;
-  locations?: { line: number; column: number }[];
-  path?: (string | number)[];
-  extensions?: Record<string, unknown>;
 }
 
 export interface GraphQLResponse<T> {
@@ -14,31 +11,18 @@ export interface GraphQLResponse<T> {
 
 export async function fetchGraphQL<T>(query: string, variables: Record<string, unknown> = {}): Promise<GraphQLResponse<T>> {
   const wpApiUrl = process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://beckend.bikanerbuilders.in/graphql';
-
-  const payload = Object.keys(variables).length > 0 
-    ? { query, variables } 
-    : { query };
+  const payload = Object.keys(variables).length > 0 ? { query, variables } : { query };
 
   try {
     const res = await fetch(wpApiUrl, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload),
-      next: {
-        revalidate: 60, // ISR: Revalidate every 60 seconds
-      },
+      next: { revalidate: 60 },
     });
-
-    if (!res.ok) {
-      console.error('Failed to fetch API', res.status);
-      return {};
-    }
-
+    if (!res.ok) return {};
     return await res.json();
   } catch (error) {
-    console.error('Network error while fetching WPGraphQL:', error);
     return {};
   }
 }
@@ -55,81 +39,78 @@ export interface GlobalSettings {
 }
 
 export async function getGlobalSettings(): Promise<GlobalSettings> {
-  const query = `
-    query GetGlobalSettings { 
-      pages(where: {title: "Global Site Settings"}) { 
-        nodes { 
-          masterSettings { 
-            primaryPhone 
-            whatsappNumber 
-            emailAddress 
-            officeAddress 
-            siteLogo
-            headerSiteTitle
-            headerButtonText
-            headerButtonLink
-          } 
-        } 
-      } 
-    }
-  `;
-
-  type GlobalSettingsResponse = {
-    pages: {
-      nodes: {
-        masterSettings: GlobalSettings;
-      }[];
-    };
+  return {
+    primaryPhone: "91XXXXXXXXXX",
+    whatsappNumber: "91XXXXXXXXXX",
+    emailAddress: "info@bikanerbuilders.in",
+    officeAddress: "Bikaner Builders HQ, Karni Industrial Area, Bikaner, Rajasthan 334004",
+    siteLogo: "",
+    headerSiteTitle: "Bikaner Builders",
+    headerButtonText: "Get Quote",
+    headerButtonLink: "#contact"
   };
-
-  const response = await fetchGraphQL<GlobalSettingsResponse>(query);
-  
-  if (response.errors || !response.data?.pages?.nodes?.[0]?.masterSettings) {
-    console.log("Returning fallback global settings because WordPress API is unavailable or missing data.");
-    return {
-      primaryPhone: "91XXXXXXXXXX",
-      whatsappNumber: "91XXXXXXXXXX",
-      emailAddress: "info@bikanerbuilders.in",
-      officeAddress: "Bikaner Builders HQ, Karni Industrial Area, Bikaner, Rajasthan 334004",
-      siteLogo: "",
-      headerSiteTitle: "Bikaner Builders",
-      headerButtonText: "Get Quote",
-      headerButtonLink: "#contact"
-    };
-  }
-
-  return response.data.pages.nodes[0].masterSettings;
-}
-
-export interface LocationData {
-  pincode?: string;
-  customSeoHeading?: string;
 }
 
 export interface SeoData {
   title?: string;
   metaDesc?: string;
-  canonical?: string;
-  opengraphTitle?: string;
-  opengraphDescription?: string;
-  opengraphImage?: {
-    sourceUrl?: string;
-  };
+  schemaDetails?: string;
 }
 
-export interface LocationNode {
+export interface WpNode {
   title: string;
-  uri: string;
+  content: string;
+  slug: string;
   featuredImage?: {
     node?: {
       sourceUrl?: string;
     };
   };
-  locationData?: LocationData;
   seo?: SeoData;
+  uri?: string;
 }
 
-export async function getRecentLocations(): Promise<LocationNode[]> {
+const COMMON_FIELDS = `
+  title
+  content
+  slug
+  featuredImage {
+    node {
+      sourceUrl
+    }
+  }
+  seo {
+    title
+    metaDesc
+    schemaDetails
+  }
+`;
+
+export const getPageBySlug = cache(async (slug: string): Promise<WpNode | null> => {
+  const query = `query GetPageBySlug($id: ID!) { page(id: $id, idType: URI) { ${COMMON_FIELDS} } }`;
+  const response = await fetchGraphQL<{ page: WpNode }>(query, { id: slug });
+  return response.data?.page || null;
+});
+
+export const getPostBySlug = cache(async (slug: string): Promise<WpNode | null> => {
+  const query = `query GetPostBySlug($id: ID!) { post(id: $id, idType: URI) { ${COMMON_FIELDS} } }`;
+  const response = await fetchGraphQL<{ post: WpNode }>(query, { id: slug });
+  return response.data?.post || null;
+});
+
+export const getLocationBySlug = cache(async (slug: string): Promise<WpNode | null> => {
+  const query = `query GetLocationBySlug($id: ID!) { location(id: $id, idType: URI) { ${COMMON_FIELDS} } }`;
+  const response = await fetchGraphQL<{ location: WpNode }>(query, { id: slug });
+  return response.data?.location || null;
+});
+
+export const getServiceBySlug = cache(async (slug: string): Promise<WpNode | null> => {
+  const query = `query GetServiceBySlug($id: ID!) { service(id: $id, idType: URI) { ${COMMON_FIELDS} } }`;
+  const response = await fetchGraphQL<{ service: WpNode }>(query, { id: slug });
+  return response.data?.service || null;
+});
+
+export async function getRecentLocations(): Promise<WpNode[]> {
   const query = `
     query GetRecentLocations {
       locations(first: 10, where: {orderby: {field: DATE, order: DESC}}) {
@@ -140,24 +121,11 @@ export async function getRecentLocations(): Promise<LocationNode[]> {
       }
     }
   `;
-
-  type LocationsResponse = {
-    locations: {
-      nodes: LocationNode[];
-    };
-  };
-
-  const response = await fetchGraphQL<LocationsResponse>(query);
-  
-  if (response.errors || !response.data?.locations?.nodes) {
-    console.error("Error fetching recent locations from WordPress API.");
-    return [];
-  }
-
-  return response.data.locations.nodes;
+  const response = await fetchGraphQL<{ locations: { nodes: WpNode[] } }>(query);
+  return response.data?.locations?.nodes || [];
 }
 
-export async function getAllLocations(): Promise<LocationNode[]> {
+export async function getAllLocations(): Promise<WpNode[]> {
   const query = `
     query GetAllLocations {
       locations(first: 100, where: {orderby: {field: TITLE, order: ASC}}) {
@@ -168,154 +136,6 @@ export async function getAllLocations(): Promise<LocationNode[]> {
       }
     }
   `;
-
-  type LocationsResponse = {
-    locations: {
-      nodes: LocationNode[];
-    };
-  };
-
-  const response = await fetchGraphQL<LocationsResponse>(query);
-  
-  if (response.errors || !response.data?.locations?.nodes) {
-    console.error("Error fetching all locations from WordPress API.");
-    return [];
-  }
-
-  return response.data.locations.nodes;
+  const response = await fetchGraphQL<{ locations: { nodes: WpNode[] } }>(query);
+  return response.data?.locations?.nodes || [];
 }
-
-export interface ServiceData {
-  serviceContent?: string;
-  galleryImage1?: string;
-  galleryImage2?: string;
-  galleryImage3?: string;
-  step1Title?: string;
-  step1Description?: string;
-  step2Title?: string;
-  step2Description?: string;
-  step3Title?: string;
-  step3Description?: string;
-  faq1Question?: string;
-  faq1Answer?: string;
-  faq2Question?: string;
-  faq2Answer?: string;
-  faq3Question?: string;
-  faq3Answer?: string;
-}
-
-export interface ServiceNode {
-  title: string;
-  uri: string;
-  serviceData?: ServiceData;
-  seo?: SeoData;
-}
-
-export const getServiceData = cache(async (slug: string): Promise<ServiceNode | null> => {
-  const query = `
-    query GetServiceBySlug($id: ID!) {
-      service(id: $id, idType: URI) {
-        title
-        uri
-        serviceData {
-          serviceContent
-          galleryImage1
-          galleryImage2
-          galleryImage3
-          step1Title
-          step1Description
-          step2Title
-          step2Description
-          step3Title
-          step3Description
-          faq1Question
-          faq1Answer
-          faq2Question
-          faq2Answer
-          faq3Question
-          faq3Answer
-        }
-        seo {
-          title
-          metaDesc
-          canonical
-          opengraphTitle
-          opengraphDescription
-          opengraphImage {
-            sourceUrl
-          }
-        }
-      }
-    }
-  `;
-
-  type ServiceResponse = {
-    service: ServiceNode;
-  };
-
-  const response = await fetchGraphQL<ServiceResponse>(query, { id: slug });
-  
-  if (response.errors || !response.data?.service) {
-    return null;
-  }
-
-  return response.data.service;
-});
-
-export const getLocationData = cache(async (slug: string): Promise<LocationNode | null> => {
-  const query = `
-    query GetLocationBySlug($id: ID!) {
-      location(id: $id, idType: URI) {
-        title
-        featuredImage {
-          node {
-            sourceUrl
-          }
-        }
-        locationData {
-          pincode
-          customSeoHeading
-        }
-        seo {
-          title
-          metaDesc
-          canonical
-          opengraphTitle
-          opengraphDescription
-          opengraphImage {
-            sourceUrl
-          }
-        }
-      }
-    }
-  `;
-
-  type LocationResponse = {
-    location: LocationNode;
-  };
-
-  const response = await fetchGraphQL<LocationResponse>(query, { id: slug });
-  
-  if (response.errors || !response.data?.location) {
-    console.log("Returning mock data for preview because WordPress API is unavailable.");
-    const safeSlug = typeof slug === 'string' && slug.length > 0 ? slug : 'location';
-    const capSlug = safeSlug.charAt(0).toUpperCase() + safeSlug.slice(1);
-    
-    // Mock Data Fallback for Preview
-    return {
-      title: capSlug,
-      uri: `/${slug}`,
-      featuredImage: {
-        node: {
-          sourceUrl: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1920&auto=format&fit=crop'
-        }
-      },
-      locationData: {
-        pincode: '334001',
-        customSeoHeading: `Premium Builders & Architects in ${capSlug}`
-      }
-    };
-  }
-
-  return response.data.location;
-});

@@ -4,10 +4,10 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSettings } from '@/components/SettingsProvider';
-import { LocationNode } from '@/lib/api';
+import { WpNode } from '@/lib/api';
 
 interface FooterProps {
-  locations?: LocationNode[];
+  locations?: WpNode[];
 }
 
 export default function Footer({ locations = [] }: FooterProps) {
@@ -129,7 +129,7 @@ export default function Footer({ locations = [] }: FooterProps) {
                 {locations.map((loc, index) => (
                   <Link 
                     key={`dyn-${index}`} 
-                    href={loc.uri}
+                    href={loc.uri || '#'}
                     className="bg-white/10 hover:bg-[#EA580C] text-white px-5 py-2.5 rounded-full text-sm font-bold tracking-wide transition-all border border-white/5 hover:border-transparent"
                   >
                     {loc.title}

@@ -1,4 +1,4 @@
-export function generateLocationSchema(locationData: any, fullUrl: string) {
+export function generateLocationSchema(locationData: { title?: string; locationData?: { pincode?: string } } | null | undefined, fullUrl: string) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -18,7 +18,7 @@ export function generateLocationSchema(locationData: any, fullUrl: string) {
   };
 }
 
-export function generateServiceSchema(serviceData: any, fullUrl: string) {
+export function generateServiceSchema(serviceData: { title?: string; excerpt?: string; content?: string } | null | undefined, fullUrl: string) {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -32,7 +32,7 @@ export function generateServiceSchema(serviceData: any, fullUrl: string) {
   };
 }
 
-export function generateArticleSchema(postData: any, fullUrl: string) {
+export function generateArticleSchema(postData: { title?: string; date?: string } | null | undefined, fullUrl: string) {
   return {
     "@context": "https://schema.org",
     "@type": "Article",

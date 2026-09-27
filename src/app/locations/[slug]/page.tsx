@@ -1,10 +1,10 @@
 import { notFound } from 'next/navigation';
-import { getServiceBySlug } from '@/lib/api';
+import { getLocationBySlug } from '@/lib/api';
 import Image from 'next/image';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  const post = await getServiceBySlug(resolvedParams.slug);
+  const post = await getLocationBySlug(resolvedParams.slug);
   
   if (!post) {
     return { title: 'Not Found' };
@@ -16,9 +16,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default async function ServicePage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function LocationPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  const post = await getServiceBySlug(resolvedParams.slug);
+  const post = await getLocationBySlug(resolvedParams.slug);
 
   if (!post) {
     notFound();
