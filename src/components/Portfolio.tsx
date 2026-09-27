@@ -37,13 +37,13 @@ const PROJECTS: Project[] = [
     id: '3',
     title: 'Luxury Gypsum Ceiling',
     category: 'Interiors',
-    imageUrl: 'https://images.unsplash.com/photo-1618221195710-dd6b14666249?q=80&w=800&auto=format&fit=crop',
+    imageUrl: '/assets/luxury_gypsum_ceiling.jpg',
   },
   {
     id: '4',
     title: 'Turnkey Project Handover',
     category: 'Completed Sites',
-    imageUrl: 'https://images.unsplash.com/photo-1541888087643-d28bc9d7fb23?q=80&w=800&auto=format&fit=crop',
+    imageUrl: '/assets/turnkey_project_handover.jpg',
   },
   {
     id: '5',
