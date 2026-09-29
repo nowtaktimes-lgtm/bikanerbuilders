@@ -69,20 +69,12 @@ export default function Header({ services }: HeaderProps) {
               </button>
               
               <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden transition-all duration-200 transform origin-top ${servicesDropdownOpen ? 'scale-100 opacity-100 visible' : 'scale-95 opacity-0 invisible'}`}>
-                <div className="py-2">
-                  {services && services.length > 0 ? (
-                    services.map((service, index) => (
-                      <Link key={index} href={service.uri || "#"} className="block px-6 py-3 text-sm font-bold text-gray-700 hover:bg-orange-50 hover:text-[#EA580C]">{service.title}</Link>
-                    ))
-                  ) : (
-                    <>
-                      <Link href="/services/2d-naksha" className="block px-6 py-3 text-sm font-bold text-gray-700 hover:bg-orange-50 hover:text-[#EA580C]">2D Vastu Naksha</Link>
-                      <Link href="/services/3d-elevation" className="block px-6 py-3 text-sm font-bold text-gray-700 hover:bg-orange-50 hover:text-[#EA580C]">3D Front Elevation</Link>
-                      <Link href="/services/turnkey-construction" className="block px-6 py-3 text-sm font-bold text-gray-700 hover:bg-orange-50 hover:text-[#EA580C]">Turnkey Construction</Link>
-                      <Link href="/services/interior-design" className="block px-6 py-3 text-sm font-bold text-gray-700 hover:bg-orange-50 hover:text-[#EA580C]">POP & Interior Design</Link>
-                      <Link href="/services/structural-drawing" className="block px-6 py-3 text-sm font-bold text-gray-700 hover:bg-orange-50 hover:text-[#EA580C]">Structural Drawings</Link>
-                    </>
-                  )}
+                                <div className="py-2">
+                  <Link href="/services/2d-naksha" className="block px-6 py-3 text-sm font-bold text-gray-700 hover:bg-orange-50 hover:text-[#EA580C]">2D Vastu Naksha</Link>
+                  <Link href="/services/3d-elevation" className="block px-6 py-3 text-sm font-bold text-gray-700 hover:bg-orange-50 hover:text-[#EA580C]">3D Front Elevation</Link>
+                  <Link href="/services/turnkey-construction" className="block px-6 py-3 text-sm font-bold text-gray-700 hover:bg-orange-50 hover:text-[#EA580C]">Turnkey Construction</Link>
+                  <Link href="/services/interior-design" className="block px-6 py-3 text-sm font-bold text-gray-700 hover:bg-orange-50 hover:text-[#EA580C]">POP & Interior Design</Link>
+                  <Link href="/services/structural-drawing" className="block px-6 py-3 text-sm font-bold text-gray-700 hover:bg-orange-50 hover:text-[#EA580C]">Structural Drawings</Link>
                 </div>
               </div>
             </div>
@@ -116,21 +108,13 @@ export default function Header({ services }: HeaderProps) {
       <div className={`fixed inset-0 bg-[#0F172A] z-40 transition-transform duration-300 ease-in-out lg:hidden flex flex-col justify-center items-center ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <nav className="flex flex-col items-center gap-6 text-white text-2xl font-black">
           <Link href="/" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#EA580C] transition-colors">Home</Link>
-          <div className="text-center">
+                    <div className="text-center">
             <span className="block mb-4 text-gray-400 text-sm uppercase tracking-widest">Our Services</span>
-            {services && services.length > 0 ? (
-              services.map((service, index) => (
-                <Link key={index} href={service.uri || "#"} onClick={() => setMobileMenuOpen(false)} className={`block text-xl hover:text-[#EA580C] transition-colors ${index !== services.length - 1 ? 'mb-3' : ''}`}>{service.title}</Link>
-              ))
-            ) : (
-              <>
-                <Link href="/services/2d-naksha" onClick={() => setMobileMenuOpen(false)} className="block text-xl hover:text-[#EA580C] mb-3 transition-colors">2D Vastu Naksha</Link>
-                <Link href="/services/3d-elevation" onClick={() => setMobileMenuOpen(false)} className="block text-xl hover:text-[#EA580C] mb-3 transition-colors">3D Front Elevation</Link>
-                <Link href="/services/turnkey-construction" onClick={() => setMobileMenuOpen(false)} className="block text-xl hover:text-[#EA580C] mb-3 transition-colors">Turnkey Construction</Link>
-                <Link href="/services/interior-design" onClick={() => setMobileMenuOpen(false)} className="block text-xl hover:text-[#EA580C] mb-3 transition-colors">POP & Interior Design</Link>
-                <Link href="/services/structural-drawing" onClick={() => setMobileMenuOpen(false)} className="block text-xl hover:text-[#EA580C] transition-colors">Structural Drawings</Link>
-              </>
-            )}
+            <Link href="/services/2d-naksha" onClick={() => setMobileMenuOpen(false)} className="block text-xl hover:text-[#EA580C] mb-3 transition-colors">2D Vastu Naksha</Link>
+            <Link href="/services/3d-elevation" onClick={() => setMobileMenuOpen(false)} className="block text-xl hover:text-[#EA580C] mb-3 transition-colors">3D Front Elevation</Link>
+            <Link href="/services/turnkey-construction" onClick={() => setMobileMenuOpen(false)} className="block text-xl hover:text-[#EA580C] mb-3 transition-colors">Turnkey Construction</Link>
+            <Link href="/services/interior-design" onClick={() => setMobileMenuOpen(false)} className="block text-xl hover:text-[#EA580C] mb-3 transition-colors">POP & Interior Design</Link>
+            <Link href="/services/structural-drawing" onClick={() => setMobileMenuOpen(false)} className="block text-xl hover:text-[#EA580C] transition-colors">Structural Drawings</Link>
           </div>
           <Link href="/portfolio" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#EA580C] transition-colors mt-2">Portfolio</Link>
           <Link href="/cost-estimator" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#EA580C] transition-colors">Cost Estimator</Link>
