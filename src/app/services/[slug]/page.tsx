@@ -67,7 +67,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 <h3 className="text-2xl font-bold text-slate-900 mb-6">Locations We Serve</h3>
                 <div className="flex flex-wrap gap-3">
                   {locations.map((loc, idx) => (
-                    <Link key={idx} href={`/locations/${loc.slug}`} className="px-5 py-2.5 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-600 font-medium rounded-full border border-slate-200 hover:border-orange-200 transition-colors text-sm">
+                    <Link key={idx} href={`/locations/${loc.slug || loc.title.toLowerCase().replace(/\s+/g, '-')}`} className="px-5 py-2.5 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-600 font-medium rounded-full border border-slate-200 hover:border-orange-200 transition-colors text-sm">
                       {loc.title}
                     </Link>
                   ))}

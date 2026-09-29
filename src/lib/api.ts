@@ -134,6 +134,7 @@ export async function getRecentLocations(): Promise<WpNode[]> {
         nodes {
           title
           uri
+          slug
         }
       }
     }
@@ -149,6 +150,7 @@ export async function getAllLocations(): Promise<WpNode[]> {
         nodes {
           title
           uri
+          slug
         }
       }
     }
@@ -181,4 +183,5 @@ export async function getAllServices(): Promise<WpNode[]> {
     uri: `/services/${s.slug}`
   }));
 }
+
 
