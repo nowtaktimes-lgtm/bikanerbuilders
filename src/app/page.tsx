@@ -295,6 +295,23 @@ export default function Home() {
       {/* Contact Section */}
       <Contact />
 
+      {/* Micro-Leadership Trust Badge */}
+      <section className="py-6 bg-slate-50 border-t border-slate-100 flex items-center justify-center">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
+          <div className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-700 flex-shrink-0">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+          </div>
+          <div>
+            <p className="text-sm font-semibold text-slate-900">
+              Rishad Khan <span className="font-normal text-slate-500 text-xs ml-1 bg-slate-200 px-1.5 py-0.5 rounded-sm">Founder & Operations Head</span>
+            </p>
+            <p className="text-xs text-slate-500 mt-1 max-w-xl">
+              "Committed to delivering 100% transparent, Vastu-compliant, and premium turnkey construction solutions across Bikaner district."
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Auto-injected FAQPage Schema */}
       <script
         type="application/ld+json"
@@ -334,6 +351,7 @@ export default function Home() {
     </>
   );
 }
+
 
 
 
