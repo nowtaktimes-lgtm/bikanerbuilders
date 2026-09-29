@@ -44,8 +44,8 @@ export default function SEOOptimizedServicePage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `JSON.stringify(serviceSchema)` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `JSON.stringify(faqSchema)` }} />
       
       <div className="pt-20">
         
@@ -85,18 +85,18 @@ export default function SEOOptimizedServicePage() {
                 <h2 className="text-3xl font-black text-slate-900 mb-6 border-b-4 border-orange-500 pb-4 inline-block">
                   Best Ghar Ka Naksha & Floor Plan Creators in Bikaner
                 </h2>
-                <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: 'Before starting any construction, a perfect <strong class="text-slate-900">ghar ka naksha (floor plan)</strong> is crucial. We are the top architects in Bikaner offering 2D floor plans, architectural layouts, and plot mapping. We optimize every inch of your space for maximum ventilation, natural lighting, and cross-ventilation, which is essential in Rajasthan.' }} />
+                <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: `Before starting any construction, a perfect <strong class="text-slate-900">ghar ka naksha (floor plan)</strong> is crucial. We are the top architects in Bikaner offering 2D floor plans, architectural layouts, and plot mapping. We optimize every inch of your space for maximum ventilation, natural lighting, and cross-ventilation, which is essential in Rajasthan.` }} />
                 
                 <h3 className="text-2xl font-bold text-slate-900 mb-4">
                   Vastu Shastra Experts for Home & Commercial
                 </h3>
-                <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: 'A Vastu-compliant home brings peace and prosperity. Our civil engineers and Vastu experts carefully position the kitchen (Agni Kund), master bedroom, pooja room, and water tanks according to strict Vastu principles. We design nakshas for 20x40, 30x60, and custom plot sizes.' }} />
+                <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: `A Vastu-compliant home brings peace and prosperity. Our civil engineers and Vastu experts carefully position the kitchen (Agni Kund), master bedroom, pooja room, and water tanks according to strict Vastu principles. We design nakshas for 20x40, 30x60, and custom plot sizes.` }} />
                 
                 {/* Local Trust Block */}
                 <div className="bg-slate-900 text-white p-8 rounded-2xl shadow-inner mt-8">
                   <h4 className="text-xl font-bold text-orange-500 mb-3">Rated #1 by Bikaner Residents</h4>
                   <p className="text-slate-300 text-base">
-                    Don't risk your hard-earned money with unverified contractors from Justdial or local directories. Bikaner Builders is a registered, trusted, and highly-rated civil engineering firm in Bikaner. We guarantee 100% transparent pricing and flawless execution.
+                    Don&apos;t risk your hard-earned money with unverified contractors from Justdial or local directories. Bikaner Builders is a registered, trusted, and highly-rated civil engineering firm in Bikaner. We guarantee 100% transparent pricing and flawless execution.
                   </p>
                 </div>
               </article>
@@ -139,3 +139,4 @@ export default function SEOOptimizedServicePage() {
     </>
   );
 }
+

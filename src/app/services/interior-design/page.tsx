@@ -44,8 +44,8 @@ export default function SEOOptimizedServicePage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `JSON.stringify(serviceSchema)` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `JSON.stringify(faqSchema)` }} />
       
       <div className="pt-20">
         
@@ -85,18 +85,18 @@ export default function SEOOptimizedServicePage() {
                 <h2 className="text-3xl font-black text-slate-900 mb-6 border-b-4 border-orange-500 pb-4 inline-block">
                   Transform Your Home with Top Interior Decorators in Bikaner
                 </h2>
-                <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: 'Your search for the <strong class="text-slate-900">best interior designer in Bikaner</strong> ends here. We provide complete interior solutions including modular kitchens, modern wardrobes, TV units, luxury living room setups, and premium bathroom designs. Our experienced carpenters and interior experts bring your vision to life.' }} />
+                <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: `Your search for the <strong class="text-slate-900">best interior designer in Bikaner</strong> ends here. We provide complete interior solutions including modular kitchens, modern wardrobes, TV units, luxury living room setups, and premium bathroom designs. Our experienced carpenters and interior experts bring your vision to life.` }} />
                 
                 <h3 className="text-2xl font-bold text-slate-900 mb-4">
                   Expert False Ceiling & Gypsum POP Work
                 </h3>
-                <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: 'A beautiful ceiling changes the entire vibe of a room. As the leading POP contractors in Bikaner, we install modern gypsum false ceilings, LED cove lighting designs, PVC panels, and intricate POP moldings. We ensure flawless finishing with laser alignment.' }} />
+                <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: `A beautiful ceiling changes the entire vibe of a room. As the leading POP contractors in Bikaner, we install modern gypsum false ceilings, LED cove lighting designs, PVC panels, and intricate POP moldings. We ensure flawless finishing with laser alignment.` }} />
                 
                 {/* Local Trust Block */}
                 <div className="bg-slate-900 text-white p-8 rounded-2xl shadow-inner mt-8">
                   <h4 className="text-xl font-bold text-orange-500 mb-3">Rated #1 by Bikaner Residents</h4>
                   <p className="text-slate-300 text-base">
-                    Don't risk your hard-earned money with unverified contractors from Justdial or local directories. Bikaner Builders is a registered, trusted, and highly-rated civil engineering firm in Bikaner. We guarantee 100% transparent pricing and flawless execution.
+                    Don&apos;t risk your hard-earned money with unverified contractors from Justdial or local directories. Bikaner Builders is a registered, trusted, and highly-rated civil engineering firm in Bikaner. We guarantee 100% transparent pricing and flawless execution.
                   </p>
                 </div>
               </article>
@@ -139,3 +139,4 @@ export default function SEOOptimizedServicePage() {
     </>
   );
 }
+

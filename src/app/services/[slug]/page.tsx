@@ -41,9 +41,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   return (
     <main className="min-h-screen bg-slate-50">
       {post.seo?.schemaDetails && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: post.seo.schemaDetails }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `post.seo.schemaDetails` }} />
       )}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `JSON.stringify(breadcrumbSchema)` }} />
       
       {/* TOP: Auto-Generated Hero Banner */}
       <DynamicPageHero title={post.title} image={post.featuredImage?.node?.sourceUrl} category="Services" categoryLink="/services" />
@@ -55,7 +55,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
           {/* Main Content Area */}
           <div className="lg:col-span-8">
             <article className="prose prose-lg md:prose-xl prose-slate max-w-none bg-white p-6 md:p-12 rounded-2xl shadow-xl border border-slate-100 prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-orange-500">
-              <div dangerouslySetInnerHTML={{ __html: post.content || '' }} />
+              <div dangerouslySetInnerHTML={{ __html: `post.content || '` }} />
             </article>
 
             {/* Dynamic FAQs */}

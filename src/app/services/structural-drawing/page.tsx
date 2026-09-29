@@ -44,8 +44,8 @@ export default function SEOOptimizedServicePage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `JSON.stringify(serviceSchema)` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `JSON.stringify(faqSchema)` }} />
       
       <div className="pt-20">
         
@@ -85,18 +85,18 @@ export default function SEOOptimizedServicePage() {
                 <h2 className="text-3xl font-black text-slate-900 mb-6 border-b-4 border-orange-500 pb-4 inline-block">
                   Top Structural Engineers for Safe Buildings in Bikaner
                 </h2>
-                <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: 'A beautiful house means nothing without a solid foundation. We provide detailed <strong class="text-slate-900">structural drawings and RCC designs</strong> in Bikaner. Our certified civil and structural engineers calculate load-bearing capacities, column positioning, beam sizes, and steel reinforcement details to ensure your home is earthquake-resistant and safe.' }} />
+                <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: `A beautiful house means nothing without a solid foundation. We provide detailed <strong class="text-slate-900">structural drawings and RCC designs</strong> in Bikaner. Our certified civil and structural engineers calculate load-bearing capacities, column positioning, beam sizes, and steel reinforcement details to ensure your home is earthquake-resistant and safe.` }} />
                 
                 <h3 className="text-2xl font-bold text-slate-900 mb-4">
                   Foundation Details & Soil Testing
                 </h3>
-                <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: 'Bikaner has unique sandy soil conditions. Our civil engineering contractors customize foundation depth and footing designs specifically for your plot's soil type. We provide complete working drawings for the steel binding team so there is zero wastage of expensive TMT bars.' }} />
+                <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: `Bikaner has unique sandy soil conditions. Our civil engineering contractors customize foundation depth and footing designs specifically for your plot&apos;s soil type. We provide complete working drawings for the steel binding team so there is zero wastage of expensive TMT bars.` }} />
                 
                 {/* Local Trust Block */}
                 <div className="bg-slate-900 text-white p-8 rounded-2xl shadow-inner mt-8">
                   <h4 className="text-xl font-bold text-orange-500 mb-3">Rated #1 by Bikaner Residents</h4>
                   <p className="text-slate-300 text-base">
-                    Don't risk your hard-earned money with unverified contractors from Justdial or local directories. Bikaner Builders is a registered, trusted, and highly-rated civil engineering firm in Bikaner. We guarantee 100% transparent pricing and flawless execution.
+                    Don&apos;t risk your hard-earned money with unverified contractors from Justdial or local directories. Bikaner Builders is a registered, trusted, and highly-rated civil engineering firm in Bikaner. We guarantee 100% transparent pricing and flawless execution.
                   </p>
                 </div>
               </article>
@@ -139,3 +139,4 @@ export default function SEOOptimizedServicePage() {
     </>
   );
 }
+
