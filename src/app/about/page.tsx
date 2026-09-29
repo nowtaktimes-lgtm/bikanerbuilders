@@ -1,6 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "About Us | Top Civil Contractors & Architects in Bikaner",
+  description: "Learn about Bikaner Builders, the #1 turnkey construction company in Bikaner. Led by Rishad Khan, we specialize in Vastu maps, 3D elevations, and home building.",
+};
 
 export default function AboutUs() {
   return (
@@ -9,8 +15,9 @@ export default function AboutUs() {
       {/* Hero Section */}
       <section className="relative h-[400px] md:h-[500px] flex items-center justify-center overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1541888087643-d28bc9d7fb23?q=80&w=1920&auto=format&fit=crop"
-          alt="Bikaner Construction Team"
+          src="/assets/bikaner_builders_engineering_team.jpg"
+          alt="Expert civil engineers and construction team at Bikaner Builders"
+          title="Top Building Contractors Bikaner"
           fill
           priority
           className="object-cover"
@@ -24,6 +31,16 @@ export default function AboutUs() {
           </h1>
           <p className="text-xl text-gray-200 font-medium max-w-2xl mx-auto">
             Trusted local expertise in 2D Naksha, 3D Elevation, and complete turnkey construction.
+          </p>
+        </div>
+      </section>
+
+      {/* Local Authority SEO Section */}
+      <section className="py-16 bg-slate-50">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-black text-[#0F172A] mb-6">Built for Rajasthan's Climate</h2>
+          <p className="text-lg text-slate-600 leading-relaxed">
+            As Bikaner's premier civil contractors, we understand that building in Rajasthan requires specialized knowledge of extreme temperatures and soil conditions. For over a decade, our expert architects and engineers have been delivering turnkey construction, structural drawings, and 100% Vastu-compliant homes. From strong foundations to heat-resistant 3D elevations and premium interior POP work, we use top-grade materials to ensure your home stands the test of time.
           </p>
         </div>
       </section>
@@ -69,6 +86,24 @@ export default function AboutUs() {
               </p>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Leadership E-E-A-T Block */}
+      <section className="py-12 bg-[#0b1121] border-t border-slate-800">
+        <div className="max-w-3xl mx-auto px-4">
+          <div className="bg-slate-900 rounded-2xl p-6 md:p-8 flex flex-col sm:flex-row items-center gap-6 border border-slate-800 shadow-xl hover:border-slate-700 transition-colors">
+            <div className="w-16 h-16 bg-slate-800 rounded-full flex items-center justify-center text-slate-400 flex-shrink-0 border border-slate-700">
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+            </div>
+            <div className="text-center sm:text-left">
+              <h3 className="text-xl font-bold text-white mb-1">Rishad Khan</h3>
+              <p className="text-sm text-orange-500 font-semibold mb-3 uppercase tracking-wide">Founder & Operations Head</p>
+              <p className="text-slate-400 text-sm italic">
+                "Committed to delivering 100% transparent, Vastu-compliant, and premium turnkey construction solutions across Bikaner district."
+              </p>
+            </div>
           </div>
         </div>
       </section>
