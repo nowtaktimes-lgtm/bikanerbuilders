@@ -34,7 +34,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} antialiased selection:bg-[#EA580C] selection:text-white`}>
+      <body className={`${inter.className} antialiased selection:bg-[#EA580C] selection:text-white pb-16 md:pb-0`}>
         <SettingsProvider settings={globalSettings}>
           <Header services={services} />
           <main>{children}</main>

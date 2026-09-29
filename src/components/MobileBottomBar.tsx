@@ -1,83 +1,24 @@
-'use client';
-
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
-import { useSettings } from '@/components/SettingsProvider';
 
-interface MobileBottomBarProps {
-  whatsappMessage?: string;
-}
-
-export default function MobileBottomBar({
-  whatsappMessage = 'Namaste, mujhe apne plot ka naksha / construction rate chahiye.',
-}: MobileBottomBarProps) {
-  
-  const [isVisible, setIsVisible] = useState(false);
-  const settings = useSettings();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      // Show sticky bar after scrolling past 400px
-      if (window.scrollY > 400) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    
-    // Initial check in case user refreshes midway down the page
-    handleScroll();
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-
-  const waUrl = `https://wa.me/${settings.whatsappNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(whatsappMessage)}`;
-  const telUrl = `tel:${settings.primaryPhone.startsWith('+') ? settings.primaryPhone : '+' + settings.primaryPhone.replace(/[^0-9]/g, '')}`;
-
+export default function MobileBottomBar() {
   return (
-    <div 
-      className={`fixed bottom-0 left-0 w-full z-50 flex md:hidden shadow-[0_-8px_20px_rgba(0,0,0,0.12)] bg-white pb-safe transition-transform duration-300 ease-in-out ${isVisible ? 'translate-y-0' : 'translate-y-full'}`}
-    >
-      <Link 
-        href={telUrl}
-        className="w-1/2 h-16 bg-[#0F172A] text-white flex items-center justify-center font-bold text-base tracking-wide active:bg-[#1E293B] transition-colors"
-        aria-label="Call Us Now"
-      >
-        <span className="flex items-center gap-2">
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            viewBox="0 0 24 24" 
-            fill="currentColor" 
-            className="w-5 h-5"
-          >
-            <path fillRule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clipRule="evenodd" />
-          </svg>
-          Call Now
-        </span>
+    <div className="fixed bottom-0 left-0 w-full z-50 bg-slate-900 border-t border-slate-800 flex justify-around p-3 pb-safe md:hidden">
+      <Link href="/#home" className="flex flex-col items-center gap-1 text-slate-400 hover:text-orange-500 active:text-orange-500 transition-colors">
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
+        <span className="text-[10px] font-medium tracking-wide">Home</span>
       </Link>
-
-      <Link 
-        href={waUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="w-1/2 h-16 bg-[#25D366] text-white flex items-center justify-center font-bold text-base tracking-wide active:bg-[#1DA851] transition-colors"
-        aria-label="Chat with us on WhatsApp"
-      >
-        <span className="flex items-center gap-2">
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            viewBox="0 0 24 24" 
-            fill="currentColor" 
-            className="w-6 h-6"
-          >
-            <path d="M11.97 2.005a9.962 9.962 0 00-8.528 15.11L2 22l5.023-1.328a9.964 9.964 0 104.947-18.667zM12 20a7.973 7.973 0 01-4.062-1.115l-.291-.173-3.023.794.808-2.953-.19-.3A7.95 7.95 0 014.032 12 7.977 7.977 0 1112 20zm4.242-5.467c-.232-.116-1.378-.68-1.593-.758-.215-.078-.372-.116-.528.116-.156.232-.6 .758-.737.914-.136.155-.274.175-.506.058-.232-.116-.983-.362-1.87-1.156-.69-.617-1.155-1.38-1.29-1.612-.136-.233-.014-.359.102-.475.105-.105.232-.272.348-.408.116-.136.155-.233.232-.388.077-.156.039-.292-.019-.408-.058-.116-.528-1.277-.723-1.748-.19-.46-.383-.398-.528-.406-.137-.008-.293-.008-.45-.008a.86.86 0 00-.618.291c-.215.233-.822.805-.822 1.96 0 1.155.843 2.27 1.96 2.443.116.175 1.636 2.5 3.96 3.504.552.238.983.38 1.318.487.553.176 1.057.151 1.455.092.445-.067 1.378-.563 1.572-1.107.193-.544.193-1.01.136-1.107-.058-.097-.215-.155-.447-.272z" />
-          </svg>
-          WhatsApp Us
-        </span>
+      <Link href="/#services" className="flex flex-col items-center gap-1 text-slate-400 hover:text-orange-500 active:text-orange-500 transition-colors">
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 002-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
+        <span className="text-[10px] font-medium tracking-wide">Services</span>
+      </Link>
+      <Link href="/#portfolio" className="flex flex-col items-center gap-1 text-slate-400 hover:text-orange-500 active:text-orange-500 transition-colors">
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+        <span className="text-[10px] font-medium tracking-wide">Gallery</span>
+      </Link>
+      <Link href="tel:9351132772" className="flex flex-col items-center gap-1 text-orange-500 hover:text-orange-400 active:text-orange-400 transition-colors">
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path fillRule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clipRule="evenodd" /></svg>
+        <span className="text-[10px] font-medium tracking-wide">Call</span>
       </Link>
     </div>
   );

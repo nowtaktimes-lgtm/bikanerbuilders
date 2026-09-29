@@ -6,6 +6,7 @@ import Link from 'next/link';
 import LeadModal from '@/components/LeadModal';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 import Portfolio from '@/components/Portfolio';
+import ReadMoreText from '@/components/ReadMoreText';
 import Contact from '@/components/Contact';
 import { useSettings } from '@/components/SettingsProvider';
 
@@ -19,7 +20,7 @@ export default function Home() {
       <LeadModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#0F172A]">
+      <section id="home" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#0F172A]">
         {/* LCP Optimized Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -175,9 +176,9 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-black text-[#0F172A] mb-4">Built for Bikaner: Our Proven Construction Process</h2>
             <div className="w-20 h-1.5 bg-[#EA580C] mx-auto rounded-full mb-6"></div>
-            <p className="max-w-3xl mx-auto text-lg text-slate-600">
+            <ReadMoreText className="max-w-3xl mx-auto text-lg text-slate-600">
               We understand Rajasthan's extreme weather. That's why our 4-step process ensures your home is built using climate-resistant materials, ensuring durability against intense heat and sandstorms.
-            </p>
+            </ReadMoreText>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -215,9 +216,9 @@ export default function Home() {
             <div className="w-full md:w-1/2">
               <h2 className="text-3xl md:text-5xl font-black mb-4">Expertise You Can Trust</h2>
               <h3 className="text-xl text-orange-500 font-bold mb-6">Led by Expert Civil Engineers</h3>
-              <p className="text-lg text-slate-300 leading-relaxed mb-8">
+              <ReadMoreText className="text-lg text-slate-300 leading-relaxed mb-8">
                 With over a decade of experience as top civil contractors and residential & commercial builders in Bikaner, our team strictly adheres to modern structural engineering codes. Led by top architects and interior designers, we promise 100% transparency in material usage and project timelines, ensuring your investment is completely secure.
-              </p>
+              </ReadMoreText>
               <ul className="space-y-4">
                 {[
                   "10+ Years Local Experience",
@@ -333,5 +334,6 @@ export default function Home() {
     </>
   );
 }
+
 
 
