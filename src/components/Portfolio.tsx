@@ -26,9 +26,11 @@ const CATEGORIES: Category[] = [
 const PROJECTS: Project[] = [
   {
     id: '1',
-    title: 'Premium Villa in Nokha',
+    title: 'Premium Villa in JNV Colony',
     category: '3D Elevations',
     imageUrl: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop',
+    alt: 'Premium 3D front elevation design for residential villa in JNV Colony, Bikaner',
+    imageTitle: '3D Elevation Architects in JNV Colony Bikaner',
   },
   {
     id: '2',
