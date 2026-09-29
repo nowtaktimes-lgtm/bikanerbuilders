@@ -97,8 +97,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       }
 
       // 4. General Pages -> /[slug] (Priority 0.6)
-      // Exclude static pages that already exist in staticRoutes
-      const existingSlugs = ['about', 'contact', 'portfolio', 'cost-estimator', 'locations', 'privacy-policy', 'terms-conditions'];
+      // Exclude static pages that already exist in staticRoutes and internal WP settings
+      const existingSlugs = [
+        'about', 'contact', 'portfolio', 'cost-estimator', 'locations', 'privacy-policy', 'terms-conditions',
+        'global-site-settings', 'header-settings', 'footer-settings'
+      ];
       if (data.pages?.nodes) {
         data.pages.nodes.forEach((page) => {
           if (page.slug && !existingSlugs.includes(page.slug)) {
