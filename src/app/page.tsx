@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import LeadModal from '@/components/LeadModal';
+import QuoteModal from '@/components/QuoteModal';
 import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 import Portfolio from '@/components/Portfolio';
 import ReadMoreText from '@/components/ReadMoreText';
@@ -17,7 +17,7 @@ export default function Home() {
   return (
     <>
       {/* Lead Modal */}
-      <LeadModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <QuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
 
       {/* Hero Section */}
       <section id="home" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#0F172A]">
@@ -351,6 +351,7 @@ export default function Home() {
     </>
   );
 }
+
 
 
 

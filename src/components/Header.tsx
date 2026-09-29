@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import QuoteModal from './QuoteModal';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useSettings } from '@/components/SettingsProvider';
@@ -14,6 +15,7 @@ export default function Header({ services }: HeaderProps) {
   const settings = useSettings();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isQuoteModalOpen, setQuoteModalOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
 
   useEffect(() => {
@@ -25,6 +27,7 @@ export default function Header({ services }: HeaderProps) {
   }, []);
 
   return (
+    <>
     <header 
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'
@@ -90,9 +93,9 @@ export default function Header({ services }: HeaderProps) {
           </nav>
 
           <div className="hidden lg:block">
-            <Link href={settings?.headerButtonLink || '#contact'} className="bg-[#EA580C] hover:bg-[#F97316] text-white px-6 py-2.5 rounded-full font-bold text-sm transition-all shadow-[0_4px_14px_rgba(234,88,12,0.4)] hover:shadow-[0_6px_20px_rgba(234,88,12,0.6)] hover:-translate-y-0.5">
+            <button onClick={() => setQuoteModalOpen(true)} className="bg-[#EA580C] hover:bg-[#F97316] text-white px-6 py-2.5 rounded-full font-bold text-sm transition-all shadow-[0_4px_14px_rgba(234,88,12,0.4)] hover:shadow-[0_6px_20px_rgba(234,88,12,0.6)] hover:-translate-y-0.5">
               {settings?.headerButtonText || 'Get Quote'}
-            </Link>
+            </button>
           </div>
 
           <button 
@@ -132,11 +135,14 @@ export default function Header({ services }: HeaderProps) {
           <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#EA580C] transition-colors">About Us</Link>
           <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="hover:text-[#EA580C] transition-colors">Contact</Link>
           
-          <Link href={settings?.headerButtonLink || '#contact'} onClick={() => setMobileMenuOpen(false)} className="mt-8 bg-[#EA580C] text-white px-8 py-4 rounded-xl text-lg font-black w-full max-w-[200px] text-center">
-            {settings?.headerButtonText || 'Get Quote Now'}
-          </Link>
+          <button onClick={() => { setMobileMenuOpen(false); setQuoteModalOpen(true); }} className="mt-8 bg-[#EA580C] text-white px-8 py-4 rounded-xl text-lg font-black w-full max-w-[200px] text-center">
+              {settings?.headerButtonText || 'Get Quote Now'}
+            </button>
         </nav>
       </div>
     </header>
+      <QuoteModal isOpen={isQuoteModalOpen} onClose={() => setQuoteModalOpen(false)} />
+    </>
   );
 }
+
