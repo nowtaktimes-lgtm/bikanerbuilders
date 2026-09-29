@@ -82,6 +82,11 @@ export default function SEOOptimizedServicePage() {
             {/* Main Content */}
             <div className="lg:col-span-8">
               <article className="prose prose-lg md:prose-xl prose-slate max-w-none bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-slate-100">
+
+                <div className="relative w-full h-[400px] mb-10 rounded-2xl overflow-hidden shadow-lg border border-slate-200">
+                  <Image src="/assets/seo_2d_naksha.jpg" alt="Professional 2D Vastu Floor Plan Blueprint" fill className="object-cover hover:scale-105 transition-transform duration-700" />
+                </div>
+
                 <h2 className="text-3xl font-black text-slate-900 mb-6 border-b-4 border-orange-500 pb-4 inline-block">
                   Best Ghar Ka Naksha & Floor Plan Creators in Bikaner
                 </h2>

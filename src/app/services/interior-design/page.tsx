@@ -82,6 +82,11 @@ export default function SEOOptimizedServicePage() {
             {/* Main Content */}
             <div className="lg:col-span-8">
               <article className="prose prose-lg md:prose-xl prose-slate max-w-none bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-slate-100">
+
+                <div className="relative w-full h-[400px] mb-10 rounded-2xl overflow-hidden shadow-lg border border-slate-200">
+                  <Image src="/assets/seo_interior.jpg" alt="Luxury POP False Ceiling and Interior Design" fill className="object-cover hover:scale-105 transition-transform duration-700" />
+                </div>
+
                 <h2 className="text-3xl font-black text-slate-900 mb-6 border-b-4 border-orange-500 pb-4 inline-block">
                   Transform Your Home with Top Interior Decorators in Bikaner
                 </h2>
