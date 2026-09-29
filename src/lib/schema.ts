@@ -4,7 +4,15 @@ export function generateLocationSchema(locationData: { title?: string; locationD
     "@type": "Service",
     "provider": {
       "@type": "LocalBusiness",
-      "name": "Bikaner Builders"
+      "name": "Bikaner Builders",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Shop No 04, Opp Govt School, Napasar Rd, Ridmalsar Sipahiyan",
+        "addressLocality": "Bikaner",
+        "addressRegion": "Rajasthan",
+        "postalCode": "334022",
+        "addressCountry": "IN"
+      }
     },
     "areaServed": {
       "@type": "Place",
@@ -25,7 +33,15 @@ export function generateServiceSchema(serviceData: { title?: string; excerpt?: s
     "name": serviceData?.title || "Construction Service",
     "provider": {
       "@type": "LocalBusiness",
-      "name": "Bikaner Builders"
+      "name": "Bikaner Builders",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Shop No 04, Opp Govt School, Napasar Rd, Ridmalsar Sipahiyan",
+        "addressLocality": "Bikaner",
+        "addressRegion": "Rajasthan",
+        "postalCode": "334022",
+        "addressCountry": "IN"
+      }
     },
     "description": serviceData?.excerpt?.replace(/(<([^>]+)>)/gi, "") || serviceData?.content?.replace(/(<([^>]+)>)/gi, "").substring(0, 160) || "Premium construction services.",
     "url": fullUrl
@@ -40,12 +56,47 @@ export function generateArticleSchema(postData: { title?: string; date?: string 
     "datePublished": postData?.date || new Date().toISOString(),
     "author": {
       "@type": "Organization",
-      "name": "Bikaner Builders"
+      "name": "Bikaner Builders",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Shop No 04, Opp Govt School, Napasar Rd, Ridmalsar Sipahiyan",
+        "addressLocality": "Bikaner",
+        "addressRegion": "Rajasthan",
+        "postalCode": "334022",
+        "addressCountry": "IN"
+      }
     },
     "publisher": {
       "@type": "Organization",
-      "name": "Bikaner Builders"
+      "name": "Bikaner Builders",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Shop No 04, Opp Govt School, Napasar Rd, Ridmalsar Sipahiyan",
+        "addressLocality": "Bikaner",
+        "addressRegion": "Rajasthan",
+        "postalCode": "334022",
+        "addressCountry": "IN"
+      }
     },
     "url": fullUrl
   };
 }
+
+export function generateLocalBusinessSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Bikaner Builders",
+    "image": "https://www.bikanerbuilders.in/assets/bikaner_builders_engineering_team.jpg",
+    "telephone": "+919351132772",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Shop No 04, Opp Govt School, Napasar Rd, Ridmalsar Sipahiyan",
+      "addressLocality": "Bikaner",
+      "addressRegion": "Rajasthan",
+      "postalCode": "334022",
+      "addressCountry": "IN"
+    }
+  };
+}
+

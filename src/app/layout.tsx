@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import { SettingsProvider } from "@/components/SettingsProvider";
+import { generateLocalBusinessSchema } from '@/lib/schema';
 import { getGlobalSettings, getRecentLocations, getAllServices } from "@/lib/api";
 
 const inter = Inter({ subsets: ["latin"], display: 'swap' });
@@ -34,6 +35,9 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessSchema()) }} />
+      </head>
       <body className={`${inter.className} antialiased selection:bg-[#EA580C] selection:text-white pb-16 md:pb-0`}>
         <SettingsProvider settings={globalSettings}>
           <Header services={services} />
@@ -45,3 +49,4 @@ export default async function RootLayout({
     </html>
   );
 }
+

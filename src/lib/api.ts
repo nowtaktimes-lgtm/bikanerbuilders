@@ -46,7 +46,7 @@ export async function getGlobalSettings(): Promise<GlobalSettings> {
     primaryPhone: "919351132772",
     whatsappNumber: "919351132772",
     emailAddress: "info@bikanerbuilders.in",
-    officeAddress: "Bikaner Builders HQ, Karni Industrial Area, Bikaner, Rajasthan 334004",
+    officeAddress: "Shop No 04, Opp Govt School,\nNapasar Rd, Ridmalsar Sipahiyan,\nBikaner, Rajasthan 334022",
     siteLogo: "",
     headerSiteTitle: "Bikaner Builders",
     headerButtonText: "Get Quote",
