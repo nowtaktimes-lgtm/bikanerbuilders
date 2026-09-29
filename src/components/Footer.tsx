@@ -136,7 +136,7 @@ export default function Footer({ locations = [] }: FooterProps) {
                 {locations.map((loc, index) => (
                   <Link 
                     key={`dyn-${index}`} 
-                    href={loc.uri || '#'}
+                    href={`/locations/${loc.slug}`}
                     className="bg-white/10 hover:bg-[#EA580C] text-white px-5 py-2.5 rounded-full text-sm font-bold tracking-wide transition-all border border-white/5 hover:border-transparent"
                   >
                     {loc.title}
