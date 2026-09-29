@@ -20,6 +20,10 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   title: "Top Builders in Bikaner | Free Site Visit & Vastu Map | 9351132772",
   description: "Bikaner me ghar banwana hai? Get 100% Vastu-compliant 3D designs & turnkey construction with a transparent BOQ. Call now to book your FREE site inspection!",
+  icons: {
+    icon: '/icon.svg',
+    apple: '/icon.svg',
+  },
 };
 
 export default async function RootLayout({
@@ -49,4 +53,5 @@ export default async function RootLayout({
     </html>
   );
 }
+
 
