@@ -7,6 +7,8 @@ import Link from 'next/link';
 type Category = 'All' | '3D Elevations' | '2D Floor Plans' | 'Completed Sites' | 'Interiors';
 
 interface Project {
+  alt?: string;
+  imageTitle?: string;
   id: string;
   title: string;
   category: Category;
@@ -39,6 +41,8 @@ const PROJECTS: Project[] = [
     title: 'Luxury Gypsum Ceiling',
     category: 'Interiors',
     imageUrl: '/assets/luxury_gypsum_ceiling.jpg',
+    alt: 'Luxury POP false ceiling and Gypsum interior design in Bikaner',
+    imageTitle: 'Best Interior Designers Bikaner',
   },
   {
     id: '4',
@@ -57,6 +61,8 @@ const PROJECTS: Project[] = [
     title: 'Modular Kitchen Setup',
     category: 'Interiors',
     imageUrl: 'https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=800&auto=format&fit=crop',
+    alt: 'Premium modular kitchen setup by expert residential builders in Bikaner',
+    imageTitle: 'Modular Kitchen Contractors Bikaner',
   },
 ];
 
@@ -108,7 +114,8 @@ export default function Portfolio() {
               >
                 <Image
                   src={project.imageUrl}
-                  alt={project.title}
+                  alt={project.alt || project.title}
+                  title={project.imageTitle}
                   fill
                   loading="lazy"
                   className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
@@ -144,3 +151,4 @@ export default function Portfolio() {
     </section>
   );
 }
+

@@ -17,8 +17,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Bikaner Builders - Top Construction & Architecture in Bikaner",
-  description: "Bikaner's leading construction company offering 2D Naksha, 3D Front Elevation, and Turnkey Construction services.",
+  title: "Top Builders in Bikaner | Free Site Visit & Vastu Map | 9351132772",
+  description: "Bikaner me ghar banwana hai? Get 100% Vastu-compliant 3D designs & turnkey construction with a transparent BOQ. Call now to book your FREE site inspection!",
 };
 
 export default async function RootLayout({

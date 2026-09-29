@@ -43,8 +43,8 @@ export interface GlobalSettings {
 
 export async function getGlobalSettings(): Promise<GlobalSettings> {
   return {
-    primaryPhone: "91XXXXXXXXXX",
-    whatsappNumber: "91XXXXXXXXXX",
+    primaryPhone: "919351132772",
+    whatsappNumber: "919351132772",
     emailAddress: "info@bikanerbuilders.in",
     officeAddress: "Bikaner Builders HQ, Karni Industrial Area, Bikaner, Rajasthan 334004",
     siteLogo: "",

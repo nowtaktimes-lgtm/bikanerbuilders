@@ -24,7 +24,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <Image
             src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1920&auto=format&fit=crop"
-            alt="Modern home construction in Bikaner"
+            alt="Premium turnkey residential construction project by Bikaner Builders in Bikaner" title="Top Civil Contractors in Bikaner"
             fill
             priority
             quality={85}
@@ -90,7 +90,7 @@ export default function Home() {
               <div className="relative h-56 overflow-hidden">
                 <Image 
                   src="/assets/icon_architecture_1789213681908.png"
-                  alt="2D Vastu Map" 
+                  alt="100% Vastu compliant 2D floor plan designed by top architects in Bikaner" title="Vastu Compliant House Map Bikaner" 
                   fill 
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -108,7 +108,7 @@ export default function Home() {
               <div className="relative h-56 overflow-hidden">
                 <Image 
                   src="/assets/icon_3d_house_1789213697503.png"
-                  alt="3D Front Elevation" 
+                  alt="Modern 3D front elevation design for residential villa in Bikaner" title="3D House Elevation Bikaner" 
                   fill 
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -126,7 +126,7 @@ export default function Home() {
               <div className="relative h-56 overflow-hidden">
                 <Image 
                   src="/assets/why_choose_us_img_1789213667904.png"
-                  alt="Turnkey Construction" 
+                  alt="Complete hassle-free turnkey home construction process in Bikaner" title="Turnkey Home Builders" 
                   fill 
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -205,7 +205,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="w-full md:w-1/2 relative h-[400px] rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-800">
-              <Image src="/assets/bikaner_builders_engineering_team.jpg" alt="Bikaner Builders Expert Engineering Team" fill className="object-cover" />
+              <Image src="/assets/bikaner_builders_engineering_team.jpg" alt="Expert civil engineering and architecture team at Bikaner Builders" title="Certified Civil Engineers Bikaner" fill className="object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#111827] to-transparent opacity-80"></div>
               <div className="absolute bottom-6 left-6">
                 <p className="text-orange-500 font-bold uppercase tracking-wider text-sm mb-1">CERTIFIED EXPERTS</p>
@@ -333,3 +333,4 @@ export default function Home() {
     </>
   );
 }
+
