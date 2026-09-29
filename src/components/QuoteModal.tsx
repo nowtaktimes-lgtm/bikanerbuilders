@@ -126,8 +126,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
                 <option value="2D Naksha">2D Naksha</option>
                 <option value="3D Elevation">3D Elevation</option>
                 <option value="Turnkey Construction">Turnkey Construction</option>
-                <option value="Interior/POP">Interior/POP</option>
-                <option value="Other">Other</option>
+                <option value="False Ceiling / POP / Other">False Ceiling / POP / Other</option>
               </select>
             </div>
 
