@@ -83,10 +83,10 @@ export default function Home() {
             <div className="w-20 h-1.5 bg-[#EA580C] mx-auto rounded-full"></div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-4 pb-4 md:grid md:grid-cols-3 md:overflow-visible [&::-webkit-scrollbar]:hidden">
             
             {/* Service 1 */}
-            <Link href="/services/2d-naksha" className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300">
+            <Link href="/services/2d-naksha" className="min-w-[85vw] md:min-w-0 snap-center group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300">
               <div className="relative h-56 overflow-hidden">
                 <Image 
                   src="/assets/icon_architecture_1789213681908.png"
@@ -104,7 +104,7 @@ export default function Home() {
             </Link>
 
             {/* Service 2 */}
-            <Link href="/services/3d-elevation" className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300">
+            <Link href="/services/3d-elevation" className="min-w-[85vw] md:min-w-0 snap-center group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300">
               <div className="relative h-56 overflow-hidden">
                 <Image 
                   src="/assets/icon_3d_house_1789213697503.png"
@@ -122,7 +122,7 @@ export default function Home() {
             </Link>
 
             {/* Service 3 */}
-            <Link href="/services/turnkey-construction" className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300">
+            <Link href="/services/turnkey-construction" className="min-w-[85vw] md:min-w-0 snap-center group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300">
               <div className="relative h-56 overflow-hidden">
                 <Image 
                   src="/assets/why_choose_us_img_1789213667904.png"
@@ -242,13 +242,13 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-black text-[#0F172A] mb-4">What Bikaner Says About Us</h2>
             <div className="w-20 h-1.5 bg-[#EA580C] mx-auto rounded-full"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-4 pb-4 md:grid md:grid-cols-3 md:overflow-visible [&::-webkit-scrollbar]:hidden">
             {[
               { name: "Rajesh Sharma, JNV Colony", review: "Bikaner Builders delivered my home exactly on time. Their material quality is top-notch and the 3D design matching was 100% accurate." },
               { name: "Sunita Jain, Gangashahar", review: "Very professional team. They handled everything from Naksha to final paint. The Vastu compliance really brought peace to our new house." },
               { name: "Vikram Singh, Nokha", review: "Transparent pricing with no hidden surprises. Aahan and his team are the most reliable contractors I've worked with in Rajasthan." }
             ].map((testimonial, idx) => (
-              <div key={idx} className="bg-slate-50 p-8 rounded-3xl border border-slate-100 shadow-sm relative">
+              <div key={idx} className="min-w-[85vw] md:min-w-0 snap-center bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100 shadow-sm relative">
                 <div className="flex gap-1 mb-4 text-orange-500">
                   {[...Array(5)].map((_, i) => (
                     <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
@@ -276,13 +276,13 @@ export default function Home() {
               { q: "Do you handle material and labor both?", a: "Absolutely. We offer comprehensive turnkey construction solutions. From foundation digging to the final coat of paint, we manage all labor, material sourcing, and project supervision." }
             ].map((faq, idx) => (
               <details key={idx} className="group bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
-                <summary className="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-lg text-slate-900 group-open:text-orange-600 transition-colors">
+                <summary className="flex justify-between items-center font-bold cursor-pointer list-none p-4 md:p-6 text-sm md:text-base text-slate-900 group-open:text-orange-600 transition-colors">
                   {faq.q}
                   <span className="transition group-open:rotate-180">
                     <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
                   </span>
                 </summary>
-                <div className="text-slate-600 p-6 pt-0 leading-relaxed">
+                <div className="text-slate-600 p-4 md:p-6 pt-0 leading-relaxed text-xs md:text-sm">
                   {faq.a}
                 </div>
               </details>
@@ -333,4 +333,5 @@ export default function Home() {
     </>
   );
 }
+
 
