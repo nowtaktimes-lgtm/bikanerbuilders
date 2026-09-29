@@ -52,7 +52,7 @@ export default function SEOOptimizedServicePage() {
         {/* SEO Hero Section */}
         <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-slate-900">
           <Image
-            src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&w=1920&auto=format&fit=crop"
+            src="/assets/seo_interior.jpg"
             alt="Luxury POP & Interior Designers in Bikaner - Bikaner Builders"
             title="Luxury POP & Interior Designers in Bikaner"
             fill

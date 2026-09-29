@@ -52,7 +52,7 @@ export default function SEOOptimizedServicePage() {
         {/* SEO Hero Section */}
         <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-slate-900">
           <Image
-            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1920&auto=format&fit=crop"
+            src="/assets/seo_2d_naksha.jpg"
             alt="100% Vastu-Compliant 2D Naksha in Bikaner - Bikaner Builders"
             title="100% Vastu-Compliant 2D Naksha in Bikaner"
             fill

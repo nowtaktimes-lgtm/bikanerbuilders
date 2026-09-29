@@ -52,7 +52,7 @@ export default function SEOOptimizedServicePage() {
         {/* SEO Hero Section */}
         <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-slate-900">
           <Image
-            src="https://images.unsplash.com/photo-1541888087643-d28bc9d7fb23?q=80&w=1920&auto=format&fit=crop"
+            src="/assets/seo_turnkey.jpg"
             alt="Complete Turnkey Construction Services in Bikaner - Bikaner Builders"
             title="Complete Turnkey Construction Services in Bikaner"
             fill

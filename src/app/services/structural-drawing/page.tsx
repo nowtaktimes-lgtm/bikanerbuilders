@@ -52,7 +52,7 @@ export default function SEOOptimizedServicePage() {
         {/* SEO Hero Section */}
         <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-slate-900">
           <Image
-            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1920&auto=format&fit=crop"
+            src="/assets/seo_structural.jpg"
             alt="Expert Structural Engineering & Drawings in Bikaner - Bikaner Builders"
             title="Expert Structural Engineering & Drawings in Bikaner"
             fill
