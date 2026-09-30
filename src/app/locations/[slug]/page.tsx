@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     if (description.length > 150) description = description.substring(0, 147) + '...';
   }
   
-  const imageUrl = post.featuredImage?.node?.sourceUrl || 'https://bikanerbuilders.in/assets/og_bikaner_builders_v2.jpg';
+  const imageUrl = post.featuredImage?.node?.sourceUrl || 'https://www.bikanerbuilders.in/_next/image?url=%2Fassets%2Fog_bikaner_builders_v2.jpg&w=1200&q=75';
 
   return {
     title,

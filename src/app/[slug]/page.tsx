@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description = `Explore ${post.title} at Bikaner Builders, the top construction and architectural firm in Bikaner.`;
   }
   
-  const imageUrl = post.featuredImage?.node?.sourceUrl || 'https://bikanerbuilders.in/assets/og_bikaner_builders_v2.jpg';
+  const imageUrl = post.featuredImage?.node?.sourceUrl || 'https://www.bikanerbuilders.in/_next/image?url=%2Fassets%2Fog_bikaner_builders_v2.jpg&w=1200&q=75';
 
   return {
     title,
