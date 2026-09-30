@@ -23,6 +23,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
   const resolvedParams = await params;
   const post = await getLocationBySlug(resolvedParams.slug);
   const locations = await getAllLocations();
+  const formattedLocationName = resolvedParams.slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
 
   if (!post) {
     notFound();
@@ -34,7 +35,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.bikanerbuilders.in" },
       { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://www.bikanerbuilders.in/locations" },
-      { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://www.bikanerbuilders.in/locations/${resolvedParams.slug}` }
+      { "@type": "ListItem", "position": 3, "name": formattedLocationName, "item": `https://www.bikanerbuilders.in/locations/${resolvedParams.slug}` }
     ]
   };
 
@@ -57,9 +58,25 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
             <article className="prose prose-lg md:prose-xl prose-slate max-w-none bg-white p-6 md:p-12 rounded-2xl shadow-xl border border-slate-100 prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-orange-500">
               <div dangerouslySetInnerHTML={{ __html: post.content || '' }} />
             </article>
+            {/* E-E-A-T Block */}
+            <div className="mt-8 bg-gradient-to-br from-slate-900 to-slate-800 p-8 rounded-2xl shadow-xl text-white">
+              <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
+                <div className="w-20 h-20 bg-slate-800 rounded-full flex items-center justify-center text-slate-400 flex-shrink-0 border-2 border-orange-500 shadow-[0_0_15px_rgba(234,88,12,0.5)]">
+                  <svg className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                </div>
+                <div className="text-center md:text-left">
+                  <h3 className="text-2xl font-bold mb-2">Why {formattedLocationName} Residents Choose Us</h3>
+                  <p className="text-slate-300 mb-3 text-sm leading-relaxed">
+                    "As a local engineering team, we understand the specific soil conditions and climate challenges in {formattedLocationName}. We've built our reputation on 100% transparent pricing and flawless execution. When you work with us, you're working directly with the experts."
+                  </p>
+                  <p className="font-bold text-orange-400 text-sm">— Rishad Khan, Founder & Head Civil Engineer</p>
+                </div>
+              </div>
+            </div>
+
 
             {/* Dynamic FAQs */}
-            <DynamicFAQ pageType="location" title={post.title} />
+            <DynamicFAQ pageType="location" title={formattedLocationName} />
 
             {/* Automated SEO Enhancements: Local Grids */}
             {locations && locations.length > 0 && (
@@ -79,8 +96,8 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
           {/* Sticky Sidebar Widget */}
           <div className="lg:col-span-4">
             <div className="sticky top-24 bg-white p-8 rounded-2xl shadow-xl border border-slate-100">
-              <h3 className="text-xl font-bold text-slate-900 mb-4">Start Your Project in {post.title}</h3>
-              <p className="text-slate-600 mb-6 text-sm">Need construction or architectural services in {post.title}? Our experts are here to assist you.</p>
+              <h3 className="text-xl font-bold text-slate-900 mb-4">Start Your Project in {formattedLocationName}</h3>
+              <p className="text-slate-600 mb-6 text-sm">Need construction or architectural services in {formattedLocationName}? Our experts are here to assist you.</p>
               
               <Link href="https://wa.me/919351132772" target="_blank" className="block w-full bg-[#25D366] hover:bg-[#1fae54] text-white text-center font-bold py-3 px-4 rounded-xl mb-4 transition-colors">
                 Chat on WhatsApp
