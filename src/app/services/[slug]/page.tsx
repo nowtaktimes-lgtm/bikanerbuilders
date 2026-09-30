@@ -13,9 +13,41 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return { title: 'Not Found' };
   }
   
+  const title = post.seo?.title || post.title;
+  let description = post.seo?.metaDesc || '';
+  if (!description) {
+    // Basic fallback description
+    description = `Premium construction and architectural services in ${post.title}. 100% Vastu-compliant designs and turnkey solutions by Bikaner Builders.`;
+    if (description.length > 150) description = description.substring(0, 147) + '...';
+  }
+  
+  const imageUrl = post.featuredImage?.node?.sourceUrl || 'https://bikanerbuilders.in/assets/og_default_bikaner_builders.jpg';
+
   return {
-    title: post.seo?.title || post.title,
-    description: post.seo?.metaDesc || '',
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `https://bikanerbuilders.in/services/${resolvedParams.slug}`,
+      siteName: 'Bikaner Builders',
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+      locale: 'en_US',
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [imageUrl],
+    },
   };
 }
 
