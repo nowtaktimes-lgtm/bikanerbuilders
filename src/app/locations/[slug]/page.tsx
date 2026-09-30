@@ -5,6 +5,7 @@ import BottomCTA from '@/components/BottomCTA';
 import DynamicFAQ from '@/components/DynamicFAQ';
 import Link from 'next/link';
 import { formatLocationName } from '@/lib/formatters';
+import { getFounderQuote } from '@/lib/quotes';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
@@ -100,7 +101,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
                 <div className="text-center md:text-left">
                   <h2 className="text-2xl font-bold mb-2">Why {formattedLocationName} Residents Choose Us</h2>
                   <p className="text-slate-300 mb-3 text-sm leading-relaxed">
-                    "As a local engineering team, we understand the specific soil conditions and climate challenges in {formattedLocationName}. We've built our reputation on 100% transparent pricing and flawless execution. When you work with us, you're working directly with the experts."
+                    "{getFounderQuote(resolvedParams.slug, formattedLocationName)}"
                   </p>
                   <p className="font-bold text-orange-400 text-sm">— Rishad Khan, Founder & Head Civil Engineer</p>
                 </div>
