@@ -3,12 +3,13 @@ import Link from 'next/link';
 
 interface DynamicPageHeroProps {
   title: string;
+  breadcrumbTitle?: string;
   image?: string;
   category: string;
   categoryLink: string;
 }
 
-export default function DynamicPageHero({ title, image, category, categoryLink }: DynamicPageHeroProps) {
+export default function DynamicPageHero({ title, breadcrumbTitle, image, category, categoryLink }: DynamicPageHeroProps) {
   return (
     <section className="relative bg-slate-900 pt-32 pb-32 md:pt-40 md:pb-40 overflow-hidden">
       {image && (
@@ -39,7 +40,7 @@ export default function DynamicPageHero({ title, image, category, categoryLink }
           <span className="text-slate-500">/</span>
           <Link href={categoryLink} className="hover:text-white transition-colors">{category}</Link>
           <span className="text-slate-500">/</span>
-          <span className="text-orange-400">{title}</span>
+          <span className="text-orange-400">{breadcrumbTitle || title}</span>
         </nav>
 
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 tracking-tight drop-shadow-xl">

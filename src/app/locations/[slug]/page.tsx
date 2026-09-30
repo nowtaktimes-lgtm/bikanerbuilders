@@ -47,7 +47,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       
       {/* TOP: Auto-Generated Hero Banner */}
-      <DynamicPageHero title={post.title} image={post.featuredImage?.node?.sourceUrl} category="Locations" categoryLink="/locations" />
+      <DynamicPageHero title={post.title} breadcrumbTitle={formattedLocationName} image={post.featuredImage?.node?.sourceUrl} category="Locations" categoryLink="/locations" />
       
       {/* MIDDLE: Modern Overlap & Grid Split */}
       <div className="container mx-auto px-4 -mt-16 md:-mt-24 relative z-10 pb-16">
