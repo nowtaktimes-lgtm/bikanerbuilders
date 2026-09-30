@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: 'Bikaner Builders',
     images: [
       {
-        url: '/assets/og_default_bikaner_builders.jpg',
+        url: '/assets/og_bikaner_builders_v2.jpg',
         width: 1200,
         height: 630,
         alt: 'Premium Villa in Bikaner by Bikaner Builders',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Top Builders in Bikaner | Free Site Visit & Vastu Map',
     description: 'Get 100% Vastu-compliant 3D designs & turnkey construction.',
-    images: ['/assets/og_default_bikaner_builders.jpg'],
+    images: ['/assets/og_bikaner_builders_v2.jpg'],
   },
 };
 
