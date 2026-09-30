@@ -55,8 +55,8 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
           
           {/* Main Content Area */}
           <div className="lg:col-span-8">
-            <article className="prose prose-lg md:prose-xl prose-slate max-w-none bg-white p-6 md:p-12 rounded-2xl shadow-xl border border-slate-100 prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-orange-500">
-              <div dangerouslySetInnerHTML={{ __html: post.content || '' }} />
+            <article className="prose max-w-none bg-white p-6 md:p-12 rounded-2xl shadow-xl border border-slate-100 prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-orange-500">
+              <div className="text-[17px] leading-[1.8] text-slate-700 [&>p]:mb-5 [&>p:last-child]:mb-0" dangerouslySetInnerHTML={{ __html: post.content || '' }} />
             </article>
             {/* E-E-A-T Block */}
             <div className="mt-8 bg-gradient-to-br from-slate-900 to-slate-800 p-8 rounded-2xl shadow-xl text-white">
