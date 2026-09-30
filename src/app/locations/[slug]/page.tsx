@@ -119,7 +119,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
                 <div className="flex flex-wrap gap-3">
                   {locations.filter(loc => loc.slug !== resolvedParams.slug).map((loc, idx) => (
                     <Link key={idx} href={`/locations/${loc.slug}`} className="px-5 py-2.5 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-600 font-medium rounded-full border border-slate-200 hover:border-orange-200 transition-colors text-sm">
-                      {loc.title}
+                      {formatLocationName(loc.slug)}
                     </Link>
                   ))}
                 </div>
