@@ -39,10 +39,13 @@ export default async function LocationsPage() {
       {/* Grid Layout */}
       <section className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-          {locations.map((loc, index) => (
+          {locations.map((loc, index) => {
+          const slugStr = (loc as any).slug || loc.title.toLowerCase().replace(/\s+/g, '-');
+          const shortName = slugStr.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+          return (
             <Link 
               key={index}
-              href={loc.uri || '#'}
+              href={`/locations/${slugStr}`}
               className="group block bg-[#0F172A] border border-white/5 rounded-2xl p-6 hover:bg-[#1E293B] hover:border-[#EA580C]/50 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
               <div className="flex items-center justify-between">
@@ -55,7 +58,7 @@ export default async function LocationsPage() {
                   </div>
                   <div>
                     <h2 className="text-xl font-bold text-white group-hover:text-[#EA580C] transition-colors duration-300">
-                      {loc.title}
+                      {shortName}
                     </h2>
                     <p className="text-sm text-slate-500 mt-1">Construction Services</p>
                   </div>
@@ -65,7 +68,7 @@ export default async function LocationsPage() {
                 </div>
               </div>
             </Link>
-          ))}
+          );})}
         </div>
       </section>
     </div>

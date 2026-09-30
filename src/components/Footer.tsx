@@ -133,15 +133,19 @@ export default function Footer({ locations = [] }: FooterProps) {
               </div>
               
               <div className="flex flex-wrap justify-center gap-3 mb-10">
-                {locations.map((loc, index) => (
-                  <Link 
-                    key={`dyn-${index}`} 
-                    href={`/locations/${loc.slug || loc.title.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="bg-white/10 hover:bg-[#EA580C] text-white px-5 py-2.5 rounded-full text-sm font-bold tracking-wide transition-all border border-white/5 hover:border-transparent"
-                  >
-                    {loc.title}
-                  </Link>
-                ))}
+                {locations.map((loc, index) => {
+                  const slugStr = loc.slug || loc.title.toLowerCase().replace(/\s+/g, '-');
+                  const shortName = slugStr.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+                  return (
+                    <Link 
+                      key={`dyn-${index}`} 
+                      href={`/locations/${slugStr}`}
+                      className="bg-white/10 hover:bg-[#EA580C] text-white px-5 py-2.5 rounded-full text-sm font-bold tracking-wide transition-all border border-white/5 hover:border-transparent"
+                    >
+                      {shortName}
+                    </Link>
+                  );
+                })}
               </div>
             </>
           )}
