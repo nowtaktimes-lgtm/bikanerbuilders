@@ -1,6 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { formatLocationName } from '@/lib/formatters';
 import { getAllLocations } from '@/lib/api';
 
 export const metadata: Metadata = {
@@ -41,7 +42,7 @@ export default async function LocationsPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {locations.map((loc, index) => {
           const slugStr = (loc as any).slug || loc.title.toLowerCase().replace(/\s+/g, '-');
-          const shortName = slugStr.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+          const shortName = formatLocationName(slugStr);
           return (
             <Link 
               key={index}

@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { formatLocationName } from '@/lib/formatters';
 import Image from 'next/image';
 import { useSettings } from '@/components/SettingsProvider';
 import { WpNode } from '@/lib/api';
@@ -135,7 +136,7 @@ export default function Footer({ locations = [] }: FooterProps) {
               <div className="flex flex-wrap justify-center gap-3 mb-10">
                 {locations.map((loc, index) => {
                   const slugStr = loc.slug || loc.title.toLowerCase().replace(/\s+/g, '-');
-                  const shortName = slugStr.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+                  const shortName = formatLocationName(slugStr);
                   return (
                     <Link 
                       key={`dyn-${index}`} 

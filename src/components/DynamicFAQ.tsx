@@ -128,12 +128,12 @@ export default function DynamicFAQ({ title, pageType }: DynamicFAQProps) {
 
   return (
     <div className="mt-12">
-      <h3 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h3>
+      <h2 className="text-2xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h2>
       <div className="space-y-4">
         {faqs.map((faq, idx) => (
           <details key={idx} className="group bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
             <summary className="flex justify-between items-center font-bold cursor-pointer list-none p-4 md:p-6 text-sm md:text-base text-slate-900 group-open:text-orange-600 transition-colors">
-              {faq.q}
+              <h3 className="inline m-0 font-inherit text-inherit">{faq.q}</h3>
               <span className="transition group-open:rotate-180 text-orange-500">
                 <svg fill="none" height="24" shapeRendering="geometricPrecision" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
               </span>

@@ -4,6 +4,7 @@ import DynamicPageHero from '@/components/DynamicPageHero';
 import BottomCTA from '@/components/BottomCTA';
 import DynamicFAQ from '@/components/DynamicFAQ';
 import Link from 'next/link';
+import { formatLocationName } from '@/lib/formatters';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
@@ -23,7 +24,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
   const resolvedParams = await params;
   const post = await getLocationBySlug(resolvedParams.slug);
   const locations = await getAllLocations();
-  const formattedLocationName = resolvedParams.slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+  const formattedLocationName = formatLocationName(resolvedParams.slug);
 
   if (!post) {
     notFound();
@@ -65,7 +66,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
                   <svg className="w-10 h-10" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
                 </div>
                 <div className="text-center md:text-left">
-                  <h3 className="text-2xl font-bold mb-2">Why {formattedLocationName} Residents Choose Us</h3>
+                  <h2 className="text-2xl font-bold mb-2">Why {formattedLocationName} Residents Choose Us</h2>
                   <p className="text-slate-300 mb-3 text-sm leading-relaxed">
                     "As a local engineering team, we understand the specific soil conditions and climate challenges in {formattedLocationName}. We've built our reputation on 100% transparent pricing and flawless execution. When you work with us, you're working directly with the experts."
                   </p>
@@ -81,7 +82,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
             {/* Automated SEO Enhancements: Local Grids */}
             {locations && locations.length > 0 && (
               <div className="mt-12 bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">Other Locations We Serve</h3>
+                <h2 className="text-2xl font-bold text-slate-900 mb-6">Other Locations We Serve</h2>
                 <div className="flex flex-wrap gap-3">
                   {locations.filter(loc => loc.slug !== resolvedParams.slug).map((loc, idx) => (
                     <Link key={idx} href={`/locations/${loc.slug}`} className="px-5 py-2.5 bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-600 font-medium rounded-full border border-slate-200 hover:border-orange-200 transition-colors text-sm">
