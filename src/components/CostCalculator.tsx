@@ -141,6 +141,7 @@ export default function CostCalculator() {
       {/* CTA Button */}
       <div className="mt-6">
         <a
+          aria-label="Get Detailed PDF Quote on WhatsApp"
           href={areaValue > 0 ? whatsappUrl : '#'}
           target={areaValue > 0 ? "_blank" : undefined}
           rel="noopener noreferrer"

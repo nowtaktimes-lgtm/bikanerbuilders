@@ -95,6 +95,7 @@ export default function Contact() {
               {/* WhatsApp CTA */}
               <div className="mt-10">
                 <Link 
+                  aria-label="Chat with us on WhatsApp"
                   href={`https://wa.me/${settings.whatsappNumber.replace(/[^0-9]/g, '')}?text=Namaste,%20mujhe%20apne%20plot%20ka%20naksha%20banwana%20hai.`}
                   target="_blank"
                   rel="noopener noreferrer"
