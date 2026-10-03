@@ -84,7 +84,7 @@ export default function Home() {
             <div className="w-20 h-1.5 bg-[#EA580C] mx-auto rounded-full"></div>
           </div>
           
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-8">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-6">
             
             {/* Service 1 */}
             <Link href="/services/2d-naksha" className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300">
@@ -136,6 +136,24 @@ export default function Home() {
               </div>
               <div className="p-3 md:p-6">
                 <p className="text-xs md:text-base text-gray-600 mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Complete hassle-free construction from foundation to handover with premium materials.</p>
+                <span className="text-[#EA580C] font-bold text-[10px] md:text-sm tracking-wide uppercase group-hover:underline">View Details &rarr;</span>
+              </div>
+            </Link>
+
+            {/* Service 4 */}
+            <Link href="/services/interior-design" className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300">
+              <div className="relative h-32 md:h-56 overflow-hidden">
+                <Image 
+                  src="/assets/icon_sofa_1789213727142.png"
+                  alt="Premium interior design and POP ceiling work in Bikaner" title="Interior Designers Bikaner" 
+                  fill 
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 to-transparent"></div>
+                <h3 className="absolute bottom-3 left-3 md:bottom-6 md:left-6 text-sm md:text-2xl font-black text-white">Interior Design</h3>
+              </div>
+              <div className="p-3 md:p-6">
+                <p className="text-xs md:text-base text-gray-600 mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Luxury interior designing, space planning, and custom modular kitchen execution.</p>
                 <span className="text-[#EA580C] font-bold text-[10px] md:text-sm tracking-wide uppercase group-hover:underline">View Details &rarr;</span>
               </div>
             </Link>
@@ -243,11 +261,12 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-black text-[#0F172A] mb-4">What Bikaner Says About Us</h2>
             <div className="w-20 h-1.5 bg-[#EA580C] mx-auto rounded-full"></div>
           </div>
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-8">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-6">
             {[
               { name: "Rajesh Sharma, JNV Colony", review: "Bikaner Builders delivered my home exactly on time. Their material quality is top-notch and the 3D design matching was 100% accurate." },
               { name: "Sunita Jain, Gangashahar", review: "Very professional team. They handled everything from Naksha to final paint. The Vastu compliance really brought peace to our new house." },
-              { name: "Vikram Singh, Nokha", review: "Transparent pricing with no hidden surprises. Aahan and his team are the most reliable contractors I've worked with in Rajasthan." }
+              { name: "Vikram Singh, Nokha", review: "Transparent pricing with no hidden surprises. Aahan and his team are the most reliable contractors I've worked with in Rajasthan." },
+              { name: "Mohit Chaudhary, Pawanpuri", review: "Exceptional service from start to finish. They built our dream home within budget and the 3D elevation was exactly what we got in reality!" }
             ].map((testimonial, idx) => (
               <div key={idx} className="bg-slate-50 p-4 md:p-8 rounded-3xl border border-slate-100 shadow-sm relative">
                 <div className="flex gap-0.5 md:gap-1 mb-2 md:mb-4 text-orange-500">
