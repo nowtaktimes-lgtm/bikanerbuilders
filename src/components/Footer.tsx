@@ -28,10 +28,10 @@ export default function Footer({ locations = [] }: FooterProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top & Middle Sections (Brand & Quick Links) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-12 md:gap-12 mb-16">
           
           {/* Brand Info */}
-          <div className="lg:col-span-2">
+          <div className="col-span-2 lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6">
               {settings?.siteLogo ? (
                 <Image 
@@ -71,26 +71,26 @@ export default function Footer({ locations = [] }: FooterProps) {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-[#0F172A] font-bold text-lg mb-6">Quick Links</h3>
-            <ul className="space-y-4">
-              <li><Link href="/" className="text-gray-600 hover:text-[#EA580C] font-medium transition-colors">Home</Link></li>
-              <li><Link href="/about" className="text-gray-600 hover:text-[#EA580C] font-medium transition-colors">About Us</Link></li>
-              <li><Link href="/portfolio" className="text-gray-600 hover:text-[#EA580C] font-medium transition-colors">Project Portfolio</Link></li>
-              <li><Link href="/cost-estimator" className="text-gray-600 hover:text-[#EA580C] font-medium transition-colors">Cost Estimator</Link></li>
-              <li><Link href="/contact" className="text-gray-600 hover:text-[#EA580C] font-medium transition-colors">Contact Us</Link></li>
-              <li><Link href="/privacy-policy" className="text-gray-600 hover:text-[#EA580C] font-medium transition-colors">Privacy Policy</Link></li>
+            <h3 className="text-[#0F172A] font-bold text-base md:text-lg mb-4 md:mb-6">Quick Links</h3>
+            <ul className="space-y-3 md:space-y-4">
+              <li><Link href="/" className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">Home</Link></li>
+              <li><Link href="/about" className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">About Us</Link></li>
+              <li><Link href="/portfolio" className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">Project Portfolio</Link></li>
+              <li><Link href="/cost-estimator" className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">Cost Estimator</Link></li>
+              <li><Link href="/contact" className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">Contact Us</Link></li>
+              <li><Link href="/privacy-policy" className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">Privacy Policy</Link></li>
             </ul>
           </div>
 
           {/* Core Services */}
           <div>
-            <h3 className="text-[#0F172A] font-bold text-lg mb-6">Core Services</h3>
-            <ul className="space-y-4">
-              <li><Link href="/services/2d-naksha" className="text-gray-600 hover:text-[#EA580C] font-medium transition-colors">2D Vastu Map / Naksha</Link></li>
-              <li><Link href="/services/3d-elevation" className="text-gray-600 hover:text-[#EA580C] font-medium transition-colors">3D Front Elevation</Link></li>
-              <li><Link href="/services/turnkey-construction" className="text-gray-600 hover:text-[#EA580C] font-medium transition-colors">Turnkey Construction</Link></li>
-              <li><Link href="/services/interior-design" className="text-gray-600 hover:text-[#EA580C] font-medium transition-colors">POP & Interior Design</Link></li>
-              <li><Link href="/services/structural-drawing" className="text-gray-600 hover:text-[#EA580C] font-medium transition-colors">Structural Drawings</Link></li>
+            <h3 className="text-[#0F172A] font-bold text-base md:text-lg mb-4 md:mb-6">Core Services</h3>
+            <ul className="space-y-3 md:space-y-4">
+              <li><Link href="/services/2d-naksha" className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">2D Vastu Map / Naksha</Link></li>
+              <li><Link href="/services/3d-elevation" className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">3D Front Elevation</Link></li>
+              <li><Link href="/services/turnkey-construction" className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">Turnkey Construction</Link></li>
+              <li><Link href="/services/interior-design" className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">POP & Interior Design</Link></li>
+              <li><Link href="/services/structural-drawing" className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">Structural Drawings</Link></li>
             </ul>
           </div>
 
