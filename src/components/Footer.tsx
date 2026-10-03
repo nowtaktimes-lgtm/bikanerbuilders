@@ -16,16 +16,21 @@ export default function Footer({ locations = [] }: FooterProps) {
   const currentYear = new Date().getFullYear();
   
   const coreLocations = [
-    "Pawanpuri", "Sadul Ganj", "JNV Colony", "Gangashahar", 
-    "Nokha", "Deshnoke", "Napasar", "Ridmalsar Sipahiyan"
+    { name: "Pawanpuri", slug: "pawanpuri-bikaner" },
+    { name: "Sadul Ganj", slug: "sadul-ganj-bikaner" },
+    { name: "JNV Colony", slug: "jnv-colony-bikaner" },
+    { name: "Gangashahar", slug: "gangashahar-bikaner" },
+    { name: "Nokha", slug: "nokha" },
+    { name: "Deshnoke", slug: "deshnoke" },
+    { name: "Napasar", slug: "napasar" },
+    { name: "Murlidhar Vyas", slug: "murlidhar-vyas-colony-bikaner" }
   ];
   
   // Deduplicate and limit dynamic locations
   const dynamicLocations = locations
     .filter(loc => {
       const slugStr = loc.slug || loc.title.toLowerCase().replace(/\s+/g, '-');
-      const shortName = formatLocationName(slugStr);
-      return !coreLocations.some(core => core.toLowerCase() === shortName.toLowerCase());
+      return !coreLocations.some(core => core.slug === slugStr);
     })
     .slice(0, 6);
 
@@ -116,13 +121,13 @@ export default function Footer({ locations = [] }: FooterProps) {
           </div>
           
           <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-6">
-            {coreLocations.map((village, index) => (
+            {coreLocations.map((loc, index) => (
               <Link 
                 key={index} 
-                href={`/locations/${village.toLowerCase().replace(/\s+/g, '-')}`}
+                href={`/locations/${loc.slug}`}
                 className="bg-white/10 hover:bg-[#EA580C] text-white px-3 py-1.5 rounded-full text-sm font-bold tracking-wide transition-all border border-white/5 hover:border-transparent"
               >
-                {village}
+                {loc.name}
               </Link>
             ))}
           </div>
