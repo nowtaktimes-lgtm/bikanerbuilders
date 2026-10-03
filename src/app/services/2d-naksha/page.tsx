@@ -1,6 +1,7 @@
 ﻿import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import ServiceTrustBlock from '@/components/ServiceTrustBlock';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -97,13 +98,7 @@ export default function SEOOptimizedServicePage() {
                 </h3>
                 <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: `A Vastu-compliant home brings peace and prosperity. Our civil engineers and Vastu experts carefully position the kitchen (Agni Kund), master bedroom, pooja room, and water tanks according to strict Vastu principles. We design nakshas for 20x40, 30x60, and custom plot sizes.` }} />
                 
-                {/* Local Trust Block */}
-                <div className="bg-slate-900 text-white p-8 rounded-2xl shadow-inner mt-8">
-                  <h4 className="text-xl font-bold text-orange-500 mb-3">Rated #1 by Bikaner Residents</h4>
-                  <p className="text-slate-300 text-base">
-                    Don&apos;t risk your hard-earned money with unverified contractors from random aggregator sites or unverified local contractor lists. Bikaner Builders is a registered, trusted, and highly-rated civil engineering firm in Bikaner. We guarantee 100% transparent pricing and flawless execution.
-                  </p>
-                </div>
+                <ServiceTrustBlock slug="2d-naksha" />
               </article>
               
               {/* FAQ Schema Section */}

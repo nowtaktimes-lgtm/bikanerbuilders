@@ -1,6 +1,7 @@
 ﻿import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import ServiceTrustBlock from '@/components/ServiceTrustBlock';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -97,13 +98,7 @@ export default function SEOOptimizedServicePage() {
                 </h3>
                 <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: `Unlike other civil contractors, we design practical elevations. We use locally available materials in Bikaner like HPL sheets, ACP panels, CNC jali designs, toughened glass, and textured paint to ensure your 3D design can actually be built within your budget.` }} />
                 
-                {/* Local Trust Block */}
-                <div className="bg-slate-900 text-white p-8 rounded-2xl shadow-inner mt-8">
-                  <h4 className="text-xl font-bold text-orange-500 mb-3">Rated #1 by Bikaner Residents</h4>
-                  <p className="text-slate-300 text-base">
-                    Don&apos;t risk your hard-earned money with unverified contractors from random aggregator sites or unverified local contractor lists. Bikaner Builders is a registered, trusted, and highly-rated civil engineering firm in Bikaner. We guarantee 100% transparent pricing and flawless execution.
-                  </p>
-                </div>
+                <ServiceTrustBlock slug="3d-elevation" />
               </article>
               
               {/* FAQ Schema Section */}
