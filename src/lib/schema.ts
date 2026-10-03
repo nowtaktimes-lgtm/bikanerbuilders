@@ -3,7 +3,7 @@ export function generateLocationSchema(locationData: { title?: string; locationD
     "@context": "https://schema.org",
     "@type": "Service",
     "provider": {
-      "@type": "LocalBusiness",
+      "@type": "GeneralContractor",
       "name": "Bikaner Builders",
       "address": {
         "@type": "PostalAddress",
@@ -32,7 +32,7 @@ export function generateServiceSchema(serviceData: { title?: string; excerpt?: s
     "@type": "Service",
     "name": serviceData?.title || "Construction Service",
     "provider": {
-      "@type": "LocalBusiness",
+      "@type": "GeneralContractor",
       "name": "Bikaner Builders",
       "address": {
         "@type": "PostalAddress",
@@ -82,13 +82,14 @@ export function generateArticleSchema(postData: { title?: string; date?: string 
   };
 }
 
-export function generateLocalBusinessSchema() {
+export function generateGeneralContractorSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "GeneralContractor",
     "name": "Bikaner Builders",
     "image": "https://www.bikanerbuilders.in/assets/bikaner_builders_engineering_team.jpg",
     "telephone": "+919351132772",
+    "url": "https://bikanerbuilders.in",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Shop No 04, Opp Govt School, Napasar Rd, Ridmalsar Sipahiyan",
@@ -96,7 +97,27 @@ export function generateLocalBusinessSchema() {
       "addressRegion": "Rajasthan",
       "postalCode": "334022",
       "addressCountry": "IN"
-    }
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 28.0229,
+      "longitude": 73.3119
+    },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Bikaner"
+      },
+      {
+        "@type": "City",
+        "name": "Nokha"
+      },
+      {
+        "@type": "City",
+        "name": "Deshnoke"
+      }
+    ],
+    "priceRange": "₹₹₹"
   };
 }
 
