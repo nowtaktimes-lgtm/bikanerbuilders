@@ -84,11 +84,11 @@ export default function Home() {
             <div className="w-20 h-1.5 bg-[#EA580C] mx-auto rounded-full"></div>
           </div>
           
-          <div className="flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-4 pb-4 md:grid md:grid-cols-3 md:overflow-visible [&::-webkit-scrollbar]:hidden">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-8">
             
             {/* Service 1 */}
-            <Link href="/services/2d-naksha" className="min-w-[85vw] md:min-w-0 snap-center group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300">
-              <div className="relative h-56 overflow-hidden">
+            <Link href="/services/2d-naksha" className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300">
+              <div className="relative h-32 md:h-56 overflow-hidden">
                 <Image 
                   src="/assets/icon_architecture_1789213681908.png"
                   alt="100% Vastu compliant 2D floor plan designed by top architects in Bikaner" title="Vastu Compliant House Map Bikaner" 
@@ -96,17 +96,17 @@ export default function Home() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 to-transparent"></div>
-                <h3 className="absolute bottom-6 left-6 text-2xl font-black text-white">2D Vastu Map</h3>
+                <h3 className="absolute bottom-3 left-3 md:bottom-6 md:left-6 text-sm md:text-2xl font-black text-white">2D Vastu Map</h3>
               </div>
-              <div className="p-6">
-                <p className="text-gray-600 mb-4">Expert floor planning designed strictly with Vastu Shastra principles.</p>
-                <span className="text-[#EA580C] font-bold text-sm tracking-wide uppercase group-hover:underline">View Details &rarr;</span>
+              <div className="p-3 md:p-6">
+                <p className="text-xs md:text-base text-gray-600 mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Expert floor planning designed strictly with Vastu Shastra principles.</p>
+                <span className="text-[#EA580C] font-bold text-[10px] md:text-sm tracking-wide uppercase group-hover:underline">View Details &rarr;</span>
               </div>
             </Link>
 
             {/* Service 2 */}
-            <Link href="/services/3d-elevation" className="min-w-[85vw] md:min-w-0 snap-center group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300">
-              <div className="relative h-56 overflow-hidden">
+            <Link href="/services/3d-elevation" className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300">
+              <div className="relative h-32 md:h-56 overflow-hidden">
                 <Image 
                   src="/assets/icon_3d_house_1789213697503.png"
                   alt="Modern 3D front elevation design for residential villa in Bikaner" title="3D House Elevation Bikaner" 
@@ -114,17 +114,17 @@ export default function Home() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 to-transparent"></div>
-                <h3 className="absolute bottom-6 left-6 text-2xl font-black text-white">3D Elevation</h3>
+                <h3 className="absolute bottom-3 left-3 md:bottom-6 md:left-6 text-sm md:text-2xl font-black text-white">3D Elevation</h3>
               </div>
-              <div className="p-6">
-                <p className="text-gray-600 mb-4">Photorealistic 3D rendering of your dream home exterior before construction.</p>
-                <span className="text-[#EA580C] font-bold text-sm tracking-wide uppercase group-hover:underline">View Details &rarr;</span>
+              <div className="p-3 md:p-6">
+                <p className="text-xs md:text-base text-gray-600 mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Photorealistic 3D rendering of your dream home exterior before construction.</p>
+                <span className="text-[#EA580C] font-bold text-[10px] md:text-sm tracking-wide uppercase group-hover:underline">View Details &rarr;</span>
               </div>
             </Link>
 
             {/* Service 3 */}
-            <Link href="/services/turnkey-construction" className="min-w-[85vw] md:min-w-0 snap-center group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300">
-              <div className="relative h-56 overflow-hidden">
+            <Link href="/services/turnkey-construction" className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300">
+              <div className="relative h-32 md:h-56 overflow-hidden">
                 <Image 
                   src="/assets/why_choose_us_img_1789213667904.png"
                   alt="Complete hassle-free turnkey home construction process in Bikaner" title="Turnkey Home Builders" 
@@ -132,11 +132,11 @@ export default function Home() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 to-transparent"></div>
-                <h3 className="absolute bottom-6 left-6 text-2xl font-black text-white">Construction</h3>
+                <h3 className="absolute bottom-3 left-3 md:bottom-6 md:left-6 text-sm md:text-2xl font-black text-white">Construction</h3>
               </div>
-              <div className="p-6">
-                <p className="text-gray-600 mb-4">Complete hassle-free construction from foundation to handover with premium materials.</p>
-                <span className="text-[#EA580C] font-bold text-sm tracking-wide uppercase group-hover:underline">View Details &rarr;</span>
+              <div className="p-3 md:p-6">
+                <p className="text-xs md:text-base text-gray-600 mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Complete hassle-free construction from foundation to handover with premium materials.</p>
+                <span className="text-[#EA580C] font-bold text-[10px] md:text-sm tracking-wide uppercase group-hover:underline">View Details &rarr;</span>
               </div>
             </Link>
 
@@ -243,20 +243,20 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-black text-[#0F172A] mb-4">What Bikaner Says About Us</h2>
             <div className="w-20 h-1.5 bg-[#EA580C] mx-auto rounded-full"></div>
           </div>
-          <div className="flex flex-nowrap overflow-x-auto snap-x snap-mandatory gap-4 pb-4 md:grid md:grid-cols-3 md:overflow-visible [&::-webkit-scrollbar]:hidden">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-3 md:gap-8">
             {[
               { name: "Rajesh Sharma, JNV Colony", review: "Bikaner Builders delivered my home exactly on time. Their material quality is top-notch and the 3D design matching was 100% accurate." },
               { name: "Sunita Jain, Gangashahar", review: "Very professional team. They handled everything from Naksha to final paint. The Vastu compliance really brought peace to our new house." },
               { name: "Vikram Singh, Nokha", review: "Transparent pricing with no hidden surprises. Aahan and his team are the most reliable contractors I've worked with in Rajasthan." }
             ].map((testimonial, idx) => (
-              <div key={idx} className="min-w-[85vw] md:min-w-0 snap-center bg-slate-50 p-6 md:p-8 rounded-3xl border border-slate-100 shadow-sm relative">
-                <div className="flex gap-1 mb-4 text-orange-500">
+              <div key={idx} className="bg-slate-50 p-4 md:p-8 rounded-3xl border border-slate-100 shadow-sm relative">
+                <div className="flex gap-0.5 md:gap-1 mb-2 md:mb-4 text-orange-500">
                   {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
+                    <svg key={i} className="w-3 h-3 md:w-5 md:h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                   ))}
                 </div>
-                <p className="text-slate-600 italic mb-6">"{testimonial.review}"</p>
-                <div className="font-bold text-slate-900 border-t border-slate-200 pt-4">- {testimonial.name}</div>
+                <p className="text-xs md:text-base text-slate-600 italic mb-3 md:mb-6 leading-snug md:leading-normal">"{testimonial.review}"</p>
+                <div className="text-xs md:text-base font-bold text-slate-900 border-t border-slate-200 pt-3 md:pt-4">- {testimonial.name}</div>
               </div>
             ))}
           </div>
@@ -299,7 +299,7 @@ export default function Home() {
       <section className="py-6 bg-slate-50 border-t border-slate-100 flex items-center justify-center">
         <div className="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
           <div className="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-700 flex-shrink-0">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+            <svg className="w-3 h-3 md:w-5 md:h-5" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
           </div>
           <div>
             <p className="text-sm font-semibold text-slate-900">
