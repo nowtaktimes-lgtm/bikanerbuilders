@@ -60,7 +60,7 @@ export default function Home() {
                 href={`https://wa.me/${settings.whatsappNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent("Namaste, Bikaner Builders team.")}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto bg-[#25D366] hover:bg-[#1fae54] text-white font-black text-lg px-8 py-4 rounded-full shadow-[0_8px_30px_rgba(37,211,102,0.4)] transition-all hover:-translate-y-1 flex items-center justify-center gap-2"
+                className="w-full sm:w-auto bg-[#25D366] hover:bg-[#1fae54] text-neutral-900 font-black text-lg px-8 py-4 rounded-full shadow-[0_8px_30px_rgba(37,211,102,0.4)] transition-all hover:-translate-y-1 flex items-center justify-center gap-2className="
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M11.97 2.005a9.962 9.962 0 00-8.528 15.11L2 22l5.023-1.328a9.964 9.964 0 104.947-18.667zM12 20a7.973 7.973 0 01-4.062-1.115l-.291-.173-3.023.794.808-2.953-.19-.3A7.95 7.95 0 014.032 12 7.977 7.977 0 1112 20zm4.242-5.467c-.232-.116-1.378-.68-1.593-.758-.215-.078-.372-.116-.528.116-.156.232-.6 .758-.737.914-.136.155-.274.175-.506.058-.232-.116-.983-.362-1.87-1.156-.69-.617-1.155-1.38-1.29-1.612-.136-.233-.014-.359.102-.475.105-.105.232-.272.348-.408.116-.136.155-.233.232-.388.077-.156.039-.292-.019-.408-.058-.116-.528-1.277-.723-1.748-.19-.46-.383-.398-.528-.406-.137-.008-.293-.008-.45-.008a.86.86 0 00-.618.291c-.215.233-.822.805-.822 1.96 0 1.155.843 2.27 1.96 2.443.116.175 1.636 2.5 3.96 3.504.552.238.983.38 1.318.487.553.176 1.057.151 1.455.092.445-.067 1.378-.563 1.572-1.107.193-.544.193-1.01.136-1.107-.058-.097-.215-.155-.447-.272z" /></svg>
                 Chat on WhatsApp
@@ -94,7 +94,7 @@ export default function Home() {
                   alt="100% Vastu compliant 2D floor plan designed by top architects in Bikaner" title="Vastu Compliant House Map Bikaner" 
                   fill 
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                / sizes="(max-width: 768px) 100vw, 578px">
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 to-transparent"></div>
                 <h3 className="absolute bottom-3 left-3 md:bottom-6 md:left-6 text-sm md:text-2xl font-black text-white">2D Vastu Map</h3>
               </div>
@@ -112,7 +112,7 @@ export default function Home() {
                   alt="Modern 3D front elevation design for residential villa in Bikaner" title="3D House Elevation Bikaner" 
                   fill 
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                / sizes="(max-width: 768px) 100vw, 578px">
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 to-transparent"></div>
                 <h3 className="absolute bottom-3 left-3 md:bottom-6 md:left-6 text-sm md:text-2xl font-black text-white">3D Elevation</h3>
               </div>
@@ -130,7 +130,7 @@ export default function Home() {
                   alt="Complete hassle-free turnkey home construction process in Bikaner" title="Turnkey Home Builders" 
                   fill 
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                / sizes="(max-width: 768px) 100vw, 578px">
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 to-transparent"></div>
                 <h3 className="absolute bottom-3 left-3 md:bottom-6 md:left-6 text-sm md:text-2xl font-black text-white">Construction</h3>
               </div>
@@ -148,7 +148,7 @@ export default function Home() {
                   alt="Premium interior design and POP ceiling work in Bikaner" title="Interior Designers Bikaner" 
                   fill 
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+                / sizes="(max-width: 768px) 100vw, 578px">
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 to-transparent"></div>
                 <h3 className="absolute bottom-3 left-3 md:bottom-6 md:left-6 text-sm md:text-2xl font-black text-white">Interior Design</h3>
               </div>
@@ -224,7 +224,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="w-full md:w-1/2 relative h-[400px] rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-800">
-              <Image src="/assets/bikaner_builders_engineering_team.jpg" alt="Expert civil engineering and architecture team at Bikaner Builders" title="Certified Civil Engineers Bikaner" fill className="object-cover" />
+              <Image src="/assets/bikaner_builders_engineering_team.jpg" alt="Expert civil engineering and architecture team at Bikaner Builders" title="Certified Civil Engineers Bikaner" fill className="object-cover" / sizes="(max-width: 768px) 100vw, 578px">
               <div className="absolute inset-0 bg-gradient-to-t from-[#111827] to-transparent opacity-80"></div>
               <div className="absolute bottom-6 left-6">
                 <p className="text-orange-500 font-bold uppercase tracking-wider text-sm mb-1">CERTIFIED EXPERTS</p>

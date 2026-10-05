@@ -69,7 +69,7 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
               fill
               className="object-cover"
               priority
-            />
+            / sizes="(max-width: 768px) 100vw, 578px">
           </div>
         )}
         {post.seo?.schemaDetails && (
