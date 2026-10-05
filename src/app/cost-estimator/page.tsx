@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Metadata } from 'next';
 import CostCalculator from '@/components/CostCalculator';
 
@@ -7,15 +8,36 @@ export const metadata: Metadata = {
   description: 'Calculate your home construction cost instantly with our free online estimator. Get accurate quotes for standard, premium, and luxury builds in Bikaner.',
   alternates: {
     canonical: 'https://bikanerbuilders.in/cost-estimator',
-  }
+  },
+  openGraph: {
+    title: 'Construction Cost Calculator in Bikaner | Free Estimate',
+    description: 'Calculate your home construction cost instantly with our free online estimator. Get accurate quotes for standard, premium, and luxury builds in Bikaner.',
+    images: [
+      {
+        url: 'https://bikanerbuilders.in/assets/seo_turnkey.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'House Construction Cost Estimator Bikaner',
+      },
+    ],
+  },
 };
 
 export default function CostEstimatorPage() {
   return (
     <div className="min-h-screen bg-slate-50 pt-20">
       {/* Hero Section */}
-      <section className="bg-[#0F172A] relative py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-radial-pattern-light"></div>
+      <section className="bg-[#0F172A] relative py-20 md:py-28 overflow-hidden min-h-[400px] flex flex-col justify-center">
+        <Image
+          src="/assets/seo_turnkey.jpg"
+          alt="House Construction Cost Estimator Bikaner - Bikaner Builders"
+          title="Construction Cost Calculator Bikaner"
+          fill
+          priority
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A]/95 to-[#0F172A]/85 z-0"></div>
+        <div className="absolute inset-0 opacity-[0.05] pointer-events-none bg-radial-pattern-light z-0"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <span className="inline-block px-4 py-1.5 rounded-full bg-white/10 text-orange-400 font-bold text-sm tracking-widest uppercase mb-6 border border-white/20 backdrop-blur-sm shadow-xl">
             Free Online Tool
