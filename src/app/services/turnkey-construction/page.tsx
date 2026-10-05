@@ -1,64 +1,76 @@
-﻿import React from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import ServiceTrustBlock from '@/components/ServiceTrustBlock';
 import type { Metadata } from 'next';
+import ServiceTrustBlock from '@/components/ServiceTrustBlock';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
-  title: "Top Turnkey Building Contractors in Bikaner | With Material",
-  description: "Best turnkey construction company in Bikaner. We provide A-to-Z house building contractors with material, civil engineering, and finishing.",
-  keywords: "Complete Turnkey Construction Services in Bikaner, Bikaner Builders, top civil contractor in Bikaner, best building construction company near me, ghar ka naksha, architects in bikaner",
+  title: "Turnkey Construction Services in Bikaner | With Material Contractors",
+  description: "Looking for turnkey building contractors in Bikaner? We offer complete house construction with material, 3D elevation, mapping, and finishing. Get BOQ today.",
+  alternates: {
+    canonical: 'https://bikanerbuilders.in/services/turnkey-construction',
+  },
+  openGraph: {
+    title: 'Turnkey Construction Services in Bikaner | With Material Contractors',
+    description: 'Looking for turnkey building contractors in Bikaner? We offer complete house construction with material, 3D elevation, mapping, and finishing. Get BOQ today.',
+    images: [
+      {
+        url: 'https://bikanerbuilders.in/assets/turnkey_project_handover.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Turnkey Construction Project Handover Bikaner',
+      },
+    ],
+  }
 };
 
-export default function SEOOptimizedServicePage() {
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "serviceType": "Home Construction",
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Bikaner Builders",
-      "image": "https://www.bikanerbuilders.in/icon.svg",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Shop No 04, Opp Govt School, Napasar Rd, Ridmalsar Sipahiyan",
-        "addressLocality": "Bikaner",
-        "addressRegion": "Rajasthan",
-        "postalCode": "334022",
-        "addressCountry": "IN"
-      },
-      "telephone": "+91-93765-90313",
-      "url": "https://www.bikanerbuilders.in"
-    },
-    "areaServed": {
-      "@type": "City",
-      "name": "Bikaner"
-    },
-    "description": "Best turnkey construction company in Bikaner. We provide A-to-Z house building contractors with material, civil engineering, and finishing."
-  };
-
+export default function TurnkeyConstructionPage() {
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [{ "@type": "Question", "name": "What is included in Turnkey Construction?", "acceptedAnswer": { "@type": "Answer", "text": "Turnkey means complete peace of mind. It includes everything from 2D mapping, 3D elevation, material procurement (steel, cement, bricks), labor management, plumbing, electrical, to final painting and handover." } },{ "@type": "Question", "name": "What is your construction cost per square foot in Bikaner?", "acceptedAnswer": { "@type": "Answer", "text": "Our turnkey construction rates are highly competitive and depend on the finishing materials you choose. We offer Standard, Premium, and Luxury packages to fit your budget." } },{ "@type": "Question", "name": "Do you use branded materials?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We strictly use top-tier brands like Tata Tiscon/JSW for steel, UltraTech/Ambuja for cement, and premium wires for electricals. Transparency is our core value." } }]
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is included in Turnkey Construction?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Turnkey means complete peace of mind. It includes everything from 2D mapping, 3D elevation, material procurement (steel, cement, bricks), labor management, plumbing, electrical, to final painting and handover."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is your construction cost per square foot in Bikaner?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our turnkey construction rates are highly competitive and depend on the finishing materials you choose. We offer Standard, Premium, and Luxury packages to fit your budget."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you use branded materials?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. We strictly use top-tier brands like Tata Tiscon/JSW for steel, UltraTech/Ambuja for cement, and premium wires for electricals. Transparency is our core value."
+        }
+      }
+    ]
   };
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      
+      <Script id="turnkey-faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="pt-20">
         
-        {/* SEO Hero Section */}
-        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-slate-900">
+        {/* Hero Section */}
+        <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
           <Image
-            src="/assets/seo_turnkey.jpg"
-            alt="Complete Turnkey Construction Services in Bikaner - Bikaner Builders"
-            title="Complete Turnkey Construction Services in Bikaner"
+            src="/assets/turnkey_project_handover.jpg"
+            alt="Handing over keys for a completed turnkey house construction in Bikaner"
+            title="Turnkey Construction Services"
             fill
             priority
-            className="object-cover opacity-30"
+            className="object-cover"
           sizes="(max-width: 768px) 100vw, 578px" />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-transparent"></div>
           
@@ -93,11 +105,122 @@ export default function SEOOptimizedServicePage() {
                 </h2>
                 <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: `Looking for the <strong class="text-slate-900">best building construction company near me in Bikaner</strong>? Our turnkey construction (With Material Theka) service means you Don&apos;t have to worry about buying cement, steel, or managing labor. From excavation, foundation, and brickwork to premium finishing, plumbing, and electrical wiring, we handle everything under one roof.` }} />
                 
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                  Transparent BOQ & Zero Hidden Costs
+                {/* 1. Elite Construction Process Section */}
+                <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6 border-b-2 border-slate-100 pb-3">
+                  Our Elite Construction Process in Bikaner
                 </h3>
-                <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: `We beat unverified local contractors by offering 100% transparency. We provide a detailed Bill of Quantities (BOQ) specifying the exact brands (Ambuja/UltraTech cement, Tata/JSW steel, Ashirvad pipes). You get premium quality execution from top civil contractors in Bikaner without any cost overruns or delays.` }} />
-                
+                <p className="text-slate-700 leading-relaxed mb-6">
+                  Building a home is a milestone, and as the <strong>best construction company in Bikaner</strong>, we ensure the journey is as premium as the final product. Our seamless, 4-step execution model guarantees zero stress for you, delivering architectural excellence directly to your doorstep.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
+                    <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">01</span>
+                    <h4 className="font-bold text-slate-900 text-xl mb-2">Site Inspection & Vastu Analysis</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">Our senior civil engineers and Vastu experts visit your plot in Bikaner to evaluate soil conditions, sun orientation, and spatial dynamics to lay a flawless foundation.</p>
+                  </div>
+                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
+                    <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">02</span>
+                    <h4 className="font-bold text-slate-900 text-xl mb-2">3D Elevation & Planning</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">As a leading luxury architecture firm, our in-house designers create precise 2D floor plans and hyper-realistic 3D elevations, giving you a virtual tour of your future home.</p>
+                  </div>
+                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
+                    <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">03</span>
+                    <h4 className="font-bold text-slate-900 text-xl mb-2">Structural Execution</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">Execution is where a <strong>turnkey home builder in Bikaner</strong> truly shines. We handle all labor, procurement, and heavy machinery, ensuring strict adherence to structural engineering codes.</p>
+                  </div>
+                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
+                    <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">04</span>
+                    <h4 className="font-bold text-slate-900 text-xl mb-2">Quality Testing & Handover</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">Before handing over the keys, your property undergoes rigorous 50+ point quality checks covering plumbing pressures, electrical loads, and finishing perfection.</p>
+                  </div>
+                </div>
+
+                {/* 2. Premium Materials Section */}
+                <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6 border-b-2 border-slate-100 pb-3">
+                  The Premium Materials We Use
+                </h3>
+                <p className="text-slate-700 leading-relaxed mb-6">
+                  True luxury and durability come from uncompromised material selection. We believe that top-tier <strong>house construction in Bikaner</strong> requires the highest grade raw materials to withstand the harsh desert climate and stand the test of time.
+                </p>
+                <ul className="space-y-4 mb-12 list-none pl-0">
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    <div>
+                      <strong className="text-slate-900 block">High-Grade Structural Steel</strong>
+                      <span className="text-slate-600 text-sm">We exclusively use Fe550D grade TMT bars from industry leaders like Tata Tiscon or JSW, ensuring maximum earthquake resistance and structural integrity.</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    <div>
+                      <strong className="text-slate-900 block">Premium Branded Cement</strong>
+                      <span className="text-slate-600 text-sm">For robust foundations and flawless plastering, we rely on top-tier cement brands like UltraTech and Ambuja, expertly mixed to exact ratios.</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    <div>
+                      <strong className="text-slate-900 block">Top-Tier Electricals & Plumbing</strong>
+                      <span className="text-slate-600 text-sm">Safety is paramount. We install fire-retardant Havells/Polycab wiring and leak-proof Ashirvad/Astral CPVC piping for lifetime durability.</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    <div>
+                      <strong className="text-slate-900 block">Luxury Interior Finishes</strong>
+                      <span className="text-slate-600 text-sm">From premium vitrified tiles and Italian marble to high-end bathroom fittings (Jaquar/Kohler), every finish reflects elite craftsmanship.</span>
+                    </div>
+                  </li>
+                </ul>
+
+                {/* 3. Why Choose Us Section */}
+                <div className="bg-slate-900 rounded-3xl p-8 md:p-10 shadow-2xl my-12 text-white not-prose">
+                  <h3 className="text-2xl md:text-3xl font-black mb-6 text-white leading-tight">
+                    Why Choose Bikaner Builders Over Local Contractors?
+                  </h3>
+                  <p className="text-slate-300 leading-relaxed mb-8">
+                    High-Net-Worth Individuals (HNIs) and NRI clients choose us because they value their time and demand perfection. Working with unverified local contractors often leads to budget overruns, delayed timelines, and substandard quality. As the premier <strong>turnkey home builder in Bikaner</strong>, we flip the script.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                        <svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                      </div>
+                      <div>
+                        <strong className="block text-white text-lg">Single Point of Contact</strong>
+                        <span className="text-slate-400 text-sm">No more chasing 10 different vendors.</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                        <svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                      </div>
+                      <div>
+                        <strong className="block text-white text-lg">Zero Hidden Costs</strong>
+                        <span className="text-slate-400 text-sm">Fixed transparent BOQ before we start.</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                        <svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                      </div>
+                      <div>
+                        <strong className="block text-white text-lg">Strict Timelines</strong>
+                        <span className="text-slate-400 text-sm">On-time delivery, guaranteed.</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                        <svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+                      </div>
+                      <div>
+                        <strong className="block text-white text-lg">In-House Architects</strong>
+                        <span className="text-slate-400 text-sm">Design and execution under one roof.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <ServiceTrustBlock slug="turnkey-construction" />
               </article>
               
@@ -139,4 +262,3 @@ export default function SEOOptimizedServicePage() {
     </>
   );
 }
-
