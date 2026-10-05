@@ -15,8 +15,8 @@ const services = {
         desc2: "A flawless foundation starts with flawless planning. As the premier <strong class=\"text-slate-900\">architectural firm in Bikaner</strong>, we rely on industry-standard software and ancient principles.",
         materials: [
             { title: 'AutoCAD Mastery', desc: 'We use the latest version of Autodesk AutoCAD for precision drafting, ensuring accurate wall thicknesses and room dimensions.' },
-            { title: 'Rajasthan Climate Focus', desc: 'Our layouts emphasize cross-ventilation and shaded courtyards (chowks) to naturally cool your home during Bikaner\'s scorching summers.' },
-            { title: 'Structural Feasibility', desc: 'We don\'t just draw pretty pictures. Every 2D plan is verified by our structural engineers to ensure it can actually be built safely.' },
+            { title: 'Rajasthan Climate Focus', desc: 'Our layouts emphasize cross-ventilation and shaded courtyards (chowks) to naturally cool your home during Bikaner\\'s scorching summers.' },
+            { title: 'Structural Feasibility', desc: 'We don\\'t just draw pretty pictures. Every 2D plan is verified by our structural engineers to ensure it can actually be built safely.' },
             { title: 'Digital & Print Delivery', desc: 'You receive high-resolution PDF blueprints and raw DWG files, along with printed A3 copies for your contractor team on-site.' }
         ],
         title3: "Why Choose Bikaner Builders for Your House Map?",
@@ -41,7 +41,7 @@ const services = {
         desc2: "We don't just provide basic 3D views. We deliver cinematic-quality architectural visualizations using the world's most powerful rendering software.",
         materials: [
             { title: '3ds Max & V-Ray', desc: 'We use industry-leading 3D modeling and rendering engines to create textures and lighting that look indistinguishable from real life.' },
-            { title: 'Weather-Resistant Styling', desc: 'We specify exterior materials (like weather-coat paints and UV-resistant claddings) that won\'t fade in Bikaner\'s extreme heat and dust.' },
+            { title: 'Weather-Resistant Styling', desc: 'We specify exterior materials (like weather-coat paints and UV-resistant claddings) that won\\'t fade in Bikaner\\'s extreme heat and dust.' },
             { title: 'Lumion Walkthroughs', desc: 'Upgrade your package to include a full 4K video walkthrough, allowing you to virtually fly around your future home.' },
             { title: 'Accurate Scaling', desc: 'Our 3D models are built strictly to scale based on the 2D naksha, ensuring the design can be 100% replicated in reality.' }
         ],
@@ -84,7 +84,7 @@ const services = {
         title1: "Our Rigorous Structural Engineering Process",
         desc1: "The safety of your family depends on the hidden skeleton of your building. As Bikaner's premier <strong class=\"text-slate-900\">structural engineering firm</strong>, we design earthquake-resistant structures that are safe, durable, and economically optimized.",
         steps: [
-            { id: '01', title: 'Soil Testing & Foundation Planning', desc: 'Bikaner\'s sandy soil requires specific foundation depth. We analyze soil bearing capacity to design isolated, combined, or raft foundations accordingly.' },
+            { id: '01', title: 'Soil Testing & Foundation Planning', desc: 'Bikaner\\'s sandy soil requires specific foundation depth. We analyze soil bearing capacity to design isolated, combined, or raft foundations accordingly.' },
             { id: '02', title: 'Load Bearing Analysis', desc: 'We meticulously calculate dead loads (concrete/walls), live loads (people/furniture), and dynamic forces (wind/earthquakes) acting on the building.' },
             { id: '03', title: 'Optimum Column Positioning', desc: 'We strategically place columns and beams to ensure maximum structural integrity without interrupting the aesthetic flow of the 2D naksha.' },
             { id: '04', title: 'Detailed Steel Detailing (BBS)', desc: 'We provide comprehensive AutoCAD drawings and a Bar Bending Schedule (BBS) so the local contractor knows exactly how to cut and tie the TMT steel.' }
@@ -92,9 +92,9 @@ const services = {
         title2: "Advanced Software & Safety Standards",
         desc2: "We do not rely on guesswork or thumb rules. Our licensed structural engineers use advanced physics and mathematics to guarantee the safety of your <strong class=\"text-slate-900\">house construction in Bikaner</strong>.",
         materials: [
-            { title: 'STAAD.Pro & ETABS', desc: 'We use world-class structural analysis software to simulate loads and seismic activity, ensuring your building won\'t crack under pressure.' },
+            { title: 'STAAD.Pro & ETABS', desc: 'We use world-class structural analysis software to simulate loads and seismic activity, ensuring your building won\\'t crack under pressure.' },
             { title: 'IS Code Compliance', desc: 'All our structural drawings strictly adhere to Indian Standard codes (IS 456, IS 1893) for reinforced concrete and earthquake resistance.' },
-            { title: 'Steel Optimization', desc: 'Local contractors often over-use steel \"just to be safe,\" wasting your money. Our calculated designs save you lakhs in unnecessary TMT bar costs.' },
+            { title: 'Steel Optimization', desc: 'Local contractors often over-use steel "just to be safe," wasting your money. Our calculated designs save you lakhs in unnecessary TMT bar costs.' },
             { title: 'Zone-Specific Seismic Design', desc: 'Bikaner falls in a specific seismic zone. We detail the column-beam joints with extra ductility to withstand potential tremors.' }
         ],
         title3: "Why You Need a Professional Structural Engineer",
@@ -109,62 +109,62 @@ const services = {
 };
 
 function generateJSX(data) {
-    return \`
+    return `
                 {/* 1. Elite Process Section */}
                 <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6 border-b-2 border-slate-100 pb-3">
-                  \${data.title1}
+                  ${data.title1}
                 </h3>
-                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: '\${data.desc1}' }}></p>
+                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: '${data.desc1}' }}></p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-                  \${data.steps.map(s => \`
+                  ${data.steps.map(s => `
                   <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
-                    <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">\${s.id}</span>
-                    <h4 className="font-bold text-slate-900 text-xl mb-2">\${s.title}</h4>
-                    <p className="text-slate-600 text-sm leading-relaxed">\${s.desc}</p>
-                  </div>\`).join('')}
+                    <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">${s.id}</span>
+                    <h4 className="font-bold text-slate-900 text-xl mb-2">${s.title}</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">${s.desc}</p>
+                  </div>`).join('')}
                 </div>
 
                 {/* 2. Materials/Tech Section */}
                 <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6 border-b-2 border-slate-100 pb-3">
-                  \${data.title2}
+                  ${data.title2}
                 </h3>
-                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: '\${data.desc2}' }}></p>
+                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: '${data.desc2}' }}></p>
                 <ul className="space-y-4 mb-12 list-none pl-0">
-                  \${data.materials.map(m => \`
+                  ${data.materials.map(m => `
                   <li className="flex items-start gap-3">
                     <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     <div>
-                      <strong className="text-slate-900 block">\${m.title}</strong>
-                      <span className="text-slate-600 text-sm">\${m.desc}</span>
+                      <strong className="text-slate-900 block">${m.title}</strong>
+                      <span className="text-slate-600 text-sm">${m.desc}</span>
                     </div>
-                  </li>\`).join('')}
+                  </li>`).join('')}
                 </ul>
 
                 {/* 3. Why Choose Us Section */}
                 <div className="bg-slate-900 rounded-3xl p-8 md:p-10 shadow-2xl my-12 text-white not-prose">
                   <h3 className="text-2xl md:text-3xl font-black mb-6 text-white leading-tight">
-                    \${data.title3}
+                    ${data.title3}
                   </h3>
                   <p className="text-slate-300 leading-relaxed mb-8">
-                    \${data.desc3}
+                    ${data.desc3}
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    \${data.usps.map((u, i) => \`
+                    ${data.usps.map((u, i) => `
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
-                        \${i === 0 ? \`<svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>\` : 
-                           i === 1 ? \`<svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>\` :
-                           i === 2 ? \`<svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>\` :
-                                     \`<svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>\`}
+                        ${i === 0 ? `<svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>` : 
+                           i === 1 ? `<svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>` :
+                           i === 2 ? `<svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>` :
+                                     `<svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>`}
                       </div>
                       <div>
-                        <strong className="block text-white text-lg">\${u.title}</strong>
-                        <span className="text-slate-400 text-sm">\${u.desc}</span>
+                        <strong className="block text-white text-lg">${u.title}</strong>
+                        <span className="text-slate-400 text-sm">${u.desc}</span>
                       </div>
-                    </div>\`).join('')}
+                    </div>`).join('')}
                   </div>
                 </div>
-\`;
+`;
 }
 
 for (const [slug, data] of Object.entries(services)) {
@@ -174,13 +174,13 @@ for (const [slug, data] of Object.entries(services)) {
         
         // Prevent double injection
         if (!content.includes('1. Elite Process Section')) {
-            const insertionPoint = \`<ServiceTrustBlock slug="\${slug}" />\`;
+            const insertionPoint = `<ServiceTrustBlock slug="${slug}" />`;
             const jsx = generateJSX(data);
-            content = content.replace(insertionPoint, jsx + '\\n                ' + insertionPoint);
+            content = content.replace(insertionPoint, jsx + '\n                ' + insertionPoint);
             fs.writeFileSync(filePath, content);
-            console.log(\`Updated \${slug}\`);
+            console.log(`Updated ${slug}`);
         } else {
-            console.log(\`Skipping \${slug}, already updated\`);
+            console.log(`Skipping ${slug}, already updated`);
         }
     }
 }
