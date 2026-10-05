@@ -98,6 +98,122 @@ export default function SEOOptimizedServicePage() {
                 </h3>
                 <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: `A beautiful ceiling changes the entire vibe of a room. As the leading POP contractors in Bikaner, we install modern gypsum false ceilings, LED cove lighting designs, PVC panels, and intricate POP moldings. We ensure flawless finishing with laser alignment.` }} />
                 
+                
+                {/* 1. Elite Process Section */}
+                <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6 border-b-2 border-slate-100 pb-3">
+                  Our Elite Interior Design & Execution Workflow
+                </h3>
+                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: 'True luxury is felt indoors. As the most sought-after <strong class="text-slate-900">interior designers in Bikaner</strong>, we don't just decorate rooms; we engineer lifestyles. From spatial flow to ambient lighting, our turnkey interior process is flawless.' }}></p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                  
+                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
+                    <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">01</span>
+                    <h4 className="font-bold text-slate-900 text-xl mb-2">Space Planning & Layout</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">We analyze the raw floor plan to strategically place furniture, modular kitchens, and wardrobes to maximize movement flow and spatial harmony.</p>
+                  </div>
+                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
+                    <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">02</span>
+                    <h4 className="font-bold text-slate-900 text-xl mb-2">Mood Boards & Theming</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">We curate premium color palettes, fabric textures, and wood finishes (veneer/laminates) to match your desired aesthetic—from minimal to royal.</p>
+                  </div>
+                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
+                    <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">03</span>
+                    <h4 className="font-bold text-slate-900 text-xl mb-2">3D Interior Visualization</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">Before buying any materials, we provide 3D renders of your living room, bedrooms, and kitchen so you can approve the exact look.</p>
+                  </div>
+                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
+                    <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">04</span>
+                    <h4 className="font-bold text-slate-900 text-xl mb-2">Turnkey Carpentry & Execution</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">Our master craftsmen handle the heavy lifting: false ceilings, electrical rerouting, modular woodwork, and final décor placement.</p>
+                  </div>
+                </div>
+
+                {/* 2. Materials/Tech Section */}
+                <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6 border-b-2 border-slate-100 pb-3">
+                  The Premium Interior Materials We Use
+                </h3>
+                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: 'A beautiful interior must also be durable. We strictly reject low-grade materials, opting only for premium, long-lasting hardware and woods for our <strong class="text-slate-900">luxury interiors in Bikaner</strong>.' }}></p>
+                <ul className="space-y-4 mb-12 list-none pl-0">
+                  
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    <div>
+                      <strong className="text-slate-900 block">BWR/BWP Grade Plywood</strong>
+                      <span className="text-slate-600 text-sm">We use boiling water-resistant and termite-proof plywood (Greenply/Century) to ensure your wardrobes and kitchens last generations.</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    <div>
+                      <strong className="text-slate-900 block">Luxury European Hardware</strong>
+                      <span className="text-slate-600 text-sm">Smooth, silent, and seamless. We use premium hinges, tandem boxes, and channels from global leaders like Hettich, Blum, and Hafele.</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    <div>
+                      <strong className="text-slate-900 block">Smart Ambient Lighting</strong>
+                      <span className="text-slate-600 text-sm">We design layered lighting using COB lights, magnetic track lights, and profile LEDs to create a warm, ultra-luxurious hotel-like vibe.</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    <div>
+                      <strong className="text-slate-900 block">High-End Surface Finishes</strong>
+                      <span className="text-slate-600 text-sm">From Italian marble and quartz countertops to PU-coated acrylics and natural wood veneers, our finishing is world-class.</span>
+                    </div>
+                  </li>
+                </ul>
+
+                {/* 3. Why Choose Us Section */}
+                <div className="bg-slate-900 rounded-3xl p-8 md:p-10 shadow-2xl my-12 text-white not-prose">
+                  <h3 className="text-2xl md:text-3xl font-black mb-6 text-white leading-tight">
+                    Why Hire Our Turnkey Interior Experts?
+                  </h3>
+                  <p className="text-slate-300 leading-relaxed mb-8">
+                    Managing carpenters, electricians, and painters is a full-time headache. High-Net-Worth clients trust us to transform their bare shells into luxurious living spaces without the daily stress.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                        <svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                      </div>
+                      <div>
+                        <strong className="block text-white text-lg">End-to-End Execution</strong>
+                        <span className="text-slate-400 text-sm">From 3D design to the final polishing, we handle the entire interior project.</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                        <svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                      </div>
+                      <div>
+                        <strong className="block text-white text-lg">Factory-Finish Woodwork</strong>
+                        <span className="text-slate-400 text-sm">We use advanced machinery for edge-banding and pressing, ensuring a flawless factory finish.</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                        <svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                      </div>
+                      <div>
+                        <strong className="block text-white text-lg">Exclusive Vendor Tie-Ups</strong>
+                        <span className="text-slate-400 text-sm">Get access to premium tiles, lighting, and fabrics at direct wholesale prices.</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                        <svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+                      </div>
+                      <div>
+                        <strong className="block text-white text-lg">Strict Quality Control</strong>
+                        <span className="text-slate-400 text-sm">No rough edges, no misaligned doors. We deliver perfection down to the millimeter.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <ServiceTrustBlock slug="interior-design" />
               </article>
               

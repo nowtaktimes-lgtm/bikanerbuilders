@@ -98,6 +98,122 @@ export default function SEOOptimizedServicePage() {
                 </h3>
                 <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: `Unlike other civil contractors, we design practical elevations. We use locally available materials in Bikaner like HPL sheets, ACP panels, CNC jali designs, toughened glass, and textured paint to ensure your 3D design can actually be built within your budget.` }} />
                 
+                
+                {/* 1. Elite Process Section */}
+                <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6 border-b-2 border-slate-100 pb-3">
+                  Our Hyper-Realistic 3D Elevation Process
+                </h3>
+                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: 'Your home's exterior is its signature. As the leading <strong class="text-slate-900">3D elevation designers in Bikaner</strong>, we transform basic 2D maps into breathtaking, photorealistic 3D visual masterpieces before a single brick is laid.' }}></p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                  
+                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
+                    <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">01</span>
+                    <h4 className="font-bold text-slate-900 text-xl mb-2">Aesthetic Consultation</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">We discuss your vision—whether you want a Heritage Rajasthani look with Jodhpur stone, an Ultra-Modern box design, or a classic European villa.</p>
+                  </div>
+                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
+                    <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">02</span>
+                    <h4 className="font-bold text-slate-900 text-xl mb-2">Wireframing & Massing</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">Our 3D artists build the core structural blocks in software to establish the proportions, balconies, and overall silhouette of the building.</p>
+                  </div>
+                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
+                    <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">03</span>
+                    <h4 className="font-bold text-slate-900 text-xl mb-2">Texture & Material Mapping</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">We apply realistic materials like HPL sheets, CNC-cut MS panels, toughened glass, and textured paint to visualize the exact final finish.</p>
+                  </div>
+                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
+                    <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">04</span>
+                    <h4 className="font-bold text-slate-900 text-xl mb-2">High-Fidelity Rendering</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">Using advanced ray-tracing engines, we generate stunning day and night renders showcasing realistic lighting, shadows, and landscaping.</p>
+                  </div>
+                </div>
+
+                {/* 2. Materials/Tech Section */}
+                <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6 border-b-2 border-slate-100 pb-3">
+                  The Technology Powering Our 3D Designs
+                </h3>
+                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: 'We don't just provide basic 3D views. We deliver cinematic-quality architectural visualizations using the world's most powerful rendering software.' }}></p>
+                <ul className="space-y-4 mb-12 list-none pl-0">
+                  
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    <div>
+                      <strong className="text-slate-900 block">3ds Max & V-Ray</strong>
+                      <span className="text-slate-600 text-sm">We use industry-leading 3D modeling and rendering engines to create textures and lighting that look indistinguishable from real life.</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    <div>
+                      <strong className="text-slate-900 block">Weather-Resistant Styling</strong>
+                      <span className="text-slate-600 text-sm">We specify exterior materials (like weather-coat paints and UV-resistant claddings) that won't fade in Bikaner extreme heat and dust.</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    <div>
+                      <strong className="text-slate-900 block">Lumion Walkthroughs</strong>
+                      <span className="text-slate-600 text-sm">Upgrade your package to include a full 4K video walkthrough, allowing you to virtually fly around your future home.</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    <div>
+                      <strong className="text-slate-900 block">Accurate Scaling</strong>
+                      <span className="text-slate-600 text-sm">Our 3D models are built strictly to scale based on the 2D naksha, ensuring the design can be 100% replicated in reality.</span>
+                    </div>
+                  </li>
+                </ul>
+
+                {/* 3. Why Choose Us Section */}
+                <div className="bg-slate-900 rounded-3xl p-8 md:p-10 shadow-2xl my-12 text-white not-prose">
+                  <h3 className="text-2xl md:text-3xl font-black mb-6 text-white leading-tight">
+                    Why Let Us Design Your Home's Facade?
+                  </h3>
+                  <p className="text-slate-300 leading-relaxed mb-8">
+                    A generic front elevation can ruin the appeal of an expensive house. We design striking, landmark-worthy exteriors that drastically increase your property's street value and aesthetic dominance.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                        <svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                      </div>
+                      <div>
+                        <strong className="block text-white text-lg">Photorealistic Quality</strong>
+                        <span className="text-slate-400 text-sm">See the exact future of your home with zero guesswork or surprises.</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                        <svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                      </div>
+                      <div>
+                        <strong className="block text-white text-lg">Budget-Aware Design</strong>
+                        <span className="text-slate-400 text-sm">We design stunning facades using materials that actually fit your construction budget.</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                        <svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                      </div>
+                      <div>
+                        <strong className="block text-white text-lg">Heritage & Modern Fusion</strong>
+                        <span className="text-slate-400 text-sm">Experts at blending traditional Bikaneri arches with contemporary minimalist glasswork.</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                        <svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+                      </div>
+                      <div>
+                        <strong className="block text-white text-lg">Material Sourcing Help</strong>
+                        <span className="text-slate-400 text-sm">We tell your contractor exactly which tiles, colors, and stones to buy to match the 3D.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <ServiceTrustBlock slug="3d-elevation" />
               </article>
               

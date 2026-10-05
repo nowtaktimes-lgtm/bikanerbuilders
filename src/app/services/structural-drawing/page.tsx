@@ -98,6 +98,122 @@ export default function SEOOptimizedServicePage() {
                 </h3>
                 <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: `Bikaner has unique sandy soil conditions. Our civil engineering contractors customize foundation depth and footing designs specifically for your plot&apos;s soil type. We provide complete working drawings for the steel binding team so there is zero wastage of expensive TMT bars.` }} />
                 
+                
+                {/* 1. Elite Process Section */}
+                <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6 border-b-2 border-slate-100 pb-3">
+                  Our Rigorous Structural Engineering Process
+                </h3>
+                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: 'The safety of your family depends on the hidden skeleton of your building. As Bikaner's premier <strong class="text-slate-900">structural engineering firm</strong>, we design earthquake-resistant structures that are safe, durable, and economically optimized.' }}></p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                  
+                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
+                    <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">01</span>
+                    <h4 className="font-bold text-slate-900 text-xl mb-2">Soil Testing & Foundation Planning</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">Bikaner sandy soil requires specific foundation depth. We analyze soil bearing capacity to design isolated, combined, or raft foundations accordingly.</p>
+                  </div>
+                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
+                    <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">02</span>
+                    <h4 className="font-bold text-slate-900 text-xl mb-2">Load Bearing Analysis</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">We meticulously calculate dead loads (concrete/walls), live loads (people/furniture), and dynamic forces (wind/earthquakes) acting on the building.</p>
+                  </div>
+                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
+                    <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">03</span>
+                    <h4 className="font-bold text-slate-900 text-xl mb-2">Optimum Column Positioning</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">We strategically place columns and beams to ensure maximum structural integrity without interrupting the aesthetic flow of the 2D naksha.</p>
+                  </div>
+                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
+                    <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">04</span>
+                    <h4 className="font-bold text-slate-900 text-xl mb-2">Detailed Steel Detailing (BBS)</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">We provide comprehensive AutoCAD drawings and a Bar Bending Schedule (BBS) so the local contractor knows exactly how to cut and tie the TMT steel.</p>
+                  </div>
+                </div>
+
+                {/* 2. Materials/Tech Section */}
+                <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6 border-b-2 border-slate-100 pb-3">
+                  Advanced Software & Safety Standards
+                </h3>
+                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: 'We do not rely on guesswork or thumb rules. Our licensed structural engineers use advanced physics and mathematics to guarantee the safety of your <strong class="text-slate-900">house construction in Bikaner</strong>.' }}></p>
+                <ul className="space-y-4 mb-12 list-none pl-0">
+                  
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    <div>
+                      <strong className="text-slate-900 block">STAAD.Pro & ETABS</strong>
+                      <span className="text-slate-600 text-sm">We use world-class structural analysis software to simulate loads and seismic activity, ensuring your building won't crack under pressure.</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    <div>
+                      <strong className="text-slate-900 block">IS Code Compliance</strong>
+                      <span className="text-slate-600 text-sm">All our structural drawings strictly adhere to Indian Standard codes (IS 456, IS 1893) for reinforced concrete and earthquake resistance.</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    <div>
+                      <strong className="text-slate-900 block">Steel Optimization</strong>
+                      <span className="text-slate-600 text-sm">Local contractors often over-use steel 'just to be safe', wasting your money. Our calculated designs save you lakhs in unnecessary TMT bar costs.</span>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    <div>
+                      <strong className="text-slate-900 block">Zone-Specific Seismic Design</strong>
+                      <span className="text-slate-600 text-sm">Bikaner falls in a specific seismic zone. We detail the column-beam joints with extra ductility to withstand potential tremors.</span>
+                    </div>
+                  </li>
+                </ul>
+
+                {/* 3. Why Choose Us Section */}
+                <div className="bg-slate-900 rounded-3xl p-8 md:p-10 shadow-2xl my-12 text-white not-prose">
+                  <h3 className="text-2xl md:text-3xl font-black mb-6 text-white leading-tight">
+                    Why You Need a Professional Structural Engineer
+                  </h3>
+                  <p className="text-slate-300 leading-relaxed mb-8">
+                    Never let a local thekedar guess your steel requirements. A weak column can cause building collapse, while over-engineering wastes your hard-earned money. Here is why you need our technical expertise.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                        <svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                      </div>
+                      <div>
+                        <strong className="block text-white text-lg">Certified Engineers</strong>
+                        <span className="text-slate-400 text-sm">Your structure is designed and approved by licensed, highly qualified civil/structural engineers.</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                        <svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                      </div>
+                      <div>
+                        <strong className="block text-white text-lg">Massive Cost Savings</strong>
+                        <span className="text-slate-400 text-sm">Our optimized steel and concrete calculations usually save you much more than our design fee.</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                        <svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                      </div>
+                      <div>
+                        <strong className="block text-white text-lg">Zero Safety Compromise</strong>
+                        <span className="text-slate-400 text-sm">Sleep peacefully knowing your multi-story building can handle storms, loads, and time.</span>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
+                        <svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+                      </div>
+                      <div>
+                        <strong className="block text-white text-lg">On-Site Steel Checking</strong>
+                        <span className="text-slate-400 text-sm">We offer site visits to verify that the contractor has tied the steel exactly as per our drawings.</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <ServiceTrustBlock slug="structural-drawing" />
               </article>
               
