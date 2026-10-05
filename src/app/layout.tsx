@@ -18,7 +18,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Top Builders in Bikaner | Free Site Visit & Vastu Map | 9351132772",
+  title: "Top Builders in Bikaner | Free Site Visit & Vastu Map | +91 93765 90313",
   description: "Bikaner me ghar banwana hai? Get 100% Vastu-compliant 3D designs & turnkey construction with a transparent BOQ. Call now to book your FREE site inspection!",
     icons: {
     icon: '/icon.svg',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL('https://bikanerbuilders.in'),
   openGraph: {
-    title: 'Top Builders in Bikaner | Free Site Visit & Vastu Map | 9351132772',
+    title: 'Top Builders in Bikaner | Free Site Visit & Vastu Map | +91 93765 90313',
     description: 'Bikaner me ghar banwana hai? Get 100% Vastu-compliant 3D designs & turnkey construction with a transparent BOQ. Call now to book your FREE site inspection!',
     url: 'https://bikanerbuilders.in',
     siteName: 'Bikaner Builders',

@@ -12,7 +12,7 @@ export default function BottomCTA() {
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <Link
-            href="https://wa.me/919351132772"
+            href="https://wa.me/919376590313"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full sm:w-auto bg-[#25D366] hover:bg-[#1fae54] text-white font-bold text-lg px-8 py-4 rounded-xl shadow-lg transition-all hover:-translate-y-1 flex items-center justify-center gap-2"
@@ -21,7 +21,7 @@ export default function BottomCTA() {
             Chat on WhatsApp
           </Link>
           <Link
-            href="tel:+919351132772"
+            href="tel:+919376590313"
             className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white font-bold text-lg px-8 py-4 rounded-xl shadow-lg transition-all hover:-translate-y-1"
           >
             Call Us Now

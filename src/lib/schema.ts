@@ -88,7 +88,7 @@ export function generateGeneralContractorSchema() {
     "@type": "GeneralContractor",
     "name": "Bikaner Builders",
     "image": "https://www.bikanerbuilders.in/assets/bikaner_builders_engineering_team.jpg",
-    "telephone": "+919351132772",
+    "telephone": "+91-93765-90313",
     "url": "https://bikanerbuilders.in",
     "address": {
       "@type": "PostalAddress",

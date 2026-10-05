@@ -43,8 +43,8 @@ export interface GlobalSettings {
 
 export async function getGlobalSettings(): Promise<GlobalSettings> {
   return {
-    primaryPhone: "919351132772",
-    whatsappNumber: "919351132772",
+    primaryPhone: "919376590313",
+    whatsappNumber: "919376590313",
     emailAddress: "info@bikanerbuilders.in",
     officeAddress: "Shop No 04, Opp Govt School,\nNapasar Rd, Ridmalsar Sipahiyan,\nBikaner, Rajasthan 334022",
     siteLogo: "",

@@ -139,10 +139,10 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
               <h3 className="text-xl font-bold text-slate-900 mb-4">Start Your Project in {formattedLocationName}</h3>
               <p className="text-slate-600 mb-6 text-sm">Need construction or architectural services in {formattedLocationName}? Our experts are here to assist you.</p>
               
-              <Link href="https://wa.me/919351132772" target="_blank" className="block w-full bg-[#25D366] hover:bg-[#1fae54] text-white text-center font-bold py-3 px-4 rounded-xl mb-4 transition-colors">
+              <Link href="https://wa.me/919376590313" target="_blank" className="block w-full bg-[#25D366] hover:bg-[#1fae54] text-white text-center font-bold py-3 px-4 rounded-xl mb-4 transition-colors">
                 Chat on WhatsApp
               </Link>
-              <Link href="tel:+919351132772" className="block w-full bg-slate-900 hover:bg-slate-800 text-white text-center font-bold py-3 px-4 rounded-xl mb-8 transition-colors">
+              <Link href="tel:+919376590313" className="block w-full bg-slate-900 hover:bg-slate-800 text-white text-center font-bold py-3 px-4 rounded-xl mb-8 transition-colors">
                 Call Us Now
               </Link>
               

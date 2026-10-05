@@ -36,7 +36,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
     const messageText = `*New Quote Request*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Service:* ${service}%0A*Message:* ${message}`;
     const encodedMessage = messageText.replace(/ /g, '%20'); // Basic encoding, %0A is already encoded
 
-    window.open(`https://wa.me/919351132772?text=${encodedMessage}`, '_blank');
+    window.open(`https://wa.me/919376590313?text=${encodedMessage}`, '_blank');
 
     setIsSubmitting(false);
     onClose();
