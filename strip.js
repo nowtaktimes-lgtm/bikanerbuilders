@@ -13,7 +13,7 @@ function replaceFile(filePath) {
     content = content.replace(/home's/g, "home&apos;s");
     
     // Check if any dangerouslySetInnerHTML has unescaped quotes causing syntax errors
-    // Instead of using '...' for dangerouslySetInnerHTML, we should use \`...\` or JSON.stringify or just use double quotes if there are no double quotes inside
+    // Instead of using '...' for dangerouslySetInnerHTML, we should use `...` or JSON.stringify or just use double quotes if there are no double quotes inside
     // Wait, earlier I generated dangerouslySetInnerHTML={{ __html: '...' }} and '...' contained a single quote!
     // Since the files are already written with the bad code, let me just replace the whole section starting from "{/* 1. Elite Process Section */}" to `<ServiceTrustBlock`
     

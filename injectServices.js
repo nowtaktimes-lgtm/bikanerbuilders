@@ -175,17 +175,18 @@ for (const [slug, data] of Object.entries(services)) {
         // Remove the previously injected code which caused the syntax error
         if (content.includes('1. Elite Process Section')) {
             const startIdx = content.indexOf('{/* 1. Elite Process Section */}');
-            const endIdx = content.indexOf(\`<ServiceTrustBlock slug="\${slug}" />\`, startIdx);
+            const endIdx = content.indexOf(`<ServiceTrustBlock slug="${slug}" />`, startIdx);
             if (startIdx !== -1 && endIdx !== -1) {
                 content = content.substring(0, startIdx) + content.substring(endIdx);
             }
         }
         
         // Inject the fresh valid code
-        const insertionPoint = \`<ServiceTrustBlock slug="\${slug}" />\`;
+        const insertionPoint = `<ServiceTrustBlock slug="${slug}" />`;
         const jsx = generateJSX(data);
-        content = content.replace(insertionPoint, jsx + '\\n                ' + insertionPoint);
+        content = content.replace(insertionPoint, jsx + '\
+                ' + insertionPoint);
         fs.writeFileSync(filePath, content);
-        console.log(\`Updated \${slug}\`);
+        console.log(`Updated ${slug}`);
     }
 }
