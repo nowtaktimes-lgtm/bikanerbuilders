@@ -21,7 +21,7 @@ export default function DynamicPageHero({ title, breadcrumbTitle, image, categor
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
-              priority
+              priority={true}
             />
           </div>
           <div className="absolute inset-0 bg-slate-900/85 z-0"></div>

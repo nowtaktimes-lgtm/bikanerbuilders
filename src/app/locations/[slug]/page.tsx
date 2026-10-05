@@ -95,7 +95,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
           {/* Main Content Area */}
           <div className="lg:col-span-8">
             <article className="prose max-w-none bg-white p-6 md:p-12 rounded-2xl shadow-xl border border-slate-100 prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-orange-500">
-              <div className="text-[17px] leading-[1.8] text-slate-700 [&>p]:mb-5 [&>p:last-child]:mb-0" dangerouslySetInnerHTML={{ __html: post.content || '' }} />
+              <div className="text-[17px] leading-[1.8] text-slate-700 [&>p]:mb-5 [&>p:last-child]:mb-0" dangerouslySetInnerHTML={{ __html: (post.content || '').replace(/<img /g, '<img sizes="(max-width: 768px) 100vw, 578px" ') }} />
             </article>
             {/* E-E-A-T Block */}
             <div className="mt-8 bg-gradient-to-br from-slate-900 to-slate-800 p-8 rounded-2xl shadow-xl text-white">
@@ -143,7 +143,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
               <Link href="https://wa.me/919376590313" target="_blank" className="block w-full bg-[#25D366] hover:bg-[#1fae54] text-neutral-900 text-center font-bold py-3 px-4 rounded-xl mb-4 transition-colorsclassName=">
                 Chat on WhatsApp
               </Link>
-              <Link href="tel:+919376590313" className="block w-full bg-slate-900 hover:bg-slate-800 text-white text-center font-bold py-3 px-4 rounded-xl mb-8 transition-colors">
+              <Link href="tel:+919376590313" className="block w-full bg-slate-900 hover:bg-slate-800 text-neutral-900 text-center font-bold py-3 px-4 rounded-xl mb-8 transition-colors">
                 Call Us Now
               </Link>
               

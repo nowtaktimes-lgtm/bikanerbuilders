@@ -120,7 +120,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <Link href="https://wa.me/919376590313" target="_blank" className="block w-full bg-[#25D366] hover:bg-[#1fae54] text-neutral-900 text-center font-bold py-3 px-4 rounded-xl mb-4 transition-colorsclassName=">
                 Chat on WhatsApp
               </Link>
-              <Link href="tel:+919376590313" className="block w-full bg-slate-900 hover:bg-slate-800 text-white text-center font-bold py-3 px-4 rounded-xl mb-8 transition-colors">
+              <Link href="tel:+919376590313" className="block w-full bg-slate-900 hover:bg-slate-800 text-neutral-900 text-center font-bold py-3 px-4 rounded-xl mb-8 transition-colors">
                 Call Us Now
               </Link>
               
