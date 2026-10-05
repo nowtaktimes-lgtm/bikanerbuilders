@@ -15,12 +15,12 @@ const services = {
         desc2: "A flawless foundation starts with flawless planning. As the premier <strong class=\"text-slate-900\">architectural firm in Bikaner</strong>, we rely on industry-standard software and ancient principles.",
         materials: [
             { title: "AutoCAD Mastery", desc: "We use the latest version of Autodesk AutoCAD for precision drafting, ensuring accurate wall thicknesses and room dimensions." },
-            { title: "Rajasthan Climate Focus", desc: "Our layouts emphasize cross-ventilation and shaded courtyards (chowks) to naturally cool your home during Bikaner scorching summers." },
+            { title: "Rajasthan Climate Focus", desc: "Our layouts emphasize cross-ventilation and shaded courtyards (chowks) to naturally cool your home during Bikaner's scorching summers." },
             { title: "Structural Feasibility", desc: "We don't just draw pretty pictures. Every 2D plan is verified by our structural engineers to ensure it can actually be built safely." },
             { title: "Digital & Print Delivery", desc: "You receive high-resolution PDF blueprints and raw DWG files, along with printed A3 copies for your contractor team on-site." }
         ],
         title3: "Why Choose Bikaner Builders for Your House Map?",
-        desc3: "Avoid the costly mistakes of hiring inexperienced draftsmen. A poorly planned map can cost you lakhs in wasted space and bad energy. Here is why Bikaner elite choose us for their architectural layouts.",
+        desc3: "Avoid the costly mistakes of hiring inexperienced draftsmen. A poorly planned map can cost you lakhs in wasted space and bad energy. Here is why Bikaner's elite choose us for their architectural layouts.",
         usps: [
             { title: "100% Custom Designs", desc: "We never copy-paste templates. Your naksha is uniquely tailored to your lifestyle." },
             { title: "Local Building By-Laws", desc: "We ensure all setbacks and heights comply with UIT Bikaner regulations." },
@@ -41,7 +41,7 @@ const services = {
         desc2: "We don't just provide basic 3D views. We deliver cinematic-quality architectural visualizations using the world's most powerful rendering software.",
         materials: [
             { title: "3ds Max & V-Ray", desc: "We use industry-leading 3D modeling and rendering engines to create textures and lighting that look indistinguishable from real life." },
-            { title: "Weather-Resistant Styling", desc: "We specify exterior materials (like weather-coat paints and UV-resistant claddings) that won't fade in Bikaner extreme heat and dust." },
+            { title: "Weather-Resistant Styling", desc: "We specify exterior materials (like weather-coat paints and UV-resistant claddings) that won't fade in Bikaner's extreme heat and dust." },
             { title: "Lumion Walkthroughs", desc: "Upgrade your package to include a full 4K video walkthrough, allowing you to virtually fly around your future home." },
             { title: "Accurate Scaling", desc: "Our 3D models are built strictly to scale based on the 2D naksha, ensuring the design can be 100% replicated in reality." }
         ],
@@ -84,7 +84,7 @@ const services = {
         title1: "Our Rigorous Structural Engineering Process",
         desc1: "The safety of your family depends on the hidden skeleton of your building. As Bikaner's premier <strong class=\"text-slate-900\">structural engineering firm</strong>, we design earthquake-resistant structures that are safe, durable, and economically optimized.",
         steps: [
-            { id: "01", title: "Soil Testing & Foundation Planning", desc: "Bikaner sandy soil requires specific foundation depth. We analyze soil bearing capacity to design isolated, combined, or raft foundations accordingly." },
+            { id: "01", title: "Soil Testing & Foundation Planning", desc: "Bikaner's sandy soil requires specific foundation depth. We analyze soil bearing capacity to design isolated, combined, or raft foundations accordingly." },
             { id: "02", title: "Load Bearing Analysis", desc: "We meticulously calculate dead loads (concrete/walls), live loads (people/furniture), and dynamic forces (wind/earthquakes) acting on the building." },
             { id: "03", title: "Optimum Column Positioning", desc: "We strategically place columns and beams to ensure maximum structural integrity without interrupting the aesthetic flow of the 2D naksha." },
             { id: "04", title: "Detailed Steel Detailing (BBS)", desc: "We provide comprehensive AutoCAD drawings and a Bar Bending Schedule (BBS) so the local contractor knows exactly how to cut and tie the TMT steel." }
@@ -114,13 +114,13 @@ function generateJSX(data) {
                 <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6 border-b-2 border-slate-100 pb-3">
                   ${data.title1}
                 </h3>
-                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: '${data.desc1}' }}></p>
+                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: ${JSON.stringify(data.desc1)} }}></p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                   ${data.steps.map(s => `
                   <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
                     <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">${s.id}</span>
                     <h4 className="font-bold text-slate-900 text-xl mb-2">${s.title}</h4>
-                    <p className="text-slate-600 text-sm leading-relaxed">${s.desc}</p>
+                    <p className="text-slate-600 text-sm leading-relaxed">${s.desc.replace(/'/g, "&apos;")}</p>
                   </div>`).join('')}
                 </div>
 
@@ -128,14 +128,14 @@ function generateJSX(data) {
                 <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6 border-b-2 border-slate-100 pb-3">
                   ${data.title2}
                 </h3>
-                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: '${data.desc2}' }}></p>
+                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: ${JSON.stringify(data.desc2)} }}></p>
                 <ul className="space-y-4 mb-12 list-none pl-0">
                   ${data.materials.map(m => `
                   <li className="flex items-start gap-3">
                     <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     <div>
                       <strong className="text-slate-900 block">${m.title}</strong>
-                      <span className="text-slate-600 text-sm">${m.desc}</span>
+                      <span className="text-slate-600 text-sm">${m.desc.replace(/'/g, "&apos;")}</span>
                     </div>
                   </li>`).join('')}
                 </ul>
@@ -146,7 +146,7 @@ function generateJSX(data) {
                     ${data.title3}
                   </h3>
                   <p className="text-slate-300 leading-relaxed mb-8">
-                    ${data.desc3}
+                    ${data.desc3.replace(/'/g, "&apos;")}
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     ${data.usps.map((u, i) => `
@@ -159,7 +159,7 @@ function generateJSX(data) {
                       </div>
                       <div>
                         <strong className="block text-white text-lg">${u.title}</strong>
-                        <span className="text-slate-400 text-sm">${u.desc}</span>
+                        <span className="text-slate-400 text-sm">${u.desc.replace(/'/g, "&apos;")}</span>
                       </div>
                     </div>`).join('')}
                   </div>
@@ -172,15 +172,20 @@ for (const [slug, data] of Object.entries(services)) {
     if (fs.existsSync(filePath)) {
         let content = fs.readFileSync(filePath, 'utf8');
         
-        // Prevent double injection
-        if (!content.includes('1. Elite Process Section')) {
-            const insertionPoint = `<ServiceTrustBlock slug="${slug}" />`;
-            const jsx = generateJSX(data);
-            content = content.replace(insertionPoint, jsx + '\n                ' + insertionPoint);
-            fs.writeFileSync(filePath, content);
-            console.log(`Updated ${slug}`);
-        } else {
-            console.log(`Skipping ${slug}, already updated`);
+        // Remove the previously injected code which caused the syntax error
+        if (content.includes('1. Elite Process Section')) {
+            const startIdx = content.indexOf('{/* 1. Elite Process Section */}');
+            const endIdx = content.indexOf(\`<ServiceTrustBlock slug="\${slug}" />\`, startIdx);
+            if (startIdx !== -1 && endIdx !== -1) {
+                content = content.substring(0, startIdx) + content.substring(endIdx);
+            }
         }
+        
+        // Inject the fresh valid code
+        const insertionPoint = \`<ServiceTrustBlock slug="\${slug}" />\`;
+        const jsx = generateJSX(data);
+        content = content.replace(insertionPoint, jsx + '\\n                ' + insertionPoint);
+        fs.writeFileSync(filePath, content);
+        console.log(\`Updated \${slug}\`);
     }
 }
