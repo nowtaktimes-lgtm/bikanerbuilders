@@ -59,7 +59,7 @@ export default function SEOOptimizedServicePage() {
             fill
             priority
             className="object-cover opacity-30"
-          / sizes="(max-width: 768px) 100vw, 578px">
+          sizes="(max-width: 768px) 100vw, 578px" />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-transparent"></div>
           
           <div className="relative z-10 text-center px-4 max-w-5xl mx-auto mt-12">
@@ -85,7 +85,7 @@ export default function SEOOptimizedServicePage() {
               <article className="prose prose-lg md:prose-xl prose-slate max-w-none bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-slate-100">
 
                 <div className="relative w-full h-[400px] mb-10 rounded-2xl overflow-hidden shadow-lg border border-slate-200">
-                  <Image src="/assets/seo_3d_elevation.jpg" alt="Modern 3D Front Elevation Villa Design" fill className="object-cover hover:scale-105 transition-transform duration-700" / sizes="(max-width: 768px) 100vw, 578px">
+                  <Image src="/assets/seo_3d_elevation.jpg" alt="Modern 3D Front Elevation Villa Design" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 100vw, 578px" />
                 </div>
 
                 <h2 className="text-3xl font-black text-slate-900 mb-6 border-b-4 border-orange-500 pb-4 inline-block">
