@@ -147,7 +147,7 @@ export default function CostCalculator() {
           rel="noopener noreferrer"
           className={`w-full flex items-center justify-center gap-3 py-4 rounded-xl font-black text-lg transition-all shadow-[0_8px_30px_rgba(37,211,102,0.3)] ${
             areaValue > 0 
-              ? 'bg-[#25D366] hover:bg-[#1fae54] text-neutral-900 hover:-translate-y-1' 
+              ? 'bg-[#25D366] hover:bg-[#1fae54] text-white hover:-translate-y-1' 
               : 'bg-slate-200 text-slate-400 cursor-not-allowed shadow-none'
           }`}
           onClick={(e) => {

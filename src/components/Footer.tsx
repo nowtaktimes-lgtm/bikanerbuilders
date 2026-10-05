@@ -117,7 +117,7 @@ export default function Footer({ locations = [] }: FooterProps) {
           {/* Section 1: Top SEO Service Areas */}
           <div className="text-center mb-8">
             <h3 className="text-2xl font-black text-white mb-2">Serving Bikaner City & Surrounding Areas</h3>
-            <p className="text-slate-400">Top construction service areas</p>
+            <p className="text-slate-500">Top construction service areas</p>
           </div>
           
           <div className="flex flex-wrap justify-center gap-2 md:gap-3 mb-6">
@@ -170,7 +170,7 @@ export default function Footer({ locations = [] }: FooterProps) {
       </div>
 
       {/* Copyright */}
-      <div className="bg-[#0b1121] py-6 text-center text-slate-400 text-sm font-medium pb-24 md:pb-6">
+      <div className="bg-[#0b1121] py-6 text-center text-slate-500 text-sm font-medium pb-24 md:pb-6">
         <div className="max-w-7xl mx-auto px-4">
           &copy; {currentYear} Bikaner Builders. All Rights Reserved. Designed for Bikaner.
         </div>

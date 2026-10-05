@@ -117,7 +117,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               <h3 className="text-xl font-bold text-slate-900 mb-4">Request a Call Back</h3>
               <p className="text-slate-600 mb-6 text-sm">Need help with {post.title}? Our experts are here to assist you.</p>
               
-              <Link href="https://wa.me/919376590313" target="_blank" className="block w-full bg-[#25D366] hover:bg-[#1fae54] text-neutral-900 text-center font-bold py-3 px-4 rounded-xl mb-4 transition-colorsclassName=">
+              <Link href="https://wa.me/919376590313" target="_blank" className="block w-full bg-[#25D366] hover:bg-[#1fae54] text-white text-center font-bold py-3 px-4 rounded-xl mb-4 transition-colorsclassName=">
                 Chat on WhatsApp
               </Link>
               <Link href="tel:+919376590313" className="block w-full bg-slate-900 hover:bg-slate-800 text-neutral-900 text-center font-bold py-3 px-4 rounded-xl mb-8 transition-colors">
