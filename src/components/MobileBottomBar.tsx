@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function MobileBottomBar() {
   return (
     <div className="fixed bottom-0 left-0 w-full z-50 bg-slate-900 border-t border-slate-800 flex justify-around p-3 pb-safe md:hidden">
-      <Link href="/#home" className="flex flex-col items-center gap-1 text-slate-400 hover:text-orange-500 active:text-orange-500 transition-colors">
+      <Link href="/" className="flex flex-col items-center gap-1 text-slate-400 hover:text-orange-500 active:text-orange-500 transition-colors">
         <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
         <span className="text-[10px] font-medium tracking-wide">Home</span>
       </Link>
