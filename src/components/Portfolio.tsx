@@ -127,7 +127,7 @@ export default function Portfolio() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 via-[#0F172A]/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
                 
                 <div className="absolute bottom-0 left-0 w-full p-3 md:p-6 translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                  <span className="inline-block px-2 py-0.5 md:px-3 md:py-1 bg-[#EA580C] text-neutral-900 text-[10px] md:text-xs font-bold uppercase tracking-wider rounded-md mb-1.5 md:mb-3 shadow-md">
+                  <span className="inline-block px-2 py-0.5 md:px-3 md:py-1 bg-[#EA580C] text-white text-[10px] md:text-xs font-bold uppercase tracking-wider rounded-md mb-1.5 md:mb-3 shadow-md">
                     {project.category}
                   </span>
                   <h3 className="text-sm md:text-2xl font-bold leading-tight text-white drop-shadow-md">

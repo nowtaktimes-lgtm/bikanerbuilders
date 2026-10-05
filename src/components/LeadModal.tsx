@@ -157,7 +157,7 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full mt-2 bg-[#EA580C] hover:bg-[#F97316] disabled:bg-orange-300 disabled:cursor-not-allowed text-neutral-900 font-black text-lg py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
+                className="w-full mt-2 bg-[#EA580C] hover:bg-[#F97316] disabled:bg-orange-300 disabled:cursor-not-allowed text-white font-black text-lg py-4 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-200"
               >
                 {isSubmitting ? (
                   <span className="flex items-center justify-center gap-2">

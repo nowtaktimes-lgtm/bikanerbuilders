@@ -146,7 +146,7 @@ export default function QuoteModal({ isOpen, onClose }: QuoteModalProps) {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full mt-2 bg-[#EA580C] hover:bg-[#F97316] text-neutral-900 font-black text-lg py-4 rounded-xl shadow-[0_4px_15px_rgba(234,88,12,0.4)] hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2"
+              className="w-full mt-2 bg-[#EA580C] hover:bg-[#F97316] text-white font-black text-lg py-4 rounded-xl shadow-[0_4px_15px_rgba(234,88,12,0.4)] hover:-translate-y-0.5 transition-all duration-200 flex items-center justify-center gap-2"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M11.97 2.005a9.962 9.962 0 00-8.528 15.11L2 22l5.023-1.328a9.964 9.964 0 104.947-18.667zM12 20a7.973 7.973 0 01-4.062-1.115l-.291-.173-3.023.794.808-2.953-.19-.3A7.95 7.95 0 014.032 12 7.977 7.977 0 1112 20zm4.242-5.467c-.232-.116-1.378-.68-1.593-.758-.215-.078-.372-.116-.528.116-.156.232-.6 .758-.737.914-.136.155-.274.175-.506.058-.232-.116-.983-.362-1.87-1.156-.69-.617-1.155-1.38-1.29-1.612-.136-.233-.014-.359.102-.475.105-.105.232-.272.348-.408.116-.136.155-.233.232-.388.077-.156.039-.292-.019-.408-.058-.116-.528-1.277-.723-1.748-.19-.46-.383-.398-.528-.406-.137-.008-.293-.008-.45-.008z" />

@@ -113,7 +113,7 @@ export default function AboutUs() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-6">Ready to start your construction journey?</h2>
           <p className="text-gray-300 mb-10 text-lg">Contact our team today for a free site visit and architectural consultation.</p>
-          <Link href="/contact" className="inline-block bg-[#EA580C] hover:bg-[#F97316] text-neutral-900 font-bold text-lg px-8 py-4 rounded-xl shadow-[0_4px_15px_rgba(234,88,12,0.5)] transition-all hover:-translate-y-1">
+          <Link href="/contact" className="inline-block bg-[#EA580C] hover:bg-[#F97316] text-white font-bold text-lg px-8 py-4 rounded-xl shadow-[0_4px_15px_rgba(234,88,12,0.5)] transition-all hover:-translate-y-1">
             Get in Touch Now
           </Link>
         </div>

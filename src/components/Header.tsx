@@ -47,7 +47,7 @@ export default function Header({ services }: HeaderProps) {
                 className="w-10 h-10 object-contain"
               />
             ) : (
-              <div className="w-10 h-10 bg-[#EA580C] rounded-lg flex items-center justify-center text-neutral-900 font-black text-xl shadow-lg">
+              <div className="w-10 h-10 bg-[#EA580C] rounded-lg flex items-center justify-center text-white font-black text-xl shadow-lg">
                 BB
               </div>
             )}
@@ -92,7 +92,7 @@ export default function Header({ services }: HeaderProps) {
           </nav>
 
           <div className="hidden lg:block">
-            <button onClick={() => setQuoteModalOpen(true)} className="bg-[#EA580C] hover:bg-[#F97316] text-neutral-900 px-6 py-2.5 rounded-full font-bold text-sm transition-all shadow-[0_4px_14px_rgba(234,88,12,0.4)] hover:shadow-[0_6px_20px_rgba(234,88,12,0.6)] hover:-translate-y-0.5">
+            <button onClick={() => setQuoteModalOpen(true)} className="bg-[#EA580C] hover:bg-[#F97316] text-white px-6 py-2.5 rounded-full font-bold text-sm transition-all shadow-[0_4px_14px_rgba(234,88,12,0.4)] hover:shadow-[0_6px_20px_rgba(234,88,12,0.6)] hover:-translate-y-0.5">
               {settings?.headerButtonText || 'Get Quote'}
             </button>
           </div>
@@ -145,7 +145,7 @@ export default function Header({ services }: HeaderProps) {
           <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-bold hover:text-[#EA580C] transition-colors">About Us</Link>
           <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-bold hover:text-[#EA580C] transition-colors">Contact</Link>
           
-          <button onClick={() => { setMobileMenuOpen(false); setQuoteModalOpen(true); }} className="mt-6 bg-[#EA580C] hover:bg-[#F97316] text-neutral-900 px-8 py-4 rounded-xl text-lg font-black w-full max-w-[200px] text-center shadow-lg hover:shadow-orange-500/30 transition-all">
+          <button onClick={() => { setMobileMenuOpen(false); setQuoteModalOpen(true); }} className="mt-6 bg-[#EA580C] hover:bg-[#F97316] text-white px-8 py-4 rounded-xl text-lg font-black w-full max-w-[200px] text-center shadow-lg hover:shadow-orange-500/30 transition-all">
             {settings?.headerButtonText || 'Get Quote'}
           </button>
         </nav>
