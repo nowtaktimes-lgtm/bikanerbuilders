@@ -3,8 +3,7 @@ import { getLocationBySlug, getAllLocations } from '@/lib/api';
 import DynamicPageHero from '@/components/DynamicPageHero';
 import BottomCTA from '@/components/BottomCTA';
 import DynamicFAQ from '@/components/DynamicFAQ';
-import dynamic from 'next/dynamic';
-const DynamicGoogleMap = dynamic(() => import('@/components/DynamicGoogleMap'), { ssr: false });
+import ClientMapWrapper from '@/components/ClientMapWrapper';
 import Link from 'next/link';
 import { formatLocationName } from '@/lib/formatters';
 import { getFounderQuote } from '@/lib/quotes';
@@ -117,7 +116,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
             {/* Dynamic FAQs */}
             <DynamicFAQ pageType="location" title={formattedLocationName} />
 
-            <DynamicGoogleMap locationName={formattedLocationName} />
+            <ClientMapWrapper locationName={formattedLocationName} />
 
             {/* Automated SEO Enhancements: Local Grids */}
             {locations && locations.length > 0 && (
