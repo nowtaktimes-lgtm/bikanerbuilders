@@ -26,104 +26,142 @@ export const metadata: Metadata = {
 };
 
 export default function ConstructionCostBikanerPage() {
-  const faqSchema = {
+  const costPageSchema = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+    "@graph": [
       {
-        "@type": "Question",
-        "name": "What is the construction cost for 1000 sq ft in Bikaner?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "For a 1000 sq ft plot in Bikaner, a standard quality construction will cost approximately ₹15 Lakhs to ₹16 Lakhs. Premium finishes will cost between ₹18 Lakhs to ₹20 Lakhs."
+        "@type": "WebPage",
+        "@id": "https://www.bikanerbuilders.in/cost/#webpage",
+        "url": "https://www.bikanerbuilders.in/cost/",
+        "name": "House Construction Cost in Bikaner 2026 | Price Per Sq Ft",
+        "isPartOf": {
+          "@id": "https://www.bikanerbuilders.in/#website"
+        },
+        "breadcrumb": {
+          "@id": "https://www.bikanerbuilders.in/cost/#breadcrumb"
         }
       },
       {
-        "@type": "Question",
-        "name": "What is the cost to build a 1200 sq ft house in Bikaner?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Building a 1200 sq ft home (like a 30x40 plot) in Bikaner typically costs ₹18 Lakhs for standard quality, and ₹21.6 Lakhs to ₹24 Lakhs for premium quality finishes."
-        }
+        "@type": "BreadcrumbList",
+        "@id": "https://www.bikanerbuilders.in/cost/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.bikanerbuilders.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Construction Cost Guide",
+            "item": "https://www.bikanerbuilders.in/cost/"
+          }
+        ]
       },
       {
-        "@type": "Question",
-        "name": "Does the per sq ft cost include labour?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, our turnkey construction rates (₹1500 to ₹2200 per sq ft) include both premium materials and skilled labour. You don't have to hire contractors separately."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How is the quotation prepared?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We prepare a transparent Bill of Quantities (BOQ) after finalizing your 2D floor plan. It details every single material brand, quantity, and cost so there are zero hidden charges."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you provide architectural maps for free?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, if you sign a turnkey contract with Bikaner Builders, the 2D Vastu maps and 3D elevations are typically included in the package at no extra cost."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I customize the materials during construction?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Absolutely. The BOQ is flexible. If you decide to upgrade your floor tiles from standard vitrified to Italian marble midway, you only pay the differential material cost."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How long does it take to build a 1500 sq ft home?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A standard 1500 sq ft single-story house in Bikaner takes about 5 to 6 months to complete from foundation to final paint, ensuring proper curing time for the RCC."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Do you build commercial complexes and shops?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, we undertake both residential and commercial construction projects, optimizing commercial spaces for maximum ROI and structural safety."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is GST included in your construction rate?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "GST is generally clearly mentioned in our official BOQ based on current government regulations for construction services."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does the estimate include architect and structural design?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, our turnkey packages include complete 2D maps, 3D elevations, and structural drawings by our in-house engineering team."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is the boundary wall included in the per sq ft cost?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No, the boundary wall, compound gate, and elevation projections are usually calculated separately as they do not fall under the standard built-up roof area."
-        }
+        "@type": "FAQPage",
+        "@id": "https://www.bikanerbuilders.in/cost/#faq",
+        "isPartOf": {
+          "@id": "https://www.bikanerbuilders.in/cost/#webpage"
+        },
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the construction cost for 1000 sq ft in Bikaner?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For a 1000 sq ft plot in Bikaner, a standard quality construction will cost approximately ₹15 Lakhs to ₹16 Lakhs. Premium finishes will cost between ₹18 Lakhs to ₹20 Lakhs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the cost to build a 1200 sq ft house in Bikaner?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Building a 1200 sq ft home (like a 30x40 plot) in Bikaner typically costs ₹18 Lakhs for standard quality, and ₹21.6 Lakhs to ₹24 Lakhs for premium quality finishes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the per sq ft cost include labour?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, our turnkey construction rates (₹1500 to ₹2200 per sq ft) include both premium materials and skilled labour. You don't have to hire contractors separately."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is the quotation prepared?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We prepare a transparent Bill of Quantities (BOQ) after finalizing your 2D floor plan. It details every single material brand, quantity, and cost so there are zero hidden charges."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you provide architectural maps for free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, if you sign a turnkey contract with Bikaner Builders, the 2D Vastu maps and 3D elevations are typically included in the package at no extra cost."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I customize the materials during construction?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely. The BOQ is flexible. If you decide to upgrade your floor tiles from standard vitrified to Italian marble midway, you only pay the differential material cost."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take to build a 1500 sq ft home?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A standard 1500 sq ft single-story house in Bikaner takes about 5 to 6 months to complete from foundation to final paint, ensuring proper curing time for the RCC."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you build commercial complexes and shops?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, we undertake both residential and commercial construction projects, optimizing commercial spaces for maximum ROI and structural safety."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is GST included in your construction rate?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "GST is generally clearly mentioned in our official BOQ based on current government regulations for construction services."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the estimate include architect and structural design?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, our turnkey packages include complete 2D maps, 3D elevations, and structural drawings by our in-house engineering team."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the boundary wall included in the per sq ft cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, the boundary wall, compound gate, and elevation projections are usually calculated separately as they do not fall under the standard built-up roof area."
+            }
+          }
+        ]
       }
     ]
   };
 
   return (
     <>
-      <Script id="cost-faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <Script id="cost-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(costPageSchema) }} />
       <div className="pt-20">
         
         {/* 1. Hero Section */}
