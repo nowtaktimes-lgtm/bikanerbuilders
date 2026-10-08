@@ -73,9 +73,16 @@ export default function Header({ services }: HeaderProps) {
               
               <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden transition-all duration-200 transform origin-top ${servicesDropdownOpen ? 'scale-100 opacity-100 visible' : 'scale-95 opacity-0 invisible'}`}>
                                 <div className="py-2">
-                  {/* Dynamic WordPress Services */}
-                  {services && services.length > 0 && services.map((service, index) => (
-                    <Link key={index} href={service.uri || "#"} className="block px-6 py-3 text-sm font-bold text-gray-700 hover:bg-orange-50 hover:text-[#EA580C]">{service.title}</Link>
+                  {/* Architecture & Design Group */}
+                  <div className="px-6 py-2 text-xs font-black text-slate-400 uppercase tracking-wider">Architecture & Design</div>
+                  {(services || []).filter(s => ['architect-in-bikaner', '2d-naksha', '3d-elevation', 'structural-drawing'].includes(s.slug || '')).map((service, index) => (
+                    <Link key={`arch-${index}`} href={service.uri || "#"} className="block px-6 py-2 text-sm font-bold text-gray-700 hover:bg-orange-50 hover:text-[#EA580C]">{service.title}</Link>
+                  ))}
+                  
+                  {/* Construction Group */}
+                  <div className="px-6 py-2 mt-2 text-xs font-black text-slate-400 uppercase tracking-wider border-t border-slate-50 pt-4">Construction</div>
+                  {(services || []).filter(s => !['architect-in-bikaner', '2d-naksha', '3d-elevation', 'structural-drawing'].includes(s.slug || '')).map((service, index) => (
+                    <Link key={`const-${index}`} href={service.uri || "#"} className="block px-6 py-2 text-sm font-bold text-gray-700 hover:bg-orange-50 hover:text-[#EA580C]">{service.title}</Link>
                   ))}
                   {/* All Services Master Link */}
                   <div className="border-t border-slate-100 mt-2 pt-2">
@@ -142,9 +149,16 @@ export default function Header({ services }: HeaderProps) {
             
             <div className={`overflow-hidden transition-all duration-300 ${mobileServicesOpen ? 'max-h-96 mt-4 opacity-100' : 'max-h-0 opacity-0'}`}>
               <div className="flex flex-col gap-3 bg-slate-800/40 rounded-2xl py-4 px-2">
-                {/* Dynamic WordPress Services */}
-                {services && services.length > 0 && services.map((service, index) => (
-                  <Link key={index} href={service.uri || "#"} onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-300 hover:text-[#EA580C]">{service.title}</Link>
+                {/* Architecture & Design Group */}
+                <div className="px-2 pb-1 text-xs font-black text-slate-500 uppercase tracking-wider">Architecture & Design</div>
+                {(services || []).filter(s => ['architect-in-bikaner', '2d-naksha', '3d-elevation', 'structural-drawing'].includes(s.slug || '')).map((service, index) => (
+                  <Link key={`m-arch-${index}`} href={service.uri || "#"} onClick={() => setMobileMenuOpen(false)} className="px-2 text-lg font-medium text-slate-300 hover:text-[#EA580C]">{service.title}</Link>
+                ))}
+                
+                {/* Construction Group */}
+                <div className="px-2 pb-1 mt-2 text-xs font-black text-slate-500 uppercase tracking-wider border-t border-slate-700/50 pt-3">Construction</div>
+                {(services || []).filter(s => !['architect-in-bikaner', '2d-naksha', '3d-elevation', 'structural-drawing'].includes(s.slug || '')).map((service, index) => (
+                  <Link key={`m-const-${index}`} href={service.uri || "#"} onClick={() => setMobileMenuOpen(false)} className="px-2 text-lg font-medium text-slate-300 hover:text-[#EA580C]">{service.title}</Link>
                 ))}
                 <div className="border-t border-slate-700/50 mt-2 pt-3">
                   <Link href="/services" onClick={() => setMobileMenuOpen(false)} className="text-lg font-bold text-[#EA580C]">View All Services &rarr;</Link>

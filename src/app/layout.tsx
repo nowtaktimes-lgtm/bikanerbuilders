@@ -71,7 +71,7 @@ export default async function RootLayout({
         <SettingsProvider settings={globalSettings}>
           <Header services={services} />
           <main>{children}</main>
-          <Footer locations={recentLocations} />
+          <Footer locations={recentLocations} services={services} />
           <MobileBottomBar />
         </SettingsProvider>
       </body>

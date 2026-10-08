@@ -64,7 +64,7 @@ export default function TurnkeyConstructionPage() {
       <div className="pt-20">
         
         {/* Hero Section */}
-        <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+        <section className="relative min-h-[60vh] py-20 md:py-32 flex items-center justify-center overflow-hidden">
           <Image
             src="/assets/turnkey_project_handover.jpg"
             alt="Handing over keys for a completed turnkey house construction in Bikaner"

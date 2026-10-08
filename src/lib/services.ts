@@ -2,6 +2,13 @@ import { WpNode } from './api';
 
 export const STATIC_SERVICES = [
   {
+    title: "Architect in Bikaner",
+    slug: "architect-in-bikaner",
+    uri: "/architect-in-bikaner",
+    content: "Professional architectural planning, 2D floor plans, 3D elevations, and structural coordination for residential and commercial projects.",
+    featuredImage: { node: { sourceUrl: "/assets/architect-in-bikaner-house-design.webp" } }
+  },
+  {
     title: "Turnkey Construction",
     slug: "turnkey-construction",
     uri: "/services/turnkey-construction",
