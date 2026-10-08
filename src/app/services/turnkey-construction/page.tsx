@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import ServiceTrustBlock from '@/components/ServiceTrustBlock';
+import OtherServicesLinker from '@/components/OtherServicesLinker';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
@@ -221,8 +222,21 @@ export default function TurnkeyConstructionPage() {
                   </div>
                 </div>
 
+                {/* Cost Guide CTA */}
+                <div className="bg-orange-50 rounded-2xl p-6 md:p-8 mt-12 mb-8 border border-orange-100 shadow-sm text-center">
+                  <p className="text-slate-800 text-lg mb-6 leading-relaxed">
+                    Planning a turnkey home? Check our <Link href="/cost" className="text-orange-600 font-bold hover:underline">2026 House Construction Cost Guide for Bikaner</Link> to understand indicative construction rates, inclusions and budgeting.
+                  </p>
+                  <Link href="/cost" className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold px-8 py-3 rounded-full shadow-md transition-transform hover:-translate-y-1">
+                    Calculate Construction Cost
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                  </Link>
+                </div>
+
                 <ServiceTrustBlock slug="turnkey-construction" />
               </article>
+              
+              <OtherServicesLinker currentSlug="turnkey-construction" />
               
               {/* FAQ Schema Section */}
               <div className="mt-12 bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-slate-100">

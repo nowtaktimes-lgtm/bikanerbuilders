@@ -1,7 +1,8 @@
-﻿import { Metadata } from 'next';
+import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getAllServices } from '@/lib/api';
+import { getCombinedServices } from '@/lib/services';
 
 export const metadata: Metadata = {
   title: 'Our Services | Bikaner Builders',
@@ -9,7 +10,8 @@ export const metadata: Metadata = {
 };
 
 export default async function ServicesPage() {
-  const services = await getAllServices();
+  const dynamicServices = await getAllServices();
+  const services = getCombinedServices(dynamicServices);
 
   return (
     <div className="min-h-screen bg-slate-50 pt-24 pb-16">

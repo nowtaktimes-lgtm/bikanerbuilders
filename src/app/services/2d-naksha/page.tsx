@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import ServiceTrustBlock from '@/components/ServiceTrustBlock';
+import OtherServicesLinker from '@/components/OtherServicesLinker';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -214,8 +215,21 @@ export default function SEOOptimizedServicePage() {
                     </div>
                   </div>
                 </div>
+                {/* Cost Guide CTA */}
+                <div className="bg-orange-50 rounded-2xl p-6 md:p-8 mt-12 mb-8 border border-orange-100 shadow-sm text-center">
+                  <p className="text-slate-800 text-lg mb-6 leading-relaxed">
+                    Planning your house design? Check the <Link href="/cost" className="text-orange-600 font-bold hover:underline">Bikaner House Construction Cost Guide</Link> before finalizing your floor plan and construction budget.
+                  </p>
+                  <Link href="/cost" className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold px-8 py-3 rounded-full shadow-md transition-transform hover:-translate-y-1">
+                    Calculate Construction Cost
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                  </Link>
+                </div>
+
                 <ServiceTrustBlock slug="2d-naksha" />
               </article>
+              
+              <OtherServicesLinker currentSlug="2d-naksha" />
               
               {/* FAQ Schema Section */}
               <div className="mt-12 bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-slate-100">

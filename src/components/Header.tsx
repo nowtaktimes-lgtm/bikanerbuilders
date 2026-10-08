@@ -18,6 +18,8 @@ export default function Header({ services }: HeaderProps) {
   const [isQuoteModalOpen, setQuoteModalOpen] = useState(false);
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [resourcesDropdownOpen, setResourcesDropdownOpen] = useState(false);
+  const [mobileResourcesOpen, setMobileResourcesOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,18 +77,32 @@ export default function Header({ services }: HeaderProps) {
                   {services && services.length > 0 && services.map((service, index) => (
                     <Link key={index} href={service.uri || "#"} className="block px-6 py-3 text-sm font-bold text-gray-700 hover:bg-orange-50 hover:text-[#EA580C]">{service.title}</Link>
                   ))}
-                  {/* Hardcoded SEO Static Services */}
-                  <Link href="/services/2d-naksha" className="block px-6 py-3 text-sm font-bold text-gray-700 hover:bg-orange-50 hover:text-[#EA580C]">2D Vastu Naksha</Link>
-                  <Link href="/services/3d-elevation" className="block px-6 py-3 text-sm font-bold text-gray-700 hover:bg-orange-50 hover:text-[#EA580C]">3D Front Elevation</Link>
-                  <Link href="/services/turnkey-construction" className="block px-6 py-3 text-sm font-bold text-gray-700 hover:bg-orange-50 hover:text-[#EA580C]">Turnkey Construction</Link>
-                  <Link href="/services/interior-design" className="block px-6 py-3 text-sm font-bold text-gray-700 hover:bg-orange-50 hover:text-[#EA580C]">POP & Interior Design</Link>
-                  <Link href="/services/structural-drawing" className="block px-6 py-3 text-sm font-bold text-gray-700 hover:bg-orange-50 hover:text-[#EA580C]">Structural Drawings</Link>
-</div>
+                  {/* All Services Master Link */}
+                  <div className="border-t border-slate-100 mt-2 pt-2">
+                    <Link href="/services" className="block px-6 py-3 text-sm font-bold text-[#EA580C] hover:bg-orange-50">View All Services &rarr;</Link>
+                  </div>
+                </div>
               </div>
             </div>
 
             <Link href="/portfolio" className={`font-bold hover:text-[#EA580C] transition-colors ${isScrolled ? 'text-gray-700' : 'text-[#0F172A] drop-shadow-sm'}`}>Portfolio</Link>
-            <Link href="/cost-estimator" className={`font-bold hover:text-[#EA580C] transition-colors ${isScrolled ? 'text-gray-700' : 'text-[#0F172A] drop-shadow-sm'}`}>Cost Estimator</Link>
+            <div 
+              className="relative group"
+              onMouseEnter={() => setResourcesDropdownOpen(true)}
+              onMouseLeave={() => setResourcesDropdownOpen(false)}
+            >
+              <button className={`font-bold hover:text-[#EA580C] transition-colors flex items-center gap-1 ${isScrolled ? 'text-gray-700' : 'text-[#0F172A] drop-shadow-sm'}`}>
+                Resources
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+              </button>
+              
+              <div className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden transition-all duration-200 transform origin-top ${resourcesDropdownOpen ? 'scale-100 opacity-100 visible' : 'scale-95 opacity-0 invisible'}`}>
+                <div className="py-2">
+                  <Link href="/cost" className="block px-6 py-3 text-sm font-bold text-gray-700 hover:bg-orange-50 hover:text-[#EA580C]">Construction Cost Guide</Link>
+                  <Link href="/cost-estimator" className="block px-6 py-3 text-sm font-bold text-gray-700 hover:bg-orange-50 hover:text-[#EA580C]">Cost Estimator Tool</Link>
+                </div>
+              </div>
+            </div>
             <Link href="/about" className={`font-bold hover:text-[#EA580C] transition-colors ${isScrolled ? 'text-gray-700' : 'text-[#0F172A] drop-shadow-sm'}`}>About</Link>
             <Link href="/contact" className={`font-bold hover:text-[#EA580C] transition-colors ${isScrolled ? 'text-gray-700' : 'text-[#0F172A] drop-shadow-sm'}`}>Contact</Link>
           </nav>
@@ -130,18 +146,30 @@ export default function Header({ services }: HeaderProps) {
                 {services && services.length > 0 && services.map((service, index) => (
                   <Link key={index} href={service.uri || "#"} onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-300 hover:text-[#EA580C]">{service.title}</Link>
                 ))}
-                {/* Hardcoded SEO Static Services */}
-                <Link href="/services/2d-naksha" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-300 hover:text-[#EA580C]">2D Vastu Naksha</Link>
-                <Link href="/services/3d-elevation" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-300 hover:text-[#EA580C]">3D Front Elevation</Link>
-                <Link href="/services/turnkey-construction" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-300 hover:text-[#EA580C]">Turnkey Construction</Link>
-                <Link href="/services/interior-design" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-300 hover:text-[#EA580C]">POP & Interior Design</Link>
-                <Link href="/services/structural-drawing" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-300 hover:text-[#EA580C]">Structural Drawings</Link>
+                <div className="border-t border-slate-700/50 mt-2 pt-3">
+                  <Link href="/services" onClick={() => setMobileMenuOpen(false)} className="text-lg font-bold text-[#EA580C]">View All Services &rarr;</Link>
+                </div>
               </div>
             </div>
           </div>
 
           <Link href="/portfolio" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-bold hover:text-[#EA580C] transition-colors">Portfolio</Link>
-          <Link href="/cost-estimator" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-bold hover:text-[#EA580C] transition-colors">Cost Estimator</Link>
+          <div className="w-full max-w-xs text-center border-y border-slate-700/50 py-3">
+            <button 
+              onClick={() => setMobileResourcesOpen(!mobileResourcesOpen)} 
+              className="text-2xl font-bold flex items-center justify-center gap-2 w-full hover:text-[#EA580C] transition-colors"
+            >
+              Resources
+              <svg className={`w-5 h-5 transition-transform duration-300 ${mobileResourcesOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            
+            <div className={`overflow-hidden transition-all duration-300 ${mobileResourcesOpen ? 'max-h-96 mt-4 opacity-100' : 'max-h-0 opacity-0'}`}>
+              <div className="flex flex-col gap-3 bg-slate-800/40 rounded-2xl py-4 px-2">
+                <Link href="/cost" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-300 hover:text-[#EA580C]">Construction Cost Guide</Link>
+                <Link href="/cost-estimator" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-slate-300 hover:text-[#EA580C]">Cost Estimator Tool</Link>
+              </div>
+            </div>
+          </div>
           <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-bold hover:text-[#EA580C] transition-colors">About Us</Link>
           <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="text-2xl font-bold hover:text-[#EA580C] transition-colors">Contact</Link>
           

@@ -9,9 +9,10 @@ import { WpNode } from '@/lib/api';
 
 interface FooterProps {
   locations?: WpNode[];
+  services?: WpNode[];
 }
 
-export default function Footer({ locations = [] }: FooterProps) {
+export default function Footer({ locations = [], services = [] }: FooterProps) {
   const settings = useSettings();
   const currentYear = new Date().getFullYear();
   
@@ -41,7 +42,7 @@ export default function Footer({ locations = [] }: FooterProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top & Middle Sections (Brand & Quick Links) */}
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-12 md:gap-12 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-4 gap-y-12 md:gap-12 mb-16">
           
           {/* Brand Info */}
           <div className="col-span-2 lg:col-span-2">
@@ -89,7 +90,6 @@ export default function Footer({ locations = [] }: FooterProps) {
               <li><Link href="/" className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">Home</Link></li>
               <li><Link href="/about" className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">About Us</Link></li>
               <li><Link href="/portfolio" className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">Project Portfolio</Link></li>
-              <li><Link href="/cost-estimator" className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">Cost Estimator</Link></li>
               <li><Link href="/contact" className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">Contact Us</Link></li>
               <li><Link href="/privacy-policy" className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">Privacy Policy</Link></li>
             </ul>
@@ -99,11 +99,27 @@ export default function Footer({ locations = [] }: FooterProps) {
           <div>
             <h3 className="text-[#0F172A] font-bold text-base md:text-lg mb-4 md:mb-6">Core Services</h3>
             <ul className="space-y-3 md:space-y-4">
-              <li><Link href="/services/2d-naksha" className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">2D Vastu Map / Naksha</Link></li>
-              <li><Link href="/services/3d-elevation" className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">3D Front Elevation</Link></li>
-              <li><Link href="/services/turnkey-construction" className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">Turnkey Construction</Link></li>
-              <li><Link href="/services/interior-design" className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">POP & Interior Design</Link></li>
-              <li><Link href="/services/structural-drawing" className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">Structural Drawings</Link></li>
+              {services.slice(0, 5).map((service, index) => (
+                <li key={index}>
+                  <Link href={service.uri || "#"} className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href="/services" className="text-sm md:text-base text-[#EA580C] hover:text-orange-700 font-bold transition-colors">
+                  View All Services &rarr;
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div>
+            <h3 className="text-[#0F172A] font-bold text-base md:text-lg mb-4 md:mb-6">Resources</h3>
+            <ul className="space-y-3 md:space-y-4">
+              <li><Link href="/cost" className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">Construction Cost Guide</Link></li>
+              <li><Link href="/cost-estimator" className="text-sm md:text-base text-gray-600 hover:text-[#EA580C] font-medium transition-colors">Cost Estimator Tool</Link></li>
             </ul>
           </div>
 

@@ -4,6 +4,7 @@ import DynamicPageHero from '@/components/DynamicPageHero';
 import BottomCTA from '@/components/BottomCTA';
 import DynamicFAQ from '@/components/DynamicFAQ';
 import Link from 'next/link';
+import OtherServicesLinker from '@/components/OtherServicesLinker';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
@@ -95,6 +96,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
 
             {/* Dynamic FAQs */}
             <DynamicFAQ pageType="service" title={post.title} />
+            <OtherServicesLinker currentSlug={resolvedParams.slug} />
 
             {/* Automated SEO Enhancements: Local Grids */}
             {locations && locations.length > 0 && (

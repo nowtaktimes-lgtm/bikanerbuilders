@@ -95,6 +95,16 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
           <div className="lg:col-span-8">
             <article className="prose max-w-none bg-white p-6 md:p-12 rounded-2xl shadow-xl border border-slate-100 prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-orange-500">
               <div className="text-[17px] leading-[1.8] text-slate-700 [&>p]:mb-5 [&>p:last-child]:mb-0" dangerouslySetInnerHTML={{ __html: (post.content || '').replace(/<img /g, '<img sizes="(max-width: 768px) 100vw, 578px" ') }} />
+              {/* Cost Guide CTA */}
+              <div className="bg-orange-50 rounded-2xl p-6 md:p-8 mt-12 border border-orange-100 shadow-sm text-center not-prose">
+                <p className="text-slate-800 text-lg mb-6 leading-relaxed font-normal">
+                  Planning to build in {formattedLocationName}? Check our <Link href="/cost" className="text-orange-600 font-bold hover:underline">Bikaner House Construction Cost Guide</Link> for indicative 2026 construction rates and budgeting factors.
+                </p>
+                <Link href="/cost" className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold px-8 py-3 rounded-full shadow-md transition-transform hover:-translate-y-1">
+                  Calculate Construction Cost
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                </Link>
+              </div>
             </article>
             {/* E-E-A-T Block */}
             <div className="mt-8 bg-gradient-to-br from-slate-900 to-slate-800 p-8 rounded-2xl shadow-xl text-white">

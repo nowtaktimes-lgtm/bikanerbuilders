@@ -7,6 +7,7 @@ import MobileBottomBar from "@/components/MobileBottomBar";
 import { SettingsProvider } from "@/components/SettingsProvider";
 import { generateGeneralContractorSchema } from '@/lib/schema';
 import { getGlobalSettings, getRecentLocations, getAllServices } from "@/lib/api";
+import { getCombinedServices } from "@/lib/services";
 
 const inter = Inter({ subsets: ["latin"], display: 'swap' });
 
@@ -54,11 +55,12 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const [globalSettings, recentLocations, services] = await Promise.all([
+  const [globalSettings, recentLocations, dynamicServices] = await Promise.all([
     getGlobalSettings(),
     getRecentLocations(),
     getAllServices()
   ]);
+  const services = getCombinedServices(dynamicServices);
 
   return (
     <html lang="en" className="scroll-smooth">
