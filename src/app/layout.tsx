@@ -19,8 +19,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Top Builders in Bikaner | Free Site Visit & Vastu Map | +91 93765 90313",
-  description: "Bikaner me ghar banwana hai? Get 100% Vastu-compliant 3D designs & turnkey construction with a transparent BOQ. Call now to book your FREE site inspection!",
+  title: "Builders in Bikaner | House Construction & Design",
+  description: "Planning to build a home in Bikaner? Explore house construction, turnkey building, 2D house plans and 3D elevation services. Request your construction estimate today.",
     icons: {
     icon: '/icon.svg',
     apple: '/icon.svg',
