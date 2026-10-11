@@ -80,50 +80,81 @@ export default function Home() {
       <section className="py-20 bg-white" id="services">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-black text-[#0F172A] mb-4">Our Core Services</h2>
-            <div className="w-20 h-1.5 bg-[#EA580C] mx-auto rounded-full"></div>
+            <h2 className="text-3xl md:text-4xl font-black text-[#0F172A] mb-4">
+              Construction &amp; Architectural Services in Bikaner
+            </h2>
+            <div className="w-20 h-1.5 bg-[#EA580C] mx-auto rounded-full mb-6"></div>
+            <p className="max-w-3xl mx-auto text-base md:text-lg text-slate-600 leading-relaxed">
+              Explore house construction, architectural planning, 2D house plans, Vastu-oriented layouts, 3D front elevations, structural drawings and interior design services in Bikaner.
+            </p>
           </div>
           
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
             
-            {/* Service 1 */}
-            <Link href="/services/2d-naksha" className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300">
+            {/* Service 1: Architect in Bikaner */}
+            <Link href="/architect-in-bikaner" className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col">
+              <div className="relative h-32 md:h-56 overflow-hidden">
+                <Image 
+                  src="/assets/architect-in-bikaner-house-design.webp"
+                  alt="Architect in Bikaner - House Planning and Architectural Design" 
+                  title="Architect in Bikaner" 
+                  fill 
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 100vw, 578px" 
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 to-transparent"></div>
+                <h3 className="absolute bottom-3 left-3 md:bottom-6 md:left-6 text-sm md:text-2xl font-black text-white">
+                  Architect in Bikaner
+                </h3>
+              </div>
+              <div className="p-3 md:p-6 flex flex-col flex-grow">
+                <p className="text-xs md:text-base text-gray-600 mb-2 md:mb-4 line-clamp-2 md:line-clamp-none flex-grow">
+                  Explore house planning, architectural layouts and design guidance for residential and other building projects.
+                </p>
+                <span className="text-[#EA580C] font-bold text-[10px] md:text-sm tracking-wide uppercase group-hover:underline mt-auto">
+                  View Details &rarr;
+                </span>
+              </div>
+            </Link>
+
+            {/* Service 2: 2D House Plan & Vastu Naksha */}
+            <Link href="/services/2d-naksha" className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col">
               <div className="relative h-32 md:h-56 overflow-hidden">
                 <Image 
                   src="/assets/icon_architecture_1789213681908.png"
-                  alt="100% Vastu compliant 2D floor plan designed by top architects in Bikaner" title="Vastu Compliant House Map Bikaner" 
+                  alt="100% Vastu compliant 2D floor plan designed by top architects in Bikaner" title="2D House Plan & Vastu Naksha Bikaner" 
                   fill 
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 sizes="(max-width: 768px) 100vw, 578px" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 to-transparent"></div>
-                <h3 className="absolute bottom-3 left-3 md:bottom-6 md:left-6 text-sm md:text-2xl font-black text-white">2D Vastu Map</h3>
+                <h3 className="absolute bottom-3 left-3 md:bottom-6 md:left-6 text-sm md:text-2xl font-black text-white">2D House Plan &amp; Vastu Naksha</h3>
               </div>
-              <div className="p-3 md:p-6">
-                <p className="text-xs md:text-base text-gray-600 mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Expert floor planning designed strictly with Vastu Shastra principles.</p>
-                <span className="text-[#EA580C] font-bold text-[10px] md:text-sm tracking-wide uppercase group-hover:underline">View Details &rarr;</span>
+              <div className="p-3 md:p-6 flex flex-col flex-grow">
+                <p className="text-xs md:text-base text-gray-600 mb-2 md:mb-4 line-clamp-2 md:line-clamp-none flex-grow">Explore residential floor plans, room layouts and Vastu-oriented house planning options.</p>
+                <span className="text-[#EA580C] font-bold text-[10px] md:text-sm tracking-wide uppercase group-hover:underline mt-auto">View Details &rarr;</span>
               </div>
             </Link>
 
-            {/* Service 2 */}
-            <Link href="/services/3d-elevation" className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300">
+            {/* Service 3: 3D Front Elevation Design */}
+            <Link href="/services/3d-elevation" className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col">
               <div className="relative h-32 md:h-56 overflow-hidden">
                 <Image 
                   src="/assets/icon_3d_house_1789213697503.png"
-                  alt="Modern 3D front elevation design for residential villa in Bikaner" title="3D House Elevation Bikaner" 
+                  alt="Modern 3D front elevation design for residential villa in Bikaner" title="3D Front Elevation Design Bikaner" 
                   fill 
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 sizes="(max-width: 768px) 100vw, 578px" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 to-transparent"></div>
-                <h3 className="absolute bottom-3 left-3 md:bottom-6 md:left-6 text-sm md:text-2xl font-black text-white">3D Elevation</h3>
+                <h3 className="absolute bottom-3 left-3 md:bottom-6 md:left-6 text-sm md:text-2xl font-black text-white">3D Front Elevation Design</h3>
               </div>
-              <div className="p-3 md:p-6">
-                <p className="text-xs md:text-base text-gray-600 mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Photorealistic 3D rendering of your dream home exterior before construction.</p>
-                <span className="text-[#EA580C] font-bold text-[10px] md:text-sm tracking-wide uppercase group-hover:underline">View Details &rarr;</span>
+              <div className="p-3 md:p-6 flex flex-col flex-grow">
+                <p className="text-xs md:text-base text-gray-600 mb-2 md:mb-4 line-clamp-2 md:line-clamp-none flex-grow">Explore 3D exterior design concepts to understand the proposed appearance of your house before construction.</p>
+                <span className="text-[#EA580C] font-bold text-[10px] md:text-sm tracking-wide uppercase group-hover:underline mt-auto">View Details &rarr;</span>
               </div>
             </Link>
 
-            {/* Service 3 */}
-            <Link href="/services/turnkey-construction" className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300">
+            {/* Service 4: Turnkey Construction */}
+            <Link href="/services/turnkey-construction" className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col">
               <div className="relative h-32 md:h-56 overflow-hidden">
                 <Image 
                   src="/assets/why_choose_us_img_1789213667904.png"
@@ -132,16 +163,16 @@ export default function Home() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 sizes="(max-width: 768px) 100vw, 578px" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 to-transparent"></div>
-                <h3 className="absolute bottom-3 left-3 md:bottom-6 md:left-6 text-sm md:text-2xl font-black text-white">Construction</h3>
+                <h3 className="absolute bottom-3 left-3 md:bottom-6 md:left-6 text-sm md:text-2xl font-black text-white">Turnkey Construction</h3>
               </div>
-              <div className="p-3 md:p-6">
-                <p className="text-xs md:text-base text-gray-600 mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Complete hassle-free construction from foundation to handover with premium materials.</p>
-                <span className="text-[#EA580C] font-bold text-[10px] md:text-sm tracking-wide uppercase group-hover:underline">View Details &rarr;</span>
+              <div className="p-3 md:p-6 flex flex-col flex-grow">
+                <p className="text-xs md:text-base text-gray-600 mb-2 md:mb-4 line-clamp-2 md:line-clamp-none flex-grow">Complete turnkey construction from foundation to handover with material coordination and site supervision.</p>
+                <span className="text-[#EA580C] font-bold text-[10px] md:text-sm tracking-wide uppercase group-hover:underline mt-auto">View Details &rarr;</span>
               </div>
             </Link>
 
-            {/* Service 4 */}
-            <Link href="/services/interior-design" className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300">
+            {/* Service 5: Interior Design */}
+            <Link href="/services/interior-design" className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col">
               <div className="relative h-32 md:h-56 overflow-hidden">
                 <Image 
                   src="/assets/icon_sofa_1789213727142.png"
@@ -152,12 +183,43 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 to-transparent"></div>
                 <h3 className="absolute bottom-3 left-3 md:bottom-6 md:left-6 text-sm md:text-2xl font-black text-white">Interior Design</h3>
               </div>
-              <div className="p-3 md:p-6">
-                <p className="text-xs md:text-base text-gray-600 mb-2 md:mb-4 line-clamp-2 md:line-clamp-none">Luxury interior designing, space planning, and custom modular kitchen execution.</p>
-                <span className="text-[#EA580C] font-bold text-[10px] md:text-sm tracking-wide uppercase group-hover:underline">View Details &rarr;</span>
+              <div className="p-3 md:p-6 flex flex-col flex-grow">
+                <p className="text-xs md:text-base text-gray-600 mb-2 md:mb-4 line-clamp-2 md:line-clamp-none flex-grow">Residential interior space planning, custom modular kitchens, and quality POP false ceiling execution.</p>
+                <span className="text-[#EA580C] font-bold text-[10px] md:text-sm tracking-wide uppercase group-hover:underline mt-auto">View Details &rarr;</span>
               </div>
             </Link>
 
+            {/* Service 6: Structural Drawings */}
+            <Link href="/services/structural-drawing" className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col">
+              <div className="relative h-32 md:h-56 overflow-hidden">
+                <Image 
+                  src="/assets/seo_structural.jpg"
+                  alt="Structural engineering drawings and RCC column design in Bikaner" title="Structural Drawings Bikaner" 
+                  fill 
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 768px) 100vw, 578px" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 to-transparent"></div>
+                <h3 className="absolute bottom-3 left-3 md:bottom-6 md:left-6 text-sm md:text-2xl font-black text-white">Structural Drawings</h3>
+              </div>
+              <div className="p-3 md:p-6 flex flex-col flex-grow">
+                <p className="text-xs md:text-base text-gray-600 mb-2 md:mb-4 line-clamp-2 md:line-clamp-none flex-grow">Practical structural coordination, column-beam planning, and foundation layout drawings for safe construction.</p>
+                <span className="text-[#EA580C] font-bold text-[10px] md:text-sm tracking-wide uppercase group-hover:underline mt-auto">View Details &rarr;</span>
+              </div>
+            </Link>
+
+          </div>
+
+          {/* View All Services CTA */}
+          <div className="mt-12 md:mt-16 text-center">
+            <Link 
+              href="/services" 
+              className="inline-flex items-center justify-center gap-2 bg-[#0F172A] hover:bg-[#EA580C] text-white font-bold text-sm md:text-base px-8 py-4 rounded-full shadow-lg hover:shadow-orange-500/20 transition-all duration-300 hover:-translate-y-0.5 group"
+            >
+              <span>Explore All Construction &amp; Architecture Services</span>
+              <svg className="w-5 h-5 text-[#EA580C] group-hover:text-white group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
@@ -291,7 +353,14 @@ export default function Home() {
           </div>
           <div className="space-y-6">
             {[
-              { q: "What is the cost of house construction in Bikaner?", a: "Our construction cost in Bikaner starts at competitive per sq.ft rates depending on your material choices. We provide a fully customized and transparent BOQ (Bill of Quantities) before starting, ensuring zero hidden charges." },
+              { 
+                q: "What is the cost of house construction in Bikaner?", 
+                a: (
+                  <span>
+                    Our construction cost in Bikaner starts at competitive per sq.ft rates depending on your material choices. We provide a fully customized and transparent BOQ (Bill of Quantities) before starting, ensuring zero hidden charges. Planning your construction budget? Explore our detailed <Link href="/cost" className="text-[#EA580C] font-semibold hover:underline">House Construction Cost in Bikaner</Link> guide to understand the factors that affect house-building expenses and prepare for your estimate.
+                  </span>
+                ) 
+              },
               { q: "Do you provide Vastu-compliant house maps?", a: "Yes, our expert architects specialize in 100% Vastu-compliant 2D nakshas and 3D elevations, ensuring your new home attracts positive energy and prosperity." },
               { q: "Do you handle material and labor both?", a: "Absolutely. We offer comprehensive turnkey construction solutions. From foundation digging to the final coat of paint, we manage all labor, material sourcing, and project supervision." }
             ].map((faq, idx) => (
@@ -344,7 +413,7 @@ export default function Home() {
                 "name": "What is the cost of house construction in Bikaner?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Our construction cost in Bikaner starts at competitive per sq.ft rates depending on your material choices. We provide a fully customized and transparent BOQ (Bill of Quantities) before starting, ensuring zero hidden charges."
+                  "text": "Our construction cost in Bikaner starts at competitive per sq.ft rates depending on your material choices. We provide a fully customized and transparent BOQ (Bill of Quantities) before starting, ensuring zero hidden charges. Planning your construction budget? Explore our detailed House Construction Cost in Bikaner guide to understand the factors that affect house-building expenses and prepare for your estimate."
                 }
               },
               {
