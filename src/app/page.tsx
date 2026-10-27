@@ -9,6 +9,7 @@ import Portfolio from '@/components/Portfolio';
 import ReadMoreText from '@/components/ReadMoreText';
 import Contact from '@/components/Contact';
 import { useSettings } from '@/components/SettingsProvider';
+import { generateWebSiteSchema } from '@/lib/schema';
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -46,14 +47,14 @@ export default function Home() {
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
           <span className="inline-block py-1.5 px-4 rounded-full bg-[#EA580C]/20 border border-[#EA580C]/50 text-[#EA580C] font-bold tracking-widest uppercase text-xs sm:text-sm mb-6 backdrop-blur-sm">
-            #1 Construction Company in Bikaner
+            Architectural Planning &amp; House Construction
           </span>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-white mb-6 leading-tight drop-shadow-2xl">
-            Build Your Dream Home <br className="hidden md:block"/>
-            <span className="text-[#EA580C]">With Zero Hassle</span>
+            Construction Company &amp; <br className="hidden md:block"/>
+            <span className="text-[#EA580C]">Builders in Bikaner</span>
           </h1>
-          <p className="mt-4 max-w-2xl text-lg sm:text-xl text-gray-200 mx-auto font-medium drop-shadow-md mb-10">
-            Premium Turnkey Construction, 100% Vastu Compliant 2D Maps, and Stunning 3D Elevations at unbeatable rates.
+          <p className="mt-4 max-w-3xl text-lg sm:text-xl text-gray-200 mx-auto font-medium drop-shadow-md mb-10 leading-relaxed">
+            Planning to build a home in Bikaner? You can rely on our team to guide and coordinate your entire home-building journey—from architectural planning, 2D Vastu house plans, and 3D front elevations to turnkey house construction and on-site supervision. We bring design and construction together under one roof, reducing the stress of managing multiple disconnected contractors.
           </p>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
               <Link 
@@ -228,7 +229,7 @@ export default function Home() {
       <section className="py-20 bg-slate-900 text-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <span className="text-[#EA580C] font-bold tracking-widest uppercase text-sm mb-2 block">Real Results</span>
+            <span className="text-[#EA580C] font-bold tracking-widest uppercase text-sm mb-2 block">Architectural Visualization</span>
             <h2 className="text-3xl md:text-5xl font-black mb-6">See The Transformation</h2>
             <p className="text-gray-400 max-w-2xl mx-auto text-lg">
               Drag the slider to see how we turn raw brickwork into stunning, finished dream homes.
@@ -254,10 +255,10 @@ export default function Home() {
       <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-black text-[#0F172A] mb-4">Built for Bikaner: Our Proven Construction Process</h2>
+            <h2 className="text-3xl md:text-4xl font-black text-[#0F172A] mb-4">House Construction in Bikaner: A Coordinated 4-Step Process</h2>
             <div className="w-20 h-1.5 bg-[#EA580C] mx-auto rounded-full mb-6"></div>
             <ReadMoreText className="max-w-3xl mx-auto text-lg text-slate-600">
-              We understand Rajasthan's extreme weather. That's why our 4-step process ensures your home is built using climate-resistant materials, ensuring durability against intense heat and sandstorms.
+              Building a house doesn&apos;t have to mean coordinating separately with draftspersons, structural consultants, material vendors, and mason teams. Our builders and technical team streamline your house construction into an organized, step-by-step workflow tailored for Bikaner&apos;s climate and soil.
             </ReadMoreText>
           </div>
           <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-8">
@@ -289,20 +290,20 @@ export default function Home() {
               <Image src="/assets/bikaner_builders_engineering_team.jpg" alt="Expert civil engineering and architecture team at Bikaner Builders" title="Certified Civil Engineers Bikaner" fill className="object-cover" sizes="(max-width: 768px) 100vw, 578px" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#111827] to-transparent opacity-80"></div>
               <div className="absolute bottom-6 left-6">
-                <p className="text-orange-500 font-bold uppercase tracking-wider text-sm mb-1">CERTIFIED EXPERTS</p>
+                <p className="text-orange-500 font-bold uppercase tracking-wider text-sm mb-1">TECHNICAL LEADERSHIP</p>
                 <p className="text-2xl font-black">Bikaner Builders Engineering Team</p>
               </div>
             </div>
             <div className="w-full md:w-1/2">
-              <h2 className="text-3xl md:text-5xl font-black mb-4">Expertise You Can Trust</h2>
-              <h3 className="text-xl text-orange-500 font-bold mb-6">Led by Expert Civil Engineers</h3>
+              <h2 className="text-3xl md:text-5xl font-black mb-4">Why Choose Our Construction Company in Bikaner?</h2>
+              <h3 className="text-xl text-orange-500 font-bold mb-6">Experienced Technical Guidance &amp; Direct Site Supervision</h3>
               <ReadMoreText className="text-lg text-slate-300 leading-relaxed mb-8">
-                With over a decade of experience as top civil contractors and residential & commercial builders in Bikaner, our team strictly adheres to modern structural engineering codes. Led by top architects and interior designers, we promise 100% transparency in material usage and project timelines, ensuring your investment is completely secure.
+                While Bikaner Builders operates as a modern, forward-looking enterprise, our founder and core team bring practical on-site construction experience and architectural design proficiency across Bikaner. We adhere strictly to standard structural engineering norms, offering homeowners a single point of accountability for quality control, material verification, and transparent project timelines.
               </ReadMoreText>
               <ul className="space-y-4">
                 {[
-                  "10+ Years Local Experience",
-                  "Government Approved Structural Standards",
+                  "Hands-on Local Construction & Planning Experience",
+                  "Standardized Structural Engineering Practices",
                   "No Hidden Costs, 100% Transparent BOQ"
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
@@ -327,7 +328,7 @@ export default function Home() {
             {[
               { name: "Rajesh Sharma, JNV Colony", review: "Bikaner Builders delivered my home exactly on time. Their material quality is top-notch and the 3D design matching was 100% accurate." },
               { name: "Sunita Jain, Gangashahar", review: "Very professional team. They handled everything from Naksha to final paint. The Vastu compliance really brought peace to our new house." },
-              { name: "Vikram Singh, Nokha", review: "Transparent pricing with no hidden surprises. Aahan and his team are the most reliable contractors I've worked with in Rajasthan." },
+              { name: "Vikram Singh, Nokha", review: "Transparent pricing with no hidden surprises. The Bikaner Builders team communicated clearly and managed our construction requirements smoothly." },
               { name: "Mohit Chaudhary, Pawanpuri", review: "Exceptional service from start to finish. They built our dream home within budget and the 3D elevation was exactly what we got in reality!" }
             ].map((testimonial, idx) => (
               <div key={idx} className="bg-slate-50 p-4 md:p-8 rounded-3xl border border-slate-100 shadow-sm relative">
@@ -362,7 +363,11 @@ export default function Home() {
                 ) 
               },
               { q: "Do you provide Vastu-compliant house maps?", a: "Yes, our expert architects specialize in 100% Vastu-compliant 2D nakshas and 3D elevations, ensuring your new home attracts positive energy and prosperity." },
-              { q: "Do you handle material and labor both?", a: "Absolutely. We offer comprehensive turnkey construction solutions. From foundation digging to the final coat of paint, we manage all labor, material sourcing, and project supervision." }
+              { q: "Do you handle material and labor both?", a: "Absolutely. We offer comprehensive turnkey construction solutions. From foundation digging to the final coat of paint, we manage all labor, material sourcing, and project supervision." },
+              { 
+                q: "Why choose a single construction company instead of hiring multiple contractors?", 
+                a: "Hiring separate contractors for house design, brickwork, electrical, plumbing, and finishing often results in coordination gaps, conflicting advice, unexpected delays, and budget overruns. At Bikaner Builders, our team manages both architectural planning and on-site house construction under one roof, giving you a single trusted point of contact throughout your project." 
+              }
             ].map((faq, idx) => (
               <details key={idx} className="group bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
                 <summary className="flex justify-between items-center font-bold cursor-pointer list-none p-4 md:p-6 text-sm md:text-base text-slate-900 group-open:text-orange-600 transition-colors">
@@ -400,6 +405,12 @@ export default function Home() {
         </div>
       </section>
 
+      {/* WebSite Schema (Homepage only) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateWebSiteSchema()) }}
+      />
+
       {/* Auto-injected FAQPage Schema */}
       <script
         type="application/ld+json"
@@ -430,6 +441,14 @@ export default function Home() {
                 "acceptedAnswer": {
                   "@type": "Answer",
                   "text": "Absolutely. We offer comprehensive turnkey construction solutions. From foundation digging to the final coat of paint, we manage all labor, material sourcing, and project supervision."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Why choose a single construction company instead of hiring multiple contractors?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Hiring separate contractors for house design, brickwork, electrical, plumbing, and finishing often results in coordination gaps, conflicting advice, unexpected delays, and budget overruns. At Bikaner Builders, our team manages both architectural planning and on-site house construction under one roof, giving you a single trusted point of contact throughout your project."
                 }
               }
             ]

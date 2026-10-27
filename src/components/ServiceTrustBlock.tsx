@@ -13,9 +13,9 @@ export default function ServiceTrustBlock({ slug }: { slug: string }) {
 
   return (
     <div className="bg-slate-900 text-white p-8 rounded-2xl shadow-inner mt-8">
-      <h4 className="text-xl font-bold text-orange-500 mb-3">Rated #1 by Bikaner Residents</h4>
+      <h4 className="text-xl font-bold text-orange-500 mb-3">Trusted Civil Engineering &amp; Construction in Bikaner</h4>
       <p className="text-slate-300 text-base">
-        Don&apos;t risk your hard-earned money with {badActor} from random aggregator sites or unverified local contractor lists. Bikaner Builders is a registered, trusted, and highly-rated civil engineering firm in Bikaner. We guarantee 100% transparent pricing and flawless execution.
+        Don&apos;t risk your hard-earned money with {badActor} from random aggregator sites or unverified local contractor lists. Bikaner Builders is a registered civil engineering firm in Bikaner. We provide transparent itemized BOQ contracts, dedicated engineering supervision, and verified quality standards.
       </p>
     </div>
   );

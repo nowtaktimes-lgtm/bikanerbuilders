@@ -6,36 +6,42 @@ import OtherServicesLinker from '@/components/OtherServicesLinker';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://www.bikanerbuilders.in/services/3d-elevation',
+  },
   title: "Top 3D Front Elevation Designers in Bikaner | Bikaner Builders",
   description: "Best 3D front elevation design for residential and commercial buildings in Bikaner. Modern, classic, and Vastu-compliant house front designs.",
   keywords: "Premium 3D Front Elevation Designers in Bikaner, Bikaner Builders, top civil contractor in Bikaner, best building construction company near me, ghar ka naksha, architects in bikaner",
 };
 
 export default function SEOOptimizedServicePage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.bikanerbuilders.in" },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.bikanerbuilders.in/services" },
+      { "@type": "ListItem", "position": 3, "name": "3D Elevation", "item": "https://www.bikanerbuilders.in/services/3d-elevation" }
+    ]
+  };
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "name": "3D Elevation & Architectural Visualization in Bikaner",
     "serviceType": "Architectural Rendering",
     "provider": {
-      "@type": "LocalBusiness",
+      "@type": "GeneralContractor",
+      "@id": "https://www.bikanerbuilders.in/#organization",
       "name": "Bikaner Builders",
-      "image": "https://www.bikanerbuilders.in/icon.svg",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Shop No 04, Opp Govt School, Napasar Rd, Ridmalsar Sipahiyan",
-        "addressLocality": "Bikaner",
-        "addressRegion": "Rajasthan",
-        "postalCode": "334022",
-        "addressCountry": "IN"
-      },
-      "telephone": "+91-93765-90313",
       "url": "https://www.bikanerbuilders.in"
     },
     "areaServed": {
       "@type": "City",
       "name": "Bikaner"
     },
-    "description": "Best 3D front elevation design for residential and commercial buildings in Bikaner. Modern, classic, and Vastu-compliant house front designs."
+    "description": "Best 3D front elevation design for residential and commercial buildings in Bikaner. Modern, classic, and Vastu-compliant house front designs.",
+    "url": "https://www.bikanerbuilders.in/services/3d-elevation"
   };
 
   const faqSchema = {
@@ -47,6 +53,7 @@ export default function SEOOptimizedServicePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       
       <div className="pt-20">
@@ -105,7 +112,7 @@ export default function SEOOptimizedServicePage() {
                 <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6 border-b-2 border-slate-100 pb-3">
                   Our Hyper-Realistic 3D Elevation Process
                 </h3>
-                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: "Your home's exterior is its signature. As the leading <strong class=\"text-slate-900\">3D elevation designers in Bikaner</strong>, we transform basic 2D maps into breathtaking, photorealistic 3D visual masterpieces before a single brick is laid." }}></p>
+                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: "Your home's exterior is its signature. As leading <strong class=\"text-slate-900\">3D elevation designers in Bikaner</strong>, we transform <a href=\"/services/2d-naksha\" class=\"text-orange-600 font-bold hover:underline\">2D house plans</a> into photorealistic 3D visual concepts before commencing physical <a href=\"/services/turnkey-construction\" class=\"text-orange-600 font-bold hover:underline\">turnkey house construction</a>." }}></p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                   
                   <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">

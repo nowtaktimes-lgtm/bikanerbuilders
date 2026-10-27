@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
-import { fetchGraphQL } from '@/lib/api';
+import { fetchGraphQL, SITE_URL } from '@/lib/api';
 
-const baseUrl = 'https://bikanerbuilders.in';
+const baseUrl = SITE_URL;
 
 // Define expected GraphQL response shapes
 interface CMSNode {

@@ -9,8 +9,10 @@ export interface GraphQLResponse<T> {
   errors?: GraphQLError[];
 }
 
+export const SITE_URL = 'https://www.bikanerbuilders.in';
+
 export async function fetchGraphQL<T>(query: string, variables: Record<string, unknown> = {}): Promise<GraphQLResponse<T>> {
-  const wpApiUrl = process.env.NEXT_PUBLIC_WORDPRESS_API_URL as string;
+  const wpApiUrl = process.env.NEXT_PUBLIC_WORDPRESS_API_URL || 'https://beckend.bikanerbuilders.in/graphql';
   if (!wpApiUrl) {
     console.warn('NEXT_PUBLIC_WORDPRESS_API_URL is not set');
   }
@@ -56,6 +58,7 @@ export async function getGlobalSettings(): Promise<GlobalSettings> {
 
 export interface SeoData {
   title?: string;
+  description?: string;
   metaDesc?: string;
   schemaDetails?: string;
 }
@@ -64,6 +67,8 @@ export interface WpNode {
   title: string;
   content: string;
   slug: string;
+  date?: string;
+  modified?: string;
   featuredImage?: {
     node?: {
       sourceUrl?: string;
@@ -77,6 +82,8 @@ const POST_COMMON_FIELDS = `
   title
   content
   slug
+  date
+  modified
   featuredImage {
     node {
       sourceUrl
@@ -84,8 +91,7 @@ const POST_COMMON_FIELDS = `
   }
   seo {
     title
-    metaDesc
-    schemaDetails
+    description
   }
 `;
 
@@ -93,6 +99,8 @@ const CUSTOM_POST_FIELDS = `
   title
   content
   slug
+  date
+  modified
   featuredImage {
     node {
       sourceUrl
@@ -100,6 +108,7 @@ const CUSTOM_POST_FIELDS = `
   }
   seo {
     title
+    description
   }
 `;
 

@@ -1,9 +1,15 @@
 import { notFound } from 'next/navigation';
 import { getPageBySlug } from '@/lib/api';
 import Image from 'next/image';
+import { generateWebPageSchema, generateBreadcrumbSchema } from '@/lib/schema';
+
+const INTERNAL_PAGE_SLUGS = ['global-site-settings', 'header-settings', 'footer-settings'];
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
+  if (INTERNAL_PAGE_SLUGS.includes(resolvedParams.slug)) {
+    return { title: 'Not Found' };
+  }
   const post = await getPageBySlug(resolvedParams.slug);
   
   if (!post) {
@@ -11,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
   
   const title = post.seo?.title || post.title;
-  let description = post.seo?.metaDesc || '';
+  let description = post.seo?.description || post.seo?.metaDesc || '';
   if (!description) {
     description = `Explore ${post.title} at Bikaner Builders, the top construction and architectural firm in Bikaner.`;
   }
@@ -22,12 +28,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title,
     description,
     alternates: {
-      canonical: `https://bikanerbuilders.in/${resolvedParams.slug}`
+      canonical: `https://www.bikanerbuilders.in/${resolvedParams.slug}`
     },
     openGraph: {
       title,
       description,
-      url: `https://bikanerbuilders.in/${resolvedParams.slug}`,
+      url: `https://www.bikanerbuilders.in/${resolvedParams.slug}`,
       siteName: 'Bikaner Builders',
       images: [
         {
@@ -51,14 +57,33 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
+  if (INTERNAL_PAGE_SLUGS.includes(resolvedParams.slug)) {
+    notFound();
+  }
   const post = await getPageBySlug(resolvedParams.slug);
 
   if (!post) {
     notFound();
   }
 
+  const pageUrl = `https://www.bikanerbuilders.in/${resolvedParams.slug}`;
+  const webPageSchema = generateWebPageSchema({
+    title: post.title,
+    description: post.seo?.description || post.content?.replace(/<[^>]+>/g, '').trim().substring(0, 160) || undefined,
+    url: pageUrl,
+    datePublished: post.date ? new Date(post.date).toISOString() : undefined,
+    dateModified: post.modified ? new Date(post.modified).toISOString() : (post.date ? new Date(post.date).toISOString() : undefined)
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "https://www.bikanerbuilders.in" },
+    { name: post.title, url: pageUrl }
+  ]);
+
   return (
     <div className="pt-24 pb-20 bg-white min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl md:text-5xl font-black text-center mb-10 text-slate-900">{post.title}</h1>
         {post.featuredImage?.node?.sourceUrl && (
@@ -71,12 +96,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
               priority
             sizes="(max-width: 768px) 100vw, 578px" />
           </div>
-        )}
-        {post.seo?.schemaDetails && (
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: post.seo.schemaDetails }}
-          />
         )}
         <article className="prose prose-lg max-w-4xl mx-auto my-12 px-4 prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-orange-500 hover:prose-a:text-orange-600 prose-img:rounded-2xl prose-img:shadow-lg">
           <div dangerouslySetInnerHTML={{ __html: post.content || '' }} />

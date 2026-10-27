@@ -6,36 +6,42 @@ import OtherServicesLinker from '@/components/OtherServicesLinker';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://www.bikanerbuilders.in/services/structural-drawing',
+  },
   title: "Structural Engineers & Drawings in Bikaner | Strong Foundations",
   description: "Best structural engineers in Bikaner. We provide RCC column design, foundation details, and structural safety drawings for buildings.",
   keywords: "Expert Structural Engineering & Drawings in Bikaner, Bikaner Builders, top civil contractor in Bikaner, best building construction company near me, ghar ka naksha, architects in bikaner",
 };
 
 export default function SEOOptimizedServicePage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.bikanerbuilders.in" },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.bikanerbuilders.in/services" },
+      { "@type": "ListItem", "position": 3, "name": "Structural Drawing", "item": "https://www.bikanerbuilders.in/services/structural-drawing" }
+    ]
+  };
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "name": "Structural Drawing & RCC Design in Bikaner",
     "serviceType": "Structural Engineering",
     "provider": {
-      "@type": "LocalBusiness",
+      "@type": "GeneralContractor",
+      "@id": "https://www.bikanerbuilders.in/#organization",
       "name": "Bikaner Builders",
-      "image": "https://www.bikanerbuilders.in/icon.svg",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Shop No 04, Opp Govt School, Napasar Rd, Ridmalsar Sipahiyan",
-        "addressLocality": "Bikaner",
-        "addressRegion": "Rajasthan",
-        "postalCode": "334022",
-        "addressCountry": "IN"
-      },
-      "telephone": "+91-93765-90313",
       "url": "https://www.bikanerbuilders.in"
     },
     "areaServed": {
       "@type": "City",
       "name": "Bikaner"
     },
-    "description": "Best structural engineers in Bikaner. We provide RCC column design, foundation details, and structural safety drawings for buildings."
+    "description": "Best structural engineers in Bikaner. We provide RCC column design, foundation details, and structural safety drawings for buildings.",
+    "url": "https://www.bikanerbuilders.in/services/structural-drawing"
   };
 
   const faqSchema = {
@@ -47,6 +53,7 @@ export default function SEOOptimizedServicePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       
       <div className="pt-20">

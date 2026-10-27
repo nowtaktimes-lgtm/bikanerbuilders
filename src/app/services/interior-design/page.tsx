@@ -6,36 +6,42 @@ import OtherServicesLinker from '@/components/OtherServicesLinker';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://www.bikanerbuilders.in/services/interior-design',
+  },
   title: "Best Interior Designers & POP Contractors in Bikaner",
   description: "Top interior designers in Bikaner. Get luxury false ceiling, gypsum POP work, modular kitchens, and residential interior decoration.",
   keywords: "Luxury POP & Interior Designers in Bikaner, Bikaner Builders, top civil contractor in Bikaner, best building construction company near me, ghar ka naksha, architects in bikaner",
 };
 
 export default function SEOOptimizedServicePage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.bikanerbuilders.in" },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.bikanerbuilders.in/services" },
+      { "@type": "ListItem", "position": 3, "name": "Interior Design", "item": "https://www.bikanerbuilders.in/services/interior-design" }
+    ]
+  };
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "name": "Interior Design Services in Bikaner",
     "serviceType": "Interior Design",
     "provider": {
-      "@type": "LocalBusiness",
+      "@type": "GeneralContractor",
+      "@id": "https://www.bikanerbuilders.in/#organization",
       "name": "Bikaner Builders",
-      "image": "https://www.bikanerbuilders.in/icon.svg",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Shop No 04, Opp Govt School, Napasar Rd, Ridmalsar Sipahiyan",
-        "addressLocality": "Bikaner",
-        "addressRegion": "Rajasthan",
-        "postalCode": "334022",
-        "addressCountry": "IN"
-      },
-      "telephone": "+91-93765-90313",
       "url": "https://www.bikanerbuilders.in"
     },
     "areaServed": {
       "@type": "City",
       "name": "Bikaner"
     },
-    "description": "Top interior designers in Bikaner. Get luxury false ceiling, gypsum POP work, modular kitchens, and residential interior decoration."
+    "description": "Top interior designers in Bikaner. Get luxury false ceiling, gypsum POP work, modular kitchens, and residential interior decoration.",
+    "url": "https://www.bikanerbuilders.in/services/interior-design"
   };
 
   const faqSchema = {
@@ -47,6 +53,7 @@ export default function SEOOptimizedServicePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       
       <div className="pt-20">

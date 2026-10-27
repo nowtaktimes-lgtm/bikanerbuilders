@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import { getPostBySlug } from '@/lib/api';
 import Image from 'next/image';
+import { generateBlogPostSchema, generateBreadcrumbSchema } from '@/lib/schema';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
@@ -11,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
   
   const title = post.seo?.title || post.title;
-  let description = post.seo?.metaDesc || '';
+  let description = post.seo?.description || post.seo?.metaDesc || '';
   if (!description) {
     description = `Explore ${post.title} at Bikaner Builders, the top construction and architectural firm in Bikaner.`;
   }
@@ -22,12 +23,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title,
     description,
     alternates: {
-      canonical: `https://bikanerbuilders.in/blog/${resolvedParams.slug}`
+      canonical: `https://www.bikanerbuilders.in/blog/${resolvedParams.slug}`
     },
     openGraph: {
       title,
       description,
-      url: `https://bikanerbuilders.in/blog/${resolvedParams.slug}`,
+      url: `https://www.bikanerbuilders.in/blog/${resolvedParams.slug}`,
       siteName: 'Bikaner Builders',
       images: [
         {
@@ -57,8 +58,26 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
     notFound();
   }
 
+  const postUrl = `https://www.bikanerbuilders.in/blog/${resolvedParams.slug}`;
+  const blogPostSchema = generateBlogPostSchema({
+    title: post.title,
+    url: postUrl,
+    description: post.seo?.description || post.content?.replace(/<[^>]+>/g, '').trim().substring(0, 160) || undefined,
+    imageUrl: post.featuredImage?.node?.sourceUrl,
+    datePublished: post.date ? new Date(post.date).toISOString() : undefined,
+    dateModified: post.modified ? new Date(post.modified).toISOString() : (post.date ? new Date(post.date).toISOString() : undefined)
+  });
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "https://www.bikanerbuilders.in" },
+    { name: "Blog", url: "https://www.bikanerbuilders.in/blog" },
+    { name: post.title, url: postUrl }
+  ]);
+
   return (
     <div className="pt-24 pb-20 bg-white min-h-screen">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl md:text-5xl font-black text-center mb-10 text-slate-900">{post.title}</h1>
         {post.featuredImage?.node?.sourceUrl && (
@@ -71,12 +90,6 @@ export default async function BlogPage({ params }: { params: Promise<{ slug: str
               priority
             sizes="(max-width: 768px) 100vw, 578px" />
           </div>
-        )}
-        {post.seo?.schemaDetails && (
-          <script
-            type="application/ld+json"
-            dangerouslySetInnerHTML={{ __html: post.seo.schemaDetails }}
-          />
         )}
         <article className="prose prose-lg max-w-4xl mx-auto my-12 px-4 prose-headings:font-bold prose-headings:text-slate-900 prose-a:text-orange-500 hover:prose-a:text-orange-600 prose-img:rounded-2xl prose-img:shadow-lg">
           <div dangerouslySetInnerHTML={{ __html: post.content || '' }} />

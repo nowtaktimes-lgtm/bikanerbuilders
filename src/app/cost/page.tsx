@@ -3,20 +3,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import ServiceTrustBlock from '@/components/ServiceTrustBlock';
-import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: "House Construction Cost in Bikaner 2026 | Price Per Sq Ft",
   description: "Check the exact house construction cost in Bikaner. Compare standard, premium, and luxury rates per square foot with detailed material specifications.",
   alternates: {
-    canonical: 'https://bikanerbuilders.in/cost',
+    canonical: 'https://www.bikanerbuilders.in/cost',
   },
   openGraph: {
     title: 'House Construction Cost in Bikaner 2026 | Price Per Sq Ft',
     description: 'Check the exact house construction cost in Bikaner. Compare standard, premium, and luxury rates per square foot with detailed material specifications.',
     images: [
       {
-        url: 'https://bikanerbuilders.in/assets/luxury-house-construction-cost-bikaner.webp',
+        url: 'https://www.bikanerbuilders.in/assets/luxury-house-construction-cost-bikaner.webp',
         width: 1200,
         height: 630,
         alt: 'House Construction Cost in Bikaner',
@@ -31,39 +30,39 @@ export default function ConstructionCostBikanerPage() {
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": "https://www.bikanerbuilders.in/cost/#webpage",
-        "url": "https://www.bikanerbuilders.in/cost/",
+        "@id": "https://www.bikanerbuilders.in/cost#webpage",
+        "url": "https://www.bikanerbuilders.in/cost",
         "name": "House Construction Cost in Bikaner 2026 | Price Per Sq Ft",
         "isPartOf": {
           "@id": "https://www.bikanerbuilders.in/#website"
         },
         "breadcrumb": {
-          "@id": "https://www.bikanerbuilders.in/cost/#breadcrumb"
+          "@id": "https://www.bikanerbuilders.in/cost#breadcrumb"
         }
       },
       {
         "@type": "BreadcrumbList",
-        "@id": "https://www.bikanerbuilders.in/cost/#breadcrumb",
+        "@id": "https://www.bikanerbuilders.in/cost#breadcrumb",
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://www.bikanerbuilders.in/"
+            "item": "https://www.bikanerbuilders.in"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Construction Cost Guide",
-            "item": "https://www.bikanerbuilders.in/cost/"
+            "item": "https://www.bikanerbuilders.in/cost"
           }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": "https://www.bikanerbuilders.in/cost/#faq",
+        "@id": "https://www.bikanerbuilders.in/cost#faq",
         "isPartOf": {
-          "@id": "https://www.bikanerbuilders.in/cost/#webpage"
+          "@id": "https://www.bikanerbuilders.in/cost#webpage"
         },
         "mainEntity": [
           {
@@ -71,7 +70,7 @@ export default function ConstructionCostBikanerPage() {
             "name": "What is the construction cost for 1000 sq ft in Bikaner?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "For a 1000 sq ft plot in Bikaner, a standard quality construction will cost approximately ₹15 Lakhs to ₹16 Lakhs. Premium finishes will cost between ₹18 Lakhs to ₹20 Lakhs."
+              "text": "For 1,000 sq ft of built-up covered area in Bikaner, standard construction typically ranges from ₹15 Lakhs to ₹17 Lakhs (with an indicative midpoint around ₹16 Lakhs at ₹1,600/sq ft). Premium finishes range between ₹18 Lakhs to ₹20 Lakhs (indicative midpoint around ₹19 Lakhs at ₹1,900/sq ft). Note that cost is calculated on actual constructed slab area, which is distinct from the total land plot area."
             }
           },
           {
@@ -79,7 +78,7 @@ export default function ConstructionCostBikanerPage() {
             "name": "What is the cost to build a 1200 sq ft house in Bikaner?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Building a 1200 sq ft home (like a 30x40 plot) in Bikaner typically costs ₹18 Lakhs for standard quality, and ₹21.6 Lakhs to ₹24 Lakhs for premium quality finishes."
+              "text": "Building a 1,200 sq ft built-up house in Bikaner typically ranges from ₹18 Lakhs to ₹20.4 Lakhs for standard quality (with an indicative midpoint around ₹19.2 Lakhs at ₹1,600/sq ft), and ₹21.6 Lakhs to ₹24 Lakhs for premium quality finishes (indicative midpoint around ₹22.8 Lakhs at ₹1,900/sq ft). Total cost depends on total constructed slab area across all floors, not just boundary plot dimensions."
             }
           },
           {
@@ -87,47 +86,7 @@ export default function ConstructionCostBikanerPage() {
             "name": "Does the per sq ft cost include labour?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, our turnkey construction rates (₹1500 to ₹2200 per sq ft) include both premium materials and skilled labour. You don't have to hire contractors separately."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How is the quotation prepared?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "We prepare a transparent Bill of Quantities (BOQ) after finalizing your 2D floor plan. It details every single material brand, quantity, and cost so there are zero hidden charges."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you provide architectural maps for free?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, if you sign a turnkey contract with Bikaner Builders, the 2D Vastu maps and 3D elevations are typically included in the package at no extra cost."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can I customize the materials during construction?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Absolutely. The BOQ is flexible. If you decide to upgrade your floor tiles from standard vitrified to Italian marble midway, you only pay the differential material cost."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How long does it take to build a 1500 sq ft home?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A standard 1500 sq ft single-story house in Bikaner takes about 5 to 6 months to complete from foundation to final paint, ensuring proper curing time for the RCC."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you build commercial complexes and shops?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, we undertake both residential and commercial construction projects, optimizing commercial spaces for maximum ROI and structural safety."
+              "text": "Yes, our turnkey construction rates (₹1400 to ₹2200+ per sq ft depending on quality tier) include both materials and skilled labour. You don't have to hire contractors separately."
             }
           },
           {
@@ -153,6 +112,38 @@ export default function ConstructionCostBikanerPage() {
               "@type": "Answer",
               "text": "No, the boundary wall, compound gate, and elevation projections are usually calculated separately as they do not fall under the standard built-up roof area."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "How is the quotation prepared?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We prepare a transparent Bill of Quantities (BOQ) after finalizing your 2D floor plan. It details every material brand, quantity, and unit rate to provide clear, itemized billing with no ambiguous charges."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I customize the materials during construction?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely. The BOQ is flexible. If you decide to upgrade your floor tiles from standard vitrified to Italian marble midway, you only pay the differential material cost."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How long does it take to build a 1500 sq ft home?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A standard 1500 sq ft single-story house in Bikaner takes about 5 to 6 months to complete from foundation to final paint, ensuring proper curing time for the RCC."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you build commercial complexes and shops?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, we undertake both residential and commercial construction projects, optimizing commercial spaces for maximum ROI and structural safety."
+            }
           }
         ]
       }
@@ -161,7 +152,7 @@ export default function ConstructionCostBikanerPage() {
 
   return (
     <>
-      <Script id="cost-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(costPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(costPageSchema) }} />
       <div className="pt-20">
         
         {/* 1. Hero Section */}
@@ -507,9 +498,9 @@ export default function ConstructionCostBikanerPage() {
                         <td className="p-4 text-center text-emerald-500 font-bold">We do it ✅</td>
                       </tr>
                       <tr className="border-b border-slate-200 hover:bg-slate-50">
-                        <td className="p-4 font-medium text-slate-800">Protection from Material Price Hikes</td>
+                        <td className="p-4 font-medium text-slate-800">Fixed-Rate Budget Protection (Agreed Contract Terms)</td>
                         <td className="p-4 text-center text-red-500 font-bold">No ❌</td>
-                        <td className="p-4 text-center text-emerald-500 font-bold">Yes ✅</td>
+                        <td className="p-4 text-center text-emerald-500 font-bold">Yes (Contract Term) ✅</td>
                       </tr>
                       <tr className="hover:bg-slate-50">
                         <td className="p-4 font-medium text-slate-800">Single-Point Responsibility</td>
@@ -649,15 +640,15 @@ export default function ConstructionCostBikanerPage() {
                 <div className="space-y-6">
                   <div className="border-b border-slate-200 pb-6">
                     <h3 className="text-xl font-bold text-slate-900 mb-3">What is the construction cost for 1000 sq ft in Bikaner?</h3>
-                    <p className="text-slate-600 leading-relaxed">For a 1000 sq ft plot in Bikaner, a standard quality construction will cost approximately ₹15 Lakhs to ₹16 Lakhs. Premium finishes will cost between ₹18 Lakhs to ₹20 Lakhs.</p>
+                    <p className="text-slate-600 leading-relaxed">For 1,000 sq ft of built-up covered area in Bikaner, standard construction typically ranges from ₹15 Lakhs to ₹17 Lakhs (with an indicative midpoint around ₹16 Lakhs at ₹1,600/sq ft). Premium finishes range between ₹18 Lakhs to ₹20 Lakhs (indicative midpoint around ₹19 Lakhs at ₹1,900/sq ft). Note that cost is calculated on actual constructed slab area, which is distinct from the total land plot area.</p>
                   </div>
                   <div className="border-b border-slate-200 pb-6">
                     <h3 className="text-xl font-bold text-slate-900 mb-3">What is the cost to build a 1200 sq ft house in Bikaner?</h3>
-                    <p className="text-slate-600 leading-relaxed">Building a 1200 sq ft home (like a 30x40 plot) in Bikaner typically costs ₹18 Lakhs for standard quality, and ₹21.6 Lakhs to ₹24 Lakhs for premium quality finishes.</p>
+                    <p className="text-slate-600 leading-relaxed">Building a 1,200 sq ft built-up house in Bikaner typically ranges from ₹18 Lakhs to ₹20.4 Lakhs for standard quality (with an indicative midpoint around ₹19.2 Lakhs at ₹1,600/sq ft), and ₹21.6 Lakhs to ₹24 Lakhs for premium quality finishes (indicative midpoint around ₹22.8 Lakhs at ₹1,900/sq ft). Total cost depends on total constructed slab area across all floors, not just boundary plot dimensions.</p>
                   </div>
                   <div className="border-b border-slate-200 pb-6">
                     <h3 className="text-xl font-bold text-slate-900 mb-3">Does the per sq ft cost include labour?</h3>
-                    <p className="text-slate-600 leading-relaxed">Yes, our turnkey construction rates (₹1500 to ₹2200 per sq ft) include both premium materials and skilled labour. You don&apos;t have to hire contractors separately.</p>
+                    <p className="text-slate-600 leading-relaxed">Yes, our turnkey construction rates (₹1400 to ₹2200+ per sq ft depending on quality tier) include both materials and skilled labour. You don&apos;t have to hire contractors separately.</p>
                   </div>
                   <div className="border-b border-slate-200 pb-6">
                     <h3 className="text-xl font-bold text-slate-900 mb-3">Is GST included in your construction rate?</h3>
@@ -673,7 +664,7 @@ export default function ConstructionCostBikanerPage() {
                   </div>
                   <div className="border-b border-slate-200 pb-6">
                     <h3 className="text-xl font-bold text-slate-900 mb-3">How is the quotation prepared?</h3>
-                    <p className="text-slate-600 leading-relaxed">We prepare a transparent Bill of Quantities (BOQ) after finalizing your 2D floor plan. It details every single material brand, quantity, and cost so there are zero hidden charges.</p>
+                    <p className="text-slate-600 leading-relaxed">We prepare a transparent Bill of Quantities (BOQ) after finalizing your 2D floor plan. It details every material brand, quantity, and unit rate to provide clear, itemized billing with no ambiguous charges.</p>
                   </div>
                   <div className="border-b border-slate-200 pb-6">
                     <h3 className="text-xl font-bold text-slate-900 mb-3">Can I customize the materials during construction?</h3>

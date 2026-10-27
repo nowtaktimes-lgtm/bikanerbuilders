@@ -7,14 +7,14 @@ export const metadata: Metadata = {
   title: 'Construction Cost Calculator in Bikaner | Free Estimate',
   description: 'Calculate your home construction cost instantly with our free online estimator. Get accurate quotes for standard, premium, and luxury builds in Bikaner.',
   alternates: {
-    canonical: 'https://bikanerbuilders.in/cost-estimator',
+    canonical: 'https://www.bikanerbuilders.in/cost-estimator',
   },
   openGraph: {
     title: 'Construction Cost Calculator in Bikaner | Free Estimate',
     description: 'Calculate your home construction cost instantly with our free online estimator. Get accurate quotes for standard, premium, and luxury builds in Bikaner.',
     images: [
       {
-        url: 'https://bikanerbuilders.in/assets/seo_turnkey.jpg',
+        url: 'https://www.bikanerbuilders.in/assets/seo_turnkey.jpg',
         width: 1200,
         height: 630,
         alt: 'House Construction Cost Estimator Bikaner',
@@ -94,7 +94,7 @@ export default function CostEstimatorPage() {
                   Why choose turnkey construction over local contractors in Bikaner?
                 </h3>
                 <p className="text-gray-600 font-medium leading-relaxed">
-                  Turnkey construction offers a single point of contact, guaranteed quality, fixed timelines, and zero hidden costs. You avoid the daily stress of managing multiple laborers and material vendors.
+                  Turnkey construction offers a single point of contact, structured engineering quality checks, clear milestone timelines, and itemized BOQ billing. You avoid the daily stress of managing multiple laborers and material vendors.
                 </p>
               </div>
             </div>

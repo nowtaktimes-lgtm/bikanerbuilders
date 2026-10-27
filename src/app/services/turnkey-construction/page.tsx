@@ -4,20 +4,19 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import ServiceTrustBlock from '@/components/ServiceTrustBlock';
 import OtherServicesLinker from '@/components/OtherServicesLinker';
-import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: "Turnkey Construction Services in Bikaner | With Material Contractors",
   description: "Looking for turnkey building contractors in Bikaner? We offer complete house construction with material, 3D elevation, mapping, and finishing. Get BOQ today.",
   alternates: {
-    canonical: 'https://bikanerbuilders.in/services/turnkey-construction',
+    canonical: 'https://www.bikanerbuilders.in/services/turnkey-construction',
   },
   openGraph: {
     title: 'Turnkey Construction Services in Bikaner | With Material Contractors',
     description: 'Looking for turnkey building contractors in Bikaner? We offer complete house construction with material, 3D elevation, mapping, and finishing. Get BOQ today.',
     images: [
       {
-        url: 'https://bikanerbuilders.in/assets/turnkey_project_handover.jpg',
+        url: 'https://www.bikanerbuilders.in/assets/turnkey_project_handover.jpg',
         width: 1200,
         height: 630,
         alt: 'Turnkey Construction Project Handover Bikaner',
@@ -27,6 +26,35 @@ export const metadata: Metadata = {
 };
 
 export default function TurnkeyConstructionPage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.bikanerbuilders.in" },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.bikanerbuilders.in/services" },
+      { "@type": "ListItem", "position": 3, "name": "Turnkey Construction", "item": "https://www.bikanerbuilders.in/services/turnkey-construction" }
+    ]
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Turnkey Construction Services in Bikaner",
+    "serviceType": "House Construction",
+    "provider": {
+      "@type": "GeneralContractor",
+      "@id": "https://www.bikanerbuilders.in/#organization",
+      "name": "Bikaner Builders",
+      "url": "https://www.bikanerbuilders.in"
+    },
+    "areaServed": {
+      "@type": "City",
+      "name": "Bikaner"
+    },
+    "description": "Looking for turnkey building contractors in Bikaner? We offer complete house construction with material, 3D elevation, mapping, and finishing. Get BOQ today.",
+    "url": "https://www.bikanerbuilders.in/services/turnkey-construction"
+  };
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -60,7 +88,9 @@ export default function TurnkeyConstructionPage() {
 
   return (
     <>
-      <Script id="turnkey-faq-schema" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="pt-20">
         
         {/* Hero Section */}
@@ -122,7 +152,7 @@ export default function TurnkeyConstructionPage() {
                   <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
                     <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">02</span>
                     <h4 className="font-bold text-slate-900 text-xl mb-2">3D Elevation & Planning</h4>
-                    <p className="text-slate-600 text-sm leading-relaxed">As a leading luxury architecture firm, our in-house designers create precise 2D floor plans and hyper-realistic 3D elevations, giving you a virtual tour of your future home.</p>
+                    <p className="text-slate-600 text-sm leading-relaxed">As a leading architecture firm, our in-house designers create precise <Link href="/services/2d-naksha" className="text-orange-600 font-bold hover:underline">2D floor plans</Link> and hyper-realistic <Link href="/services/3d-elevation" className="text-orange-600 font-bold hover:underline">3D elevations</Link>, giving you a virtual tour of your future home before construction begins.</p>
                   </div>
                   <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
                     <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">03</span>
@@ -197,8 +227,8 @@ export default function TurnkeyConstructionPage() {
                         <svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
                       </div>
                       <div>
-                        <strong className="block text-white text-lg">Zero Hidden Costs</strong>
-                        <span className="text-slate-400 text-sm">Fixed transparent BOQ before we start.</span>
+                        <strong className="block text-white text-lg">Transparent Pricing</strong>
+                        <span className="text-slate-400 text-sm">Itemized BOQ agreed before we start.</span>
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
@@ -206,8 +236,8 @@ export default function TurnkeyConstructionPage() {
                         <svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                       </div>
                       <div>
-                        <strong className="block text-white text-lg">Strict Timelines</strong>
-                        <span className="text-slate-400 text-sm">On-time delivery, guaranteed.</span>
+                        <strong className="block text-white text-lg">Milestone-Driven Schedule</strong>
+                        <span className="text-slate-400 text-sm">Phase-by-phase timeline tracking.</span>
                       </div>
                     </div>
                     <div className="flex items-center gap-4">

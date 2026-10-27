@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: 'Architect in Bikaner | House Plans, 2D Maps & 3D Elevation',
   description: 'Looking for an architect in Bikaner? Explore house planning, 2D floor plans, Vastu-oriented layouts, 3D elevations and architectural design services from Bikaner Builders.',
   alternates: {
-    canonical: 'https://www.bikanerbuilders.in/architect-in-bikaner/'
+    canonical: 'https://www.bikanerbuilders.in/architect-in-bikaner'
   },
   openGraph: {
     title: 'Architect in Bikaner | House Plans, 2D Maps & 3D Elevation',
     description: 'Looking for an architect in Bikaner? Explore house planning, 2D floor plans, Vastu-oriented layouts, 3D elevations and architectural design services from Bikaner Builders.',
-    url: 'https://www.bikanerbuilders.in/architect-in-bikaner/',
+    url: 'https://www.bikanerbuilders.in/architect-in-bikaner',
     siteName: 'Bikaner Builders',
     images: [
       {
@@ -41,7 +41,7 @@ export default function ArchitectInBikanerPage() {
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.bikanerbuilders.in" },
       { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.bikanerbuilders.in/services" },
-      { "@type": "ListItem", "position": 3, "name": "Architect in Bikaner", "item": "https://www.bikanerbuilders.in/architect-in-bikaner/" }
+      { "@type": "ListItem", "position": 3, "name": "Architect in Bikaner", "item": "https://www.bikanerbuilders.in/architect-in-bikaner" }
     ]
   };
 
@@ -50,7 +50,8 @@ export default function ArchitectInBikanerPage() {
     "@type": "Service",
     "name": "Architectural Services in Bikaner",
     "provider": {
-      "@type": "LocalBusiness",
+      "@type": "GeneralContractor",
+      "@id": "https://www.bikanerbuilders.in/#organization",
       "name": "Bikaner Builders",
       "url": "https://www.bikanerbuilders.in"
     },

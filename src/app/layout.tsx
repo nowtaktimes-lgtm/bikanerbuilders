@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import MobileBottomBar from "@/components/MobileBottomBar";
 import { SettingsProvider } from "@/components/SettingsProvider";
 import { generateGeneralContractorSchema } from '@/lib/schema';
-import { getGlobalSettings, getRecentLocations, getAllServices } from "@/lib/api";
+import { getGlobalSettings, getRecentLocations, getAllServices, SITE_URL } from "@/lib/api";
 import { getCombinedServices } from "@/lib/services";
 
 const inter = Inter({ subsets: ["latin"], display: 'swap' });
@@ -19,24 +19,23 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Builders in Bikaner | House Construction & Design",
-  description: "Planning to build a home in Bikaner? Explore house construction, turnkey building, 2D house plans and 3D elevation services. Request your construction estimate today.",
-    icons: {
-    icon: '/icon.svg',
-    apple: '/icon.svg',
+  title: "Construction Company in Bikaner | Top Builders & House Construction",
+  description: "Looking for a trusted construction company & builders in Bikaner? We coordinate house construction, architectural planning, 2D Vastu maps, 3D elevation, and turnkey projects under one roof.",
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: 'https://www.bikanerbuilders.in/',
   },
-  metadataBase: new URL('https://bikanerbuilders.in'),
   openGraph: {
-    title: 'Top Builders in Bikaner | Free Site Visit & Vastu Map | +91 93765 90313',
-    description: 'Bikaner me ghar banwana hai? Get 100% Vastu-compliant 3D designs & turnkey construction with a transparent BOQ. Call now to book your FREE site inspection!',
-    url: 'https://bikanerbuilders.in',
+    title: 'Construction Company in Bikaner | Top Builders & House Construction',
+    description: 'Looking for a trusted construction company & builders in Bikaner? We coordinate house construction, architectural planning, 2D Vastu maps, 3D elevation, and turnkey projects under one roof.',
+    url: SITE_URL,
     siteName: 'Bikaner Builders',
     images: [
       {
         url: 'https://www.bikanerbuilders.in/_next/image?url=%2Fassets%2Fog_bikaner_builders_v2.jpg&w=1200&q=75',
         width: 1200,
         height: 630,
-        alt: 'Premium Villa in Bikaner by Bikaner Builders',
+        alt: 'Bikaner Builders - Construction Company and Builders in Bikaner',
       },
     ],
     locale: 'en_US',
@@ -44,8 +43,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Top Builders in Bikaner | Free Site Visit & Vastu Map',
-    description: 'Get 100% Vastu-compliant 3D designs & turnkey construction.',
+    title: 'Construction Company in Bikaner | Top Builders & House Construction',
+    description: 'Looking for a trusted construction company & builders in Bikaner? We coordinate house construction, architectural planning, 2D Vastu maps, 3D elevation, and turnkey projects under one roof.',
     images: ['https://www.bikanerbuilders.in/_next/image?url=%2Fassets%2Fog_bikaner_builders_v2.jpg&w=1200&q=75'],
   },
 };

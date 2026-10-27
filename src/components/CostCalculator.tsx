@@ -2,7 +2,6 @@
 
 import React, { useState } from 'react';
 import { useSettings } from '@/components/SettingsProvider';
-import Script from 'next/script';
 import Link from 'next/link';
 
 export default function CostCalculator() {
@@ -32,12 +31,20 @@ export default function CostCalculator() {
     return '';
   };
 
+  const getQualityRange = (rate: number) => {
+    if (rate === 1500) return '₹1,500 – ₹1,700/sq ft';
+    if (rate === 1800) return '₹1,800 – ₹2,000/sq ft';
+    if (rate === 2200) return '₹2,200+/sq ft';
+    return '';
+  };
+
   const getFloorName = (num: number) => {
     if (num === 1) return 'Ground Floor (G)';
     return `G + ${num - 1}`;
   };
 
-  const whatsappMessage = `Namaste! I want a detailed quote for my construction project.\n\nPlot Area: ${areaValue} ${unit === 'gaj' ? 'Gaj' : 'Sq Ft'}\nQuality: ${getQualityName(quality)}\nFloors: ${getFloorName(floors)}\nEstimated Cost: ${formatCurrency(estimatedCost)}\n\nPlease send me a detailed PDF quote.`;
+  const totalBuiltUp = totalSqFt * floors;
+  const whatsappMessage = `Namaste! I want an itemized quote for my construction project in Bikaner.\n\nAverage Built-up Area per floor: ${areaValue} ${unit === 'gaj' ? 'Gaj' : 'Sq Ft'}\nFloors: ${getFloorName(floors)}\nTotal Estimated Built-up Area: ${totalBuiltUp} Sq Ft\nQuality Tier: ${getQualityName(quality)} (Starting at ₹${quality}/sq ft, range: ${getQualityRange(quality)})\nEstimated Baseline Cost: ${formatCurrency(estimatedCost)}\n\nPlease send me a detailed BOQ estimate.`;
   const whatsappUrl = `https://wa.me/${settings.whatsappNumber.replace(/[^0-9]/g, '')}?text=${encodeURIComponent(whatsappMessage)}`;
 
   // Task 1: WebApplication SEO Schema
@@ -45,8 +52,8 @@ export default function CostCalculator() {
     "@context": "https://schema.org",
     "@type": "WebApplication",
     "name": "Bikaner Builders Construction Cost Estimator",
-    "url": "https://www.bikanerbuilders.in/estimate",
-    "description": "Calculate your turnkey construction and architecture cost in Bikaner instantly with our smart estimate tool. Get 100% accurate residential and commercial building estimates.",
+    "url": "https://www.bikanerbuilders.in/cost-estimator",
+    "description": "Calculate your turnkey construction and architecture cost in Bikaner instantly with our smart estimate tool. Get realistic, data-driven residential and commercial building estimates.",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "All",
     "browserRequirements": "Requires JavaScript",
@@ -63,8 +70,7 @@ export default function CostCalculator() {
 
   return (
     <>
-      <Script 
-        id="estimate-tool-schema" 
+      <script 
         type="application/ld+json" 
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} 
       />
@@ -76,16 +82,17 @@ export default function CostCalculator() {
         </div>
 
         <div className="space-y-6">
-          {/* Plot Area */}
+          {/* Constructed Built-up Area per Floor */}
           <div>
-            <label className="block text-sm font-bold text-[#0F172A] mb-2">Plot Area</label>
+            <label className="block text-sm font-bold text-[#0F172A] mb-1">Constructed Built-up Area (per floor)</label>
+            <p className="text-xs text-gray-500 mb-2">Enter the roof/slab constructed area for a single floor (not overall plot land area).</p>
             <div className="flex flex-col sm:flex-row gap-3">
               <div className="relative flex-1">
                 <input
                   type="number"
                   value={area}
                   onChange={(e) => setArea(e.target.value === '' ? '' : Number(e.target.value))}
-                  placeholder="Enter plot area"
+                  placeholder="e.g. 900"
                   className="w-full bg-slate-50 border border-slate-200 text-[#0F172A] font-bold rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-[#EA580C] focus:border-transparent transition-all"
                   min={0}
                 />
@@ -103,12 +110,12 @@ export default function CostCalculator() {
             <div className="mt-2 text-sm font-medium text-gray-500 h-5">
               {unit === 'gaj' && areaValue > 0 && (
                 <span className="text-[#EA580C] animate-fade-in-up">
-                  {areaValue} Gaj = {totalSqFt} Sq Ft
+                  {areaValue} Gaj = {totalSqFt} Sq Ft per floor
                 </span>
               )}
               {unit === 'sqft' && areaValue > 0 && (
                 <span className="text-gray-400">
-                  {areaValue} Sq Ft = {(areaValue / 9).toFixed(2)} Gaj
+                  {areaValue} Sq Ft = {(areaValue / 9).toFixed(2)} Gaj per floor
                 </span>
               )}
             </div>
@@ -116,15 +123,16 @@ export default function CostCalculator() {
 
           {/* Construction Quality */}
           <div>
-            <label className="block text-sm font-bold text-[#0F172A] mb-3">Construction Quality</label>
+            <label className="block text-sm font-bold text-[#0F172A] mb-3">Construction Quality Tier</label>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {[
-                { label: 'Standard', rate: 1500, desc: '₹1,500/sqft' },
-                { label: 'Premium', rate: 1800, desc: '₹1,800/sqft' },
-                { label: 'Luxury', rate: 2200, desc: '₹2,200/sqft' },
+                { label: 'Standard', rate: 1500, startingDesc: 'From ₹1,500/sqft', rangeDesc: '₹1,500 – ₹1,700/sqft' },
+                { label: 'Premium', rate: 1800, startingDesc: 'From ₹1,800/sqft', rangeDesc: '₹1,800 – ₹2,000/sqft' },
+                { label: 'Luxury', rate: 2200, startingDesc: 'From ₹2,200/sqft', rangeDesc: '₹2,200+/sqft' },
               ].map((option) => (
                 <button
                   key={option.rate}
+                  type="button"
                   onClick={() => setQuality(option.rate)}
                   className={`flex flex-col items-center justify-center p-3 rounded-xl border-2 transition-all ${
                     quality === option.rate
@@ -133,7 +141,8 @@ export default function CostCalculator() {
                   }`}
                 >
                   <span className="font-bold">{option.label}</span>
-                  <span className="text-xs font-medium opacity-80">{option.desc}</span>
+                  <span className="text-xs font-semibold text-[#EA580C]">{option.startingDesc}</span>
+                  <span className="text-[11px] font-medium opacity-70 mt-0.5">{option.rangeDesc}</span>
                 </button>
               ))}
             </div>
@@ -153,18 +162,39 @@ export default function CostCalculator() {
               <option value={3}>Ground + 2 Floors (G+2)</option>
               <option value={4}>Ground + 3 Floors (G+3)</option>
             </select>
+            <p className="mt-2 text-xs text-slate-500 font-normal">
+              {areaValue > 0 ? (
+                <>
+                  Total Estimated Slab Area: <span className="text-[#EA580C] font-bold">{(totalSqFt * floors).toLocaleString('en-IN')} Sq Ft</span> ({totalSqFt.toLocaleString('en-IN')} sq ft × {floors} floor{floors > 1 ? 's' : ''}). *Assumes an average of {totalSqFt.toLocaleString('en-IN')} sq ft constructed slab area per floor. If upper floors differ in size, enter your average slab area per floor.
+                </>
+              ) : (
+                <>
+                  *Multiplies entered area by floor count assuming average constructed area per floor. If upper floors have different built-up areas, enter the average slab area per floor.
+                </>
+              )}
+            </p>
           </div>
         </div>
 
         {/* Result Section */}
         <div className="mt-8 bg-[#0F172A] rounded-2xl p-6 text-center shadow-inner relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.05] pointer-events-none bg-radial-pattern-light"></div>
-          <p className="text-gray-400 font-bold uppercase tracking-wider text-xs mb-2">Estimated Total Cost</p>
+          <p className="text-gray-400 font-bold uppercase tracking-wider text-xs mb-1">Estimated Baseline Cost</p>
           <p className="text-4xl sm:text-5xl font-black text-white drop-shadow-md mb-2">
             {areaValue > 0 ? formatCurrency(estimatedCost) : '₹0'}
           </p>
+          {areaValue > 0 && (
+            <div className="text-xs text-slate-300 font-medium mb-2 space-y-1">
+              <p>
+                Calculated at the baseline starting rate of <span className="text-[#EA580C] font-bold">₹{quality}/sq ft</span> for <span className="font-semibold text-white">{getQualityName(quality)}</span> quality.
+              </p>
+              <p className="text-slate-400">
+                Full published tier range: <span className="text-slate-200 font-semibold">{getQualityRange(quality)}</span>. Total built-up slab area: {(totalSqFt * floors).toLocaleString('en-IN')} Sq Ft.
+              </p>
+            </div>
+          )}
           <p className="text-xs text-gray-500 font-medium">
-            *This is an approximate estimate. Actual cost may vary based on exact material choices and local conditions.
+            *This baseline estimate is calculated using the tier&apos;s starting rate and assumes equal average built-up area across all selected floors. Final quotation depends on exact material specifications, soil conditions, and detailed BOQ.
           </p>
         </div>
 

@@ -5,6 +5,7 @@ import BottomCTA from '@/components/BottomCTA';
 import DynamicFAQ from '@/components/DynamicFAQ';
 import Link from 'next/link';
 import OtherServicesLinker from '@/components/OtherServicesLinker';
+import { generateDynamicServiceSchema } from '@/lib/schema';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
@@ -15,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
   
   const title = post.seo?.title || post.title;
-  let description = post.seo?.metaDesc || '';
+  let description = post.seo?.description || post.seo?.metaDesc || '';
   if (!description) {
     // Basic fallback description
     description = `Premium construction and architectural services in ${post.title}. 100% Vastu-compliant designs and turnkey solutions by Bikaner Builders.`;
@@ -28,12 +29,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title,
     description,
     alternates: {
-      canonical: `https://bikanerbuilders.in/services/${resolvedParams.slug}`
+      canonical: `https://www.bikanerbuilders.in/services/${resolvedParams.slug}`
     },
     openGraph: {
       title,
       description,
-      url: `https://bikanerbuilders.in/services/${resolvedParams.slug}`,
+      url: `https://www.bikanerbuilders.in/services/${resolvedParams.slug}`,
       siteName: 'Bikaner Builders',
       images: [
         {
@@ -64,22 +65,27 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
     notFound();
   }
 
+  const serviceUrl = `https://www.bikanerbuilders.in/services/${resolvedParams.slug}`;
+  const serviceSchema = generateDynamicServiceSchema({
+    title: post.title,
+    url: serviceUrl,
+    description: post.seo?.description || post.content?.replace(/<[^>]+>/g, '').trim().substring(0, 160) || undefined
+  });
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.bikanerbuilders.in" },
       { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.bikanerbuilders.in/services" },
-      { "@type": "ListItem", "position": 3, "name": post.title, "item": `https://www.bikanerbuilders.in/services/${resolvedParams.slug}` }
+      { "@type": "ListItem", "position": 3, "name": post.title, "item": serviceUrl }
     ]
   };
 
   return (
     <main className="min-h-screen bg-slate-50">
-      {post.seo?.schemaDetails && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `post.seo.schemaDetails` }} />
-      )}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: `JSON.stringify(breadcrumbSchema)` }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       
       {/* TOP: Auto-Generated Hero Banner */}
       <DynamicPageHero title={post.title} image={post.featuredImage?.node?.sourceUrl} category="Services" categoryLink="/services" />

@@ -6,36 +6,42 @@ import OtherServicesLinker from '@/components/OtherServicesLinker';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://www.bikanerbuilders.in/services/2d-naksha',
+  },
   title: "Expert 2D Vastu Naksha & Floor Plans in Bikaner",
   description: "Get a 100% Vastu-compliant 2D house naksha in Bikaner. Expert architects for residential duplex, commercial shops, and plot mapping.",
   keywords: "100% Vastu-Compliant 2D Naksha in Bikaner, Bikaner Builders, top civil contractor in Bikaner, best building construction company near me, ghar ka naksha, architects in bikaner",
 };
 
 export default function SEOOptimizedServicePage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.bikanerbuilders.in" },
+      { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://www.bikanerbuilders.in/services" },
+      { "@type": "ListItem", "position": 3, "name": "2D Naksha", "item": "https://www.bikanerbuilders.in/services/2d-naksha" }
+    ]
+  };
+
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
+    "name": "2D Vastu Naksha & Floor Plans in Bikaner",
     "serviceType": "Architectural Design",
     "provider": {
-      "@type": "LocalBusiness",
+      "@type": "GeneralContractor",
+      "@id": "https://www.bikanerbuilders.in/#organization",
       "name": "Bikaner Builders",
-      "image": "https://www.bikanerbuilders.in/icon.svg",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Shop No 04, Opp Govt School, Napasar Rd, Ridmalsar Sipahiyan",
-        "addressLocality": "Bikaner",
-        "addressRegion": "Rajasthan",
-        "postalCode": "334022",
-        "addressCountry": "IN"
-      },
-      "telephone": "+91-93765-90313",
       "url": "https://www.bikanerbuilders.in"
     },
     "areaServed": {
       "@type": "City",
       "name": "Bikaner"
     },
-    "description": "Get a 100% Vastu-compliant 2D house naksha in Bikaner. Expert architects for residential duplex, commercial shops, and plot mapping."
+    "description": "Get a 100% Vastu-compliant 2D house naksha in Bikaner. Expert architects for residential duplex, commercial shops, and plot mapping.",
+    "url": "https://www.bikanerbuilders.in/services/2d-naksha"
   };
 
   const faqSchema = {
@@ -47,6 +53,7 @@ export default function SEOOptimizedServicePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       
       <div className="pt-20">
@@ -92,7 +99,7 @@ export default function SEOOptimizedServicePage() {
                 <h2 className="text-3xl font-black text-slate-900 mb-6 border-b-4 border-orange-500 pb-4 inline-block">
                   Best Ghar Ka Naksha & Floor Plan Creators in Bikaner
                 </h2>
-                <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: `Before starting any construction, a perfect <strong class="text-slate-900">ghar ka naksha (floor plan)</strong> is crucial. We are the top architects in Bikaner offering 2D floor plans, architectural layouts, and plot mapping. We optimize every inch of your space for maximum ventilation, natural lighting, and cross-ventilation, which is essential in Rajasthan.` }} />
+                <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: `Before starting any construction, a perfect <strong class="text-slate-900">ghar ka naksha (floor plan)</strong> is crucial. We offer 2D floor plans, architectural layouts, and plot mapping in Bikaner. Once your layout is finalized, pairing it with a <a href="/services/3d-elevation" class="text-orange-600 font-bold hover:underline">3D front elevation</a> ensures facade clarity before starting <a href="/services/turnkey-construction" class="text-orange-600 font-bold hover:underline">turnkey house construction</a>.` }} />
                 
                 <h3 className="text-2xl font-bold text-slate-900 mb-4">
                   Vastu Shastra Experts for Home & Commercial

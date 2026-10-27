@@ -7,6 +7,7 @@ import ClientMapWrapper from '@/components/ClientMapWrapper';
 import Link from 'next/link';
 import { formatLocationName } from '@/lib/formatters';
 import { getFounderQuote } from '@/lib/quotes';
+import { generateLocationServiceSchema } from '@/lib/schema';
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
@@ -17,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
   
   const title = post.seo?.title || post.title;
-  let description = post.seo?.metaDesc || '';
+  let description = post.seo?.description || post.seo?.metaDesc || '';
   if (!description) {
     // Basic fallback description
     description = `Premium construction and architectural services in ${post.title}. 100% Vastu-compliant designs and turnkey solutions by Bikaner Builders.`;
@@ -30,12 +31,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title,
     description,
     alternates: {
-      canonical: `https://bikanerbuilders.in/locations/${resolvedParams.slug}`
+      canonical: `https://www.bikanerbuilders.in/locations/${resolvedParams.slug}`
     },
     openGraph: {
       title,
       description,
-      url: `https://bikanerbuilders.in/locations/${resolvedParams.slug}`,
+      url: `https://www.bikanerbuilders.in/locations/${resolvedParams.slug}`,
       siteName: 'Bikaner Builders',
       images: [
         {
@@ -67,21 +68,26 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
     notFound();
   }
 
+  const locationUrl = `https://www.bikanerbuilders.in/locations/${resolvedParams.slug}`;
+  const locationServiceSchema = generateLocationServiceSchema({
+    locationName: formattedLocationName,
+    url: locationUrl,
+    description: post.seo?.description || `Professional house construction, architectural planning, 2D floor plans, and turnkey building services in ${formattedLocationName}, Bikaner.`
+  });
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
       { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.bikanerbuilders.in" },
       { "@type": "ListItem", "position": 2, "name": "Locations", "item": "https://www.bikanerbuilders.in/locations" },
-      { "@type": "ListItem", "position": 3, "name": formattedLocationName, "item": `https://www.bikanerbuilders.in/locations/${resolvedParams.slug}` }
+      { "@type": "ListItem", "position": 3, "name": formattedLocationName, "item": locationUrl }
     ]
   };
 
   return (
     <main className="min-h-screen bg-slate-50">
-      {post.seo?.schemaDetails && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: post.seo.schemaDetails }} />
-      )}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(locationServiceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       
       {/* TOP: Auto-Generated Hero Banner */}
@@ -123,6 +129,69 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
             </div>
 
 
+            {/* Construction & Design Services in Location */}
+            <div className="mt-8 bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100">
+              <h2 className="text-2xl font-bold text-slate-900 mb-3">
+                Construction &amp; Design Services in {formattedLocationName}
+              </h2>
+              <p className="text-slate-600 mb-6 text-sm md:text-base leading-relaxed">
+                Whether you are planning a new residential build or architectural design in {formattedLocationName}, our team coordinates your project from initial planning to on-site execution:
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <Link 
+                  href="/architect-in-bikaner" 
+                  className="p-4 rounded-xl border border-slate-200 hover:border-orange-500 bg-slate-50/50 hover:bg-orange-50/30 transition-all group"
+                >
+                  <h3 className="text-base font-bold text-slate-900 group-hover:text-orange-600 mb-1 flex items-center justify-between">
+                    Architect in Bikaner
+                    <span className="text-orange-500">&rarr;</span>
+                  </h3>
+                  <p className="text-xs md:text-sm text-slate-600 leading-normal">
+                    Comprehensive house planning, space layout, and Vastu-oriented design guidance for projects in {formattedLocationName}.
+                  </p>
+                </Link>
+
+                <Link 
+                  href="/services/turnkey-construction" 
+                  className="p-4 rounded-xl border border-slate-200 hover:border-orange-500 bg-slate-50/50 hover:bg-orange-50/30 transition-all group"
+                >
+                  <h3 className="text-base font-bold text-slate-900 group-hover:text-orange-600 mb-1 flex items-center justify-between">
+                    Turnkey House Construction
+                    <span className="text-orange-500">&rarr;</span>
+                  </h3>
+                  <p className="text-xs md:text-sm text-slate-600 leading-normal">
+                    Complete with-material residential house building with dedicated site supervision and transparent BOQ pricing.
+                  </p>
+                </Link>
+
+                <Link 
+                  href="/services/2d-naksha" 
+                  className="p-4 rounded-xl border border-slate-200 hover:border-orange-500 bg-slate-50/50 hover:bg-orange-50/30 transition-all group"
+                >
+                  <h3 className="text-base font-bold text-slate-900 group-hover:text-orange-600 mb-1 flex items-center justify-between">
+                    2D House Plan &amp; Vastu Naksha
+                    <span className="text-orange-500">&rarr;</span>
+                  </h3>
+                  <p className="text-xs md:text-sm text-slate-600 leading-normal">
+                    Custom residential floor plans and room layouts optimized for local plot dimensions and natural ventilation.
+                  </p>
+                </Link>
+
+                <Link 
+                  href="/services/3d-elevation" 
+                  className="p-4 rounded-xl border border-slate-200 hover:border-orange-500 bg-slate-50/50 hover:bg-orange-50/30 transition-all group"
+                >
+                  <h3 className="text-base font-bold text-slate-900 group-hover:text-orange-600 mb-1 flex items-center justify-between">
+                    3D Front Elevation Design
+                    <span className="text-orange-500">&rarr;</span>
+                  </h3>
+                  <p className="text-xs md:text-sm text-slate-600 leading-normal">
+                    Photorealistic 3D exterior concepts to visualize your facade materials and front elevation before building.
+                  </p>
+                </Link>
+              </div>
+            </div>
+
             {/* Dynamic FAQs */}
             <DynamicFAQ pageType="location" title={formattedLocationName} />
 
@@ -158,7 +227,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
               
               <div className="pt-6 border-t border-slate-100 text-center">
                 <Link href="/" className="text-slate-500 hover:text-orange-500 text-sm font-medium transition-colors">
-                  &larr; Back to Bikaner Builders Home
+                  &larr; Construction Company &amp; Builders in Bikaner
                 </Link>
               </div>
             </div>
