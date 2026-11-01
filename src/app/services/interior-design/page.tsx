@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import ServiceTrustBlock from '@/components/ServiceTrustBlock';
@@ -6,15 +6,30 @@ import OtherServicesLinker from '@/components/OtherServicesLinker';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  title: "Interior Designers in Bikaner | Home Interior Design",
+  description: "Looking for interior designers in Bikaner? Get interior planning, 2D/3D designs and complete execution for modular kitchens, wardrobes, false ceilings, carpentry and home interiors.",
   alternates: {
     canonical: 'https://www.bikanerbuilders.in/services/interior-design',
   },
-  title: "Best Interior Designers & POP Contractors in Bikaner",
-  description: "Top interior designers in Bikaner. Get luxury false ceiling, gypsum POP work, modular kitchens, and residential interior decoration.",
-  keywords: "Luxury POP & Interior Designers in Bikaner, Bikaner Builders, top civil contractor in Bikaner, best building construction company near me, ghar ka naksha, architects in bikaner",
+  openGraph: {
+    title: "Interior Designers in Bikaner | Home Interior Design",
+    description: "Looking for interior designers in Bikaner? Get interior planning, 2D/3D designs and complete execution for modular kitchens, wardrobes, false ceilings, carpentry and home interiors.",
+    url: 'https://www.bikanerbuilders.in/services/interior-design',
+    siteName: 'Bikaner Builders',
+    locale: 'en_IN',
+    type: 'website',
+    images: [
+      {
+        url: 'https://www.bikanerbuilders.in/assets/turnkey-interior-finishing-cost-bikaner.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Interior Design and Turnkey Execution in Bikaner - Bikaner Builders',
+      },
+    ],
+  },
 };
 
-export default function SEOOptimizedServicePage() {
+export default function InteriorDesignServicePage() {
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -28,8 +43,8 @@ export default function SEOOptimizedServicePage() {
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "name": "Interior Design Services in Bikaner",
-    "serviceType": "Interior Design",
+    "name": "Interior Design & Turnkey Execution in Bikaner",
+    "serviceType": "Interior Design and Turnkey Interior Execution",
     "provider": {
       "@type": "GeneralContractor",
       "@id": "https://www.bikanerbuilders.in/#organization",
@@ -40,14 +55,63 @@ export default function SEOOptimizedServicePage() {
       "@type": "City",
       "name": "Bikaner"
     },
-    "description": "Top interior designers in Bikaner. Get luxury false ceiling, gypsum POP work, modular kitchens, and residential interior decoration.",
+    "description": "Looking for interior designers in Bikaner? Get interior planning, 2D/3D designs and complete execution for modular kitchens, wardrobes, false ceilings, carpentry and home interiors.",
     "url": "https://www.bikanerbuilders.in/services/interior-design"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [{ "@type": "Question", "name": "Do you design modular kitchens in Bikaner?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we are experts in designing and installing modern, highly durable modular kitchens with Hettich/Godrej fittings, acrylic finishes, and smart storage solutions." } },{ "@type": "Question", "name": "What types of false ceilings do you do?", "acceptedAnswer": { "@type": "Answer", "text": "We specialize in Gypsum board false ceilings, Grid ceilings, POP designs, and PVC wall/ceiling panels, complete with modern profile lighting." } },{ "@type": "Question", "name": "Can you work on existing homes?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! We offer complete interior renovation and remodeling services for old homes, flats, and commercial shops in Bikaner." } }]
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I hire Bikaner Builders for interior design and 3D visualization only?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. If you already have your own contractors or carpenters, you can engage us exclusively for 2D furniture layouts, 3D interior concept renderings, reflected ceiling lighting plans, and a detailed bill of quantities (BOQ) without execution."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is included in your turnkey interior execution service?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our turnkey interior service covers end-to-end execution from approved designs to final handover. This includes custom modular carpentry, false ceiling installation, electrical routing and architectural lighting, wall treatments, painting, on-site supervision, and final cleaning."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you design modular kitchens and wardrobes for Bikaner homes?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We design modular kitchens and wardrobes tailored to local storage requirements and desert climate conditions. Kitchens feature boiling-water-resistant core boards, smooth soft-close hardware, and organized utility units. Wardrobes are built with floor-to-ceiling storage, edge sealing designed to reduce dust ingress, and customized internal organizers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What false ceiling and POP options do you offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We install moisture-resistant gypsum board false ceilings, perimeter LED cove lighting trays, magnetic track profiles, and decorative POP mouldings. All ceilings use rigid galvanized iron (GI) framing aligned with laser levels to minimize the potential for sagging or hairline surface fissures caused by seasonal temperature variations."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you undertake interior renovation for existing homes and commercial spaces?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We handle partial and complete interior renovations for established homes, apartments, and commercial spaces in Bikaner. Our team evaluates existing structural beams, electrical conduits, and plumbing before planning remodeling work to minimize disruption."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do you estimate costs and begin an interior project?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "We begin with an on-site consultation and dimensional survey in Bikaner to understand your scope and preferences. Based on the layout, we prepare an itemized bill of quantities (BOQ) detailing material specifications, finishes, and costs before execution begins."
+        }
+      }
+    ]
   };
 
   return (
@@ -58,33 +122,38 @@ export default function SEOOptimizedServicePage() {
       
       <div className="pt-20">
         
-        {/* SEO Hero Section */}
+        {/* Hero Section */}
         <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-slate-900">
           <Image
             src="/assets/seo_interior.jpg"
-            alt="Luxury POP & Interior Designers in Bikaner - Bikaner Builders"
-            title="Luxury POP & Interior Designers in Bikaner"
+            alt="Interior Design & Turnkey Execution in Bikaner - Bikaner Builders"
+            title="Interior Design & Turnkey Execution in Bikaner"
             fill
             priority
             className="object-cover opacity-30"
-          sizes="(max-width: 768px) 100vw, 578px" />
+            sizes="(max-width: 768px) 100vw, 1200px"
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-transparent"></div>
           
-          <div className="relative z-10 text-center px-4 max-w-5xl mx-auto mt-12">
+          <div className="relative z-10 text-center px-4 max-w-5xl mx-auto mt-12 py-16">
             <h1 className="text-4xl md:text-6xl font-black text-white mb-6 drop-shadow-xl leading-tight">
-              Luxury POP & Interior Designers in Bikaner
+              Interior Design & Turnkey Execution in Bikaner
             </h1>
-            <h2 className="text-xl md:text-2xl text-orange-400 font-bold max-w-3xl mx-auto mb-8 drop-shadow-md">
-              Top interior designers in Bikaner. Get luxury false ceiling, gypsum POP work, modular kitchens, and residential interior decoration.
-            </h2>
-            <Link href="tel:9376590313" className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-500 text-white font-bold text-xl px-10 py-5 rounded-full shadow-[0_4px_25px_rgba(234,88,12,0.6)] transition-all hover:-translate-y-1">
+            <p className="text-xl md:text-2xl text-orange-400 font-bold max-w-3xl mx-auto mb-8 drop-shadow-md">
+              Looking for interior designers in Bikaner? Get interior planning, 2D/3D designs and complete execution for modular kitchens, wardrobes, false ceilings, carpentry and home interiors.
+            </p>
+            <Link 
+              href="https://wa.me/919376590313" 
+              target="_blank" 
+              className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-500 text-white font-bold text-xl px-10 py-5 rounded-full shadow-[0_4px_25px_rgba(234,88,12,0.6)] transition-all hover:-translate-y-1"
+            >
               <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M11.97 2.005a9.962 9.962 0 00-8.528 15.11L2 22l5.023-1.328a9.964 9.964 0 104.947-18.667zM12 20a7.973 7.973 0 01-4.062-1.115l-.291-.173-3.023.794.808-2.953-.19-.3A7.95 7.95 0 014.032 12 7.977 7.977 0 1112 20zm4.242-5.467c-.232-.116-1.378-.68-1.593-.758-.215-.078-.372-.116-.528.116-.156.232-.6 .758-.737.914-.136.155-.274.175-.506.058-.232-.116-.983-.362-1.87-1.156-.69-.617-1.155-1.38-1.29-1.612-.136-.233-.014-.359.102-.475.105-.105.232-.272.348-.408.116-.136.155-.233.232-.388.077-.156.039-.292-.019-.408-.058-.116-.528-1.277-.723-1.748-.19-.46-.383-.398-.528-.406-.137-.008-.293-.008-.45-.008z" /></svg>
               Get a Free Quote on WhatsApp
             </Link>
           </div>
         </section>
 
-        {/* LSI Keyword Rich Content Section */}
+        {/* Content Section */}
         <section className="py-16 md:py-24 bg-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-12">
             
@@ -92,105 +161,213 @@ export default function SEOOptimizedServicePage() {
             <div className="lg:col-span-8">
               <article className="prose prose-lg md:prose-xl prose-slate max-w-none bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-slate-100">
 
-                <div className="relative w-full h-[400px] mb-10 rounded-2xl overflow-hidden shadow-lg border border-slate-200">
-                  <Image src="/assets/seo_interior.jpg" alt="Luxury POP False Ceiling and Interior Design" fill className="object-cover hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 100vw, 578px" />
+                {/* Conceptual Visualization Graphic */}
+                <div className="relative w-full h-[320px] sm:h-[400px] mb-4 rounded-2xl overflow-hidden shadow-lg border border-slate-200">
+                  <Image 
+                    src="/assets/turnkey-interior-finishing-cost-bikaner.webp" 
+                    alt="Interior Design and Turnkey Execution in Bikaner - Modern Concept Visualization" 
+                    title="Modern Interior Design Concept Visualization" 
+                    fill 
+                    className="object-cover hover:scale-105 transition-transform duration-700" 
+                    sizes="(max-width: 768px) 100vw, 750px" 
+                  />
+                </div>
+                <p className="text-xs text-slate-500 text-center mb-10 italic">
+                  Representative 3D conceptual visualization for modern residential interior layout, lighting, and woodwork.
+                </p>
+
+                {/* Section 1: Complete Interior Solutions */}
+                <h2 className="text-3xl font-black text-slate-900 mb-6 border-b-4 border-orange-500 pb-4 inline-block">
+                  Complete Interior Solutions: From Concept to Execution
+                </h2>
+                <p className="text-slate-700 leading-relaxed mb-6">
+                  Planning an interior for a newly built home or renovating an existing residence in Bikaner requires balancing functional space planning with durable on-site craftsmanship. At Bikaner Builders, we offer structured interior services tailored to your project stage:
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-8 not-prose">
+                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <span className="text-orange-500 font-black text-3xl block mb-2">01</span>
+                    <h3 className="font-bold text-slate-900 text-xl mb-2">Design-Only Services</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                      Best suited if you already have personal carpenters or civil contractors and need clear architectural direction and 3D visual concepts before purchasing materials.
+                    </p>
+                    <ul className="text-sm text-slate-700 space-y-2 list-disc list-inside">
+                      <li>2D Furniture layout and circulation planning</li>
+                      <li>3D Photorealistic views of bedrooms, living, and kitchen</li>
+                      <li>Reflected ceiling plans (RCP) with electrical points</li>
+                      <li>Plumbing and drainage coordination for wet areas</li>
+                      <li>Detailed material schedule and bill of quantities (BOQ)</li>
+                    </ul>
+                  </div>
+
+                  <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm">
+                    <span className="text-orange-500 font-black text-3xl block mb-2">02</span>
+                    <h3 className="font-bold text-slate-900 text-xl mb-2">Turnkey Interior Execution</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                      Full-scope delivery where our team manages material sourcing, site carpentry, false ceiling framing, electrical installations, painting, and finishing under one roof.
+                    </p>
+                    <ul className="text-sm text-slate-700 space-y-2 list-disc list-inside">
+                      <li>Dedicated site supervisor and milestone tracking</li>
+                      <li>Bespoke modular kitchen manufacturing and assembly</li>
+                      <li>Built-in wardrobes, vanity units, and TV consoles</li>
+                      <li>Gypsum false ceiling, POP mouldings, and cove lighting</li>
+                      <li>Surface wall finishes, paneling, and final handover</li>
+                    </ul>
+                  </div>
                 </div>
 
-                <h2 className="text-3xl font-black text-slate-900 mb-6 border-b-4 border-orange-500 pb-4 inline-block">
-                  Transform Your Home with Top Interior Decorators in Bikaner
+                {/* Section 2: Interior Scope & Craftsmanship */}
+                <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mt-12 mb-6 border-b-2 border-slate-100 pb-3">
+                  Interior Scope & Craftsmanship
                 </h2>
-                <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: `Your search for the <strong class="text-slate-900">best interior designer in Bikaner</strong> ends here. We provide complete interior solutions including modular kitchens, modern wardrobes, TV units, luxury living room setups, and premium bathroom designs. Our experienced carpenters and interior experts bring your vision to life.` }} />
-                
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">
-                  Expert False Ceiling & Gypsum POP Work
-                </h3>
-                <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: `A beautiful ceiling changes the entire vibe of a room. As the leading POP contractors in Bikaner, we install modern gypsum false ceilings, LED cove lighting designs, PVC panels, and intricate POP moldings. We ensure flawless finishing with laser alignment.` }} />
-                
-                
-                
-                {/* 1. Elite Process Section */}
-                <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6 border-b-2 border-slate-100 pb-3">
-                  Our Elite Interior Design & Execution Workflow
-                </h3>
-                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: "True luxury is felt indoors. As the most sought-after <strong class=\"text-slate-900\">interior designers in Bikaner</strong>, we don't just decorate rooms; we engineer lifestyles. From spatial flow to ambient lighting, our turnkey interior process is flawless." }}></p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-                  
+                <p className="text-slate-700 leading-relaxed mb-6">
+                  Interior work in Bikaner needs special consideration for hot desert summers, fine dust ingress, and intensive daily kitchen usage. We focus on practical durability and clean detailing across every room:
+                </p>
+
+                <div className="space-y-6 mb-10 not-prose">
+                  <div className="p-6 rounded-2xl border border-slate-100 bg-slate-50/50 hover:border-orange-200 transition-colors">
+                    <h3 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-3">
+                      <span className="w-2.5 h-2.5 rounded-full bg-orange-500"></span>
+                      Modular Kitchens & Smart Utility Storage
+                    </h3>
+                    <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                      Kitchens designed for Indian cooking habits with clear division between wet prep and cooking zones. We construct sturdy carcasses using boiling-water-resistant plywood, heavy-load drawer channels, tandem boxes, corner carousels, and quartz countertops engineered for enhanced resistance to heat and common kitchen stains under regular use.
+                    </p>
+                  </div>
+
+                  <div className="p-6 rounded-2xl border border-slate-100 bg-slate-50/50 hover:border-orange-200 transition-colors">
+                    <h3 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-3">
+                      <span className="w-2.5 h-2.5 rounded-full bg-orange-500"></span>
+                      Built-in Wardrobes & Storage Units
+                    </h3>
+                    <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                      Custom floor-to-ceiling wardrobes that maximize vertical height to minimize open dust accumulation zones common in Bikaner homes. Available in sliding and hinged configurations with machine-pressed edge banding designed to help curb fine dust infiltration into storage compartments.
+                    </p>
+                  </div>
+
+                  <div className="p-6 rounded-2xl border border-slate-100 bg-slate-50/50 hover:border-orange-200 transition-colors">
+                    <h3 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-3">
+                      <span className="w-2.5 h-2.5 rounded-full bg-orange-500"></span>
+                      False Ceilings & Gypsum POP Work
+                    </h3>
+                    <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                      Gypsum board false ceilings suspended on rust-resistant galvanized steel channels. Aside from modern perimeter lighting, false ceilings create an air-gap buffer that can help temper radiant heat transmission from roof slabs during peak summer months.
+                    </p>
+                  </div>
+
+                  <div className="p-6 rounded-2xl border border-slate-100 bg-slate-50/50 hover:border-orange-200 transition-colors">
+                    <h3 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-3">
+                      <span className="w-2.5 h-2.5 rounded-full bg-orange-500"></span>
+                      Architectural Lighting & Electrical Coordination
+                    </h3>
+                    <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                      Layered lighting schemes combining indirect warm cove lighting, anti-glare COB spotlights, magnetic track channels, and dedicated task lighting for study desks and kitchen counters to create visual depth without harsh glare.
+                    </p>
+                  </div>
+
+                  <div className="p-6 rounded-2xl border border-slate-100 bg-slate-50/50 hover:border-orange-200 transition-colors">
+                    <h3 className="text-xl font-bold text-slate-900 mb-2 flex items-center gap-3">
+                      <span className="w-2.5 h-2.5 rounded-full bg-orange-500"></span>
+                      Wall Treatments, Fluted Paneling & Surface Finishes
+                    </h3>
+                    <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                      Decorative feature walls incorporating acoustic charcoal louvers, fluted composite panels, durable interior laminates, and washable wall paints designed to be easily wiped clean of fine desert dust.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Section 3: Our Step-by-Step Interior Workflow (Original 2x2 Grid) */}
+                <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mt-12 mb-6 border-b-2 border-slate-100 pb-3">
+                  Our Step-by-Step Interior Workflow
+                </h2>
+                <p className="text-slate-700 leading-relaxed mb-6">
+                  A structured workflow ensures that creative concepts translate into well-built rooms on time and within agreed budget parameters:
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 not-prose">
                   <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
                     <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">01</span>
-                    <h4 className="font-bold text-slate-900 text-xl mb-2">Space Planning & Layout</h4>
-                    <p className="text-slate-600 text-sm leading-relaxed">We analyze the raw floor plan to strategically place furniture, modular kitchens, and wardrobes to maximize movement flow and spatial harmony.</p>
+                    <h3 className="font-bold text-slate-900 text-xl mb-2">Site Measurement & Briefing</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      We conduct an on-site survey in Bikaner to measure exact room dimensions, ceiling heights, door swings, and conduit locations while discussing your family's daily routine.
+                    </p>
                   </div>
                   <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
                     <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">02</span>
-                    <h4 className="font-bold text-slate-900 text-xl mb-2">Mood Boards & Theming</h4>
-                    <p className="text-slate-600 text-sm leading-relaxed">We curate premium color palettes, fabric textures, and wood finishes (veneer/laminates) to match your desired aesthetic—from minimal to royal.</p>
+                    <h3 className="font-bold text-slate-900 text-xl mb-2">2D Layout & 3D Visualization</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      We draft functional furniture layouts followed by photorealistic 3D perspectives to preview color palettes, textures, and lighting ambiance before execution starts.
+                    </p>
                   </div>
                   <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
                     <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">03</span>
-                    <h4 className="font-bold text-slate-900 text-xl mb-2">3D Interior Visualization</h4>
-                    <p className="text-slate-600 text-sm leading-relaxed">Before buying any materials, we provide 3D renders of your living room, bedrooms, and kitchen so you can approve the exact look.</p>
+                    <h3 className="font-bold text-slate-900 text-xl mb-2">Itemized BOQ & Material Selection</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      You receive a detailed bill of quantities outlining core ply specifications, hardware fittings, surface laminates, and lighting fixtures for total budget transparency.
+                    </p>
                   </div>
                   <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
                     <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">04</span>
-                    <h4 className="font-bold text-slate-900 text-xl mb-2">Turnkey Carpentry & Execution</h4>
-                    <p className="text-slate-600 text-sm leading-relaxed">Our master craftsmen handle the heavy lifting: false ceilings, electrical rerouting, modular woodwork, and final décor placement.</p>
+                    <h3 className="font-bold text-slate-900 text-xl mb-2">Turnkey Execution & Handover</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      Carpenters, electricians, and painters execute the work under on-site supervision, concluding with alignment verification, post-work cleaning, and a room-by-room walkthrough.
+                    </p>
                   </div>
                 </div>
 
-                {/* 2. Materials/Tech Section */}
-                <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6 border-b-2 border-slate-100 pb-3">
-                  The Premium Interior Materials We Use
-                </h3>
-                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: "A beautiful interior must also be durable. We strictly reject low-grade materials, opting only for premium, long-lasting hardware and woods for our <strong class=\"text-slate-900\">luxury interiors in Bikaner</strong>." }}></p>
-                <ul className="space-y-4 mb-12 list-none pl-0">
-                  
+                {/* Section 4: Material & Finishing Options */}
+                <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mt-12 mb-6 border-b-2 border-slate-100 pb-3">
+                  Material & Finishing Options
+                </h2>
+                <p className="text-slate-700 leading-relaxed mb-6">
+                  Material selection in Bikaner must account for extreme heat cycles, low humidity, and fine dust. We prioritize durable materials selected to withstand dry desert conditions, insect exposure, and surface wear:
+                </p>
+                <ul className="space-y-4 mb-12 list-none pl-0 not-prose">
                   <li className="flex items-start gap-3">
                     <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     <div>
-                      <strong className="text-slate-900 block">BWR/BWP Grade Plywood</strong>
-                      <span className="text-slate-600 text-sm">We use boiling water-resistant and termite-proof plywood (Greenply/Century) to ensure your wardrobes and kitchens last generations.</span>
+                      <strong className="text-slate-900 block text-base font-bold">Boiling-Water-Resistant (BWR / BWP) Core Plywood</strong>
+                      <span className="text-slate-600 text-sm leading-relaxed">Calibrated commercial and marine-grade plywood treated for moisture and borer resistance, formulated to support long-term structural stability under normal kitchen and vanity usage.</span>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     <div>
-                      <strong className="text-slate-900 block">Luxury European Hardware</strong>
-                      <span className="text-slate-600 text-sm">Smooth, silent, and seamless. We use premium hinges, tandem boxes, and channels from global leaders like Hettich, Blum, and Hafele.</span>
+                      <strong className="text-slate-900 block text-base font-bold">Tested Soft-Close Hardware & Concealed Hinges</strong>
+                      <span className="text-slate-600 text-sm leading-relaxed">Heavy-duty drawer channels, hydraulic hinges, and lift-up mechanisms designed for smooth operation and durability against desert dust exposure.</span>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     <div>
-                      <strong className="text-slate-900 block">Smart Ambient Lighting</strong>
-                      <span className="text-slate-600 text-sm">We design layered lighting using COB lights, magnetic track lights, and profile LEDs to create a warm, ultra-luxurious hotel-like vibe.</span>
+                      <strong className="text-slate-900 block text-base font-bold">Moisture-Resistant Gypsum Board & GI Framing</strong>
+                      <span className="text-slate-600 text-sm leading-relaxed">Certified gypsum ceiling boards secured onto galvanized iron perimeter channels, engineered to minimize the risk of sagging, thermal movement, and hairline cracking across ceiling spans.</span>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     <div>
-                      <strong className="text-slate-900 block">High-End Surface Finishes</strong>
-                      <span className="text-slate-600 text-sm">From Italian marble and quartz countertops to PU-coated acrylics and natural wood veneers, our finishing is world-class.</span>
+                      <strong className="text-slate-900 block text-base font-bold">Durable Surface Finishes & Machine Edge Banding</strong>
+                      <span className="text-slate-600 text-sm leading-relaxed">High-pressure decorative laminates, acrylic panels, and natural veneers sealed with machine-applied PVC edge-banding tapes to provide a protective barrier against ambient moisture and edge impact chipping.</span>
                     </div>
                   </li>
                 </ul>
 
-                {/* 3. Why Choose Us Section */}
+                {/* Section 5: Benefits Section (Dark Navy original block) */}
                 <div className="bg-slate-900 rounded-3xl p-8 md:p-10 shadow-2xl my-12 text-white not-prose">
-                  <h3 className="text-2xl md:text-3xl font-black mb-6 text-white leading-tight">
-                    Why Hire Our Turnkey Interior Experts?
-                  </h3>
+                  <h2 className="text-2xl md:text-3xl font-black mb-6 text-white leading-tight">
+                    Why Choose Bikaner Builders for Interior Projects?
+                  </h2>
                   <p className="text-slate-300 leading-relaxed mb-8">
-                    Managing carpenters, electricians, and painters is a full-time headache. High-Net-Worth clients trust us to transform their bare shells into luxurious living spaces without the daily stress.
+                    Managing independent carpenters, painters, and electricians often creates coordination conflicts and unexpected expenses. We provide a consolidated approach from design to on-site execution:
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    
                     <div className="flex items-center gap-4">
                       <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center shrink-0">
                         <svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                       </div>
                       <div>
-                        <strong className="block text-white text-lg">End-to-End Execution</strong>
-                        <span className="text-slate-400 text-sm">From 3D design to the final polishing, we handle the entire interior project.</span>
+                        <strong className="block text-white text-lg font-bold">Single-Point Accountability</strong>
+                        <span className="text-slate-400 text-sm">One dedicated team coordinates all trades, minimizing coordination gaps between drawings and execution.</span>
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
@@ -198,8 +375,8 @@ export default function SEOOptimizedServicePage() {
                         <svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
                       </div>
                       <div>
-                        <strong className="block text-white text-lg">Factory-Finish Woodwork</strong>
-                        <span className="text-slate-400 text-sm">We use advanced machinery for edge-banding and pressing, ensuring a flawless factory finish.</span>
+                        <strong className="block text-white text-lg font-bold">Precision Carpentry & Leveling</strong>
+                        <span className="text-slate-400 text-sm">Laser-guided ceiling alignment and factory edge banding support clean joints and accurate shutter alignment.</span>
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
@@ -207,8 +384,8 @@ export default function SEOOptimizedServicePage() {
                         <svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                       </div>
                       <div>
-                        <strong className="block text-white text-lg">Exclusive Vendor Tie-Ups</strong>
-                        <span className="text-slate-400 text-sm">Get access to premium tiles, lighting, and fabrics at direct wholesale prices.</span>
+                        <strong className="block text-white text-lg font-bold">Transparent Itemized BOQ</strong>
+                        <span className="text-slate-400 text-sm">Detailed material specifications and quantity estimates prevent surprise costs during execution.</span>
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
@@ -216,21 +393,31 @@ export default function SEOOptimizedServicePage() {
                         <svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
                       </div>
                       <div>
-                        <strong className="block text-white text-lg">Strict Quality Control</strong>
-                        <span className="text-slate-400 text-sm">No rough edges, no misaligned doors. We deliver perfection down to the millimeter.</span>
+                        <strong className="block text-white text-lg font-bold">Climate-Conscious Detailing</strong>
+                        <span className="text-slate-400 text-sm">Material selection and layouts optimized for Bikaner's desert heat, dust protection, and airflow.</span>
                       </div>
                     </div>
                   </div>
                 </div>
-                {/* Cost Guide CTA */}
-                <div className="bg-orange-50 rounded-2xl p-6 md:p-8 mt-12 mb-8 border border-orange-100 shadow-sm text-center">
-                  <p className="text-slate-800 text-lg mb-6 leading-relaxed">
-                    Planning your complete home project? Explore the <Link href="/cost" className="text-orange-600 font-bold hover:underline">Bikaner House Construction Cost Guide</Link> to understand construction and finishing budgets.
+
+                {/* Section 6: Construction Cost CTA */}
+                <div className="bg-orange-50 rounded-2xl p-6 md:p-8 mt-12 mb-8 border border-orange-100 shadow-sm text-center not-prose">
+                  <p className="text-slate-800 text-lg mb-4 leading-relaxed">
+                    Planning your complete home project? Explore our <Link href="/cost" className="text-orange-600 font-bold hover:underline">Bikaner House Construction Cost Guide</Link> or calculate estimates with the <Link href="/cost-estimator" className="text-orange-600 font-bold hover:underline">Interactive Cost Estimator</Link>.
                   </p>
-                  <Link href="/cost" className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold px-8 py-3 rounded-full shadow-md transition-transform hover:-translate-y-1">
-                    Calculate Construction Cost
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                  </Link>
+                  <p className="text-slate-600 text-sm mb-6 leading-relaxed">
+                    Need structural or civil work first? Consult our <Link href="/architect-in-bikaner" className="text-orange-600 font-bold hover:underline">Architectural Design Team</Link>, explore <Link href="/services/turnkey-construction" className="text-orange-600 font-bold hover:underline">Turnkey Construction Services</Link>, or browse our <Link href="/portfolio" className="text-orange-600 font-bold hover:underline">Recent Project Portfolio</Link>.
+                  </p>
+                  <div className="flex flex-wrap items-center justify-center gap-4">
+                    <Link href="/cost" className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold px-8 py-3 rounded-full shadow-md transition-transform hover:-translate-y-1">
+                      Calculate Construction Cost
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                    </Link>
+                    <Link href="/cost-estimator" className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-500 text-white font-bold px-8 py-3 rounded-full shadow-md transition-transform hover:-translate-y-1">
+                      Use Cost Estimator
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                    </Link>
+                  </div>
                 </div>
 
                 <ServiceTrustBlock slug="interior-design" />
@@ -238,13 +425,34 @@ export default function SEOOptimizedServicePage() {
               
               <OtherServicesLinker currentSlug="interior-design" />
               
-              {/* FAQ Schema Section */}
+              {/* FAQ Section */}
               <div className="mt-12 bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-slate-100">
                 <h2 className="text-3xl font-black text-slate-900 mb-8">Frequently Asked Questions</h2>
                 <div className="space-y-6">
-                  <div className="border-b border-slate-200 pb-6"><h3 className="text-xl font-bold text-slate-900 mb-2">Do you design modular kitchens in Bikaner?</h3><p className="text-slate-600">Yes, we are experts in designing and installing modern, highly durable modular kitchens with Hettich/Godrej fittings, acrylic finishes, and smart storage solutions.</p></div>
-                  <div className="border-b border-slate-200 pb-6"><h3 className="text-xl font-bold text-slate-900 mb-2">What types of false ceilings do you do?</h3><p className="text-slate-600">We specialize in Gypsum board false ceilings, Grid ceilings, POP designs, and PVC wall/ceiling panels, complete with modern profile lighting.</p></div>
-                  <div className="border-b border-slate-200 pb-6"><h3 className="text-xl font-bold text-slate-900 mb-2">Can you work on existing homes?</h3><p className="text-slate-600">Yes! We offer complete interior renovation and remodeling services for old homes, flats, and commercial shops in Bikaner.</p></div>
+                  <div className="border-b border-slate-200 pb-6">
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">Can I hire Bikaner Builders for interior design and 3D visualization only?</h3>
+                    <p className="text-slate-600 leading-relaxed">Yes. If you already have your own contractors or carpenters, you can engage us exclusively for 2D furniture layouts, 3D interior concept renderings, reflected ceiling lighting plans, and a detailed bill of quantities (BOQ) without execution.</p>
+                  </div>
+                  <div className="border-b border-slate-200 pb-6">
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">What is included in your turnkey interior execution service?</h3>
+                    <p className="text-slate-600 leading-relaxed">Our turnkey interior service covers end-to-end execution from approved designs to final handover. This includes custom modular carpentry, false ceiling installation, electrical routing and architectural lighting, wall treatments, painting, on-site supervision, and final cleaning.</p>
+                  </div>
+                  <div className="border-b border-slate-200 pb-6">
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">How do you design modular kitchens and wardrobes for Bikaner homes?</h3>
+                    <p className="text-slate-600 leading-relaxed">We design modular kitchens and wardrobes tailored to local storage requirements and desert climate conditions. Kitchens feature boiling-water-resistant core boards, smooth soft-close hardware, and organized utility units. Wardrobes are built with floor-to-ceiling storage, edge sealing designed to reduce dust ingress, and customized internal organizers.</p>
+                  </div>
+                  <div className="border-b border-slate-200 pb-6">
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">What false ceiling and POP options do you offer?</h3>
+                    <p className="text-slate-600 leading-relaxed">We install moisture-resistant gypsum board false ceilings, perimeter LED cove lighting trays, magnetic track profiles, and decorative POP mouldings. All ceilings use rigid galvanized iron (GI) framing aligned with laser levels to minimize the potential for sagging or hairline surface fissures caused by seasonal temperature variations.</p>
+                  </div>
+                  <div className="border-b border-slate-200 pb-6">
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">Do you undertake interior renovation for existing homes and commercial spaces?</h3>
+                    <p className="text-slate-600 leading-relaxed">Yes. We handle partial and complete interior renovations for established homes, apartments, and commercial spaces in Bikaner. Our team evaluates existing structural beams, electrical conduits, and plumbing before planning remodeling work to minimize disruption.</p>
+                  </div>
+                  <div className="border-b border-slate-200 pb-6">
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">How do you estimate costs and begin an interior project?</h3>
+                    <p className="text-slate-600 leading-relaxed">We begin with an on-site consultation and dimensional survey in Bikaner to understand your scope and preferences. Based on the layout, we prepare an itemized bill of quantities (BOQ) detailing material specifications, finishes, and costs before execution begins.</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -252,14 +460,23 @@ export default function SEOOptimizedServicePage() {
             {/* Sticky Sidebar */}
             <div className="lg:col-span-4">
               <div className="sticky top-28 bg-white p-8 rounded-3xl shadow-2xl border border-slate-100">
-                <h3 className="text-2xl font-black text-slate-900 mb-2">Book a Free Site Visit</h3>
-                <p className="text-slate-600 mb-8 text-base">Our senior architect will visit your plot in Bikaner and provide a free consultation.</p>
+                <h3 className="text-2xl font-black text-slate-900 mb-2">Book an Interior Consultation</h3>
+                <p className="text-slate-600 mb-8 text-base leading-relaxed">
+                  Speak with our interior team in Bikaner to discuss your home layout, 3D design, or turnkey execution.
+                </p>
                 
-                <Link href="https://wa.me/919376590313" target="_blank" className="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#1fae54] text-white font-black text-lg py-4 px-4 rounded-xl mb-4 transition-transform hover:-translate-y-1">
+                <Link 
+                  href="https://wa.me/919376590313" 
+                  target="_blank" 
+                  className="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#1fae54] text-white font-black text-lg py-4 px-4 rounded-xl mb-4 transition-transform hover:-translate-y-1 shadow-md"
+                >
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M11.97 2.005a9.962 9.962 0 00-8.528 15.11L2 22l5.023-1.328a9.964 9.964 0 104.947-18.667zM12 20a7.973 7.973 0 01-4.062-1.115l-.291-.173-3.023.794.808-2.953-.19-.3A7.95 7.95 0 014.032 12 7.977 7.977 0 1112 20zm4.242-5.467c-.232-.116-1.378-.68-1.593-.758-.215-.078-.372-.116-.528.116-.156.232-.6 .758-.737.914-.136.155-.274.175-.506.058-.232-.116-.983-.362-1.87-1.156-.69-.617-1.155-1.38-1.29-1.612-.136-.233-.014-.359.102-.475.105-.105.232-.272.348-.408.116-.136.155-.233.232-.388.077-.156.039-.292-.019-.408-.058-.116-.528-1.277-.723-1.748-.19-.46-.383-.398-.528-.406-.137-.008-.293-.008-.45-.008z" /></svg>
                   WhatsApp Now
                 </Link>
-                <Link href="tel:+919376590313" className="flex items-center justify-center gap-2 w-full bg-slate-900 hover:bg-slate-800 text-white font-black text-lg py-4 px-4 rounded-xl mb-6 transition-transform hover:-translate-y-1">
+                <Link 
+                  href="tel:+919376590313" 
+                  className="flex items-center justify-center gap-2 w-full bg-slate-900 hover:bg-slate-800 text-white font-black text-lg py-4 px-4 rounded-xl mb-6 transition-transform hover:-translate-y-1 shadow-md"
+                >
                   <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                   Call +91 93765 90313
                 </Link>
@@ -276,4 +493,3 @@ export default function SEOOptimizedServicePage() {
     </>
   );
 }
-
