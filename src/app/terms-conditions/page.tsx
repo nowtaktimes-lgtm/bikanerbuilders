@@ -14,14 +14,14 @@ export default function TermsConditions() {
             <section>
               <h2 className="text-2xl font-bold text-[#0F172A] mb-4">1. Scope of Services</h2>
               <p>
-                Bikaner Builders provides architectural planning (2D/3D), interior design, and turnkey construction services in Bikaner, Rajasthan. All designs and construction work are executed based on the finalized agreements signed by both parties.
+                Bikaner Builders provides house planning & 2D/3D design, interior design, and turnkey construction services in Bikaner, Rajasthan. All designs and construction work are executed based on the finalized agreements signed by both parties.
               </p>
             </section>
 
             <section>
               <h2 className="text-2xl font-bold text-[#0F172A] mb-4">2. Payments & Advance Policies</h2>
               <ul className="list-disc pl-5 space-y-2">
-                <li><strong className="text-[#0F172A]">Architectural Maps (2D/3D):</strong> A minimum 50% non-refundable advance is required before the commencement of any design work.</li>
+                <li><strong className="text-[#0F172A]">House Maps &amp; 3D Designs (2D/3D):</strong> A minimum 50% non-refundable advance is required before the commencement of any design work.</li>
                 <li><strong className="text-[#0F172A]">Construction (Turnkey):</strong> Payments are tied strictly to project milestones as outlined in the physical contract.</li>
                 <li>All quotations provided online or via phone are estimates. Final pricing is subject to a physical site inspection.</li>
               </ul>

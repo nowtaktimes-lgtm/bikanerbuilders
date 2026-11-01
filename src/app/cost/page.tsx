@@ -99,10 +99,10 @@ export default function ConstructionCostBikanerPage() {
           },
           {
             "@type": "Question",
-            "name": "Does the estimate include architect and structural design?",
+            "name": "Does the estimate include house plan and structural design?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes, our turnkey packages include complete 2D maps, 3D elevations, and structural drawings by our in-house engineering team."
+              "text": "Yes, our turnkey packages include complete 2D maps, 3D elevations, and structural drawings coordinated with our technical team."
             }
           },
           {
@@ -201,7 +201,7 @@ export default function ConstructionCostBikanerPage() {
                   Transparent Construction Estimates for Bikaner Homeowners
                 </h2>
                 <p className="text-slate-700 leading-relaxed mb-6">
-                  If you are planning to build a home in Bikaner, understanding the true cost per square foot is the most critical first step. As the premier turnkey construction company in Bikaner, we offer completely transparent, quality-tiered pricing models:
+                  If you are planning to build a home in Bikaner, understanding the true cost per square foot is the most critical first step. As an experienced turnkey construction contractor in Bikaner, we offer transparent, quality-tiered pricing models:
                 </p>
 
                 <div className="overflow-x-auto mb-6">
@@ -525,7 +525,7 @@ export default function ConstructionCostBikanerPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-orange-500 font-bold mt-1">●</span>
-                    <span><strong>Variable Soil Conditions:</strong> Foundation depth and structural load-bearing capacity must be customized based on precise soil investigation and site-specific bearing capacity in different zones of Bikaner.</span>
+                    <span><strong>Ground Conditions:</strong> Foundation depth and structural load-bearing requirements must be planned based on site-specific ground conditions and bearing requirements across different areas of Bikaner.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <span className="text-orange-500 font-bold mt-1">●</span>
@@ -602,7 +602,7 @@ export default function ConstructionCostBikanerPage() {
                     </Link>
                     <Link href="/services/2d-naksha" className="bg-slate-50 p-4 rounded-xl border border-slate-100 hover:border-orange-200 hover:bg-orange-50 transition-colors group">
                       <span className="font-bold text-slate-800 group-hover:text-orange-600 block mb-1">2D Vastu Naksha</span>
-                      <span className="text-sm text-slate-500">Expert architectural mapping</span>
+                      <span className="text-sm text-slate-500">Detailed 2D/3D house mapping</span>
                     </Link>
                     <Link href="/services/3d-elevation" className="bg-slate-50 p-4 rounded-xl border border-slate-100 hover:border-orange-200 hover:bg-orange-50 transition-colors group">
                       <span className="font-bold text-slate-800 group-hover:text-orange-600 block mb-1">3D Front Elevation</span>
@@ -655,8 +655,8 @@ export default function ConstructionCostBikanerPage() {
                     <p className="text-slate-600 leading-relaxed">GST is generally clearly mentioned in our official BOQ based on current government regulations for construction services.</p>
                   </div>
                   <div className="border-b border-slate-200 pb-6">
-                    <h3 className="text-xl font-bold text-slate-900 mb-3">Does the estimate include architect and structural design?</h3>
-                    <p className="text-slate-600 leading-relaxed">Yes, our turnkey packages include complete 2D maps, 3D elevations, and structural drawings by our in-house engineering team.</p>
+                    <h3 className="text-xl font-bold text-slate-900 mb-3">Does the estimate include house plan and structural design?</h3>
+                    <p className="text-slate-600 leading-relaxed">Yes, our turnkey packages include complete 2D maps, 3D elevations, and structural drawings coordinated with our technical team.</p>
                   </div>
                   <div className="border-b border-slate-200 pb-6">
                     <h3 className="text-xl font-bold text-slate-900 mb-3">Is the boundary wall included in the per sq ft cost?</h3>
@@ -686,7 +686,7 @@ export default function ConstructionCostBikanerPage() {
             <div className="lg:col-span-4">
               <div className="sticky top-28 bg-white p-8 rounded-3xl shadow-2xl border border-slate-100">
                 <h3 className="text-2xl font-black text-slate-900 mb-3">Calculate Your Cost</h3>
-                <p className="text-slate-600 mb-8 text-base leading-relaxed">Use our smart online estimator tool or speak directly with our engineers in Bikaner.</p>
+                <p className="text-slate-600 mb-8 text-base leading-relaxed">Use our smart online estimator tool or speak directly with our construction and planning team in Bikaner.</p>
                 
                 <Link href="/cost-estimator" className="flex items-center justify-center gap-3 w-full bg-orange-600 hover:bg-orange-500 text-white font-black text-lg py-4 px-4 rounded-xl mb-4 transition-transform hover:-translate-y-1 shadow-md shadow-orange-600/20">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>

@@ -18,12 +18,12 @@ export default function DynamicFAQ({ title, pageType }: DynamicFAQProps) {
     // Set 0: Logistics & Site Visits
     [
       {
-        q: `How do you manage daily site supervision in ${title}?`,
-        a: `We assign dedicated site engineers to oversee construction in ${title}, ensuring daily progress tracking and strict quality control on-site.`
+        q: `How do you manage site supervision in ${title}?`,
+        a: `Our project team conducts regular site supervisory visits in ${title} to track construction progress, coordinate trades, and verify workmanship on-site.`
       },
       {
         q: `Are transport costs included for ${title}?`,
-        a: `Yes, our detailed BOQ includes all logistical and transportation costs specific to ${title}, guaranteeing 100% transparency with zero hidden delivery charges.`
+        a: `Yes, material transportation and delivery terms for ${title} are outlined in the agreed BOQ before work begins.`
       },
       {
         q: `Can you handle complete turnkey construction in ${title}?`,
@@ -33,8 +33,8 @@ export default function DynamicFAQ({ title, pageType }: DynamicFAQProps) {
     // Set 1: Local Climate & Soil
     [
       {
-        q: `Do you design foundations suited for ${title}'s specific soil conditions?`,
-        a: `Yes, we always conduct a thorough soil analysis before construction in ${title} to engineer a foundation that guarantees long-term structural integrity.`
+        q: `Do you plan foundations suited for ${title}'s ground conditions?`,
+        a: `Yes, our project team assesses visible surface conditions, plot level, and local foundation depth in ${title} to coordinate appropriate foundation layouts. Specialized laboratory soil testing can be arranged separately if required for complex structures.`
       },
       {
         q: `Which materials work best for homes in ${title}?`,
@@ -42,7 +42,7 @@ export default function DynamicFAQ({ title, pageType }: DynamicFAQProps) {
       },
       {
         q: `Are the 3D elevations designed for the local environment of ${title}?`,
-        a: `Definitely. Our architects design exterior elevations that not only look premium but are practically suited for the dust and heat conditions of ${title}.`
+        a: `Definitely. Our design team creates exterior elevations that not only look modern but are practically suited for the dust and heat conditions of ${title}.`
       }
     ],
     // Set 2: Timelines & Approvals
@@ -53,11 +53,11 @@ export default function DynamicFAQ({ title, pageType }: DynamicFAQProps) {
       },
       {
         q: `Do you assist with local municipal approvals in ${title}?`,
-        a: `Yes, our team can guide you through the local building bye-laws and necessary documentation required for municipal approvals in ${title}.`
+        a: `Yes, our team can assist you with local building bye-law guidelines and drawing documentation for submissions in ${title}.`
       },
       {
         q: `Is Vastu compliance factored into ${title} projects?`,
-        a: `Yes, we ensure 100% Vastu compliance right from the initial floor planning stage for all our clients in ${title}.`
+        a: `Yes, we integrate traditional Vastu Shastra principles from the initial layout stage for clients in ${title} upon request.`
       }
     ]
   ];
@@ -75,33 +75,33 @@ export default function DynamicFAQ({ title, pageType }: DynamicFAQProps) {
       },
       {
         q: `Are there any hidden charges associated with ${title}?`,
-        a: `Never. We pride ourselves on 100% transparency. The final quote provided for ${title} covers all aspects without any surprise costs.`
+        a: `The itemized BOQ explains the agreed project scope, specifications and charges. Any changes or additional work are discussed with the customer before proceeding.`
       }
     ],
     // Set 1: Process & Expertise
     [
       {
         q: `What are the standard steps involved in ${title}?`,
-        a: `The process begins with an in-depth consultation, followed by structural planning, 3D visualization, and finally, flawless execution of the ${title}.`
+        a: `The process begins with an in-depth consultation, followed by structural planning, 3D visualization, and finally, disciplined on-site execution of the ${title}.`
       },
       {
-        q: `Are certified engineers handling the ${title} process?`,
-        a: `Absolutely. Every phase of ${title} is supervised and executed by our team of certified civil engineers and expert architects.`
+        q: `How is quality supervised during the ${title} process?`,
+        a: `Every phase of ${title} is overseen by our experienced construction supervision and technical planning team to maintain quality and safety standards.`
       },
       {
         q: `How do you ensure the quality of ${title}?`,
-        a: `We conduct multi-level quality checks during the entire lifecycle of ${title}, strictly adhering to modern structural engineering codes.`
+        a: `We conduct stage-wise quality checks during the construction of ${title}, verifying shuttering, reinforcement layouts, and curing in accordance with standard civil engineering norms.`
       }
     ],
     // Set 2: Customization & Vastu
     [
       {
         q: `Is ${title} fully customizable to Vastu principles?`,
-        a: `Yes, our team specializes in deeply integrating Vastu Shastra principles into every aspect of ${title} to ensure a positive living space.`
+        a: `Yes, our design team can integrate traditional Vastu Shastra guidelines into the layout of ${title} upon request to suit your personal preferences.`
       },
       {
         q: `Do you provide revisions during the ${title} phase?`,
-        a: `Of course. We offer multiple design revisions during the planning stage of ${title} until you are 100% satisfied with the outcome.`
+        a: `Of course. We offer multiple design revisions during the planning stage of ${title} until you are satisfied with the outcome.`
       },
       {
         q: `Can the design for ${title} be tailored to my budget?`,

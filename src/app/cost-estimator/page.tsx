@@ -63,7 +63,7 @@ export default function CostEstimatorPage() {
               Our construction cost calculator uses current market rates in Bikaner to provide you with a highly accurate estimate. The final cost includes the foundation, structure, finishing, plumbing, and electrical work based on the selected quality tier. 
             </p>
             <p>
-              Please note that architectural design, 3D elevation, and government approval fees are typically not included in raw per-square-foot construction estimates, but we offer them as part of our full Turnkey packages.
+              Please note that house plan design, 3D elevation, and statutory municipal fees are typically not included in raw per-square-foot construction estimates, but we offer design coordination as part of our full Turnkey packages.
             </p>
           </div>
 
@@ -83,7 +83,7 @@ export default function CostEstimatorPage() {
               </div>
               <div className="bg-white border border-slate-200 p-6 sm:p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
                 <h3 className="text-lg sm:text-xl font-bold text-[#0F172A] mb-3">
-                  Does this estimate include architectural maps and 3D elevation?
+                  Does this estimate include house plans and 3D elevation?
                 </h3>
                 <p className="text-gray-600 font-medium leading-relaxed">
                   Raw per-square-foot rates typically cover structural and finishing work. However, our comprehensive Turnkey Packages at Bikaner Builders include free 2D floor plans, 3D elevations, and Vastu consultation.
@@ -94,7 +94,7 @@ export default function CostEstimatorPage() {
                   Why choose turnkey construction over local contractors in Bikaner?
                 </h3>
                 <p className="text-gray-600 font-medium leading-relaxed">
-                  Turnkey construction offers a single point of contact, structured engineering quality checks, clear milestone timelines, and itemized BOQ billing. You avoid the daily stress of managing multiple laborers and material vendors.
+                  Turnkey construction offers a single point of contact, structured milestone quality checks, clear milestone timelines, and itemized BOQ billing. You avoid the daily stress of managing multiple laborers and material vendors.
                 </p>
               </div>
             </div>

@@ -10,8 +10,8 @@ export const metadata: Metadata = {
     canonical: 'https://www.bikanerbuilders.in/services/2d-naksha',
   },
   title: "Expert 2D Vastu Naksha & Floor Plans in Bikaner",
-  description: "Get a 100% Vastu-compliant 2D house naksha in Bikaner. Expert architects for residential duplex, commercial shops, and plot mapping.",
-  keywords: "100% Vastu-Compliant 2D Naksha in Bikaner, Bikaner Builders, top civil contractor in Bikaner, best building construction company near me, ghar ka naksha, architects in bikaner",
+  description: "Get a Vastu-oriented 2D house naksha in Bikaner. Residential floor planning, commercial layouts, and plot mapping.",
+  keywords: "Vastu-Oriented 2D Naksha in Bikaner, Bikaner Builders, civil contractor in Bikaner, building construction company, ghar ka naksha, house plan design in bikaner",
 };
 
 export default function SEOOptimizedServicePage() {
@@ -29,7 +29,7 @@ export default function SEOOptimizedServicePage() {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "2D Vastu Naksha & Floor Plans in Bikaner",
-    "serviceType": "Architectural Design",
+    "serviceType": "House Plan & Floor Plan Design",
     "provider": {
       "@type": "GeneralContractor",
       "@id": "https://www.bikanerbuilders.in/#organization",
@@ -40,14 +40,14 @@ export default function SEOOptimizedServicePage() {
       "@type": "City",
       "name": "Bikaner"
     },
-    "description": "Get a 100% Vastu-compliant 2D house naksha in Bikaner. Expert architects for residential duplex, commercial shops, and plot mapping.",
+    "description": "Get a Vastu-oriented 2D house naksha in Bikaner. Residential floor planning, commercial layouts, and plot mapping.",
     "url": "https://www.bikanerbuilders.in/services/2d-naksha"
   };
 
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [{ "@type": "Question", "name": "Do you make 2D nakshas according to Vastu?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, all our 2D floor plans and house layouts are 100% strictly designed according to Vastu Shastra principles by our expert architects." } },{ "@type": "Question", "name": "How much time does it take to get a 2D floor plan?", "acceptedAnswer": { "@type": "Answer", "text": "Usually, we deliver the first draft of your 2D naksha within 2 to 3 days after understanding your requirements and plot dimensions." } },{ "@type": "Question", "name": "Can you design for commercial properties?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we design complex commercial floor plans, shop layouts, and office spaces maximizing carpet area and utility." } }]
+    "mainEntity": [{ "@type": "Question", "name": "Do you make 2D nakshas according to Vastu?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, our 2D floor plans and residential layouts incorporate Vastu Shastra guidelines upon request, aligning entrances, kitchens, and rooms according to directional preferences." } },{ "@type": "Question", "name": "How much time does it take to get a 2D floor plan?", "acceptedAnswer": { "@type": "Answer", "text": "Usually, we deliver the first draft of your 2D naksha within 2 to 3 days after understanding your requirements and plot dimensions." } },{ "@type": "Question", "name": "Can you design for commercial properties?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, we design complex commercial floor plans, shop layouts, and office spaces maximizing carpet area and utility." } }]
   };
 
   return (
@@ -62,8 +62,8 @@ export default function SEOOptimizedServicePage() {
         <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden bg-slate-900">
           <Image
             src="/assets/seo_2d_naksha.jpg"
-            alt="100% Vastu-Compliant 2D Naksha in Bikaner - Bikaner Builders"
-            title="100% Vastu-Compliant 2D Naksha in Bikaner"
+            alt="Vastu-Oriented 2D Naksha in Bikaner - Bikaner Builders"
+            title="Vastu-Oriented 2D Naksha in Bikaner"
             fill
             priority
             className="object-cover opacity-30"
@@ -72,10 +72,10 @@ export default function SEOOptimizedServicePage() {
           
           <div className="relative z-10 text-center px-4 max-w-5xl mx-auto mt-12">
             <h1 className="text-4xl md:text-6xl font-black text-white mb-6 drop-shadow-xl leading-tight">
-              100% Vastu-Compliant 2D Naksha in Bikaner
+              Vastu-Oriented 2D Naksha in Bikaner
             </h1>
             <h2 className="text-xl md:text-2xl text-orange-400 font-bold max-w-3xl mx-auto mb-8 drop-shadow-md">
-              Get a 100% Vastu-compliant 2D house naksha in Bikaner. Expert architects for residential duplex, commercial shops, and plot mapping.
+              Vastu-oriented 2D house naksha in Bikaner. Residential floor planning, commercial layouts, and plot mapping.
             </h2>
             <Link href="tel:9376590313" className="inline-flex items-center gap-2 bg-orange-600 hover:bg-orange-500 text-white font-bold text-xl px-10 py-5 rounded-full shadow-[0_4px_25px_rgba(234,88,12,0.6)] transition-all hover:-translate-y-1">
               <svg className="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M11.97 2.005a9.962 9.962 0 00-8.528 15.11L2 22l5.023-1.328a9.964 9.964 0 104.947-18.667zM12 20a7.973 7.973 0 01-4.062-1.115l-.291-.173-3.023.794.808-2.953-.19-.3A7.95 7.95 0 014.032 12 7.977 7.977 0 1112 20zm4.242-5.467c-.232-.116-1.378-.68-1.593-.758-.215-.078-.372-.116-.528.116-.156.232-.6 .758-.737.914-.136.155-.274.175-.506.058-.232-.116-.983-.362-1.87-1.156-.69-.617-1.155-1.38-1.29-1.612-.136-.233-.014-.359.102-.475.105-.105.232-.272.348-.408.116-.136.155-.233.232-.388.077-.156.039-.292-.019-.408-.058-.116-.528-1.277-.723-1.748-.19-.46-.383-.398-.528-.406-.137-.008-.293-.008-.45-.008z" /></svg>
@@ -104,26 +104,26 @@ export default function SEOOptimizedServicePage() {
                 <h3 className="text-2xl font-bold text-slate-900 mb-4">
                   Vastu Shastra Experts for Home & Commercial
                 </h3>
-                <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: `A Vastu-compliant home brings peace and prosperity. Our civil engineers and Vastu experts carefully position the kitchen (Agni Kund), master bedroom, pooja room, and water tanks according to strict Vastu principles. We design nakshas for 20x40, 30x60, and custom plot sizes.` }} />
+                <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: `For homeowners seeking traditional spatial harmony, our house planning and design team can incorporate Vastu Shastra preferences—positioning the kitchen (Agni zone), master bedroom, pooja space, and water elements in accordance with directional guidelines. We design practical nakshas for 20x40, 30x60, and custom plot dimensions.` }} />
                 
                 
                 
                 {/* 1. Elite Process Section */}
                 <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6 border-b-2 border-slate-100 pb-3">
-                  Our Scientific Approach to 2D Plot Mapping
+                  Our Approach to 2D Plot Planning
                 </h3>
-                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: "Designing a <strong class=\"text-slate-900\">Ghar Ka Naksha</strong> isn't just about drawing lines; it's about optimizing space, air, and energy. Our elite architects in Bikaner follow a strict protocol to ensure your home is breathable, spacious, and 100% Vastu compliant." }}></p>
+                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: "Designing a <strong class=\"text-slate-900\">Ghar Ka Naksha</strong> isn't just about drawing lines; it's about optimizing space, air, and energy. Our house planning team in Bikaner follows a structured process to ensure your home is breathable, spacious, and aligned with your family's preferences." }}></p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                   
                   <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
                     <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">01</span>
-                    <h4 className="font-bold text-slate-900 text-xl mb-2">Plot & Topography Analysis</h4>
-                    <p className="text-slate-600 text-sm leading-relaxed">We start by analyzing your plot dimensions, neighboring structures, and sun path in Bikaner to ensure natural lighting and optimal ventilation.</p>
+                    <h4 className="font-bold text-slate-900 text-xl mb-2">Plot Dimensions & Site Analysis</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">We start by evaluating your plot dimensions, boundary setbacks, orientation, and access roads in Bikaner to plan for natural day-lighting and cross-ventilation.</p>
                   </div>
                   <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
                     <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">02</span>
-                    <h4 className="font-bold text-slate-900 text-xl mb-2">Vastu Shastra Integration</h4>
-                    <p className="text-slate-600 text-sm leading-relaxed">Our Vastu experts carefully align the Brahmasthan, kitchen (Agni Kund), and entrances to channel positive energy and prosperity into your home.</p>
+                    <h4 className="font-bold text-slate-900 text-xl mb-2">Vastu & Lifestyle Planning</h4>
+                    <p className="text-slate-600 text-sm leading-relaxed">Where requested by the client, our design team aligns key functional zones (entrance, kitchen, bedrooms) to match traditional Vastu preferences and family lifestyle needs.</p>
                   </div>
                   <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
                     <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">03</span>
@@ -133,7 +133,7 @@ export default function SEOOptimizedServicePage() {
                   <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
                     <span className="text-orange-500 font-black text-4xl opacity-20 block mb-2">04</span>
                     <h4 className="font-bold text-slate-900 text-xl mb-2">Precision Drafting & Delivery</h4>
-                    <p className="text-slate-600 text-sm leading-relaxed">Using advanced AutoCAD software, we deliver millimeter-perfect floor plans that local civil contractors can easily understand and execute.</p>
+                    <p className="text-slate-600 text-sm leading-relaxed">Using advanced AutoCAD software, we deliver clear, dimensioned floor plans that civil contractors and masons can easily understand and execute on site.</p>
                   </div>
                 </div>
 
@@ -141,7 +141,7 @@ export default function SEOOptimizedServicePage() {
                 <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6 border-b-2 border-slate-100 pb-3">
                   The Tools & Principles Behind Our Nakshas
                 </h3>
-                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: "A flawless foundation starts with flawless planning. As the premier <strong class=\"text-slate-900\">architectural firm in Bikaner</strong>, we rely on industry-standard software and ancient principles." }}></p>
+                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: "A solid home starts with organized planning. As a dedicated <strong class=\"text-slate-900\">house planning and construction team in Bikaner</strong>, we rely on industry-standard design tools and practical spatial principles." }}></p>
                 <ul className="space-y-4 mb-12 list-none pl-0">
                   
                   <li className="flex items-start gap-3">
@@ -155,14 +155,14 @@ export default function SEOOptimizedServicePage() {
                     <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     <div>
                       <strong className="text-slate-900 block">Rajasthan Climate Focus</strong>
-                      <span className="text-slate-600 text-sm">Our layouts emphasize cross-ventilation and shaded courtyards (chowks) to naturally cool your home during Bikaner&apos;s scorching summers.</span>
+                      <span className="text-slate-600 text-sm">Our layouts emphasize cross-ventilation and shaded courtyards (chowks) to help reduce indoor heat during Bikaner&apos;s scorching summers.</span>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     <div>
                       <strong className="text-slate-900 block">Structural Feasibility</strong>
-                      <span className="text-slate-600 text-sm">We don&apos;t just draw pretty pictures. Every 2D plan is verified by our structural engineers to ensure it can actually be built safely.</span>
+                      <span className="text-slate-600 text-sm">We focus on practical buildability. Every 2D floor plan is coordinated with structural load requirements so it can be executed safely on site.</span>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -180,7 +180,7 @@ export default function SEOOptimizedServicePage() {
                     Why Choose Bikaner Builders for Your House Map?
                   </h3>
                   <p className="text-slate-300 leading-relaxed mb-8">
-                    Avoid the costly mistakes of hiring inexperienced draftsmen. A poorly planned map can cost you lakhs in wasted space and bad energy. Here is why Bikaner&apos;s elite choose us for their architectural layouts.
+                    Avoid the costly mistakes of hiring inexperienced draftsmen. A poorly planned map can cost you lakhs in wasted space and bad energy. Here is why homeowners across Bikaner trust us for their residential floor planning.
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     
@@ -189,7 +189,7 @@ export default function SEOOptimizedServicePage() {
                         <svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
                       </div>
                       <div>
-                        <strong className="block text-white text-lg">100% Custom Designs</strong>
+                        <strong className="block text-white text-lg">Custom Layout Planning</strong>
                         <span className="text-slate-400 text-sm">We never copy-paste templates. Your naksha is uniquely tailored to your lifestyle.</span>
                       </div>
                     </div>
@@ -199,7 +199,7 @@ export default function SEOOptimizedServicePage() {
                       </div>
                       <div>
                         <strong className="block text-white text-lg">Local Building By-Laws</strong>
-                        <span className="text-slate-400 text-sm">We ensure all setbacks and heights comply with UIT Bikaner regulations.</span>
+                        <span className="text-slate-400 text-sm">We plan setbacks and floor heights in line with standard municipal guidelines and local UIT Bikaner norms. Final statutory approvals remain subject to municipal authority sanction.</span>
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
@@ -208,7 +208,7 @@ export default function SEOOptimizedServicePage() {
                       </div>
                       <div>
                         <strong className="block text-white text-lg">Lightning Fast Delivery</strong>
-                        <span className="text-slate-400 text-sm">Get your initial draft within 48-72 hours without compromising on quality.</span>
+                        <span className="text-slate-400 text-sm">Receive your initial conceptual layout within 2 to 4 working days after requirement finalization.</span>
                       </div>
                     </div>
                     <div className="flex items-center gap-4">
@@ -217,7 +217,7 @@ export default function SEOOptimizedServicePage() {
                       </div>
                       <div>
                         <strong className="block text-white text-lg">Free Revisions</strong>
-                        <span className="text-slate-400 text-sm">We tweak the layout until you are 100% satisfied with the floor plan.</span>
+                        <span className="text-slate-400 text-sm">We refine the layout with your feedback until the floor plan meets your family&apos;s needs.</span>
                       </div>
                     </div>
                   </div>
@@ -242,7 +242,7 @@ export default function SEOOptimizedServicePage() {
               <div className="mt-12 bg-white p-8 md:p-12 rounded-3xl shadow-xl border border-slate-100">
                 <h2 className="text-3xl font-black text-slate-900 mb-8">Frequently Asked Questions</h2>
                 <div className="space-y-6">
-                  <div className="border-b border-slate-200 pb-6"><h3 className="text-xl font-bold text-slate-900 mb-2">Do you make 2D nakshas according to Vastu?</h3><p className="text-slate-600">Yes, all our 2D floor plans and house layouts are 100% strictly designed according to Vastu Shastra principles by our expert architects.</p></div>
+                  <div className="border-b border-slate-200 pb-6"><h3 className="text-xl font-bold text-slate-900 mb-2">Do you make 2D nakshas according to Vastu?</h3><p className="text-slate-600">Yes, our 2D floor plans and residential layouts incorporate Vastu Shastra guidelines upon request, aligning entrances, kitchens, and rooms according to directional preferences.</p></div>
                   <div className="border-b border-slate-200 pb-6"><h3 className="text-xl font-bold text-slate-900 mb-2">How much time does it take to get a 2D floor plan?</h3><p className="text-slate-600">Usually, we deliver the first draft of your 2D naksha within 2 to 3 days after understanding your requirements and plot dimensions.</p></div>
                   <div className="border-b border-slate-200 pb-6"><h3 className="text-xl font-bold text-slate-900 mb-2">Can you design for commercial properties?</h3><p className="text-slate-600">Yes, we design complex commercial floor plans, shop layouts, and office spaces maximizing carpet area and utility.</p></div>
                 </div>
@@ -253,7 +253,7 @@ export default function SEOOptimizedServicePage() {
             <div className="lg:col-span-4">
               <div className="sticky top-28 bg-white p-8 rounded-3xl shadow-2xl border border-slate-100">
                 <h3 className="text-2xl font-black text-slate-900 mb-2">Book a Free Site Visit</h3>
-                <p className="text-slate-600 mb-8 text-base">Our senior architect will visit your plot in Bikaner and provide a free consultation.</p>
+                <p className="text-slate-600 mb-8 text-base">Our project team will visit your plot in Bikaner and provide a free site consultation.</p>
                 
                 <Link href="https://wa.me/919376590313" target="_blank" className="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#1fae54] text-white font-black text-lg py-4 px-4 rounded-xl mb-4 transition-transform hover:-translate-y-1">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M11.97 2.005a9.962 9.962 0 00-8.528 15.11L2 22l5.023-1.328a9.964 9.964 0 104.947-18.667zM12 20a7.973 7.973 0 01-4.062-1.115l-.291-.173-3.023.794.808-2.953-.19-.3A7.95 7.95 0 014.032 12 7.977 7.977 0 1112 20zm4.242-5.467c-.232-.116-1.378-.68-1.593-.758-.215-.078-.372-.116-.528.116-.156.232-.6 .758-.737.914-.136.155-.274.175-.506.058-.232-.116-.983-.362-1.87-1.156-.69-.617-1.155-1.38-1.29-1.612-.136-.233-.014-.359.102-.475.105-.105.232-.272.348-.408.116-.136.155-.233.232-.388.077-.156.039-.292-.019-.408-.058-.116-.528-1.277-.723-1.748-.19-.46-.383-.398-.528-.406-.137-.008-.293-.008-.45-.008z" /></svg>

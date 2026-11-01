@@ -1,6 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/architect-in-bikaner',
+        destination: '/house-plan-design-bikaner',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

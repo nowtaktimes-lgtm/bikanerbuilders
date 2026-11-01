@@ -207,7 +207,7 @@ export default function InteriorDesignServicePage() {
                       Full-scope delivery where our team manages material sourcing, site carpentry, false ceiling framing, electrical installations, painting, and finishing under one roof.
                     </p>
                     <ul className="text-sm text-slate-700 space-y-2 list-disc list-inside">
-                      <li>Dedicated site supervisor and milestone tracking</li>
+                      <li>Site supervision and milestone tracking</li>
                       <li>Bespoke modular kitchen manufacturing and assembly</li>
                       <li>Built-in wardrobes, vanity units, and TV consoles</li>
                       <li>Gypsum false ceiling, POP mouldings, and cove lighting</li>
@@ -406,7 +406,7 @@ export default function InteriorDesignServicePage() {
                     Planning your complete home project? Explore our <Link href="/cost" className="text-orange-600 font-bold hover:underline">Bikaner House Construction Cost Guide</Link> or calculate estimates with the <Link href="/cost-estimator" className="text-orange-600 font-bold hover:underline">Interactive Cost Estimator</Link>.
                   </p>
                   <p className="text-slate-600 text-sm mb-6 leading-relaxed">
-                    Need structural or civil work first? Consult our <Link href="/architect-in-bikaner" className="text-orange-600 font-bold hover:underline">Architectural Design Team</Link>, explore <Link href="/services/turnkey-construction" className="text-orange-600 font-bold hover:underline">Turnkey Construction Services</Link>, or browse our <Link href="/portfolio" className="text-orange-600 font-bold hover:underline">Recent Project Portfolio</Link>.
+                    Need structural or civil work first? Consult our <Link href="/house-plan-design-bikaner" className="text-orange-600 font-bold hover:underline">House Planning &amp; Design Team</Link>, explore <Link href="/services/turnkey-construction" className="text-orange-600 font-bold hover:underline">Turnkey Construction Services</Link>, or browse our <Link href="/portfolio" className="text-orange-600 font-bold hover:underline">Recent Project Portfolio</Link>.
                   </p>
                   <div className="flex flex-wrap items-center justify-center gap-4">
                     <Link href="/cost" className="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold px-8 py-3 rounded-full shadow-md transition-transform hover:-translate-y-1">

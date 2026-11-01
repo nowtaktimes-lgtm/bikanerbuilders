@@ -23,7 +23,7 @@ export default function Contact() {
           </h2>
           <div className="w-24 h-1.5 bg-[#EA580C] mx-auto rounded-full mb-6"></div>
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            Ready to start your project? Contact our engineering team for a free consultation and site visit anywhere in Bikaner.
+            Ready to start your project? Contact our construction and planning team for a free consultation and site visit anywhere in Bikaner.
           </p>
         </div>
 

@@ -2,10 +2,10 @@ import { WpNode } from './api';
 
 export const STATIC_SERVICES = [
   {
-    title: "Architect in Bikaner",
-    slug: "architect-in-bikaner",
-    uri: "/architect-in-bikaner",
-    content: "Professional architectural planning, 2D floor plans, 3D elevations, and structural coordination for residential and commercial projects.",
+    title: "House Plan Design",
+    slug: "house-plan-design-bikaner",
+    uri: "/house-plan-design-bikaner",
+    content: "House planning, 2D floor plans, 3D front elevations, and structural coordination for residential and commercial projects.",
     featuredImage: { node: { sourceUrl: "/assets/architect-in-bikaner-house-design.webp" } }
   },
   {
@@ -19,7 +19,7 @@ export const STATIC_SERVICES = [
     title: "2D Vastu Naksha",
     slug: "2d-naksha",
     uri: "/services/2d-naksha",
-    content: "Expert architectural mapping and 2D floor plans. 100% Vastu-compliant designs for residential and commercial spaces.",
+    content: "Detailed house mapping and 2D floor plans. Vastu-oriented designs for residential and commercial spaces.",
     featuredImage: { node: { sourceUrl: "/assets/seo_2d_naksha.jpg" } }
   },
   {
@@ -40,7 +40,7 @@ export const STATIC_SERVICES = [
     title: "Structural Drawings",
     slug: "structural-drawing",
     uri: "/services/structural-drawing",
-    content: "Safe, earthquake-resistant structural engineering designs. Detailed load calculations and steel framing plans.",
+    content: "Coordinated structural drawings and column-beam framing plans adhering to Indian Standard codes.",
     featuredImage: { node: { sourceUrl: "/assets/seo_structural.jpg" } }
   }
 ];

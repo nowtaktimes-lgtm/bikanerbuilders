@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   },
   title: "Top 3D Front Elevation Designers in Bikaner | Bikaner Builders",
   description: "Best 3D front elevation design for residential and commercial buildings in Bikaner. Modern, classic, and Vastu-compliant house front designs.",
-  keywords: "Premium 3D Front Elevation Designers in Bikaner, Bikaner Builders, top civil contractor in Bikaner, best building construction company near me, ghar ka naksha, architects in bikaner",
+  keywords: "Premium 3D Front Elevation Designers in Bikaner, Bikaner Builders, top civil contractor in Bikaner, best building construction company near me, ghar ka naksha, 3d elevation design bikaner",
 };
 
 export default function SEOOptimizedServicePage() {
@@ -29,7 +29,7 @@ export default function SEOOptimizedServicePage() {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": "3D Elevation & Architectural Visualization in Bikaner",
-    "serviceType": "Architectural Rendering",
+    "serviceType": "3D Front Elevation & Facade Design",
     "provider": {
       "@type": "GeneralContractor",
       "@id": "https://www.bikanerbuilders.in/#organization",
@@ -97,9 +97,9 @@ export default function SEOOptimizedServicePage() {
                 </div>
 
                 <h2 className="text-3xl font-black text-slate-900 mb-6 border-b-4 border-orange-500 pb-4 inline-block">
-                  Why We Are The Best 3D Elevation Architects in Bikaner
+                  Why Choose Us for 3D Front Elevation Design in Bikaner
                 </h2>
-                <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: `Are you searching for the <strong class="text-slate-900">best 3D elevation designers in Bikaner</strong>? Your house exterior is the first impression. We specialize in photorealistic 3D rendering, modern house facades, traditional Rajasthan architectural designs, and commercial building elevations. Whether you need a simple single-floor elevation or a luxurious duplex villa design, our expert architects ensure it is 100% Vastu-compliant and climate-ready for extreme temperatures.` }} />
+                <p className="text-slate-700 leading-relaxed mb-10" dangerouslySetInnerHTML={{ __html: `Looking for professional <strong class="text-slate-900">3D front elevation design in Bikaner</strong>? Your house exterior is the first impression. We specialize in realistic 3D visual concepts, modern house facades, traditional Rajasthan architectural designs, and commercial building elevations. Whether you need a simple single-floor elevation or a duplex villa design, our design team ensures it incorporates your aesthetic preferences, Vastu considerations, and climate-ready materials for extreme temperatures.` }} />
                 
                 <h3 className="text-2xl font-bold text-slate-900 mb-4">
                   Materials & Execution (ACP, HPL, CNC)
@@ -110,9 +110,9 @@ export default function SEOOptimizedServicePage() {
                 
                 {/* 1. Elite Process Section */}
                 <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6 border-b-2 border-slate-100 pb-3">
-                  Our Hyper-Realistic 3D Elevation Process
+                  Our 3D Elevation Design Process
                 </h3>
-                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: "Your home's exterior is its signature. As leading <strong class=\"text-slate-900\">3D elevation designers in Bikaner</strong>, we transform <a href=\"/services/2d-naksha\" class=\"text-orange-600 font-bold hover:underline\">2D house plans</a> into photorealistic 3D visual concepts before commencing physical <a href=\"/services/turnkey-construction\" class=\"text-orange-600 font-bold hover:underline\">turnkey house construction</a>." }}></p>
+                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: "Your home's exterior is its signature. As experienced <strong class=\"text-slate-900\">3D elevation designers in Bikaner</strong>, we transform <a href=\"/services/2d-naksha\" class=\"text-orange-600 font-bold hover:underline\">2D house plans</a> into realistic 3D visual concepts before commencing physical <a href=\"/services/turnkey-construction\" class=\"text-orange-600 font-bold hover:underline\">turnkey house construction</a>." }}></p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
                   
                   <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 hover:shadow-md transition-shadow">
@@ -141,21 +141,21 @@ export default function SEOOptimizedServicePage() {
                 <h3 className="text-2xl font-bold text-slate-900 mt-12 mb-6 border-b-2 border-slate-100 pb-3">
                   The Technology Powering Our 3D Designs
                 </h3>
-                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: "We don't just provide basic 3D views. We deliver cinematic-quality architectural visualizations using the world's most powerful rendering software." }}></p>
+                <p className="text-slate-700 leading-relaxed mb-6" dangerouslySetInnerHTML={{ __html: "We provide high-resolution 3D visual concepts using industry-standard modeling and rendering software to help you visualize your facade clearly." }}></p>
                 <ul className="space-y-4 mb-12 list-none pl-0">
                   
                   <li className="flex items-start gap-3">
                     <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     <div>
                       <strong className="text-slate-900 block">3ds Max & V-Ray</strong>
-                      <span className="text-slate-600 text-sm">We use industry-leading 3D modeling and rendering engines to create textures and lighting that look indistinguishable from real life.</span>
+                      <span className="text-slate-600 text-sm">We use industry-standard 3D modeling and rendering software (such as 3ds Max, SketchUp, and V-Ray) to create detailed material textures and realistic lighting.</span>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
                     <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     <div>
                       <strong className="text-slate-900 block">Weather-Resistant Styling</strong>
-                      <span className="text-slate-600 text-sm">We specify exterior materials (like weather-coat paints and UV-resistant claddings) that won&apos;t fade in Bikaner&apos;s extreme heat and dust.</span>
+                      <span className="text-slate-600 text-sm">We specify exterior finishes (such as exterior-grade paints, stone cladding, and weather-resistant panels) suited to withstand Bikaner&apos;s intense heat, sunlight, and dust.</span>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -169,7 +169,7 @@ export default function SEOOptimizedServicePage() {
                     <svg className="w-6 h-6 text-orange-500 mt-1 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     <div>
                       <strong className="text-slate-900 block">Accurate Scaling</strong>
-                      <span className="text-slate-600 text-sm">Our 3D models are built strictly to scale based on the 2D naksha, ensuring the design can be 100% replicated in reality.</span>
+                      <span className="text-slate-600 text-sm">Our 3D models are built strictly to scale based on the 2D naksha, ensuring the design can be accurately replicated on site.</span>
                     </div>
                   </li>
                 </ul>
@@ -253,7 +253,7 @@ export default function SEOOptimizedServicePage() {
             <div className="lg:col-span-4">
               <div className="sticky top-28 bg-white p-8 rounded-3xl shadow-2xl border border-slate-100">
                 <h3 className="text-2xl font-black text-slate-900 mb-2">Book a Free Site Visit</h3>
-                <p className="text-slate-600 mb-8 text-base">Our senior architect will visit your plot in Bikaner and provide a free consultation.</p>
+                <p className="text-slate-600 mb-8 text-base">Our project team will visit your plot in Bikaner and provide a free site consultation.</p>
                 
                 <Link href="https://wa.me/919376590313" target="_blank" className="flex items-center justify-center gap-2 w-full bg-[#25D366] hover:bg-[#1fae54] text-white font-black text-lg py-4 px-4 rounded-xl mb-4 transition-transform hover:-translate-y-1">
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M11.97 2.005a9.962 9.962 0 00-8.528 15.11L2 22l5.023-1.328a9.964 9.964 0 104.947-18.667zM12 20a7.973 7.973 0 01-4.062-1.115l-.291-.173-3.023.794.808-2.953-.19-.3A7.95 7.95 0 014.032 12 7.977 7.977 0 1112 20zm4.242-5.467c-.232-.116-1.378-.68-1.593-.758-.215-.078-.372-.116-.528.116-.156.232-.6 .758-.737.914-.136.155-.274.175-.506.058-.232-.116-.983-.362-1.87-1.156-.69-.617-1.155-1.38-1.29-1.612-.136-.233-.014-.359.102-.475.105-.105.232-.272.348-.408.116-.136.155-.233.232-.388.077-.156.039-.292-.019-.408-.058-.116-.528-1.277-.723-1.748-.19-.46-.383-.398-.528-.406-.137-.008-.293-.008-.45-.008z" /></svg>

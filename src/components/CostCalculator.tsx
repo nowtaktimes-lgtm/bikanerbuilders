@@ -53,7 +53,7 @@ export default function CostCalculator() {
     "@type": "WebApplication",
     "name": "Bikaner Builders Construction Cost Estimator",
     "url": "https://www.bikanerbuilders.in/cost-estimator",
-    "description": "Calculate your turnkey construction and architecture cost in Bikaner instantly with our smart estimate tool. Get realistic, data-driven residential and commercial building estimates.",
+    "description": "Calculate your turnkey construction and house building cost in Bikaner instantly with our smart estimate tool. Get realistic, data-driven residential and commercial building estimates.",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "All",
     "browserRequirements": "Requires JavaScript",
@@ -226,7 +226,7 @@ export default function CostCalculator() {
               Get a Custom Blueprint for this Estimate
             </h3>
             <p className="text-sm md:text-base text-gray-500 font-medium">
-              Talk to our elite architects in Bikaner today.
+              Talk to our house planning and construction team in Bikaner today.
             </p>
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

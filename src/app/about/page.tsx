@@ -4,8 +4,8 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "About Us | Top Civil Contractors & Architects in Bikaner",
-  description: "Learn about Bikaner Builders, the #1 turnkey construction company in Bikaner. Led by Rishad Khan, we specialize in Vastu maps, 3D elevations, and home building.",
+  title: "About Us | Civil Contractors & House Builders in Bikaner",
+  description: "Learn about Bikaner Builders, a trusted turnkey construction company in Bikaner. Led by Rishad Khan, we specialize in Vastu-oriented floor plans, 3D elevations, and home building.",
 };
 
 export default function AboutUs() {
@@ -16,8 +16,8 @@ export default function AboutUs() {
       <section className="relative h-[400px] md:h-[500px] flex items-center justify-center overflow-hidden">
         <Image
           src="/assets/bikaner_builders_engineering_team.jpg"
-          alt="Expert civil engineers and construction team at Bikaner Builders"
-          title="Top Building Contractors Bikaner"
+          alt="Civil construction and house planning team at Bikaner Builders"
+          title="Building Contractors Bikaner"
           fill
           priority
           className="object-cover"
@@ -40,7 +40,7 @@ export default function AboutUs() {
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-black text-[#0F172A] mb-6">Built for Rajasthan's Climate</h2>
           <p className="text-lg text-slate-600 leading-relaxed">
-            As Bikaner's premier civil contractors, we understand that building in Rajasthan requires specialized knowledge of extreme temperatures and soil conditions. For over a decade, our expert architects and engineers have been delivering turnkey construction, structural drawings, and 100% Vastu-compliant homes. From strong foundations to heat-resistant 3D elevations and premium interior POP work, we use top-grade materials to ensure your home stands the test of time.
+            As experienced building contractors in Bikaner, we understand that building in Rajasthan requires specialized knowledge of extreme temperatures and soil conditions. Our team delivers turnkey construction, residential layouts, 3D elevations, and coordinated structural drawings. From strong foundations to heat-resistant 3D elevations and premium interior POP work, we use top-grade materials to ensure your home stands the test of time.
           </p>
         </div>
       </section>
@@ -60,9 +60,9 @@ export default function AboutUs() {
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md mx-auto mb-6">
                 <span className="text-[#EA580C] text-2xl">🕉️</span>
               </div>
-              <h3 className="text-xl font-bold text-[#0F172A] mb-4">100% Vastu Compliance</h3>
+              <h3 className="text-xl font-bold text-[#0F172A] mb-4">Vastu-Oriented Planning</h3>
               <p className="text-gray-600">
-                Every 2D naksha and architectural plan we create is designed strictly following traditional Vastu Shastra principles to bring harmony to your home.
+                Every 2D naksha and residential plan we create can incorporate traditional Vastu Shastra principles to bring harmony to your home.
               </p>
             </div>
 
@@ -112,7 +112,7 @@ export default function AboutUs() {
       <section className="bg-[#0F172A] py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-6">Ready to start your construction journey?</h2>
-          <p className="text-gray-300 mb-10 text-lg">Contact our team today for a free site visit and architectural consultation.</p>
+          <p className="text-gray-300 mb-10 text-lg">Contact our team today for a free site visit and house planning consultation.</p>
           <Link href="/contact" className="inline-block bg-[#EA580C] hover:bg-[#F97316] text-white font-bold text-lg px-8 py-4 rounded-xl shadow-[0_4px_15px_rgba(234,88,12,0.5)] transition-all hover:-translate-y-1">
             Get in Touch Now
           </Link>

@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const title = post.seo?.title || post.title;
   let description = post.seo?.description || post.seo?.metaDesc || '';
   if (!description) {
-    description = `Explore ${post.title} at Bikaner Builders, the top construction and architectural firm in Bikaner.`;
+    description = `Explore ${post.title} at Bikaner Builders, your trusted home construction and house planning service in Bikaner.`;
   }
   
   const imageUrl = post.featuredImage?.node?.sourceUrl || 'https://www.bikanerbuilders.in/_next/image?url=%2Fassets%2Fog_bikaner_builders_v2.jpg&w=1200&q=75';

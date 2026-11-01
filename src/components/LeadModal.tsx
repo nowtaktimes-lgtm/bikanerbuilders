@@ -81,7 +81,7 @@ export default function LeadModal({ isOpen, onClose }: LeadModalProps) {
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-navy-900 mb-2">Request Received!</h3>
-              <p className="text-gray-600">Our engineering expert will call you shortly.</p>
+              <p className="text-gray-600">Our project team will call you shortly.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">

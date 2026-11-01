@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   let description = post.seo?.description || post.seo?.metaDesc || '';
   if (!description) {
     // Basic fallback description
-    description = `Premium construction and architectural services in ${post.title}. 100% Vastu-compliant designs and turnkey solutions by Bikaner Builders.`;
+    description = `Premium construction and house planning services for ${post.title}. Tailored floor plans and turnkey building solutions by Bikaner Builders.`;
     if (description.length > 150) description = description.substring(0, 147) + '...';
   }
   

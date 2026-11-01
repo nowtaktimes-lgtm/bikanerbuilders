@@ -47,7 +47,7 @@ export default function Home() {
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
           <span className="inline-block py-1.5 px-4 rounded-full bg-[#EA580C]/20 border border-[#EA580C]/50 text-[#EA580C] font-bold tracking-widest uppercase text-xs sm:text-sm mb-6 backdrop-blur-sm">
-            Architectural Planning &amp; House Construction
+            House Planning &amp; Construction Services
           </span>
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-black text-white mb-6 leading-tight drop-shadow-2xl">
             Construction Company &amp; <br className="hidden md:block"/>
@@ -82,7 +82,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-black text-[#0F172A] mb-4">
-              Construction &amp; Architectural Services in Bikaner
+              Construction &amp; House Planning Services in Bikaner
             </h2>
             <div className="w-20 h-1.5 bg-[#EA580C] mx-auto rounded-full mb-6"></div>
             <p className="max-w-3xl mx-auto text-base md:text-lg text-slate-600 leading-relaxed">
@@ -92,25 +92,25 @@ export default function Home() {
           
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
             
-            {/* Service 1: Architect in Bikaner */}
-            <Link href="/architect-in-bikaner" className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col">
+            {/* Service 1: House Plan Design */}
+            <Link href="/house-plan-design-bikaner" className="group bg-slate-50 rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col">
               <div className="relative h-32 md:h-56 overflow-hidden">
                 <Image 
                   src="/assets/architect-in-bikaner-house-design.webp"
-                  alt="Architect in Bikaner - House Planning and Architectural Design" 
-                  title="Architect in Bikaner" 
+                  alt="House Plan Design and 3D Elevation in Bikaner" 
+                  title="House Plan Design Bikaner" 
                   fill 
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 578px" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A]/90 to-transparent"></div>
                 <h3 className="absolute bottom-3 left-3 md:bottom-6 md:left-6 text-sm md:text-2xl font-black text-white">
-                  Architect in Bikaner
+                  House Plan Design
                 </h3>
               </div>
               <div className="p-3 md:p-6 flex flex-col flex-grow">
                 <p className="text-xs md:text-base text-gray-600 mb-2 md:mb-4 line-clamp-2 md:line-clamp-none flex-grow">
-                  Explore house planning, architectural layouts and design guidance for residential and other building projects.
+                  Explore house planning, 2D floor plans, 3D front elevations and space planning for residential homes.
                 </p>
                 <span className="text-[#EA580C] font-bold text-[10px] md:text-sm tracking-wide uppercase group-hover:underline mt-auto">
                   View Details &rarr;
@@ -123,7 +123,7 @@ export default function Home() {
               <div className="relative h-32 md:h-56 overflow-hidden">
                 <Image 
                   src="/assets/icon_architecture_1789213681908.png"
-                  alt="100% Vastu compliant 2D floor plan designed by top architects in Bikaner" title="2D House Plan & Vastu Naksha Bikaner" 
+                  alt="Vastu-oriented 2D floor plan designed for residential homes in Bikaner" title="2D House Plan & Vastu Naksha Bikaner" 
                   fill 
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 sizes="(max-width: 768px) 100vw, 578px" />
@@ -216,7 +216,7 @@ export default function Home() {
               href="/services" 
               className="inline-flex items-center justify-center gap-2 bg-[#0F172A] hover:bg-[#EA580C] text-white font-bold text-sm md:text-base px-8 py-4 rounded-full shadow-lg hover:shadow-orange-500/20 transition-all duration-300 hover:-translate-y-0.5 group"
             >
-              <span>Explore All Construction &amp; Architecture Services</span>
+              <span>Explore All Construction &amp; Planning Services</span>
               <svg className="w-5 h-5 text-[#EA580C] group-hover:text-white group-hover:translate-x-1 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
@@ -263,7 +263,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-8">
             {[
-              { title: "Free Site Inspection", desc: "Detailed soil & topography analysis before we begin.", icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" },
+              { title: "Free Site Inspection", desc: "Plot assessment and orientation check before we begin.", icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" },
               { title: "Vastu-Compliant 3D Design", desc: "Scientific space planning for positive energy.", icon: "M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" },
               { title: "Transparent BOQ", desc: "Clear material selection with zero hidden costs.", icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" },
               { title: "Turnkey Handover", desc: "Move-in ready homes delivered on strict deadlines.", icon: "M5 13l4 4L19 7" }
@@ -287,11 +287,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="w-full md:w-1/2 relative h-[400px] rounded-3xl overflow-hidden shadow-2xl border-4 border-slate-800">
-              <Image src="/assets/bikaner_builders_engineering_team.jpg" alt="Expert civil engineering and architecture team at Bikaner Builders" title="Certified Civil Engineers Bikaner" fill className="object-cover" sizes="(max-width: 768px) 100vw, 578px" />
+              <Image src="/assets/bikaner_builders_engineering_team.jpg" alt="Construction supervision and house planning team at Bikaner Builders" title="Construction & Planning Team Bikaner" fill className="object-cover" sizes="(max-width: 768px) 100vw, 578px" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#111827] to-transparent opacity-80"></div>
               <div className="absolute bottom-6 left-6">
                 <p className="text-orange-500 font-bold uppercase tracking-wider text-sm mb-1">TECHNICAL LEADERSHIP</p>
-                <p className="text-2xl font-black">Bikaner Builders Engineering Team</p>
+                <p className="text-2xl font-black">Bikaner Builders Project &amp; Planning Team</p>
               </div>
             </div>
             <div className="w-full md:w-1/2">
@@ -362,7 +362,7 @@ export default function Home() {
                   </span>
                 ) 
               },
-              { q: "Do you provide Vastu-compliant house maps?", a: "Yes, our expert architects specialize in 100% Vastu-compliant 2D nakshas and 3D elevations, ensuring your new home attracts positive energy and prosperity." },
+              { q: "Do you provide Vastu-compliant house maps?", a: "Yes, our design team specializes in Vastu-oriented 2D nakshas and 3D elevations, ensuring your new home layout aligns with traditional spatial preferences." },
               { q: "Do you handle material and labor both?", a: "Absolutely. We offer comprehensive turnkey construction solutions. From foundation digging to the final coat of paint, we manage all labor, material sourcing, and project supervision." },
               { 
                 q: "Why choose a single construction company instead of hiring multiple contractors?", 
@@ -432,7 +432,7 @@ export default function Home() {
                 "name": "Do you provide Vastu-compliant house maps?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Yes, our expert architects specialize in 100% Vastu-compliant 2D nakshas and 3D elevations, ensuring your new home attracts positive energy and prosperity."
+                  "text": "Yes, our design team specializes in Vastu-oriented 2D nakshas and 3D elevations, ensuring your new home layout aligns with traditional spatial preferences."
                 }
               },
               {

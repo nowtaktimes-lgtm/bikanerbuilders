@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   let description = post.seo?.description || post.seo?.metaDesc || '';
   if (!description) {
     // Basic fallback description
-    description = `Premium construction and architectural services in ${post.title}. 100% Vastu-compliant designs and turnkey solutions by Bikaner Builders.`;
+    description = `Premium construction and house planning services in ${post.title}. Tailored floor plans and turnkey building solutions by Bikaner Builders.`;
     if (description.length > 150) description = description.substring(0, 147) + '...';
   }
   
@@ -72,7 +72,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
   const locationServiceSchema = generateLocationServiceSchema({
     locationName: formattedLocationName,
     url: locationUrl,
-    description: post.seo?.description || `Professional house construction, architectural planning, 2D floor plans, and turnkey building services in ${formattedLocationName}, Bikaner.`
+    description: post.seo?.description || `Professional house construction, 2D floor plans, 3D front elevations, and turnkey building services in ${formattedLocationName}, Bikaner.`
   });
 
   const breadcrumbSchema = {
@@ -123,7 +123,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
                   <p className="text-slate-300 mb-3 text-sm leading-relaxed">
                     "{getFounderQuote(resolvedParams.slug, formattedLocationName)}"
                   </p>
-                  <p className="font-bold text-orange-400 text-sm">— Rishad Khan, Founder & Head Civil Engineer</p>
+                  <p className="font-bold text-orange-400 text-sm">— Rishad Khan, Founder & Operations Head</p>
                 </div>
               </div>
             </div>
@@ -135,19 +135,19 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
                 Construction &amp; Design Services in {formattedLocationName}
               </h2>
               <p className="text-slate-600 mb-6 text-sm md:text-base leading-relaxed">
-                Whether you are planning a new residential build or architectural design in {formattedLocationName}, our team coordinates your project from initial planning to on-site execution:
+                Whether you are planning a new residential build or house plan design in {formattedLocationName}, our team coordinates your project from initial planning to on-site execution:
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Link 
-                  href="/architect-in-bikaner" 
+                  href="/house-plan-design-bikaner" 
                   className="p-4 rounded-xl border border-slate-200 hover:border-orange-500 bg-slate-50/50 hover:bg-orange-50/30 transition-all group"
                 >
                   <h3 className="text-base font-bold text-slate-900 group-hover:text-orange-600 mb-1 flex items-center justify-between">
-                    Architect in Bikaner
+                    House Plan Design
                     <span className="text-orange-500">&rarr;</span>
                   </h3>
                   <p className="text-xs md:text-sm text-slate-600 leading-normal">
-                    Comprehensive house planning, space layout, and Vastu-oriented design guidance for projects in {formattedLocationName}.
+                    Comprehensive house planning, 2D floor plans, and 3D elevation designs for residential plots in {formattedLocationName}.
                   </p>
                 </Link>
 
@@ -216,7 +216,7 @@ export default async function LocationPage({ params }: { params: Promise<{ slug:
           <div className="lg:col-span-4">
             <div className="sticky top-24 bg-white p-8 rounded-2xl shadow-xl border border-slate-100">
               <h3 className="text-xl font-bold text-slate-900 mb-4">Start Your Project in {formattedLocationName}</h3>
-              <p className="text-slate-600 mb-6 text-sm">Need construction or architectural services in {formattedLocationName}? Our experts are here to assist you.</p>
+              <p className="text-slate-600 mb-6 text-sm">Need construction or house planning services in {formattedLocationName}? Our project team is here to assist you.</p>
               
               <Link href="https://wa.me/919376590313" target="_blank" className="block w-full bg-[#25D366] hover:bg-[#1fae54] text-white text-center font-bold py-3 px-4 rounded-xl mb-4 transition-colors">
                 Chat on WhatsApp

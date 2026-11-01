@@ -65,7 +65,7 @@ export default function Footer({ locations = [], services = [] }: FooterProps) {
               </span>
             </Link>
             <p className="text-gray-600 mb-6 leading-relaxed max-w-sm">
-              Premium construction, 3D architectural elevations, and Vastu-compliant floor planning for Bikaner city and surrounding rural areas. Quality you can trust.
+              Premium house construction, 3D front elevations, and Vastu-oriented floor planning for Bikaner city and surrounding areas. Quality you can trust.
             </p>
             {/* Address */}
             <div className="flex items-start gap-3 text-gray-700 mb-6">

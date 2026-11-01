@@ -5,8 +5,8 @@ import { getAllServices, WpNode } from '@/lib/api';
 import { getCombinedServices } from '@/lib/services';
 
 export const metadata: Metadata = {
-  title: 'Construction & Architectural Services in Bikaner | Bikaner Builders',
-  description: 'Explore the comprehensive range of construction, architecture, interior design, and structural services offered by Bikaner Builders in Bikaner.',
+  title: 'Construction & House Planning Services in Bikaner | Bikaner Builders',
+  description: 'Explore construction, house planning, 2D floor plans, 3D elevations, interior design, and structural drawings offered by Bikaner Builders in Bikaner.',
   alternates: {
     canonical: 'https://www.bikanerbuilders.in/services'
   }
@@ -62,7 +62,7 @@ export default async function ServicesPage() {
   const dynamicServices = await getAllServices();
   const services = getCombinedServices(dynamicServices);
 
-  const archSlugs = ['architect-in-bikaner', '2d-naksha', '3d-elevation'];
+  const archSlugs = ['house-plan-design-bikaner', 'architect-in-bikaner', '2d-naksha', '3d-elevation'];
   const structSlugs = ['structural-drawing'];
   const interiorSlugs = ['interior-design'];
   const constSlugs = ['turnkey-construction', 'building-contractor', 'civil-contractor'];
@@ -83,10 +83,10 @@ export default async function ServicesPage() {
         <div className="absolute inset-0 opacity-10 bg-[url('/pattern.svg')] bg-repeat" />
         <div className="max-w-7xl mx-auto relative z-10 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6 tracking-tight text-white drop-shadow-md">
-            Construction & Architectural Services in Bikaner
+            Construction & House Planning Services in Bikaner
           </h1>
           <p className="text-xl md:text-2xl max-w-3xl mx-auto text-slate-300 font-light leading-relaxed mt-6">
-            From visionary architectural planning to complete turnkey constructions, we bring your dream spaces to life with unmatched precision and quality.
+            From residential floor planning and 3D elevation to complete turnkey house construction, we build your spaces with precision and care.
           </p>
         </div>
       </div>
@@ -96,7 +96,7 @@ export default async function ServicesPage() {
         {/* ARCHITECTURE & DESIGN SERVICES */}
         {architectureServices.length > 0 && (
           <section>
-            <h2 className="text-3xl font-black text-slate-900 mb-2">ARCHITECTURE & DESIGN SERVICES</h2>
+            <h2 className="text-3xl font-black text-slate-900 mb-2">PLANNING & DESIGN SERVICES</h2>
             <div className="w-20 h-1.5 bg-orange-500 mb-8 rounded-full"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {architectureServices.map((service, index) => (
